@@ -1,0 +1,282 @@
+[2023-08-21 10:50:53] Act:.INFO: auth_user_info START  
+[2023-08-21 10:50:53] Act:.INFO: auth_user_info END  
+[2023-08-21 10:50:53] Act:.INFO: auth login redirectTo user = stdClass Object
+(
+    [id] => 11
+    [name] => ユーザー１１
+    [email] => user11@gmail.com
+    [email_verified_at] => 
+    [organization_id] => 1
+    [user_id] => 2
+    [login_flg] => 1
+    [admin_flg] => 1
+    [created_at] => 2022-10-20T03:00:00.000000Z
+    [updated_at] => 2022-10-20T03:00:00.000000Z
+    [deleted_at] => 
+)
+  
+[2023-08-21 10:50:59] Act:.INFO: auth_user_info START  
+[2023-08-21 10:50:59] Act:.INFO: auth_user_info END  
+[2023-08-21 10:50:59] Act:.INFO: topclient index START $user->name = ユーザー１１  
+[2023-08-21 10:50:59] Act:.INFO: auth_customer_findrec START  
+[2023-08-21 10:50:59] Act:.INFO: auth_customer_findrec START $u_id = 11  
+[2023-08-21 10:51:00] Act:.INFO: auth_customer_findrec END $u_id = 11  
+[2023-08-21 10:51:00] Act:.INFO: auth_customer_findrec END  
+[2023-08-21 10:51:00] Act:.INFO: get_three_month START  
+[2023-08-21 10:51:00] Act:.INFO: get_three_month END  
+[2023-08-21 10:51:01] Act:.INFO: topclient index END $user->name = ユーザー１１  
+[2023-08-21 10:55:04] Act:.INFO: client postUpload  START  
+[2023-08-21 10:55:05] Act:.INFO: client postUpload_info  START  
+[2023-08-21 10:55:05] Act:.INFO: auth_user_info START  
+[2023-08-21 10:55:05] Act:.INFO: auth_user_info END  
+[2023-08-21 10:55:05] Act:.INFO: auth_user_foldername START  
+[2023-08-21 10:55:05] Act:.INFO: auth_user_foldername END  
+[2023-08-21 10:55:05] Act:.INFO: client json_put_info_set  START  
+[2023-08-21 10:55:05] Act:.INFO: client json_put_info_set  END  
+[2023-08-21 10:55:05] Act:.INFO: client postUpload_info  END  
+[2023-08-21 10:55:05] Act:.INFO: client json_put_status  START  
+[2023-08-21 10:55:05] Act:.INFO: client json_put_status  END  
+[2023-08-21 10:55:05] Act:.INFO: client json_get_info  START  
+[2023-08-21 10:55:05] Act:.INFO: client json_get_info  END  
+[2023-08-21 10:55:05] Act:.INFO: client postUpload  $fileName = upload_index.blade.php  
+[2023-08-21 10:55:06] Act:.INFO: beginTransaction - client postUpload saveFile start  
+[2023-08-21 10:55:07] Act:.INFO: beginTransaction - client postUpload saveFile end(commit)  
+[2023-08-21 10:55:07] Act:.INFO: client json_put_status  START  
+[2023-08-21 10:55:07] Act:.INFO: client json_put_status  END  
+[2023-08-21 10:55:07] Act:.INFO: client postUpload  END  
+[2023-08-21 10:55:18] Act:.INFO: client postUpload  START  
+[2023-08-21 10:55:18] Act:.INFO: client postUpload_info  START  
+[2023-08-21 10:55:18] Act:.INFO: auth_user_info START  
+[2023-08-21 10:55:19] Act:.INFO: auth_user_info END  
+[2023-08-21 10:55:19] Act:.INFO: auth_user_foldername START  
+[2023-08-21 10:55:19] Act:.INFO: auth_user_foldername END  
+[2023-08-21 10:55:19] Act:.INFO: client json_put_info_set  START  
+[2023-08-21 10:55:19] Act:.INFO: client json_put_info_set  END  
+[2023-08-21 10:55:19] Act:.INFO: client postUpload_info  END  
+[2023-08-21 10:55:19] Act:.INFO: client json_put_status  START  
+[2023-08-21 10:55:19] Act:.INFO: client json_put_status  END  
+[2023-08-21 10:55:19] Act:.INFO: client json_get_info  START  
+[2023-08-21 10:55:19] Act:.INFO: client json_get_info  END  
+[2023-08-21 10:55:19] Act:.INFO: client postUpload  $fileName = upload.blade.php  
+[2023-08-21 10:55:20] Act:.INFO: beginTransaction - client postUpload saveFile start  
+[2023-08-21 10:55:20] Act:.INFO: beginTransaction - client postUpload saveFile end(commit)  
+[2023-08-21 10:55:20] Act:.INFO: client json_put_status  START  
+[2023-08-21 10:55:20] Act:.INFO: client json_put_status  END  
+[2023-08-21 10:55:20] Act:.INFO: client postUpload  END  
+[2023-08-21 10:55:43] Act:.INFO: transhistory index START  
+[2023-08-21 10:55:43] Act:.INFO: auth_user_info START  
+[2023-08-21 10:55:43] Act:.INFO: auth_user_info END  
+[2023-08-21 10:55:43] Act:.INFO: auth_customer_findrec START  
+[2023-08-21 10:55:43] Act:.INFO: auth_customer_findrec START $u_id = 11  
+[2023-08-21 10:55:44] Act:.INFO: auth_customer_findrec END $u_id = 11  
+[2023-08-21 10:55:44] Act:.INFO: auth_customer_findrec END  
+[2023-08-21 10:55:45] Act:.INFO: transhistory index END  
+[2023-08-21 11:03:18] Act:.INFO: auth logout redirectTo user = stdClass Object
+(
+    [id] => 11
+    [name] => ユーザー１１
+    [email] => user11@gmail.com
+    [email_verified_at] => 
+    [organization_id] => 1
+    [user_id] => 2
+    [login_flg] => 1
+    [admin_flg] => 1
+    [created_at] => 2022-10-20T03:00:00.000000Z
+    [updated_at] => 2022-10-20T03:00:00.000000Z
+    [deleted_at] => 
+)
+  
+[2023-08-21 19:42:51] Act:.INFO: auth_user_info START  
+[2023-08-21 19:42:51] Act:.INFO: auth_user_info END  
+[2023-08-21 19:42:51] Act:.INFO: auth login redirectTo user = stdClass Object
+(
+    [id] => 1
+    [name] => 新冨泰明
+    [email] => shintomi.sh@gmail.com
+    [email_verified_at] => 
+    [organization_id] => 0
+    [user_id] => 1
+    [login_flg] => 2
+    [admin_flg] => 2
+    [created_at] => 2022-10-20T03:00:00.000000Z
+    [updated_at] => 2022-10-20T03:00:00.000000Z
+    [deleted_at] => 
+)
+  
+[2023-08-21 19:42:56] Act:.INFO: auth_user_info START  
+[2023-08-21 19:42:57] Act:.INFO: auth_user_info END  
+[2023-08-21 19:42:57] Act:.INFO: office top index START $user->name = 新冨泰明  
+[2023-08-21 19:42:57] Act:.INFO: auth_user_organization START  
+[2023-08-21 19:42:57] Act:.INFO: auth_user_organization END  
+[2023-08-21 19:42:58] Act:.INFO: office top index END $user->name = 新冨泰明  
+[2023-08-21 19:43:10] Act:.INFO: uploaduser index START  
+[2023-08-21 19:43:10] Act:.INFO: auth_user_organization START  
+[2023-08-21 19:43:11] Act:.INFO: auth_user_organization END  
+[2023-08-21 19:43:11] Act:.INFO: auth_customer_all START  
+[2023-08-21 19:43:11] Act:.INFO: auth_customer_all END  
+[2023-08-21 19:43:12] Act:.INFO: uploaduser index END  
+[2023-08-21 19:43:22] Act:.INFO: filemng post START  
+[2023-08-21 19:43:22] Act:.INFO: auth_user_info START  
+[2023-08-21 19:43:22] Act:.INFO: auth_user_info END  
+[2023-08-21 19:43:22] Act:.INFO: filemng post $customer_id = 2  
+[2023-08-21 19:43:22] Act:.INFO: filemng post END  
+[2023-08-21 19:43:27] Act:.INFO: filemng index START  
+[2023-08-21 19:43:27] Act:.INFO: auth_user_info START  
+[2023-08-21 19:43:27] Act:.INFO: auth_user_info END  
+[2023-08-21 19:43:27] Act:.INFO: filemng index $customer_id = 2  
+[2023-08-21 19:43:27] Act:.INFO: auth_user_foldername START  
+[2023-08-21 19:43:27] Act:.INFO: auth_user_foldername END  
+[2023-08-21 19:43:28] Act:.INFO: filemng index END  
+[2023-08-21 19:44:06] Act:.INFO: update_api Filemng Uploaduser START  
+[2023-08-21 19:44:06] Act:.INFO: update_api Filemng Uploaduser beginTransaction - start  
+[2023-08-21 19:44:07] Act:.INFO: update_api Filemng Uploaduser beginTransaction - end  
+[2023-08-21 19:44:07] Act:.INFO: auth_user_info START  
+[2023-08-21 19:44:07] Act:.INFO: auth_user_info END  
+[2023-08-21 19:44:07] Act:.INFO: filemng index $customer_id = 2  
+[2023-08-21 19:44:07] Act:.INFO: auth_user_foldername START  
+[2023-08-21 19:44:07] Act:.INFO: auth_user_foldername END  
+[2023-08-21 19:44:08] Act:.INFO: update_api Filemng Uploaduser END  
+[2023-08-21 19:44:12] Act:.INFO: filemng index START  
+[2023-08-21 19:44:12] Act:.INFO: auth_user_info START  
+[2023-08-21 19:44:13] Act:.INFO: auth_user_info END  
+[2023-08-21 19:44:13] Act:.INFO: filemng index $customer_id = 2  
+[2023-08-21 19:44:13] Act:.INFO: auth_user_foldername START  
+[2023-08-21 19:44:13] Act:.INFO: auth_user_foldername END  
+[2023-08-21 19:44:13] Act:.INFO: filemng index END  
+[2023-08-21 19:44:23] Act:.INFO: uploaduser index START  
+[2023-08-21 19:44:23] Act:.INFO: auth_user_organization START  
+[2023-08-21 19:44:23] Act:.INFO: auth_user_organization END  
+[2023-08-21 19:44:23] Act:.INFO: auth_customer_all START  
+[2023-08-21 19:44:24] Act:.INFO: auth_customer_all END  
+[2023-08-21 19:44:24] Act:.INFO: uploaduser index END  
+[2023-08-21 19:59:07] Act:.INFO: filemng post START  
+[2023-08-21 19:59:07] Act:.INFO: auth_user_info START  
+[2023-08-21 19:59:07] Act:.INFO: auth_user_info END  
+[2023-08-21 19:59:07] Act:.INFO: filemng post $customer_id = 2  
+[2023-08-21 19:59:08] Act:.INFO: filemng post END  
+[2023-08-21 19:59:12] Act:.INFO: filemng index START  
+[2023-08-21 19:59:13] Act:.INFO: auth_user_info START  
+[2023-08-21 19:59:13] Act:.INFO: auth_user_info END  
+[2023-08-21 19:59:13] Act:.INFO: filemng index $customer_id = 2  
+[2023-08-21 19:59:13] Act:.INFO: auth_user_foldername START  
+[2023-08-21 19:59:13] Act:.INFO: auth_user_foldername END  
+[2023-08-21 19:59:13] Act:.INFO: filemng index END  
+[2023-08-21 19:59:30] Act:.INFO: uploaduser index START  
+[2023-08-21 19:59:30] Act:.INFO: auth_user_organization START  
+[2023-08-21 19:59:30] Act:.INFO: auth_user_organization END  
+[2023-08-21 19:59:31] Act:.INFO: auth_customer_all START  
+[2023-08-21 19:59:31] Act:.INFO: auth_customer_all END  
+[2023-08-21 19:59:31] Act:.INFO: uploaduser index END  
+[2023-08-21 20:09:37] Act:.INFO: filemng post START  
+[2023-08-21 20:09:37] Act:.INFO: auth_user_info START  
+[2023-08-21 20:09:37] Act:.INFO: auth_user_info END  
+[2023-08-21 20:09:37] Act:.INFO: filemng post $customer_id = 2  
+[2023-08-21 20:09:38] Act:.INFO: filemng post END  
+[2023-08-21 20:09:43] Act:.INFO: filemng index START  
+[2023-08-21 20:09:43] Act:.INFO: auth_user_info START  
+[2023-08-21 20:09:43] Act:.INFO: auth_user_info END  
+[2023-08-21 20:09:43] Act:.INFO: filemng index $customer_id = 2  
+[2023-08-21 20:09:43] Act:.INFO: auth_user_foldername START  
+[2023-08-21 20:09:43] Act:.INFO: auth_user_foldername END  
+[2023-08-21 20:09:43] Act:.INFO: filemng index END  
+[2023-08-21 20:23:51] Act:.INFO: filemng index START  
+[2023-08-21 20:23:51] Act:.INFO: auth_user_info START  
+[2023-08-21 20:23:52] Act:.INFO: auth_user_info END  
+[2023-08-21 20:23:52] Act:.INFO: filemng index $customer_id = 2  
+[2023-08-21 20:23:52] Act:.INFO: auth_user_foldername START  
+[2023-08-21 20:23:52] Act:.INFO: auth_user_foldername END  
+[2023-08-21 20:23:52] Act:.INFO: filemng index END  
+[2023-08-21 20:24:24] Act:.INFO: filemng index START  
+[2023-08-21 20:24:24] Act:.INFO: auth_user_info START  
+[2023-08-21 20:24:24] Act:.INFO: auth_user_info END  
+[2023-08-21 20:24:24] Act:.INFO: filemng index $customer_id = 2  
+[2023-08-21 20:24:24] Act:.INFO: auth_user_foldername START  
+[2023-08-21 20:24:25] Act:.INFO: auth_user_foldername END  
+[2023-08-21 20:24:25] Act:.INFO: filemng index END  
+[2023-08-21 20:24:42] Act:.INFO: filemng index START  
+[2023-08-21 20:24:42] Act:.INFO: auth_user_info START  
+[2023-08-21 20:24:43] Act:.INFO: auth_user_info END  
+[2023-08-21 20:24:43] Act:.INFO: filemng index $customer_id = 2  
+[2023-08-21 20:24:43] Act:.INFO: auth_user_foldername START  
+[2023-08-21 20:24:43] Act:.INFO: auth_user_foldername END  
+[2023-08-21 20:24:43] Act:.INFO: filemng index END  
+[2023-08-21 20:24:58] Act:.INFO: filemng index START  
+[2023-08-21 20:24:58] Act:.INFO: auth_user_info START  
+[2023-08-21 20:24:58] Act:.INFO: auth_user_info END  
+[2023-08-21 20:24:58] Act:.INFO: filemng index $customer_id = 2  
+[2023-08-21 20:24:58] Act:.INFO: auth_user_foldername START  
+[2023-08-21 20:24:58] Act:.INFO: auth_user_foldername END  
+[2023-08-21 20:24:58] Act:.INFO: filemng index END  
+[2023-08-21 20:25:09] Act:.INFO: filemng index START  
+[2023-08-21 20:25:09] Act:.INFO: auth_user_info START  
+[2023-08-21 20:25:10] Act:.INFO: auth_user_info END  
+[2023-08-21 20:25:10] Act:.INFO: filemng index $customer_id = 2  
+[2023-08-21 20:25:10] Act:.INFO: auth_user_foldername START  
+[2023-08-21 20:25:10] Act:.INFO: auth_user_foldername END  
+[2023-08-21 20:25:10] Act:.INFO: filemng index END  
+[2023-08-21 20:38:09] Act:.INFO: filemng index START  
+[2023-08-21 20:38:10] Act:.INFO: auth_user_info START  
+[2023-08-21 20:38:10] Act:.INFO: auth_user_info END  
+[2023-08-21 20:38:10] Act:.INFO: filemng index $customer_id = 2  
+[2023-08-21 20:38:10] Act:.INFO: auth_user_foldername START  
+[2023-08-21 20:38:10] Act:.INFO: auth_user_foldername END  
+[2023-08-21 20:38:10] Act:.INFO: filemng index END  
+[2023-08-21 20:38:20] Act:.INFO: update_api Filemng Uploaduser START  
+[2023-08-21 20:38:21] Act:.INFO: update_api Filemng Uploaduser beginTransaction - start  
+[2023-08-21 20:38:21] Act:.INFO: update_api Filemng Uploaduser beginTransaction - end  
+[2023-08-21 20:38:21] Act:.INFO: auth_user_info START  
+[2023-08-21 20:38:21] Act:.INFO: auth_user_info END  
+[2023-08-21 20:38:21] Act:.INFO: auth_user_foldername START  
+[2023-08-21 20:38:22] Act:.INFO: auth_user_foldername END  
+[2023-08-21 20:38:22] Act:.INFO: update_api Filemng Uploaduser END  
+[2023-08-21 20:38:27] Act:.INFO: filemng index START  
+[2023-08-21 20:38:27] Act:.INFO: auth_user_info START  
+[2023-08-21 20:38:27] Act:.INFO: auth_user_info END  
+[2023-08-21 20:38:27] Act:.INFO: filemng index $customer_id = 2  
+[2023-08-21 20:38:27] Act:.INFO: auth_user_foldername START  
+[2023-08-21 20:38:27] Act:.INFO: auth_user_foldername END  
+[2023-08-21 20:38:27] Act:.INFO: filemng index END  
+[2023-08-21 20:38:57] Act:.INFO: filemng alldwonload START  
+[2023-08-21 20:38:57] Act:.INFO: auth_user_info START  
+[2023-08-21 20:38:57] Act:.INFO: auth_user_info END  
+[2023-08-21 20:38:57] Act:.INFO: auth_user_foldername START  
+[2023-08-21 20:38:58] Act:.INFO: auth_user_foldername END  
+[2023-08-21 20:38:58] Act:.INFO: filemng alldwonload after $str = upload_index.blade.php  
+[2023-08-21 20:38:58] Act:.INFO: filemng alldwonload END  
+[2023-08-21 20:38:58] Act:.INFO: filemng alldwonload $rtn == true END  
+[2023-08-21 20:39:23] Act:.INFO: filemng alldelete START  
+[2023-08-21 20:39:23] Act:.INFO: auth_user_info START  
+[2023-08-21 20:39:23] Act:.INFO: auth_user_info END  
+[2023-08-21 20:39:23] Act:.INFO: auth_user_foldername START  
+[2023-08-21 20:39:23] Act:.INFO: auth_user_foldername END  
+[2023-08-21 20:39:23] Act:.INFO: filemng remove_delete_files START  
+[2023-08-21 20:39:23] Act:.INFO: filemng remove_delete_files END  
+[2023-08-21 20:39:24] Act:.INFO: filemng alldelete END  
+[2023-08-21 20:39:35] Act:.INFO: filemng index START  
+[2023-08-21 20:39:36] Act:.INFO: auth_user_info START  
+[2023-08-21 20:39:36] Act:.INFO: auth_user_info END  
+[2023-08-21 20:39:36] Act:.INFO: filemng index $customer_id = 2  
+[2023-08-21 20:39:36] Act:.INFO: auth_user_foldername START  
+[2023-08-21 20:39:36] Act:.INFO: auth_user_foldername END  
+[2023-08-21 20:39:36] Act:.INFO: filemng index END  
+[2023-08-21 20:40:00] Act:.INFO: uploaduser index START  
+[2023-08-21 20:40:00] Act:.INFO: auth_user_organization START  
+[2023-08-21 20:40:00] Act:.INFO: auth_user_organization END  
+[2023-08-21 20:40:00] Act:.INFO: auth_customer_all START  
+[2023-08-21 20:40:01] Act:.INFO: auth_customer_all END  
+[2023-08-21 20:40:01] Act:.INFO: uploaduser index END  
+[2023-08-21 20:41:10] Act:.INFO: auth logout redirectTo user = stdClass Object
+(
+    [id] => 1
+    [name] => 新冨泰明
+    [email] => shintomi.sh@gmail.com
+    [email_verified_at] => 
+    [organization_id] => 0
+    [user_id] => 1
+    [login_flg] => 2
+    [admin_flg] => 2
+    [created_at] => 2022-10-20T03:00:00.000000Z
+    [updated_at] => 2022-10-20T03:00:00.000000Z
+    [deleted_at] => 
+)
+  

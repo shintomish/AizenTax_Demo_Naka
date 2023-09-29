@@ -1,0 +1,460 @@
+[2023-08-21 10:33:42] Act:.INFO: auth_user_info START  
+[2023-08-21 10:33:42] Act:.INFO: auth_user_info END  
+[2023-08-21 10:33:42] Act:.INFO: auth login redirectTo user = stdClass Object
+(
+    [id] => 11
+    [name] => ユーザー１１
+    [email] => user11@gmail.com
+    [email_verified_at] => 
+    [organization_id] => 1
+    [user_id] => 2
+    [login_flg] => 1
+    [admin_flg] => 1
+    [created_at] => 2022-10-20T12:00:00.000000Z
+    [updated_at] => 2022-10-20T12:00:00.000000Z
+    [deleted_at] => 
+)
+  
+[2023-08-21 10:33:42] Act:.INFO: auth_user_info START  
+[2023-08-21 10:33:42] Act:.INFO: auth_user_info END  
+[2023-08-21 10:33:42] Act:.INFO: topclient index START $user->name = ユーザー１１  
+[2023-08-21 10:33:42] Act:.INFO: auth_customer_findrec START  
+[2023-08-21 10:33:42] Act:.INFO: auth_customer_findrec START $u_id = 11  
+[2023-08-21 10:33:42] Act:.INFO: auth_customer_findrec END $u_id = 11  
+[2023-08-21 10:33:42] Act:.INFO: auth_customer_findrec END  
+[2023-08-21 10:33:42] Act:.INFO: get_three_month START  
+[2023-08-21 10:33:42] Act:.INFO: get_three_month END  
+[2023-08-21 10:33:42] Act:.INFO: topclient index END $user->name = ユーザー１１  
+[2023-08-21 10:34:27] Act:.INFO: client postUpload  START  
+[2023-08-21 10:34:27] Act:.INFO: client postUpload_info  START  
+[2023-08-21 10:34:27] Act:.INFO: auth_user_info START  
+[2023-08-21 10:34:27] Act:.INFO: auth_user_info END  
+[2023-08-21 10:34:27] Act:.INFO: auth_user_foldername START  
+[2023-08-21 10:34:27] Act:.INFO: auth_user_foldername END  
+[2023-08-21 10:34:27] Act:.INFO: client json_put_info_set  START  
+[2023-08-21 10:34:27] Act:.INFO: client json_put_info_set  END  
+[2023-08-21 10:34:27] Act:.INFO: client postUpload_info  END  
+[2023-08-21 10:34:27] Act:.INFO: client json_put_status  START  
+[2023-08-21 10:34:27] Act:.INFO: client json_put_status  END  
+[2023-08-21 10:34:27] Act:.INFO: client json_get_info  START  
+[2023-08-21 10:34:27] Act:.INFO: client json_get_info  END  
+[2023-08-21 10:34:27] Act:.INFO: client postUpload  $fileName = 鍵盤　演奏.sb3  
+[2023-08-21 10:34:27] Act:.INFO: beginTransaction - client postUpload saveFile start  
+[2023-08-21 10:34:27] Act:.INFO: beginTransaction - client postUpload saveFile end(commit)  
+[2023-08-21 10:34:27] Act:.INFO: client json_put_status  START  
+[2023-08-21 10:34:27] Act:.INFO: client json_put_status  END  
+[2023-08-21 10:34:27] Act:.INFO: client postUpload  END  
+[2023-08-21 10:34:27] Act:.INFO: client postUpload  START  
+[2023-08-21 10:34:27] Act:.INFO: client postUpload_info  START  
+[2023-08-21 10:34:27] Act:.INFO: auth_user_info START  
+[2023-08-21 10:34:27] Act:.INFO: auth_user_info END  
+[2023-08-21 10:34:27] Act:.INFO: auth_user_foldername START  
+[2023-08-21 10:34:27] Act:.INFO: auth_user_foldername END  
+[2023-08-21 10:34:27] Act:.INFO: client json_put_info_set  START  
+[2023-08-21 10:34:27] Act:.INFO: client json_put_info_set  END  
+[2023-08-21 10:34:27] Act:.INFO: client postUpload_info  END  
+[2023-08-21 10:34:27] Act:.INFO: client json_put_status  START  
+[2023-08-21 10:34:27] Act:.INFO: client json_put_status  END  
+[2023-08-21 10:34:27] Act:.INFO: client json_get_info  START  
+[2023-08-21 10:34:27] Act:.INFO: client json_get_info  END  
+[2023-08-21 10:34:27] Act:.INFO: client postUpload  $fileName = ロケット計算.sb3  
+[2023-08-21 10:34:27] Act:.INFO: beginTransaction - client postUpload saveFile start  
+[2023-08-21 10:34:27] Act:.INFO: beginTransaction - client postUpload saveFile end(commit)  
+[2023-08-21 10:34:27] Act:.INFO: client json_put_status  START  
+[2023-08-21 10:34:27] Act:.INFO: client json_put_status  END  
+[2023-08-21 10:34:27] Act:.INFO: client postUpload  END  
+[2023-08-21 10:42:03] Act:.INFO: auth_user_info START  
+[2023-08-21 10:42:03] Act:.INFO: auth_user_info END  
+[2023-08-21 10:42:03] Act:.INFO: topclient index START $user->name = ユーザー１１  
+[2023-08-21 10:42:03] Act:.INFO: auth_customer_findrec START  
+[2023-08-21 10:42:03] Act:.INFO: auth_customer_findrec START $u_id = 11  
+[2023-08-21 10:42:03] Act:.INFO: auth_customer_findrec END $u_id = 11  
+[2023-08-21 10:42:03] Act:.INFO: auth_customer_findrec END  
+[2023-08-21 10:42:03] Act:.INFO: get_three_month START  
+[2023-08-21 10:42:03] Act:.INFO: get_three_month END  
+[2023-08-21 10:42:03] Act:.INFO: topclient index END $user->name = ユーザー１１  
+[2023-08-21 10:42:03] Act:.ERROR: Route [topclientshow] not defined. {"view":{"view":"/var/www/html/actver/resources/views/topclient/index.blade.php","data":[]},"userId":11,"exception":"[object] (Spatie\\LaravelIgnition\\Exceptions\\ViewException(code: 0): Route [topclientshow] not defined. at /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Routing/UrlGenerator.php:467)
+[stacktrace]
+#0 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(790): Illuminate\\Routing\\UrlGenerator->route()
+#1 /var/www/html/actver/resources/views/topclient/index.blade.php(154): route()
+#2 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php(109): require('...')
+#3 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php(110): Illuminate\\Filesystem\\Filesystem::Illuminate\\Filesystem\\{closure}()
+#4 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/View/Engines/PhpEngine.php(58): Illuminate\\Filesystem\\Filesystem->getRequire()
+#5 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/View/Engines/CompilerEngine.php(70): Illuminate\\View\\Engines\\PhpEngine->evaluatePath()
+#6 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/View/View.php(139): Illuminate\\View\\Engines\\CompilerEngine->get()
+#7 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/View/View.php(122): Illuminate\\View\\View->getContents()
+#8 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/View/View.php(91): Illuminate\\View\\View->renderContents()
+#9 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Http/Response.php(69): Illuminate\\View\\View->render()
+#10 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Http/Response.php(35): Illuminate\\Http\\Response->setContent()
+#11 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Routing/Router.php(833): Illuminate\\Http\\Response->__construct()
+#12 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Routing/Router.php(802): Illuminate\\Routing\\Router::toResponse()
+#13 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Routing/Router.php(724): Illuminate\\Routing\\Router->prepareResponse()
+#14 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(141): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}()
+#15 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php(50): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#16 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle()
+#17 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Auth/Middleware/Authenticate.php(44): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#18 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Auth\\Middleware\\Authenticate->handle()
+#19 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/VerifyCsrfToken.php(78): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#20 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken->handle()
+#21 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/View/Middleware/ShareErrorsFromSession.php(49): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#22 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\View\\Middleware\\ShareErrorsFromSession->handle()
+#23 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(121): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#24 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(64): Illuminate\\Session\\Middleware\\StartSession->handleStatefulRequest()
+#25 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Session\\Middleware\\StartSession->handle()
+#26 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/AddQueuedCookiesToResponse.php(37): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#27 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse->handle()
+#28 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/EncryptCookies.php(67): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#29 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Cookie\\Middleware\\EncryptCookies->handle()
+#30 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(116): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#31 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Routing/Router.php(724): Illuminate\\Pipeline\\Pipeline->then()
+#32 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Routing/Router.php(703): Illuminate\\Routing\\Router->runRouteWithinStack()
+#33 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Routing/Router.php(667): Illuminate\\Routing\\Router->runRoute()
+#34 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Routing/Router.php(656): Illuminate\\Routing\\Router->dispatchToRoute()
+#35 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(190): Illuminate\\Routing\\Router->dispatch()
+#36 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(141): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}()
+#37 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#38 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull.php(31): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle()
+#39 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull->handle()
+#40 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#41 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TrimStrings.php(40): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle()
+#42 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\TrimStrings->handle()
+#43 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#44 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle()
+#45 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance.php(86): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#46 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance->handle()
+#47 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Http/Middleware/HandleCors.php(49): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#48 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Http\\Middleware\\HandleCors->handle()
+#49 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Http/Middleware/TrustProxies.php(39): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#50 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Http\\Middleware\\TrustProxies->handle()
+#51 /var/www/html/actver/app/Http/Middleware/ThrowFileError.php(51): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#52 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): App\\Http\\Middleware\\ThrowFileError->handle()
+#53 /var/www/html/actver/vendor/barryvdh/laravel-cors/src/HandleCors.php(38): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#54 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Fruitcake\\Cors\\HandleCors->handle()
+#55 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(116): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#56 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(165): Illuminate\\Pipeline\\Pipeline->then()
+#57 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(134): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter()
+#58 /var/www/html/actver/public/index.php(51): Illuminate\\Foundation\\Http\\Kernel->handle()
+#59 {main}
+
+[previous exception] [object] (Symfony\\Component\\Routing\\Exception\\RouteNotFoundException(code: 0): Route [topclientshow] not defined. at /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Routing/UrlGenerator.php:467)
+[stacktrace]
+#0 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(790): Illuminate\\Routing\\UrlGenerator->route()
+#1 /var/www/html/actver/storage/framework/views/096578c0775d00ac65e1f93b80b87ce9db84c73c.php(158): route()
+#2 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php(109): require('...')
+#3 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php(110): Illuminate\\Filesystem\\Filesystem::Illuminate\\Filesystem\\{closure}()
+#4 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/View/Engines/PhpEngine.php(58): Illuminate\\Filesystem\\Filesystem->getRequire()
+#5 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/View/Engines/CompilerEngine.php(70): Illuminate\\View\\Engines\\PhpEngine->evaluatePath()
+#6 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/View/View.php(139): Illuminate\\View\\Engines\\CompilerEngine->get()
+#7 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/View/View.php(122): Illuminate\\View\\View->getContents()
+#8 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/View/View.php(91): Illuminate\\View\\View->renderContents()
+#9 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Http/Response.php(69): Illuminate\\View\\View->render()
+#10 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Http/Response.php(35): Illuminate\\Http\\Response->setContent()
+#11 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Routing/Router.php(833): Illuminate\\Http\\Response->__construct()
+#12 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Routing/Router.php(802): Illuminate\\Routing\\Router::toResponse()
+#13 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Routing/Router.php(724): Illuminate\\Routing\\Router->prepareResponse()
+#14 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(141): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}()
+#15 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php(50): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#16 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle()
+#17 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Auth/Middleware/Authenticate.php(44): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#18 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Auth\\Middleware\\Authenticate->handle()
+#19 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/VerifyCsrfToken.php(78): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#20 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken->handle()
+#21 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/View/Middleware/ShareErrorsFromSession.php(49): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#22 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\View\\Middleware\\ShareErrorsFromSession->handle()
+#23 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(121): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#24 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(64): Illuminate\\Session\\Middleware\\StartSession->handleStatefulRequest()
+#25 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Session\\Middleware\\StartSession->handle()
+#26 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/AddQueuedCookiesToResponse.php(37): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#27 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse->handle()
+#28 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/EncryptCookies.php(67): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#29 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Cookie\\Middleware\\EncryptCookies->handle()
+#30 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(116): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#31 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Routing/Router.php(724): Illuminate\\Pipeline\\Pipeline->then()
+#32 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Routing/Router.php(703): Illuminate\\Routing\\Router->runRouteWithinStack()
+#33 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Routing/Router.php(667): Illuminate\\Routing\\Router->runRoute()
+#34 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Routing/Router.php(656): Illuminate\\Routing\\Router->dispatchToRoute()
+#35 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(190): Illuminate\\Routing\\Router->dispatch()
+#36 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(141): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}()
+#37 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#38 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull.php(31): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle()
+#39 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull->handle()
+#40 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#41 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TrimStrings.php(40): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle()
+#42 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\TrimStrings->handle()
+#43 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#44 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle()
+#45 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance.php(86): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#46 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance->handle()
+#47 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Http/Middleware/HandleCors.php(49): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#48 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Http\\Middleware\\HandleCors->handle()
+#49 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Http/Middleware/TrustProxies.php(39): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#50 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Http\\Middleware\\TrustProxies->handle()
+#51 /var/www/html/actver/app/Http/Middleware/ThrowFileError.php(51): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#52 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): App\\Http\\Middleware\\ThrowFileError->handle()
+#53 /var/www/html/actver/vendor/barryvdh/laravel-cors/src/HandleCors.php(38): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#54 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Fruitcake\\Cors\\HandleCors->handle()
+#55 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(116): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#56 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(165): Illuminate\\Pipeline\\Pipeline->then()
+#57 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(134): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter()
+#58 /var/www/html/actver/public/index.php(51): Illuminate\\Foundation\\Http\\Kernel->handle()
+#59 {main}
+"} 
+[2023-08-21 10:43:00] Act:.INFO: auth_user_info START  
+[2023-08-21 10:43:00] Act:.INFO: auth_user_info END  
+[2023-08-21 10:43:00] Act:.INFO: HomeController index START  
+[2023-08-21 10:43:00] Act:.INFO: HomeController index $user->name = ユーザー１１  
+[2023-08-21 10:43:00] Act:.INFO: HomeController index END  
+[2023-08-21 10:43:04] Act:.INFO: auth logout redirectTo user = stdClass Object
+(
+    [id] => 11
+    [name] => ユーザー１１
+    [email] => user11@gmail.com
+    [email_verified_at] => 
+    [organization_id] => 1
+    [user_id] => 2
+    [login_flg] => 1
+    [admin_flg] => 1
+    [created_at] => 2022-10-20T12:00:00.000000Z
+    [updated_at] => 2022-10-20T12:00:00.000000Z
+    [deleted_at] => 
+)
+  
+[2023-08-21 10:43:12] Act:.INFO: auth_user_info START  
+[2023-08-21 10:43:12] Act:.INFO: auth_user_info END  
+[2023-08-21 10:43:12] Act:.INFO: auth login redirectTo user = stdClass Object
+(
+    [id] => 1
+    [name] => 新冨泰明
+    [email] => shintomi.sh@gmail.com
+    [email_verified_at] => 
+    [organization_id] => 0
+    [user_id] => 1
+    [login_flg] => 2
+    [admin_flg] => 2
+    [created_at] => 2022-10-20T12:00:00.000000Z
+    [updated_at] => 2022-10-20T12:00:00.000000Z
+    [deleted_at] => 
+)
+  
+[2023-08-21 10:43:12] Act:.INFO: auth_user_info START  
+[2023-08-21 10:43:12] Act:.INFO: auth_user_info END  
+[2023-08-21 10:43:12] Act:.INFO: office top index START $user->name = 新冨泰明  
+[2023-08-21 10:43:12] Act:.INFO: auth_user_organization START  
+[2023-08-21 10:43:12] Act:.INFO: auth_user_organization END  
+[2023-08-21 10:43:12] Act:.INFO: office top index END $user->name = 新冨泰明  
+[2023-08-21 10:43:15] Act:.INFO: uploaduser index START  
+[2023-08-21 10:43:15] Act:.INFO: auth_user_organization START  
+[2023-08-21 10:43:15] Act:.INFO: auth_user_organization END  
+[2023-08-21 10:43:15] Act:.INFO: auth_customer_all START  
+[2023-08-21 10:43:15] Act:.INFO: auth_customer_all END  
+[2023-08-21 10:43:15] Act:.INFO: uploaduser index END  
+[2023-08-21 10:43:29] Act:.INFO: update_api Uploaduser START  
+[2023-08-21 10:43:29] Act:.INFO: update_api Uploaduser beginTransaction - start  
+[2023-08-21 10:43:29] Act:.INFO: update_api Uploaduser beginTransaction - end  
+[2023-08-21 10:43:29] Act:.INFO: update_api Uploaduser END  
+[2023-08-21 10:43:30] Act:.INFO: filemng post START  
+[2023-08-21 10:43:30] Act:.INFO: auth_user_info START  
+[2023-08-21 10:43:30] Act:.INFO: auth_user_info END  
+[2023-08-21 10:43:30] Act:.INFO: filemng post $customer_id = 1  
+[2023-08-21 10:43:30] Act:.INFO: filemng post END  
+[2023-08-21 10:43:30] Act:.INFO: filemng index START  
+[2023-08-21 10:43:30] Act:.INFO: auth_user_info START  
+[2023-08-21 10:43:30] Act:.INFO: auth_user_info END  
+[2023-08-21 10:43:30] Act:.INFO: filemng index $customer_id = 1  
+[2023-08-21 10:43:30] Act:.INFO: auth_user_foldername START  
+[2023-08-21 10:43:30] Act:.INFO: auth_user_foldername END  
+[2023-08-21 10:43:30] Act:.INFO: filemng index END  
+[2023-08-21 10:43:33] Act:.INFO: uploaduser index START  
+[2023-08-21 10:43:33] Act:.INFO: auth_user_organization START  
+[2023-08-21 10:43:33] Act:.INFO: auth_user_organization END  
+[2023-08-21 10:43:33] Act:.INFO: auth_customer_all START  
+[2023-08-21 10:43:33] Act:.INFO: auth_customer_all END  
+[2023-08-21 10:43:33] Act:.INFO: uploaduser index END  
+[2023-08-21 10:43:36] Act:.INFO: auth logout redirectTo user = stdClass Object
+(
+    [id] => 1
+    [name] => 新冨泰明
+    [email] => shintomi.sh@gmail.com
+    [email_verified_at] => 
+    [organization_id] => 0
+    [user_id] => 1
+    [login_flg] => 2
+    [admin_flg] => 2
+    [created_at] => 2022-10-20T12:00:00.000000Z
+    [updated_at] => 2022-10-20T12:00:00.000000Z
+    [deleted_at] => 
+)
+  
+[2023-08-21 10:43:46] Act:.INFO: auth_user_info START  
+[2023-08-21 10:43:46] Act:.INFO: auth_user_info END  
+[2023-08-21 10:43:46] Act:.INFO: auth login redirectTo user = stdClass Object
+(
+    [id] => 11
+    [name] => ユーザー１１
+    [email] => user11@gmail.com
+    [email_verified_at] => 
+    [organization_id] => 1
+    [user_id] => 2
+    [login_flg] => 1
+    [admin_flg] => 1
+    [created_at] => 2022-10-20T12:00:00.000000Z
+    [updated_at] => 2022-10-20T12:00:00.000000Z
+    [deleted_at] => 
+)
+  
+[2023-08-21 10:43:46] Act:.INFO: auth_user_info START  
+[2023-08-21 10:43:46] Act:.INFO: auth_user_info END  
+[2023-08-21 10:43:46] Act:.INFO: topclient index START $user->name = ユーザー１１  
+[2023-08-21 10:43:46] Act:.INFO: auth_customer_findrec START  
+[2023-08-21 10:43:46] Act:.INFO: auth_customer_findrec START $u_id = 11  
+[2023-08-21 10:43:46] Act:.INFO: auth_customer_findrec END $u_id = 11  
+[2023-08-21 10:43:46] Act:.INFO: auth_customer_findrec END  
+[2023-08-21 10:43:46] Act:.INFO: get_three_month START  
+[2023-08-21 10:43:46] Act:.INFO: get_three_month END  
+[2023-08-21 10:43:46] Act:.INFO: topclient index END $user->name = ユーザー１１  
+[2023-08-21 10:43:46] Act:.ERROR: Route [topclientshow] not defined. {"view":{"view":"/var/www/html/actver/resources/views/topclient/index.blade.php","data":[]},"userId":11,"exception":"[object] (Spatie\\LaravelIgnition\\Exceptions\\ViewException(code: 0): Route [topclientshow] not defined. at /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Routing/UrlGenerator.php:467)
+[stacktrace]
+#0 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(790): Illuminate\\Routing\\UrlGenerator->route()
+#1 /var/www/html/actver/resources/views/topclient/index.blade.php(154): route()
+#2 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php(109): require('...')
+#3 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php(110): Illuminate\\Filesystem\\Filesystem::Illuminate\\Filesystem\\{closure}()
+#4 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/View/Engines/PhpEngine.php(58): Illuminate\\Filesystem\\Filesystem->getRequire()
+#5 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/View/Engines/CompilerEngine.php(70): Illuminate\\View\\Engines\\PhpEngine->evaluatePath()
+#6 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/View/View.php(139): Illuminate\\View\\Engines\\CompilerEngine->get()
+#7 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/View/View.php(122): Illuminate\\View\\View->getContents()
+#8 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/View/View.php(91): Illuminate\\View\\View->renderContents()
+#9 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Http/Response.php(69): Illuminate\\View\\View->render()
+#10 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Http/Response.php(35): Illuminate\\Http\\Response->setContent()
+#11 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Routing/Router.php(833): Illuminate\\Http\\Response->__construct()
+#12 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Routing/Router.php(802): Illuminate\\Routing\\Router::toResponse()
+#13 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Routing/Router.php(724): Illuminate\\Routing\\Router->prepareResponse()
+#14 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(141): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}()
+#15 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php(50): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#16 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle()
+#17 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Auth/Middleware/Authenticate.php(44): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#18 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Auth\\Middleware\\Authenticate->handle()
+#19 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/VerifyCsrfToken.php(78): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#20 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken->handle()
+#21 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/View/Middleware/ShareErrorsFromSession.php(49): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#22 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\View\\Middleware\\ShareErrorsFromSession->handle()
+#23 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(121): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#24 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(64): Illuminate\\Session\\Middleware\\StartSession->handleStatefulRequest()
+#25 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Session\\Middleware\\StartSession->handle()
+#26 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/AddQueuedCookiesToResponse.php(37): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#27 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse->handle()
+#28 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/EncryptCookies.php(67): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#29 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Cookie\\Middleware\\EncryptCookies->handle()
+#30 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(116): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#31 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Routing/Router.php(724): Illuminate\\Pipeline\\Pipeline->then()
+#32 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Routing/Router.php(703): Illuminate\\Routing\\Router->runRouteWithinStack()
+#33 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Routing/Router.php(667): Illuminate\\Routing\\Router->runRoute()
+#34 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Routing/Router.php(656): Illuminate\\Routing\\Router->dispatchToRoute()
+#35 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(190): Illuminate\\Routing\\Router->dispatch()
+#36 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(141): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}()
+#37 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#38 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull.php(31): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle()
+#39 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull->handle()
+#40 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#41 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TrimStrings.php(40): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle()
+#42 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\TrimStrings->handle()
+#43 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#44 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle()
+#45 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance.php(86): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#46 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance->handle()
+#47 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Http/Middleware/HandleCors.php(49): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#48 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Http\\Middleware\\HandleCors->handle()
+#49 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Http/Middleware/TrustProxies.php(39): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#50 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Http\\Middleware\\TrustProxies->handle()
+#51 /var/www/html/actver/app/Http/Middleware/ThrowFileError.php(51): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#52 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): App\\Http\\Middleware\\ThrowFileError->handle()
+#53 /var/www/html/actver/vendor/barryvdh/laravel-cors/src/HandleCors.php(38): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#54 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Fruitcake\\Cors\\HandleCors->handle()
+#55 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(116): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#56 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(165): Illuminate\\Pipeline\\Pipeline->then()
+#57 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(134): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter()
+#58 /var/www/html/actver/public/index.php(51): Illuminate\\Foundation\\Http\\Kernel->handle()
+#59 {main}
+
+[previous exception] [object] (Symfony\\Component\\Routing\\Exception\\RouteNotFoundException(code: 0): Route [topclientshow] not defined. at /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Routing/UrlGenerator.php:467)
+[stacktrace]
+#0 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(790): Illuminate\\Routing\\UrlGenerator->route()
+#1 /var/www/html/actver/storage/framework/views/096578c0775d00ac65e1f93b80b87ce9db84c73c.php(158): route()
+#2 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php(109): require('...')
+#3 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php(110): Illuminate\\Filesystem\\Filesystem::Illuminate\\Filesystem\\{closure}()
+#4 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/View/Engines/PhpEngine.php(58): Illuminate\\Filesystem\\Filesystem->getRequire()
+#5 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/View/Engines/CompilerEngine.php(70): Illuminate\\View\\Engines\\PhpEngine->evaluatePath()
+#6 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/View/View.php(139): Illuminate\\View\\Engines\\CompilerEngine->get()
+#7 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/View/View.php(122): Illuminate\\View\\View->getContents()
+#8 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/View/View.php(91): Illuminate\\View\\View->renderContents()
+#9 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Http/Response.php(69): Illuminate\\View\\View->render()
+#10 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Http/Response.php(35): Illuminate\\Http\\Response->setContent()
+#11 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Routing/Router.php(833): Illuminate\\Http\\Response->__construct()
+#12 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Routing/Router.php(802): Illuminate\\Routing\\Router::toResponse()
+#13 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Routing/Router.php(724): Illuminate\\Routing\\Router->prepareResponse()
+#14 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(141): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}()
+#15 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php(50): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#16 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle()
+#17 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Auth/Middleware/Authenticate.php(44): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#18 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Auth\\Middleware\\Authenticate->handle()
+#19 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/VerifyCsrfToken.php(78): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#20 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken->handle()
+#21 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/View/Middleware/ShareErrorsFromSession.php(49): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#22 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\View\\Middleware\\ShareErrorsFromSession->handle()
+#23 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(121): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#24 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(64): Illuminate\\Session\\Middleware\\StartSession->handleStatefulRequest()
+#25 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Session\\Middleware\\StartSession->handle()
+#26 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/AddQueuedCookiesToResponse.php(37): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#27 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse->handle()
+#28 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/EncryptCookies.php(67): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#29 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Cookie\\Middleware\\EncryptCookies->handle()
+#30 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(116): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#31 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Routing/Router.php(724): Illuminate\\Pipeline\\Pipeline->then()
+#32 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Routing/Router.php(703): Illuminate\\Routing\\Router->runRouteWithinStack()
+#33 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Routing/Router.php(667): Illuminate\\Routing\\Router->runRoute()
+#34 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Routing/Router.php(656): Illuminate\\Routing\\Router->dispatchToRoute()
+#35 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(190): Illuminate\\Routing\\Router->dispatch()
+#36 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(141): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}()
+#37 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#38 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull.php(31): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle()
+#39 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull->handle()
+#40 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#41 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TrimStrings.php(40): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle()
+#42 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\TrimStrings->handle()
+#43 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#44 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle()
+#45 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance.php(86): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#46 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance->handle()
+#47 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Http/Middleware/HandleCors.php(49): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#48 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Http\\Middleware\\HandleCors->handle()
+#49 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Http/Middleware/TrustProxies.php(39): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#50 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Http\\Middleware\\TrustProxies->handle()
+#51 /var/www/html/actver/app/Http/Middleware/ThrowFileError.php(51): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#52 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): App\\Http\\Middleware\\ThrowFileError->handle()
+#53 /var/www/html/actver/vendor/barryvdh/laravel-cors/src/HandleCors.php(38): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#54 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Fruitcake\\Cors\\HandleCors->handle()
+#55 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(116): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#56 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(165): Illuminate\\Pipeline\\Pipeline->then()
+#57 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(134): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter()
+#58 /var/www/html/actver/public/index.php(51): Illuminate\\Foundation\\Http\\Kernel->handle()
+#59 {main}
+"} 
+[2023-08-21 10:44:06] Act:.INFO: auth_user_info START  
+[2023-08-21 10:44:06] Act:.INFO: auth_user_info END  
+[2023-08-21 10:44:06] Act:.INFO: HomeController index START  
+[2023-08-21 10:44:06] Act:.INFO: HomeController index $user->name = ユーザー１１  
+[2023-08-21 10:44:06] Act:.INFO: HomeController index END  
+[2023-08-21 10:44:09] Act:.INFO: auth logout redirectTo user = stdClass Object
+(
+    [id] => 11
+    [name] => ユーザー１１
+    [email] => user11@gmail.com
+    [email_verified_at] => 
+    [organization_id] => 1
+    [user_id] => 2
+    [login_flg] => 1
+    [admin_flg] => 1
+    [created_at] => 2022-10-20T12:00:00.000000Z
+    [updated_at] => 2022-10-20T12:00:00.000000Z
+    [deleted_at] => 
+)
+  
