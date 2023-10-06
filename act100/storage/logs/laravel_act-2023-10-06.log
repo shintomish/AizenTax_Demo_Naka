@@ -1,0 +1,50 @@
+[2023-10-06 22:15:53] Act:.INFO: auth_user_info START  
+[2023-10-06 22:15:53] Act:.INFO: auth_user_info END  
+[2023-10-06 22:15:53] Act:.INFO: auth login redirectTo user = stdClass Object
+(
+    [id] => 1
+    [name] => 新冨泰明
+    [email] => shintomi.sh@gmail.com
+    [email_verified_at] => 
+    [organization_id] => 0
+    [user_id] => 1
+    [login_flg] => 2
+    [admin_flg] => 2
+    [created_at] => 2022-10-20T03:00:00.000000Z
+    [updated_at] => 2022-10-20T03:00:00.000000Z
+    [deleted_at] => 
+)
+  
+[2023-10-06 22:15:59] Act:.INFO: auth_user_info START  
+[2023-10-06 22:15:59] Act:.INFO: auth_user_info END  
+[2023-10-06 22:15:59] Act:.INFO: office top index START $user->name = 新冨泰明  
+[2023-10-06 22:15:59] Act:.INFO: auth_user_organization START  
+[2023-10-06 22:15:59] Act:.INFO: auth_user_organization END  
+[2023-10-06 22:16:01] Act:.INFO: office top index END $user->name = 新冨泰明  
+[2023-10-06 22:16:19] Act:.INFO: advisorsfee input START  
+[2023-10-06 22:16:19] Act:.INFO: auth_user_info START  
+[2023-10-06 22:16:19] Act:.INFO: auth_user_info END  
+[2023-10-06 22:16:19] Act:.INFO: auth_user_organization START  
+[2023-10-06 22:16:20] Act:.INFO: auth_user_organization END  
+[2023-10-06 22:16:20] Act:.DEBUG: advisorsfee input nowyear = 2023  
+[2023-10-06 22:16:20] Act:.INFO: advisorsfee input END  
+[2023-10-06 22:16:35] Act:.INFO: ExcelMakeController excel START  
+[2023-10-06 22:16:35] Act:.INFO: ExcelMakeController pdfmake START  
+[2023-10-06 22:16:35] Act:.INFO: ExportService makePdf START  
+[2023-10-06 22:16:37] Act:.INFO: ExportService makePdf END  
+[2023-10-06 22:16:37] Act:.DEBUG: ExcelMakeController pdfmake file_path  = /var/www/html/storage/app/public/invoice/pdf/folder000220231006_from_com0002請求書.pdf  
+[2023-10-06 22:16:37] Act:.INFO: ExcelMakeController pdfmake END  
+[2023-10-06 22:19:46] Act:.INFO: advisorsfee input START  
+[2023-10-06 22:19:46] Act:.INFO: auth_user_info START  
+[2023-10-06 22:19:47] Act:.INFO: auth_user_info END  
+[2023-10-06 22:19:47] Act:.INFO: auth_user_organization START  
+[2023-10-06 22:19:47] Act:.INFO: auth_user_organization END  
+[2023-10-06 22:19:48] Act:.DEBUG: advisorsfee input nowyear = 2023  
+[2023-10-06 22:19:48] Act:.INFO: advisorsfee input END  
+[2023-10-06 22:20:06] Act:.INFO: ExcelMakeController excel START  
+[2023-10-06 22:20:06] Act:.INFO: ExcelMakeController pdfmake START  
+[2023-10-06 22:20:06] Act:.INFO: ExportService makePdf START  
+[2023-10-06 22:20:08] Act:.INFO: ExportService makePdf END  
+[2023-10-06 22:20:08] Act:.DEBUG: ExcelMakeController pdfmake file_path  = /var/www/html/storage/app/public/invoice/pdf/folder0002/20231006_from_com0002請求書.pdf  
+[2023-10-06 22:20:08] Act:.INFO: ExcelMakeController pdfmake END  
+[2023-10-06 22:20:08] Act:.ERROR: The file "/var/www/html/storage/app/public/invoice/pdf/folder0002/20231006_from_com0002請求書.pdf" does not exist {"userId":1,"exception":"[object] (Symfony\\Component\\HttpFoundation\\File\\Exception\\FileNotFoundException(code: 0): The file \"/var/www/html/storage/app/public/invoice/pdf/folder0002/20231006_from_com0002請求書.pdf\" does not exist at /var/www/html/vendor/symfony/http-foundation/File/File.php:36)

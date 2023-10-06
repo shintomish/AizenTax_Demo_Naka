@@ -49,7 +49,7 @@ class ExcelMakeController extends Controller
         $export_service->makePdf($file_name,$foloder_name);
 
         // $file_path = Storage::path('pdf/export/' . $file_name . '.pdf');
-        $pdf_path = 'app/public/invoice/pdf/'. $foloder_name;
+        $pdf_path = 'app/public/invoice/pdf/'. $foloder_name. '/';
         // $export_pdf_path = storage_path('app/pdf/export');
         $file_path = storage_path($pdf_path . $file_name . '.pdf');
 
