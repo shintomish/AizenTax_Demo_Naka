@@ -4,7 +4,8 @@
 @section('content')
     {{-- <h2>顧問料一覧</h2> --}}
     <div class="text-right">
-        <a class="btn btn-success btn-sm mr-auto" href="{{route('advisorsfee.create')}}">新規登録</a>
+        {{-- <a class="btn btn-success btn-sm mr-auto" href="{{route('advisorsfee.create')}}">新規登録</a> --}}
+        <a class="btn btn-success btn-sm mr-auto" href="{{route('excelexp')}}">新規登録</a>
     </div>
 
     <div class="row">

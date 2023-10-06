@@ -167,7 +167,9 @@ return [
         /*
          * Package Service Providers...
          */
-        // Spatie\Backup\BackupServiceProvider::class,
+        Maatwebsite\Excel\ExcelServiceProvider::class,
+
+         // Spatie\Backup\BackupServiceProvider::class,
         /*
          * Application Service Providers...
          */
@@ -230,7 +232,9 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
-        'Helper' => App\Helper\Helper::class
+        'Helper' => App\Helper\Helper::class,
+        'Excel' => Maatwebsite\Excel\Facades\Excel::class,
+
     ],
 
 ];

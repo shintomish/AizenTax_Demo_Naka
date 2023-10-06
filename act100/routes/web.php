@@ -42,6 +42,11 @@ Route::get('actlog',          'App\Http\Controllers\ActlogController@index')    
 Route::post('actlog/download', 'App\Http\Controllers\ActlogController@download') -> name('actlogdownload');
 
 //-----------------------------------------------------------------------------------------------
+//- Excel
+//-----------------------------------------------------------------------------------------------
+Route::get('/excel/exp',  'App\Http\Controllers\ExcelMakeController@excel')->name('excelexp');
+
+//-----------------------------------------------------------------------------------------------
 //- Chat
 //-----------------------------------------------------------------------------------------------
 Route::get('chat',         'App\Http\Controllers\ChatController@index')->name('chatin');
