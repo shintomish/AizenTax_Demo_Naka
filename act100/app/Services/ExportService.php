@@ -53,23 +53,32 @@ class ExportService
     {
         Log::info('ExportService convertOfficeToPdf START');
 
-        putenv('HOME=/tmp'); // libreoffice の作業スペースとして tmp を使う
+        // putenv('HOME=/tmp'); // libreoffice の作業スペースとして tmp を使う
 
         $pdf_dir = storage_path('app/public/invoice/pdf/'. $foloder_name);
+$pdf_dir = './storage/app/public/invoice/pdf/folder0002';
+        # /usr/bin/soffice --headless --convert-to pdf --outdir {出力先のディレクトリ} {変換する元のExcel}
+        # 例) /tmp/sample.xls -> /tmp/sample.pdfに変換する場合
+        // /usr/bin/soffice --headless --convert-to pdf --outdir /tmp /tmp/sample.xls
 
+        $office_path = '/mnt/d/010_Web開発/100_TaxDemo/act100/storage/app/public/invoice/xls/folder0002/20231007_global_com0002_請求書.xlsx';
         // exec("export LANG=ja_JP.UTF-8 && /usr/bin/soffice --headless --convert-to pdf --outdir /tmp /tmp/sample.xls");
-        $command_parts = [
-            'export LANG=ja_JP.UTF-8 && /usr/bin/soffice',
-            '--headless',
-            '--convert-to pdf',
-            '--outdir '. '/tmp',
-            $office_path
-        ];
-        $command = implode(' ', $command_parts);
-        exec($command);
+        // $command_parts = [
+        //     'HOME=/tmp',
+        // LANG=ja_JP.utf8 libreoffice --language=ja
+        //     'export LANG=ja_JP.UTF-8 && /usr/bin/soffice',
+        //     '--headless',
+        //     '--convert-to pdf',
+        //     '--outdir '. $pdf_dir,
+        //     $office_path
+        // ];
+        // $command = implode(' ', $command_parts);
+        // exec($command);
 
         $command_parts = [
+            'HOME=/tmp;',
             'libreoffice',
+            '--language=ja',
             '--headless',
             '--convert-to pdf:writer_pdf_Export',
             '--outdir '. $pdf_dir,
@@ -78,7 +87,7 @@ class ExportService
         $command = implode(' ', $command_parts);
         exec($command);
 
-        // Log::debug('ExportService convertOfficeToPdf $command = ' . $command);
+        Log::debug('ExportService convertOfficeToPdf $command = ' . $command);
 
         $filename = pathinfo($office_path, PATHINFO_FILENAME);
         $pdf_path = $pdf_dir . '/' . $filename . '.pdf';
