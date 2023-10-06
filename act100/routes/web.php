@@ -44,7 +44,7 @@ Route::post('actlog/download', 'App\Http\Controllers\ActlogController@download')
 //-----------------------------------------------------------------------------------------------
 //- Excel
 //-----------------------------------------------------------------------------------------------
-Route::get('/excel/exp',  'App\Http\Controllers\ExcelMakeController@excel')->name('excelexp');
+Route::get('/excel/exp', 'App\Http\Controllers\ExcelMakeController@excel')->name('excelexp');
 
 //-----------------------------------------------------------------------------------------------
 //- Chat

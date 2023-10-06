@@ -33,20 +33,60 @@ class ExportService
 
         // Pdf出力
         if (file_exists($export_excel_path)) {
-            $pdf_path = 'app/public/invoice/pdf/'. $foloder_name;
-            // $export_pdf_path = storage_path('app/pdf/export');
-            $export_pdf_path = storage_path($pdf_path);
-        // Log::debug('ExportService makePdf export_pdf_path  = ' . $export_pdf_path);
-            $cmd = 'export HOME=/tmp; libreoffice --headless --convert-to pdf --outdir ' . $export_pdf_path . ' ' . $export_excel_path;
+            Log::info('ExportService makePdf Pdf出力 START');
 
-            Log::info('ExportService makePdf END');
+            // $pdf_path = 'app/public/invoice/pdf/'. $foloder_name. '/';
+            // $export_pdf_path = storage_path($pdf_path);
+            // $cmd = 'export HOME=/tmp; libreoffice --headless --convert-to pdf --outdir ' . $export_pdf_path . ' ' . $export_excel_path;
+            // exec($cmd);
 
-            exec($cmd);
+            // Excel -> Pdf
+            $this->convertOfficeToPdf($file_name, $foloder_name, $export_excel_path);
+
+            Log::info('ExportService makePdf Pdf出力 END');
         }
-        // if (file_exists($export_excel_path)) {
-        //     $export_pdf_path = storage_path('app/pdf/export');
-        //     $cmd = 'export HOME=/tmp; libreoffice --headless --convert-to pdf --outdir ' . $export_pdf_path . ' ' . $export_excel_path;
-        //     exec($cmd);
-        // }
+        Log::info('ExportService makePdf END');
+        return;
+    }
+
+    public function convertOfficeToPdf($file_name, $foloder_name, $office_path)
+    {
+        Log::info('ExportService convertOfficeToPdf START');
+
+        putenv('HOME=/tmp'); // libreoffice の作業スペースとして tmp を使う
+
+        $pdf_dir = storage_path('app/public/invoice/pdf/'. $foloder_name);
+
+        // exec("export LANG=ja_JP.UTF-8 && /usr/bin/soffice --headless --convert-to pdf --outdir /tmp /tmp/sample.xls");
+        $command_parts = [
+            'export LANG=ja_JP.UTF-8 && /usr/bin/soffice',
+            '--headless',
+            '--convert-to pdf',
+            '--outdir '. '/tmp',
+            $office_path
+        ];
+        $command = implode(' ', $command_parts);
+        exec($command);
+
+        $command_parts = [
+            'libreoffice',
+            '--headless',
+            '--convert-to pdf:writer_pdf_Export',
+            '--outdir '. $pdf_dir,
+            $office_path
+        ];
+        $command = implode(' ', $command_parts);
+        exec($command);
+
+        // Log::debug('ExportService convertOfficeToPdf $command = ' . $command);
+
+        $filename = pathinfo($office_path, PATHINFO_FILENAME);
+        $pdf_path = $pdf_dir . '/' . $filename . '.pdf';
+
+        // Log::debug('ExportService convertOfficeToPdf $pdf_path = ' . $pdf_path);
+
+        Log::info('ExportService convertOfficeToPdf END');
+
+        return file_exists($pdf_path) ? $pdf_path : null;
     }
 }

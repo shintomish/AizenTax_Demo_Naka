@@ -1,0 +1,206 @@
+[2023-10-07 00:38:06] Act:.INFO: ExcelMakeController excel START  
+[2023-10-07 00:38:06] Act:.INFO: ExportService makePdf START  
+[2023-10-07 00:38:09] Act:.INFO: ExportService makePdf Pdf出力 START  
+[2023-10-07 00:38:09] Act:.INFO: ExportService convertOfficeToPdf START  
+[2023-10-07 00:38:09] Act:.INFO: ExportService convertOfficeToPdf END  
+[2023-10-07 00:38:09] Act:.INFO: ExportService makePdf Pdf出力 END  
+[2023-10-07 00:38:09] Act:.INFO: ExportService makePdf END  
+[2023-10-07 00:38:09] Act:.INFO: ExcelMakeController excel END  
+[2023-10-07 00:38:15] Act:.INFO: advisorsfee input START  
+[2023-10-07 00:38:15] Act:.INFO: auth_user_info START  
+[2023-10-07 00:38:16] Act:.INFO: auth_user_info END  
+[2023-10-07 00:38:16] Act:.INFO: auth_user_organization START  
+[2023-10-07 00:38:16] Act:.INFO: auth_user_organization END  
+[2023-10-07 00:38:17] Act:.DEBUG: advisorsfee input nowyear = 2023  
+[2023-10-07 00:38:17] Act:.INFO: advisorsfee input END  
+[2023-10-07 00:41:16] Act:.INFO: advisorsfee input START  
+[2023-10-07 00:41:16] Act:.INFO: auth_user_info START  
+[2023-10-07 00:41:16] Act:.INFO: auth_user_info END  
+[2023-10-07 00:41:16] Act:.INFO: auth_user_organization START  
+[2023-10-07 00:41:17] Act:.INFO: auth_user_organization END  
+[2023-10-07 00:41:17] Act:.DEBUG: advisorsfee input nowyear = 2023  
+[2023-10-07 00:41:17] Act:.INFO: advisorsfee input END  
+[2023-10-07 00:41:48] Act:.INFO: ExcelMakeController excel START  
+[2023-10-07 00:41:48] Act:.INFO: ExportService makePdf START  
+[2023-10-07 00:41:51] Act:.INFO: ExportService makePdf Pdf出力 START  
+[2023-10-07 00:41:51] Act:.INFO: ExportService convertOfficeToPdf START  
+[2023-10-07 00:41:51] Act:.DEBUG: ExportService convertOfficeToPdf $pdf_path = /var/www/html/storage/public/invoice/pdf/folder0002/20231007_from_com0002請求書.pdf  
+[2023-10-07 00:41:51] Act:.INFO: ExportService convertOfficeToPdf END  
+[2023-10-07 00:41:51] Act:.INFO: ExportService makePdf Pdf出力 END  
+[2023-10-07 00:41:51] Act:.INFO: ExportService makePdf END  
+[2023-10-07 00:41:51] Act:.INFO: ExcelMakeController excel END  
+[2023-10-07 00:41:57] Act:.INFO: advisorsfee input START  
+[2023-10-07 00:41:57] Act:.INFO: auth_user_info START  
+[2023-10-07 00:41:57] Act:.INFO: auth_user_info END  
+[2023-10-07 00:41:57] Act:.INFO: auth_user_organization START  
+[2023-10-07 00:41:57] Act:.INFO: auth_user_organization END  
+[2023-10-07 00:41:58] Act:.DEBUG: advisorsfee input nowyear = 2023  
+[2023-10-07 00:41:58] Act:.INFO: advisorsfee input END  
+[2023-10-07 00:45:44] Act:.INFO: advisorsfee input START  
+[2023-10-07 00:45:44] Act:.INFO: auth_user_info START  
+[2023-10-07 00:45:44] Act:.INFO: auth_user_info END  
+[2023-10-07 00:45:44] Act:.INFO: auth_user_organization START  
+[2023-10-07 00:45:45] Act:.INFO: auth_user_organization END  
+[2023-10-07 00:45:45] Act:.DEBUG: advisorsfee input nowyear = 2023  
+[2023-10-07 00:45:45] Act:.INFO: advisorsfee input END  
+[2023-10-07 00:45:55] Act:.INFO: ExcelMakeController excel START  
+[2023-10-07 00:45:55] Act:.INFO: ExportService makePdf START  
+[2023-10-07 00:45:57] Act:.INFO: ExportService makePdf Pdf出力 START  
+[2023-10-07 00:45:57] Act:.INFO: ExportService convertOfficeToPdf START  
+[2023-10-07 00:45:57] Act:.DEBUG: ExportService convertOfficeToPdf $pdf_path = /var/www/html/storage/public/invoice/pdf/folder0002/20231007_from_com0002請求書.pdf  
+[2023-10-07 00:45:57] Act:.INFO: ExportService convertOfficeToPdf END  
+[2023-10-07 00:45:57] Act:.INFO: ExportService makePdf Pdf出力 END  
+[2023-10-07 00:45:57] Act:.INFO: ExportService makePdf END  
+[2023-10-07 00:45:57] Act:.INFO: ExcelMakeController excel END  
+[2023-10-07 00:46:03] Act:.INFO: advisorsfee input START  
+[2023-10-07 00:46:03] Act:.INFO: auth_user_info START  
+[2023-10-07 00:46:03] Act:.INFO: auth_user_info END  
+[2023-10-07 00:46:03] Act:.INFO: auth_user_organization START  
+[2023-10-07 00:46:03] Act:.INFO: auth_user_organization END  
+[2023-10-07 00:46:04] Act:.DEBUG: advisorsfee input nowyear = 2023  
+[2023-10-07 00:46:04] Act:.INFO: advisorsfee input END  
+[2023-10-07 00:52:03] Act:.INFO: advisorsfee input START  
+[2023-10-07 00:52:03] Act:.INFO: auth_user_info START  
+[2023-10-07 00:52:03] Act:.INFO: auth_user_info END  
+[2023-10-07 00:52:03] Act:.INFO: auth_user_organization START  
+[2023-10-07 00:52:03] Act:.INFO: auth_user_organization END  
+[2023-10-07 00:52:04] Act:.DEBUG: advisorsfee input nowyear = 2023  
+[2023-10-07 00:52:04] Act:.INFO: advisorsfee input END  
+[2023-10-07 00:52:13] Act:.INFO: ExcelMakeController excel START  
+[2023-10-07 00:52:13] Act:.INFO: ExportService makePdf START  
+[2023-10-07 00:52:15] Act:.INFO: ExportService makePdf Pdf出力 START  
+[2023-10-07 00:52:15] Act:.INFO: ExportService convertOfficeToPdf START  
+[2023-10-07 00:52:15] Act:.DEBUG: ExportService convertOfficeToPdf $pdf_path = /var/www/html/storage/public/invoice/pdf/folder0002/20231007_global_com0002_請求書.pdf  
+[2023-10-07 00:52:15] Act:.INFO: ExportService convertOfficeToPdf END  
+[2023-10-07 00:52:15] Act:.INFO: ExportService makePdf Pdf出力 END  
+[2023-10-07 00:52:15] Act:.INFO: ExportService makePdf END  
+[2023-10-07 00:52:15] Act:.INFO: ExcelMakeController excel END  
+[2023-10-07 00:52:21] Act:.INFO: advisorsfee input START  
+[2023-10-07 00:52:21] Act:.INFO: auth_user_info START  
+[2023-10-07 00:52:22] Act:.INFO: auth_user_info END  
+[2023-10-07 00:52:22] Act:.INFO: auth_user_organization START  
+[2023-10-07 00:52:22] Act:.INFO: auth_user_organization END  
+[2023-10-07 00:52:23] Act:.DEBUG: advisorsfee input nowyear = 2023  
+[2023-10-07 00:52:23] Act:.INFO: advisorsfee input END  
+[2023-10-07 00:59:00] Act:.INFO: advisorsfee input START  
+[2023-10-07 00:59:00] Act:.INFO: auth_user_info START  
+[2023-10-07 00:59:00] Act:.INFO: auth_user_info END  
+[2023-10-07 00:59:00] Act:.INFO: auth_user_organization START  
+[2023-10-07 00:59:01] Act:.INFO: auth_user_organization END  
+[2023-10-07 00:59:01] Act:.DEBUG: advisorsfee input nowyear = 2023  
+[2023-10-07 00:59:01] Act:.INFO: advisorsfee input END  
+[2023-10-07 00:59:10] Act:.INFO: ExcelMakeController excel START  
+[2023-10-07 00:59:10] Act:.INFO: ExportService makePdf START  
+[2023-10-07 00:59:12] Act:.INFO: ExportService makePdf Pdf出力 START  
+[2023-10-07 01:10:07] Act:.INFO: advisorsfee input START  
+[2023-10-07 01:10:07] Act:.INFO: auth_user_info START  
+[2023-10-07 01:10:07] Act:.INFO: auth_user_info END  
+[2023-10-07 01:10:07] Act:.INFO: auth_user_organization START  
+[2023-10-07 01:10:07] Act:.INFO: auth_user_organization END  
+[2023-10-07 01:10:08] Act:.DEBUG: advisorsfee input nowyear = 2023  
+[2023-10-07 01:10:08] Act:.INFO: advisorsfee input END  
+[2023-10-07 01:10:28] Act:.INFO: ExcelMakeController excel START  
+[2023-10-07 01:10:28] Act:.INFO: ExportService makePdf START  
+[2023-10-07 01:10:30] Act:.INFO: ExportService makePdf Pdf出力 START  
+[2023-10-07 01:10:30] Act:.INFO: ExportService convertOfficeToPdf START  
+[2023-10-07 01:10:30] Act:.DEBUG: ExportService convertOfficeToPdf $command = HOME=/tmp libreoffice --headless --convert-to pdf:writer_pdf_Export --outdir /var/www/html/storage/public/invoice/pdf/folder0002/ /var/www/html/storage/app/public/invoice/xls/folder0002/20231007_global_com0002_請求書.xlsx  
+[2023-10-07 01:10:30] Act:.DEBUG: ExportService convertOfficeToPdf $pdf_path = /var/www/html/storage/public/invoice/pdf/folder0002//20231007_global_com0002_請求書.pdf  
+[2023-10-07 01:10:30] Act:.INFO: ExportService convertOfficeToPdf END  
+[2023-10-07 01:10:30] Act:.INFO: ExportService makePdf Pdf出力 END  
+[2023-10-07 01:10:30] Act:.INFO: ExportService makePdf END  
+[2023-10-07 01:10:30] Act:.INFO: ExcelMakeController excel END  
+[2023-10-07 01:10:36] Act:.INFO: advisorsfee input START  
+[2023-10-07 01:10:36] Act:.INFO: auth_user_info START  
+[2023-10-07 01:10:36] Act:.INFO: auth_user_info END  
+[2023-10-07 01:10:36] Act:.INFO: auth_user_organization START  
+[2023-10-07 01:10:36] Act:.INFO: auth_user_organization END  
+[2023-10-07 01:10:37] Act:.DEBUG: advisorsfee input nowyear = 2023  
+[2023-10-07 01:10:37] Act:.INFO: advisorsfee input END  
+[2023-10-07 01:14:09] Act:.INFO: advisorsfee input START  
+[2023-10-07 01:14:09] Act:.INFO: auth_user_info START  
+[2023-10-07 01:14:09] Act:.INFO: auth_user_info END  
+[2023-10-07 01:14:09] Act:.INFO: auth_user_organization START  
+[2023-10-07 01:14:09] Act:.INFO: auth_user_organization END  
+[2023-10-07 01:14:10] Act:.DEBUG: advisorsfee input nowyear = 2023  
+[2023-10-07 01:14:10] Act:.INFO: advisorsfee input END  
+[2023-10-07 01:14:18] Act:.INFO: ExcelMakeController excel START  
+[2023-10-07 01:14:18] Act:.INFO: ExportService makePdf START  
+[2023-10-07 01:14:21] Act:.INFO: ExportService makePdf Pdf出力 START  
+[2023-10-07 01:14:21] Act:.INFO: ExportService convertOfficeToPdf START  
+[2023-10-07 01:14:21] Act:.DEBUG: ExportService convertOfficeToPdf $command = HOME=/tmp libreoffice --headless --convert-to pdf:writer_pdf_Export --outdir /var/www/html/storage/public/invoice/pdf/folder0002 /var/www/html/storage/app/public/invoice/xls/folder0002/20231007_global_com0002_請求書.xlsx  
+[2023-10-07 01:14:21] Act:.DEBUG: ExportService convertOfficeToPdf $pdf_path = /var/www/html/storage/public/invoice/pdf/folder0002/20231007_global_com0002_請求書.pdf  
+[2023-10-07 01:14:21] Act:.INFO: ExportService convertOfficeToPdf END  
+[2023-10-07 01:14:21] Act:.INFO: ExportService makePdf Pdf出力 END  
+[2023-10-07 01:14:21] Act:.INFO: ExportService makePdf END  
+[2023-10-07 01:14:21] Act:.INFO: ExcelMakeController excel END  
+[2023-10-07 01:14:27] Act:.INFO: advisorsfee input START  
+[2023-10-07 01:14:27] Act:.INFO: auth_user_info START  
+[2023-10-07 01:14:27] Act:.INFO: auth_user_info END  
+[2023-10-07 01:14:27] Act:.INFO: auth_user_organization START  
+[2023-10-07 01:14:28] Act:.INFO: auth_user_organization END  
+[2023-10-07 01:14:28] Act:.DEBUG: advisorsfee input nowyear = 2023  
+[2023-10-07 01:14:28] Act:.INFO: advisorsfee input END  
+[2023-10-07 01:17:01] Act:.INFO: advisorsfee input START  
+[2023-10-07 01:17:01] Act:.INFO: auth_user_info START  
+[2023-10-07 01:17:01] Act:.INFO: auth_user_info END  
+[2023-10-07 01:17:01] Act:.INFO: auth_user_organization START  
+[2023-10-07 01:17:01] Act:.INFO: auth_user_organization END  
+[2023-10-07 01:17:02] Act:.DEBUG: advisorsfee input nowyear = 2023  
+[2023-10-07 01:17:02] Act:.INFO: advisorsfee input END  
+[2023-10-07 01:17:10] Act:.INFO: ExcelMakeController excel START  
+[2023-10-07 01:17:11] Act:.INFO: ExportService makePdf START  
+[2023-10-07 01:17:13] Act:.INFO: ExportService makePdf Pdf出力 START  
+[2023-10-07 01:17:13] Act:.INFO: ExportService convertOfficeToPdf START  
+[2023-10-07 01:17:13] Act:.DEBUG: ExportService convertOfficeToPdf $command = HOME=/tmp libreoffice --headless --convert-to pdf:writer_pdf_Export --outdir /var/www/html/storage/app/public/invoice/pdf/folder0002 /var/www/html/storage/app/public/invoice/xls/folder0002/20231007_global_com0002_請求書.xlsx  
+[2023-10-07 01:17:13] Act:.DEBUG: ExportService convertOfficeToPdf $pdf_path = /var/www/html/storage/app/public/invoice/pdf/folder0002/20231007_global_com0002_請求書.pdf  
+[2023-10-07 01:17:13] Act:.INFO: ExportService convertOfficeToPdf END  
+[2023-10-07 01:17:13] Act:.INFO: ExportService makePdf Pdf出力 END  
+[2023-10-07 01:17:13] Act:.INFO: ExportService makePdf END  
+[2023-10-07 01:17:13] Act:.INFO: ExcelMakeController excel END  
+[2023-10-07 01:17:19] Act:.INFO: advisorsfee input START  
+[2023-10-07 01:17:19] Act:.INFO: auth_user_info START  
+[2023-10-07 01:17:19] Act:.INFO: auth_user_info END  
+[2023-10-07 01:17:19] Act:.INFO: auth_user_organization START  
+[2023-10-07 01:17:19] Act:.INFO: auth_user_organization END  
+[2023-10-07 01:17:20] Act:.DEBUG: advisorsfee input nowyear = 2023  
+[2023-10-07 01:17:20] Act:.INFO: advisorsfee input END  
+[2023-10-07 01:21:12] Act:.INFO: advisorsfee input START  
+[2023-10-07 01:21:12] Act:.INFO: auth_user_info START  
+[2023-10-07 01:21:12] Act:.INFO: auth_user_info END  
+[2023-10-07 01:21:12] Act:.INFO: auth_user_organization START  
+[2023-10-07 01:21:13] Act:.INFO: auth_user_organization END  
+[2023-10-07 01:21:13] Act:.DEBUG: advisorsfee input nowyear = 2023  
+[2023-10-07 01:21:13] Act:.INFO: advisorsfee input END  
+[2023-10-07 01:21:22] Act:.INFO: ExcelMakeController excel START  
+[2023-10-07 01:21:22] Act:.INFO: ExportService makePdf START  
+[2023-10-07 01:21:24] Act:.INFO: ExportService makePdf Pdf出力 START  
+[2023-10-07 01:21:24] Act:.INFO: ExportService convertOfficeToPdf START  
+[2023-10-07 01:24:19] Act:.INFO: advisorsfee input START  
+[2023-10-07 01:24:19] Act:.INFO: auth_user_info START  
+[2023-10-07 01:24:19] Act:.INFO: auth_user_info END  
+[2023-10-07 01:24:19] Act:.INFO: auth_user_organization START  
+[2023-10-07 01:24:19] Act:.INFO: auth_user_organization END  
+[2023-10-07 01:24:20] Act:.DEBUG: advisorsfee input nowyear = 2023  
+[2023-10-07 01:24:20] Act:.INFO: advisorsfee input END  
+[2023-10-07 01:35:39] Act:.INFO: advisorsfee input START  
+[2023-10-07 01:35:39] Act:.INFO: auth_user_info START  
+[2023-10-07 01:35:39] Act:.INFO: auth_user_info END  
+[2023-10-07 01:35:39] Act:.INFO: auth_user_organization START  
+[2023-10-07 01:35:40] Act:.INFO: auth_user_organization END  
+[2023-10-07 01:35:41] Act:.DEBUG: advisorsfee input nowyear = 2023  
+[2023-10-07 01:35:41] Act:.INFO: advisorsfee input END  
+[2023-10-07 01:35:50] Act:.INFO: ExcelMakeController excel START  
+[2023-10-07 01:35:50] Act:.INFO: ExportService makePdf START  
+[2023-10-07 01:35:53] Act:.INFO: ExportService makePdf Pdf出力 START  
+[2023-10-07 01:35:53] Act:.INFO: ExportService convertOfficeToPdf START  
+[2023-10-07 01:35:53] Act:.INFO: ExportService convertOfficeToPdf END  
+[2023-10-07 01:35:53] Act:.INFO: ExportService makePdf Pdf出力 END  
+[2023-10-07 01:35:53] Act:.INFO: ExportService makePdf END  
+[2023-10-07 01:35:53] Act:.INFO: ExcelMakeController excel END  
+[2023-10-07 01:35:59] Act:.INFO: advisorsfee input START  
+[2023-10-07 01:35:59] Act:.INFO: auth_user_info START  
+[2023-10-07 01:35:59] Act:.INFO: auth_user_info END  
+[2023-10-07 01:35:59] Act:.INFO: auth_user_organization START  
+[2023-10-07 01:35:59] Act:.INFO: auth_user_organization END  
+[2023-10-07 01:36:00] Act:.DEBUG: advisorsfee input nowyear = 2023  
+[2023-10-07 01:36:00] Act:.INFO: advisorsfee input END  
