@@ -38,20 +38,14 @@ class MailSend extends Mailable
         Log::info('App_Mail build START');
 
         $dbug  = 1;
-        $books = DB::table('books')->first();
-        $dbug  = $books->price;
+        // $books = DB::table('books')->first();
+        // $dbug  = $books->price;
 
         if($dbug == 1){
             $subject   = "株式会社アイゼンテスト税理からお知らせ";
             $fromname  = "株式会社アイゼンテスト税理事務局";
             $fromadr   = "y-shintomi@aizen-sol.co.jp";
-            $viewname  = "newsrepo.contact_aizen";
-        } else {
-            $subject   = "間庭税理士事務所からお知らせ";
-            $fromname  = "間庭税理士事務所事務局";
-            // $fromadr   = "system@arkhe-eco.com";
-            $fromadr   = "y-shintomi@aizen-sol.co.jp";
-            $viewname  = "newsrepo.contact_maniwa";
+            $viewname  = "newsrepo.contact";
         }
 
         Log::info('App_Mail build subject  = ' . print_r($subject, true));

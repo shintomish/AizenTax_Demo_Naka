@@ -14,9 +14,9 @@ class ExcelMakeController extends Controller
 	{
         Log::info('ExcelMakeController excel START');
 
-        $to_name        = 'company-0002';
+        $to_name        = 'company-0005';
         $from_name      = 'global';
-        $foloder_name   = 'folder0002';
+        $foloder_name   = 'folder0005';
         $file_name      = now()->format('Ymd') .'_'. $from_name. '_'. $to_name. '_請求書';
 
         // App\Services\ExportService
