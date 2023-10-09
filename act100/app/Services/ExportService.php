@@ -14,9 +14,22 @@ class ExportService
 {
     protected $proxies = "*";
 
-    public function makePdf($to_name, $file_name, $foloder_name)
+    // $export_service->makeXlsPdf($data['to_company'], $data['to_represent'] , $data['foloder_name'], $data['file_name']);
+    public function makeXlsPdf(
+                        $tourokuno,
+                        $tekiyou,
+                        $furibi,
+                        $from_company,
+                        $from_repres,
+                        $kanrino,
+                        $tanka,
+                        $to_company, 
+                        $to_represent, 
+                        $foloder_name, 
+                        $file_name
+                        )
     {
-        Log::info('ExportService makePdf START');
+        Log::info('ExportService makeXlsPdf START');
 
         // もとになるExcelを読み込み
         $excel_file = storage_path('app/public/invoice/xls/tmp/tmp_invoice.xlsx');
@@ -28,15 +41,24 @@ class ExportService
 
         // セルに指定した値挿入 M1 請求日
         $worksheet->setCellValue('M1', now()->format('Y/m/d'));
+        // セルに指定した値挿入 M2 登録番号
+        $worksheet->setCellValue('M2', $tourokuno);
+        // セルに指定した値挿入 K14 請求書宛名会社名
+        $worksheet->setCellValue('K14', $from_company);
+        // セルに指定した値挿入 K15 請求書宛名代表者名
+        $worksheet->setCellValue('K15', $from_repres);
+        // セルに指定した値挿入 K19 管理番号
+        $worksheet->setCellValue('K19', $kanrino);
+        // セルに指定した値挿入 K22 単価
+        $worksheet->setCellValue('K22', $tanka);
         // セルに指定した値挿入 B22 適用欄
-        $worksheet->setCellValue('B22', '2023年10月分　顧問料金');
-
+        $worksheet->setCellValue('B22', $tekiyou);
         // セルに指定した値挿入 C5 会社名 
-        $worksheet->setCellValue('C5', $to_name);
-
-        // セルに指定した値挿入 C6 氏名
-        $c6 = $to_name. '氏名'; 
-        $worksheet->setCellValue('C6', $c6. ' 様');
+        $worksheet->setCellValue('C5', $to_company);
+        // セルに指定した値挿入 C6 代表者名
+        $worksheet->setCellValue('C6', $to_represent. ' 様');
+        // セルに指定した値挿入 E55 ※大変恐縮ではございますが、　2023年4月15日　までにお振込みください
+        $worksheet->setCellValue('E55', $furibi);
 
         // Dirなければ作成
         if(!file_exists( storage_path('app/public/invoice/xls/'. $foloder_name))){
@@ -52,60 +74,21 @@ class ExportService
         $writer     = new XlsxWriter($spreadsheet);
         $writer->save($export_xls_path);
 
-        // save後に上書き 属性 r->w
-        // $this->resave($writer, $export_xls_path);
-
         // Pdf出力
         if (file_exists($export_xls_path)) {
 
-            Log::debug('ExportService makePdf $export_xls_path = ' . $export_xls_path);
+            // Log::debug('ExportService makeXlsPdf $export_xls_path = ' . $export_xls_path);
 
             // ExcelファイルをPDFに変換するコード
             $this->convertOfficeToPdf($file_name, $foloder_name, $export_xls_path);
 
-            // $pdf_path = 'app/public/invoice/xls/'. $foloder_name. '/'. $file_name. '.pdf';
-            // $export_pdf_path = storage_path($pdf_path);         //'app/invoice'
-            // $this->generate_pdf($export_pdf_path, $export_xls_path);
-
         }
 
-        Log::info('ExportService makePdf END');
+        Log::info('ExportService makeXlsPdf END');
         return;
     }
 
-    // save後に上書き 属性 r->w
-    public function resave($writer,$export_xls_path)
-    {
-        Log::info('ExportService makePdf resave START');
-        Log::info('ExportService makePdf resave END');
-
-        // return Excel::download(new AddressExport, 'output.xlsx');
-        // Excel::store(new AddressExport, 'output.xlsx', 'local');
-        return Excel::store($writer, $export_xls_path);
-    }
-
-    public function changeDompdf($export_pdf_path)
-    {
-
-        // DOMPDF
-        // return (new AddressExport)->download('output.pdf', \Maatwebsite\Excel\Excel::DOMPDF);
-
-    }
-
-    // // ExcelファイルをPDFに変換するコード
-    public function generate_pdf($export_pdf_path, $export_xls_path) {
-
-        // Log::info('ExportService generate_pdf START');
-
-        // $pdf = \PDF::loadFile($export_xls_path,\Maatwebsite\Excel\Excel::DOMPDF);
-        // $pdf->save($export_pdf_path);
-
-        // Log::info('ExportService generate_pdf END');
-        // return;
-
-    }
-
-    // commandではうまく行くが実行すると出来ない
+    // Local commandではうまく行くが実行すると出来ない SV=OK
     public function convertOfficeToPdf($file_name,$foloder_name, $office_path)
     {
         Log::info('ExportService convertOfficeToPdf START');
@@ -141,13 +124,7 @@ class ExportService
         $command = implode(' ', $command_parts);
         exec($command, $output, $return_var);
 
-        // OK Exec
-        // /usr/bin/soffice --language=ja --headless --convert-to pdf:writer_pdf_Export 
-        // --outdir ./storage/app/public/invoice/pdf/folder0002 
-        // ./storage/app/public/invoice/xls/folder0002/20231007_global_company-0002_請求書.xlsx
-
-        Log::debug('ExportService convertOfficeToPdf exec $command = '    .print_r($command,true));
-        // Log::debug('ExportService convertOfficeToPdf exec $output = '     .print_r($output,true));
+        // Log::debug('ExportService convertOfficeToPdf exec $command = '    .print_r($command,true));
         Log::debug('ExportService convertOfficeToPdf exec $return_var = ' .print_r($return_var,true));
 
         // $filename = pathinfo($office_path, PATHINFO_FILENAME);
