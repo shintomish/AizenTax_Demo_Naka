@@ -66,7 +66,10 @@ class ExcelMakeController extends Controller
                 $work_data['to_represent']  = $xls_data2->business_name;              // 会社名
             }
             $work_data['foloder_name'] = $xls_data2->foldername;        // フォルダー名
-            $work_data['file_name']    = $first_ymd .'_'. $from_flcompany. '_'. $xls_data2->business_name. '様_請求書';  // ファイル名
+            //文字列の中にある半角空白と全角空白をすべて削除・除去する
+            $stringw = $first_ymd .'_'. $from_flcompany. '_'. $xls_data2->business_name. '様_請求書';  // ファイル名
+            $string  = preg_replace("/( |　)/", "", $stringw );
+            $work_data['file_name']    = $string;
             $str = sprintf("%05d", $xls_data2->customers_id);
             $work_data['kanrino']      = $year .'_'. $mon. '_'. $str;   // 管理番号
             $work_data['tanka']        = ($xls_data2->customers_id * 10) + 10000;

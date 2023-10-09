@@ -96,6 +96,8 @@ class ExportService
         // putenv('HOME=/tmp'); // libreoffice の作業スペースとして tmp を使う
 
         $pdf_dir = storage_path('app/public/invoice/pdf/'.  $foloder_name);
+        Log::debug('ExportService convertOfficeToPdf exec $pdf_dir = '    .print_r($pdf_dir,true));
+        // Log::debug('ExportService convertOfficeToPdf exec $foloder_name = '    .print_r($foloder_name,true));
         // $office_path = './storage/app/public/invoice/xls/'. $foloder_name. '/'. $file_name. '.xlsx';
 
         #  /usr/bin/soffice --headless --convert-to pdf --outdir {出力先のディレクトリ} {変換する元のExcel}
@@ -124,7 +126,7 @@ class ExportService
         $command = implode(' ', $command_parts);
         exec($command, $output, $return_var);
 
-        // Log::debug('ExportService convertOfficeToPdf exec $command = '    .print_r($command,true));
+        Log::debug('ExportService convertOfficeToPdf exec $office_path = '    .print_r($office_path,true));
         Log::debug('ExportService convertOfficeToPdf exec $return_var = ' .print_r($return_var,true));
 
         // $filename = pathinfo($office_path, PATHINFO_FILENAME);
