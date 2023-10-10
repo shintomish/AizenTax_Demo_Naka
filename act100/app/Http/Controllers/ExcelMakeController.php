@@ -157,9 +157,7 @@ class ExcelMakeController extends Controller
                             ->whereNull('customers.deleted_at')
                             ->whereNull('advisorsfees.deleted_at')
                             ->where('advisorsfees.year','=',$nowyear)
-                            ->orderBy('customers.individual_class', 'asc')
-                            ->orderBy('customers.business_name', 'asc')
-                            ->sortable()
+                            ->orderBy('customers.id', 'asc')
                             ->get();
         } else {
             $customers = Customer::where('organization_id','=',$organization_id)
@@ -199,9 +197,7 @@ class ExcelMakeController extends Controller
                             ->whereNull('customers.deleted_at')
                             ->whereNull('advisorsfees.deleted_at')
                             ->where('advisorsfees.year','=',$nowyear)
-                            ->orderBy('customers.individual_class', 'asc')
-                            ->orderBy('customers.business_name', 'asc')
-                            ->sortable()
+                            ->orderBy('customers.id', 'asc')
                             ->get();
         }
 
