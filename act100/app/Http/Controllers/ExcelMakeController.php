@@ -65,8 +65,9 @@ class ExcelMakeController extends Controller
             return redirect()->route('advisorsfee.input');
         }
 
+        Log::info('ExcelMakeController excel ret_query_count = ' .print_r($count,true));
+
         $xls_inp_data = $this->advisorsGet($request,$organization_id,$nowyear,$nowmonth);
-        // $xls_inp_data = DB::select($query);
 
         $work_data = array(
             'to_company'   => array(),
@@ -91,7 +92,6 @@ class ExcelMakeController extends Controller
                 $work_data['to_represent']  = $xls_data2->business_name;              // 会社名
             }
             $work_data['foloder_name'] = $xls_data2->foldername;        // フォルダー名
-            $cusid = sprintf("%05d", $xls_data2->customers_id);
 
             // 契約主体
             if($xls_data2->contract_entity == 1) {
@@ -100,13 +100,17 @@ class ExcelMakeController extends Controller
                 $work_data['from_repres']    = '代表社員　　　　　富　澤　利　広';
                 $work_data['tourokuno']      = 'T9010503005932';
             } else {
-                $work_data['from_flcompany'] = 'Tax-accountant';
+                $work_data['from_flcompany'] = 'Tax-account';
                 $work_data['from_company']   = '税理士法人 間庭・飯田合同事務所';
                 $work_data['from_repres']    = '代表社員　　　　　税 理 士 法 人';
                 $work_data['tourokuno']      = 'T9010501234567';             
             }
 
-            $stringw = $first_ymd .'_'. $from_flcompany. '_'. $cusid. '_請求書';  // ファイル名
+            $cusid = sprintf("%05d", $xls_data2->customers_id);
+            // ファイル名 20231010_Global_000xx_請求書
+            $stringw  = $first_ymd;
+            $stringw .= '_'. $work_data['from_flcompany'];
+            $stringw .= '_'. $cusid. '_請求書';
 
             $string  = preg_replace("/( |　)/", "", $stringw ); //文字列の中にある半角空白と全角空白をすべて削除・除去する
             $work_data['file_name']    = $string;
@@ -155,7 +159,7 @@ class ExcelMakeController extends Controller
         $query = $this->ret_query($organization_id,$nowyear,$nowmonth);
         $advisorsfees = DB::select($query);
 
-        Log::debug('ExcelMakeController advisorsGet $query = ' .print_r($query,true));
+        // Log::debug('ExcelMakeController advisorsGet $query = ' .print_r($query,true));
 
 
         Log::info('ExcelMakeController advisorsGet END');
@@ -247,13 +251,14 @@ class ExcelMakeController extends Controller
     {
         Log::info('ExcelMakeController ret_query START');
 
-        // select sql
+        // select sql contract_entity
         $query = '';
         $query .= 'select ';
         $query .= 'advisorsfees.id               as id ,';
         $query .= 'advisorsfees.organization_id  as organization_id ,';
         $query .= 'advisorsfees.custm_id         as custm_id ,';
         $query .= 'advisorsfees.year             as year ,';
+        $query .= 'advisorsfees.contract_entity  as contract_entity ,';
         $query .= 'advisorsfees.advisor_fee      as advisor_fee ,';
         $query .= 'advisorsfees.fee_01        as fee_01 ,';
         $query .= 'advisorsfees.fee_02        as fee_02 ,';
@@ -274,6 +279,7 @@ class ExcelMakeController extends Controller
         $query .= 'customers.individual_class    as individual_class ';
         $query .=  ' FROM advisorsfees JOIN customers ON advisorsfees.custm_id=customers.id ';
         $query .=  ' where ';
+
         if($organization_id == 0) {
             $query .=  ' (advisorsfees.organization_id >= %organization_id%) AND';
         } else {
@@ -283,6 +289,7 @@ class ExcelMakeController extends Controller
         if($nowmonth == 10) {
             $query .=  ' (advisorsfees.fee_10 > 0) AND';
         }
+    
         $query .=  ' (customers.deleted_at is NULL ) AND ';
         $query .=  ' (advisorsfees.deleted_at is NULL ) AND ';
         $query .=  ' (advisorsfees.year = %nowyear% ) ';
@@ -322,7 +329,7 @@ class ExcelMakeController extends Controller
 
         $query .=  ' (advisorsfees.deleted_at is NULL ) AND ';
         $query .=  ' (advisorsfees.year = %nowyear% ) ';
-        $query .=  ' order By advisorsfees.id asc ';
+        $query .=  ' GROUP BY id; ';
         $query  = str_replace('%organization_id%', $organization_id, $query);
         $query  = str_replace('%nowyear%',         $nowyear,         $query);
 

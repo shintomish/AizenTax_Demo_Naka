@@ -65,6 +65,7 @@ class AdvisorsfeeController extends Controller
                             ,'advisorsfees.organization_id  as organization_id'
                             ,'advisorsfees.custm_id         as custm_id'
                             ,'advisorsfees.year             as year'
+                            ,'advisorsfees.contract_entity  as contract_entity'
                             ,'advisorsfees.advisor_fee      as advisor_fee'
                             ,'advisorsfees.fee_01        as fee_01'
                             ,'advisorsfees.fee_02        as fee_02'
@@ -107,6 +108,7 @@ class AdvisorsfeeController extends Controller
                             ,'advisorsfees.organization_id  as organization_id'
                             ,'advisorsfees.custm_id         as custm_id'
                             ,'advisorsfees.year             as year'
+                            ,'advisorsfees.contract_entity  as contract_entity'
                             ,'advisorsfees.advisor_fee      as advisor_fee'
                             ,'advisorsfees.fee_01        as fee_01'
                             ,'advisorsfees.fee_02        as fee_02'
@@ -181,6 +183,7 @@ class AdvisorsfeeController extends Controller
                             ,'advisorsfees.organization_id  as organization_id'
                             ,'advisorsfees.custm_id         as custm_id'
                             ,'advisorsfees.year             as year'
+                            ,'advisorsfees.contract_entity  as contract_entity'
                             ,'advisorsfees.advisor_fee      as advisor_fee'
                             ,'advisorsfees.fee_01        as fee_01'
                             ,'advisorsfees.fee_02        as fee_02'
@@ -222,6 +225,7 @@ class AdvisorsfeeController extends Controller
                             ,'advisorsfees.organization_id  as organization_id'
                             ,'advisorsfees.custm_id         as custm_id'
                             ,'advisorsfees.year             as year'
+                            ,'advisorsfees.contract_entity  as contract_entity'
                             ,'advisorsfees.advisor_fee      as advisor_fee'
                             ,'advisorsfees.fee_01        as fee_01'
                             ,'advisorsfees.fee_02        as fee_02'
@@ -281,6 +285,7 @@ class AdvisorsfeeController extends Controller
         $id = $request->input('id');
 
         // $organization      = $this->auth_user_organization();
+        $contract_entity    = $request->input('contract_entity');   //'契約主体'
         $advisor_fee    = $request->input('advisor_fee');   //'顧問料金'
         $fee_01         = $request->input('fee_01');        //'顧問料01'
         $fee_02         = $request->input('fee_02');        //'顧問料02'
@@ -301,6 +306,7 @@ class AdvisorsfeeController extends Controller
 
         $counts = array();
         $update = [];
+        if( $request->exists('contract_entity')   ) $update['contract_entity']  = $request->input('contract_entity');
         if( $request->exists('advisor_fee')   ) $update['advisor_fee']  = $request->input('advisor_fee');
         if( $request->exists('fee_01')        ) $update['fee_01']       = $request->input('fee_01');
         if( $request->exists('fee_02')        ) $update['fee_02']       = $request->input('fee_02');
@@ -330,6 +336,10 @@ class AdvisorsfeeController extends Controller
 //  Log::debug('update_api $advisorsfees->custm_id  = ' . $advisorsfees->custm_id);
                 $customer = Customer::find($advisorsfees->custm_id);
                 $customer->advisor_fee      = $request->advisor_fee;
+
+                //2023/10/10 customerに追加
+                //contract_entity
+
                 $customer->updated_at       = now();
                 $result = $customer->save();
             }
@@ -651,6 +661,7 @@ class AdvisorsfeeController extends Controller
                                     ,'advisorsfees.organization_id  as organization_id'
                                     ,'advisorsfees.custm_id         as custm_id'
                                     ,'advisorsfees.year             as year'
+                                    ,'advisorsfees.contract_entity  as contract_entity'
                                     ,'advisorsfees.advisor_fee      as advisor_fee'
 		                            ,'advisorsfees.fee_01        as fee_01'
 		                            ,'advisorsfees.fee_02        as fee_02'
@@ -698,6 +709,7 @@ class AdvisorsfeeController extends Controller
                                     ,'advisorsfees.organization_id  as organization_id'
                                     ,'advisorsfees.custm_id         as custm_id'
                                     ,'advisorsfees.year             as year'
+                                    ,'advisorsfees.contract_entity  as contract_entity'
                                     ,'advisorsfees.advisor_fee      as advisor_fee'
 		                            ,'advisorsfees.fee_01        as fee_01'
 		                            ,'advisorsfees.fee_02        as fee_02'

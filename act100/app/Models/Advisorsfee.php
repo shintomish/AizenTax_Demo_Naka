@@ -38,6 +38,7 @@ class Advisorsfee extends Model
         'organization_id',
         'custm_id',
         'year',
+        'contract_entity',
         'advisor_fee',
         'fee_01',
         'fee_02',
