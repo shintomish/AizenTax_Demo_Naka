@@ -101,7 +101,7 @@ class ExcelMakeController extends Controller
                 $work_data['tourokuno']      = 'T9010503005932';
             } else {
                 $work_data['from_flcompany'] = 'Tax-accountant';
-                $work_data['from_company']   = '税理士法人';
+                $work_data['from_company']   = '税理士法人 間庭・飯田合同事務所';
                 $work_data['from_repres']    = '代表社員　　　　　税 理 士 法 人';
                 $work_data['tourokuno']      = 'T9010501234567';             
             }
@@ -118,7 +118,7 @@ class ExcelMakeController extends Controller
             array_push($xls_out_data, $work_data );
             $cnt = $cnt + 1;
         }
-        
+
         // Log::debug('ExcelMakeController excel $xls_out_data = ' .print_r($xls_out_data,true));
 
         // App\Services\ExportService
