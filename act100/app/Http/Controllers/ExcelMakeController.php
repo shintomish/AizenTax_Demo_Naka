@@ -15,10 +15,24 @@ use Illuminate\Support\Facades\DB;
 class ExcelMakeController extends Controller
 {
     //
-	public function excel()
+	public function excel(Request $request)
 	{
         Log::info('ExcelMakeController excel START');
-        
+
+        // ログインユーザーのユーザー情報を取得する
+        // $user    = $this->auth_user_info();
+        // $user_id = $user->id;
+
+        $organization    = $this->auth_user_organization();
+        $organization_id = $organization->id;
+
+        // 年を取得2 
+        $nowyear   = intval($this->get_now_year2());
+        // $nowyear = $request->Input('year');
+
+        //今年の月を取得
+        $nowmonth = intval($this->get_now_month());
+
         $year     = now()->format('Y');
         $mon      = now()->format('m');
         $furiyear = now()->format('Y');
@@ -44,7 +58,21 @@ class ExcelMakeController extends Controller
         // $foloder_name   = 'folder0005';
         // $file_name      = now()->format('Ymd') .'_'. $from_company. '_'. $to_company. '_請求書';
 
-        $xls_inp_data = $this->advisorsGet();
+        // ret_query_count(): Queryを取得 Count用
+        $count = $this->ret_query_count($organization_id,$nowyear,$nowmonth);
+        if($count == 0) {
+             
+            Log::info('ExcelMakeController excel $count = 0 END');
+
+            // toastrというキーでメッセージを格納　今月の請求データ対象の会社はありません
+            session()->flash('toastr', config('toastr.invoice_warning'));
+
+            return redirect()->route('advisorsfee.input');
+        }
+
+        $xls_inp_data = $this->advisorsGet($request,$organization_id,$nowyear,$nowmonth);
+        // $xls_inp_data = DB::select($query);
+
         $work_data = array(
             'to_company'   => array(),
             'to_represent' => array(),
@@ -104,109 +132,188 @@ class ExcelMakeController extends Controller
 
     }
 
-    public function advisorsGet()
+    public function advisorsGet(Request $request,$organization_id,$nowyear,$nowmonth)
     {
         Log::info('ExcelMakeController advisorsGet START');
 
-        // ログインユーザーのユーザー情報を取得する
-        $user    = $this->auth_user_info();
-        $user_id = $user->id;
-        
-        $organization  = $this->auth_user_organization();
-        $organization_id = $organization->id;
+        $query = $this->ret_query($organization_id,$nowyear,$nowmonth);
+        $advisorsfees = DB::select($query);
 
-        // 年を取得2 
-        $nowyear   = intval($this->get_now_year2());
+        Log::debug('ExcelMakeController advisorsGet $query = ' .print_r($query,true));
 
-        //今年の月を取得
-        $nowmonth = intval($this->get_now_month());
 
-        if($organization_id == 0) {
-            $customers = Customer::where('organization_id','>=',$organization_id)
-                            ->whereNull('deleted_at')
-                            ->get();
-            $advisorsfees = Advisorsfee::select(
-                             'advisorsfees.id               as id'
-                            ,'advisorsfees.organization_id  as organization_id'
-                            ,'advisorsfees.custm_id         as custm_id'
-                            ,'advisorsfees.year             as year'
-                            ,'advisorsfees.advisor_fee      as advisor_fee'
-                            ,'advisorsfees.fee_01        as fee_01'
-                            ,'advisorsfees.fee_02        as fee_02'
-                            ,'advisorsfees.fee_03        as fee_03'
-                            ,'advisorsfees.fee_04        as fee_04'
-                            ,'advisorsfees.fee_05        as fee_05'
-                            ,'advisorsfees.fee_06        as fee_06'
-                            ,'advisorsfees.fee_07        as fee_07'
-                            ,'advisorsfees.fee_08        as fee_08'
-                            ,'advisorsfees.fee_09        as fee_09'
-                            ,'advisorsfees.fee_10        as fee_10'
-                            ,'advisorsfees.fee_11        as fee_11'
-                            ,'advisorsfees.fee_12        as fee_12'
-
-                            ,'customers.id                  as customers_id'
-                            ,'customers.business_name       as business_name'
-                            ,'customers.represent_name      as represent_name'
-                            ,'customers.foldername          as foldername'
-                            ,'customers.individual_class    as individual_class'
-
-                            )
-                            ->leftJoin('customers', function ($join) {
-                                $join->on('advisorsfees.custm_id', '=', 'customers.id');
-                            })
-                            ->whereNull('customers.deleted_at')
-                            ->whereNull('advisorsfees.deleted_at')
-                            ->where('advisorsfees.year','=',$nowyear)
-                            ->orderBy('customers.id', 'asc')
-                            ->get();
-        } else {
-            $customers = Customer::where('organization_id','=',$organization_id)
-                            ->whereNull('deleted_at')
-                            ->get();
-
-            $advisorsfees = Advisorsfee::select(
-                             'advisorsfees.id               as id'
-                            ,'advisorsfees.organization_id  as organization_id'
-                            ,'advisorsfees.custm_id         as custm_id'
-                            ,'advisorsfees.year             as year'
-                            ,'advisorsfees.advisor_fee      as advisor_fee'
-                            ,'advisorsfees.fee_01        as fee_01'
-                            ,'advisorsfees.fee_02        as fee_02'
-                            ,'advisorsfees.fee_03        as fee_03'
-                            ,'advisorsfees.fee_04        as fee_04'
-                            ,'advisorsfees.fee_05        as fee_05'
-                            ,'advisorsfees.fee_06        as fee_06'
-                            ,'advisorsfees.fee_07        as fee_07'
-                            ,'advisorsfees.fee_08        as fee_08'
-                            ,'advisorsfees.fee_09        as fee_09'
-                            ,'advisorsfees.fee_10        as fee_10'
-                            ,'advisorsfees.fee_11        as fee_11'
-                            ,'advisorsfees.fee_12        as fee_12'
-
-                            ,'customers.id                  as customers_id'
-                            ,'customers.business_name       as business_name'
-                            ,'customers.represent_name      as represent_name'
-                            ,'customers.foldername          as foldername'
-                            ,'customers.individual_class    as individual_class'
-
-                            )
-                            ->leftJoin('customers', function ($join) {
-                                $join->on('advisorsfees.custm_id', '=', 'customers.id');
-                            })
-                            ->where('advisorsfees.organization_id','=',$organization_id)
-                            ->whereNull('customers.deleted_at')
-                            ->whereNull('advisorsfees.deleted_at')
-                            ->where('advisorsfees.year','=',$nowyear)
-                            ->orderBy('customers.id', 'asc')
-                            ->get();
-        }
-
-        // $compacts = compact( 'advisorsfees' );
-
-        // Log::debug('ExcelMakeController advisorsGet $compacts = ' .print_r($compacts,true));
         Log::info('ExcelMakeController advisorsGet END');
 
         return $advisorsfees;
+
+        // if($organization_id == 0) {
+        //     $advisorsfees = Advisorsfee::select(
+        //                      'advisorsfees.id               as id'
+        //                     ,'advisorsfees.organization_id  as organization_id'
+        //                     ,'advisorsfees.custm_id         as custm_id'
+        //                     ,'advisorsfees.year             as year'
+        //                     ,'advisorsfees.advisor_fee      as advisor_fee'
+        //                     ,'advisorsfees.fee_01        as fee_01'
+        //                     ,'advisorsfees.fee_02        as fee_02'
+        //                     ,'advisorsfees.fee_03        as fee_03'
+        //                     ,'advisorsfees.fee_04        as fee_04'
+        //                     ,'advisorsfees.fee_05        as fee_05'
+        //                     ,'advisorsfees.fee_06        as fee_06'
+        //                     ,'advisorsfees.fee_07        as fee_07'
+        //                     ,'advisorsfees.fee_08        as fee_08'
+        //                     ,'advisorsfees.fee_09        as fee_09'
+        //                     ,'advisorsfees.fee_10        as fee_10'
+        //                     ,'advisorsfees.fee_11        as fee_11'
+        //                     ,'advisorsfees.fee_12        as fee_12'
+
+        //                     ,'customers.id                  as customers_id'
+        //                     ,'customers.business_name       as business_name'
+        //                     ,'customers.represent_name      as represent_name'
+        //                     ,'customers.foldername          as foldername'
+        //                     ,'customers.individual_class    as individual_class'
+
+        //                     )
+        //                     ->leftJoin('customers', function ($join) {
+        //                         $join->on('advisorsfees.custm_id', '=', 'customers.id');
+        //                     })
+        //                     ->whereNull('customers.deleted_at')
+        //                     ->whereNull('advisorsfees.deleted_at')
+        //                     ->where('advisorsfees.year','=',$nowyear)
+        //                     ->orderBy('customers.id', 'asc')
+        //                     ->get();
+        // } else {
+        //     $advisorsfees = Advisorsfee::select(
+        //                      'advisorsfees.id               as id'
+        //                     ,'advisorsfees.organization_id  as organization_id'
+        //                     ,'advisorsfees.custm_id         as custm_id'
+        //                     ,'advisorsfees.year             as year'
+        //                     ,'advisorsfees.advisor_fee      as advisor_fee'
+        //                     ,'advisorsfees.fee_01        as fee_01'
+        //                     ,'advisorsfees.fee_02        as fee_02'
+        //                     ,'advisorsfees.fee_03        as fee_03'
+        //                     ,'advisorsfees.fee_04        as fee_04'
+        //                     ,'advisorsfees.fee_05        as fee_05'
+        //                     ,'advisorsfees.fee_06        as fee_06'
+        //                     ,'advisorsfees.fee_07        as fee_07'
+        //                     ,'advisorsfees.fee_08        as fee_08'
+        //                     ,'advisorsfees.fee_09        as fee_09'
+        //                     ,'advisorsfees.fee_10        as fee_10'
+        //                     ,'advisorsfees.fee_11        as fee_11'
+        //                     ,'advisorsfees.fee_12        as fee_12'
+
+        //                     ,'customers.id                  as customers_id'
+        //                     ,'customers.business_name       as business_name'
+        //                     ,'customers.represent_name      as represent_name'
+        //                     ,'customers.foldername          as foldername'
+        //                     ,'customers.individual_class    as individual_class'
+
+        //                     )
+        //                     ->leftJoin('customers', function ($join) {
+        //                         $join->on('advisorsfees.custm_id', '=', 'customers.id');
+        //                     })
+        //                     ->where('advisorsfees.organization_id','=',$organization_id)
+        //                     ->whereNull('customers.deleted_at')
+        //                     ->whereNull('advisorsfees.deleted_at')
+        //                     ->where('advisorsfees.year','=',$nowyear)
+        //                     ->orderBy('customers.id', 'asc')
+        //                     ->get();
+        // }
+
     }
 
+    /**
+     *    ret_query()      : Queryを取得
+     *    $organization_id : 組織ID
+     *    $nowyear         : 選択年
+     *    $nowmonth        : 当月
+     */
+    public function ret_query($organization_id,$nowyear,$nowmonth) 
+    {
+        Log::info('ExcelMakeController ret_query START');
+
+        // select sql
+        $query = '';
+        $query .= 'select ';
+        $query .= 'advisorsfees.id               as id ,';
+        $query .= 'advisorsfees.organization_id  as organization_id ,';
+        $query .= 'advisorsfees.custm_id         as custm_id ,';
+        $query .= 'advisorsfees.year             as year ,';
+        $query .= 'advisorsfees.advisor_fee      as advisor_fee ,';
+        $query .= 'advisorsfees.fee_01        as fee_01 ,';
+        $query .= 'advisorsfees.fee_02        as fee_02 ,';
+        $query .= 'advisorsfees.fee_03        as fee_03 ,';
+        $query .= 'advisorsfees.fee_04        as fee_04 ,';
+        $query .= 'advisorsfees.fee_05        as fee_05 ,';
+        $query .= 'advisorsfees.fee_06        as fee_06 ,';
+        $query .= 'advisorsfees.fee_07        as fee_07 ,';
+        $query .= 'advisorsfees.fee_08        as fee_08 ,';
+        $query .= 'advisorsfees.fee_09        as fee_09 ,';
+        $query .= 'advisorsfees.fee_10        as fee_10 ,';
+        $query .= 'advisorsfees.fee_11        as fee_11 ,';
+        $query .= 'advisorsfees.fee_12        as fee_12 ,';
+        $query .= 'customers.id                  as customers_id ,';
+        $query .= 'customers.business_name       as business_name ,';
+        $query .= 'customers.represent_name      as represent_name ,';
+        $query .= 'customers.foldername          as foldername ,';
+        $query .= 'customers.individual_class    as individual_class ';
+        $query .=  ' FROM advisorsfees JOIN customers ON advisorsfees.custm_id=customers.id ';
+        $query .=  ' where ';
+        if($organization_id == 0) {
+            $query .=  ' (advisorsfees.organization_id >= %organization_id%) AND';
+        } else {
+            $query .=  ' (advisorsfees.organization_id = %organization_id%) AND';
+        }
+        
+        if($nowmonth == 10) {
+            $query .=  ' (advisorsfees.fee_10 > 0) AND';
+        }
+        $query .=  ' (customers.deleted_at is NULL ) AND ';
+        $query .=  ' (advisorsfees.deleted_at is NULL ) AND ';
+        $query .=  ' (advisorsfees.year = %nowyear% ) ';
+        $query .=  ' order By customers.id asc ';
+        $query  = str_replace('%organization_id%', $organization_id, $query);
+        $query  = str_replace('%nowyear%',         $nowyear,         $query);
+
+        Log::info('ExcelMakeController ret_query END');
+
+        return $query;
+    }
+
+    /**
+     *    ret_query_count(): Queryを取得 Count用
+     *    $organization_id : 組織ID
+     *    $nowyear         : 選択年
+     *    $nowmonth        : 当月
+     */
+    public function ret_query_count($organization_id,$nowyear,$nowmonth) 
+    {
+        Log::info('ExcelMakeController ret_query_count START');
+
+        // count sql
+        $query = '';
+        $query .= 'select count(*) AS count ';
+        $query .= 'from advisorsfees ';
+        $query .= 'where deleted_at is NULL AND ';
+        if($organization_id == 0) {
+            $query .=  ' (advisorsfees.organization_id >= %organization_id%) AND';
+        } else {
+            $query .=  ' (advisorsfees.organization_id = %organization_id%) AND';
+        }
+        
+        if($nowmonth == 10) {
+            $query .=  ' (advisorsfees.fee_10 > 0) AND';
+        }
+
+        $query .=  ' (advisorsfees.deleted_at is NULL ) AND ';
+        $query .=  ' (advisorsfees.year = %nowyear% ) ';
+        $query .=  ' order By advisorsfees.id asc ';
+        $query  = str_replace('%organization_id%', $organization_id, $query);
+        $query  = str_replace('%nowyear%',         $nowyear,         $query);
+
+        Log::info('ExcelMakeController ret_query_count END');
+        $advisorsfees = DB::select($query);
+        $count        = $advisorsfees[0]->count;
+
+        return $count;
+    }
 }

@@ -41,6 +41,10 @@ return [
         'type' => 'warning',
         'text' => '対象データがありません',
     ],
+    'invoice_warning' => [
+        'type' => 'warning',
+        'text' => '今月の請求データはありません',
+    ],
     'custom_warning' => [
         'type' => 'warning',
         'text' => '対象の会社はありません',
