@@ -167,12 +167,12 @@
                             </li>
 
                             {{-- 2022/10/24 --}}
-                            <li class="nav-item">
+                            {{-- <li class="nav-item">
                                 <a class="nav-link" href="{{route('chatin')}}">
                                     <i class="fas fa-wifi"></i>
                                     チャット
                                 </a>
-                            </li>
+                            </li> --}}
                             {{-- 2023/09/04 以下「顧客ログイン状態」追加--}}
                             <li class="nav-item">
                                 <a class="nav-link" href="{{route('operationindex')}}">
@@ -183,14 +183,14 @@
 
                             {{-- 2023/09/04 1=shintomi.sh@gmail.com 9=dummy09@gmail.com --}}
                             {{-- 2022/11/05 actlogindex --}}
-                            @if($userid == 1 || $userid == 9 )
+                            {{-- @if($userid == 1 || $userid == 9 )
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{route('actlogindex')}}">
                                         <i class="fas fa-clipboard"></i>
                                         操作履歴
                                     </a>
                                 </li>
-                            @endif
+                            @endif --}}
 
                         </ul>
 
@@ -238,7 +238,7 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="{{route('advisorsfee.input')}}">
                                     <i class="fas fa-wallet"></i>
-                                    顧問料金編集
+                                    請求書作成・アップロード
                                 </a>
                             </li>
                             {{-- 2023/09/26 --}}
@@ -249,12 +249,12 @@
                                 </a>
                             </li>
                             {{-- 2023/09/22 --}}
-                            <li class="nav-item">
+                            {{-- <li class="nav-item">
                                 <a class="nav-link" href="{{route('invoice.index')}}">
                                     <i class="fas fa-file-upload"></i>
                                     請求書データファイルアップロード
                                 </a>
-                            </li>
+                            </li> --}}
                             <li class="nav-item">
                                 <a class="nav-link" href="{{route('wokprocbook.input')}}">
                                     <i class="fas fa-address-book"></i>
@@ -349,7 +349,7 @@
                             @case ('06')
                                 {{-- 2023/09/22 --}}
                                 <!-- タイトル -->
-                                <h3>顧問料金編集</h3>
+                                <h3>請求書作成・アップロード</h3>
                                 <form  class="form-inline my-2 my-lg-0 ml-2" action="{{route('advisorsfee_custom')}}" method="GET">
                                 @break;
                             @case ('07')
