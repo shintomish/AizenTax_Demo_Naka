@@ -5,11 +5,16 @@
     {{-- <h2>顧問料一覧</h2> --}}
     <div class="text-right">
         {{-- <a class="btn btn-success btn-sm mr-auto" href="{{route('advisorsfee.create')}}">新規登録</a> --}}
-        <a class="btn btn-success btn-sm mr-auto" href="{{route('excelexp')}}">新規登録</a>
+        <a id="start2" class="btn btn-success btn-sm mr-auto" href="{{route('excelexp')}}">請求書作成</a>
     </div>
 
     <div class="row">
         <!-- 検索エリア -->
+        <p>作成状況：
+            <div class="progress">
+                <div id="pgss2" class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">
+                </div>
+            </div>
         <!-- 検索エリア -->
     </div>
 
@@ -789,6 +794,28 @@
      <ul class="pagination justify-content-center">
         {{ $advisorsfees->appends(request()->query())->render() }}
      </ul>
+
+    {{-- 進捗バー --}}
+    <script>
+        $(function () {
+            var count = 0;
+            $(document).on('click','#start2',function(){
+                progress(count);
+            });
+
+            function progress(count){
+                setTimeout(function(){
+                    $("#pgss2").css({'width':count+'%'});
+                    $("#pgss2").prop('aria-valuenow', count)
+                    $("#pgss2").text(count + '%');
+                    count++;
+                    if(count == 100) return;
+                    progress(count);
+                },150);
+            }
+        })
+
+    </script>
 
 @endsection
 
