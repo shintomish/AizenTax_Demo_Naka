@@ -78,18 +78,18 @@ class InvoiceconfirmController extends Controller
         // 請求書データを取得
         if($organization_id == 0) {
             $invoices = Invoice::where('organization_id','>=',$organization_id)
-                        ->where('customer_id','=',$customer_id)
+                        // ->where('customer_id','=',$customer_id)
                         ->whereNull('deleted_at')
                         ->orderBy('created_at', 'desc')
                         ->sortable()
-                        ->paginate(50);
+                        ->paginate(300);
         } else {
             $invoices = Invoice::where('organization_id','=',$organization_id)
-                        ->where('customer_id','=',$customer_id)
+                        // ->where('customer_id','=',$customer_id)
                         ->whereNull('deleted_at')
                         ->orderBy('created_at', 'desc')
                         ->sortable()
-                        ->paginate(50);
+                        ->paginate(300);
         }
 
         $jsonfile = storage_path() . "/tmp/invoice_info_status_". $customer_id. ".json";

@@ -19,7 +19,7 @@
 
     <div class="row">
         <!-- 検索エリア -->
-        <form  class="my-2 my-lg-0 ml-2" action="{{route('invoiceconfirmserch')}}" method="GET">
+        {{-- <form  class="my-2 my-lg-0 ml-2" action="{{route('invoiceconfirmserch')}}" method="GET">
             @csrf
             @method('get')
             <style>
@@ -40,10 +40,10 @@
                 </select>
                 <button type="submit" class="btn btn-secondary btn_sm">送信先</button>
             </div>
-        </form -->
+        </form> --}}
         <!-- 検索エリア -->
     </div>
-    <hr class="mb-4">  {{-- // line --}}
+    {{-- <hr class="mb-4">  // line --}}
 
     <style>
         /* スクロールバーの実装 */
