@@ -128,6 +128,9 @@ class ExcelMakeController extends Controller
  
         Log::info('ExcelMakeController excel END');
 
+        // toastrというキーでメッセージを格納　請求データ作成処理が正常に完了しました
+        session()->flash('toastr', config('toastr.invoice_success'));
+
         return redirect()->route('advisorsfee.input');
 
     }
