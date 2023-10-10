@@ -64,7 +64,7 @@ class ExcelMakeController extends Controller
              
             Log::info('ExcelMakeController excel $count = 0 END');
 
-            // toastrというキーでメッセージを格納　今月の請求データ対象の会社はありません
+            // toastrというキーでメッセージを格納　今月の請求データはありません
             session()->flash('toastr', config('toastr.invoice_warning'));
 
             return redirect()->route('advisorsfee.input');
