@@ -48,11 +48,6 @@ class ExcelMakeController extends Controller
         $first_ymd    = now()->format('Ymd');
         $tekiyou      = now()->format('Y').'年'.now()->format('m').'月分　顧問料金';
 
-        $from_flcompany = 'global';
-        $from_company   = '合同会社グローアップ・マネジメント';
-        $from_repres    = '代表社員　　　　　富　澤　利　広';
-        $tourokuno      = 'T9010503005932';
-
         // $to_company     = 'company-0005';       // 会社名
         // $to_represent   = 'represent-0005';     // 代表者名
         // $foloder_name   = 'folder0005';
@@ -76,6 +71,8 @@ class ExcelMakeController extends Controller
         $work_data = array(
             'to_company'   => array(),
             'to_represent' => array(),
+            'from_company' => array(),
+            'from_repres'  => array(),
             'foloder_name' => array(),
             'file_name'    => array(),
             'kanrino'      => array(),
@@ -94,29 +91,45 @@ class ExcelMakeController extends Controller
                 $work_data['to_represent']  = $xls_data2->business_name;              // 会社名
             }
             $work_data['foloder_name'] = $xls_data2->foldername;        // フォルダー名
-            //文字列の中にある半角空白と全角空白をすべて削除・除去する
-            $stringw = $first_ymd .'_'. $from_flcompany. '_'. $xls_data2->business_name. '様_請求書';  // ファイル名
-            $string  = preg_replace("/( |　)/", "", $stringw );
+            $cusid = sprintf("%05d", $xls_data2->customers_id);
+
+            // 契約主体
+            if($xls_data2->contract_entity == 1) {
+                $work_data['from_flcompany'] = 'Global';
+                $work_data['from_company']   = '合同会社グローアップ・マネジメント';
+                $work_data['from_repres']    = '代表社員　　　　　富　澤　利　広';
+                $work_data['tourokuno']      = 'T9010503005932';
+            } else {
+                $work_data['from_flcompany'] = 'Tax-accountant';
+                $work_data['from_company']   = '税理士法人';
+                $work_data['from_repres']    = '代表社員　　　　　税 理 士 法 人';
+                $work_data['tourokuno']      = 'T9010501234567';             
+            }
+
+            $stringw = $first_ymd .'_'. $from_flcompany. '_'. $cusid. '_請求書';  // ファイル名
+
+            $string  = preg_replace("/( |　)/", "", $stringw ); //文字列の中にある半角空白と全角空白をすべて削除・除去する
             $work_data['file_name']    = $string;
-            $str = sprintf("%05d", $xls_data2->customers_id);
-            $work_data['kanrino']      = $year .'_'. $mon. '_'. $str;   // 管理番号
-            $work_data['tanka']        = ($xls_data2->customers_id * 10) + 10000;
+            $work_data['kanrino']      = $year .'_'. $mon. '_'. $cusid;   // 管理番号
+            if($nowmonth == 10) {
+                $work_data['tanka']    = ($xls_data2->fee_10);
+            }
+            // $work_data['tanka']        = ($xls_data2->customers_id * 10) + 10000;
             array_push($xls_out_data, $work_data );
             $cnt = $cnt + 1;
         }
-        // $xls_out_data = json_encode($xls_out_data);
-        // $compacts = compact( 'advisorsfees', 'customers', 'nowyear', 'nowmonth' );
+        
         // Log::debug('ExcelMakeController excel $xls_out_data = ' .print_r($xls_out_data,true));
 
         // App\Services\ExportService
         $export_service = new ExportService();
         foreach ($xls_out_data as $data) {
             $export_service->makeXlsPdf(
-                $tourokuno,
+                $data['tourokuno'],
                 $tekiyou,
                 $furibi,
-                $from_company,
-                $from_repres,
+                $data['from_company'],
+                $data['from_repres'],
                 $data['kanrino'],
                 $data['tanka'],
                 $data['to_company'], 
