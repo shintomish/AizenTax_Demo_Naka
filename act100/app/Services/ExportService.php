@@ -10,6 +10,7 @@ use PhpOffice\PhpSpreadsheet\IOFactory;
 use Maatwebsite\Excel\Facades\Excel;
 
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 
 class ExportService
@@ -143,30 +144,31 @@ class ExportService
     public function billdataUpdate()
     {
         Log::info('ExportService  billdataUpdate START');
-        try {
-            DB::beginTransaction();
-            Log::info('beginTransaction - ExportService  billdataUpdate saveFile start');
 
-            // $billdata = new Billdata();
-            // $billdata->filepath        = $filepath;
-            // $billdata->filename        = $fileName;
-            // $billdata->organization_id = 1;
-            // $billdata->extension_flg   = 1;
-            // $billdata->customer_id     = $customer_id;
-            // $billdata->filesize        = $fileSize;
-            // $billdata->urgent_flg      = 2;  // 1:既読 2:未読
-            // $billdata->save();               //  Inserts
+        // try {
+        //     DB::beginTransaction();
+        //     Log::info('beginTransaction - ExportService  billdataUpdate saveFile start');
 
-            DB::commit();
-            Log::info('beginTransaction - ExportService  billdataUpdate saveFile end(commit)');
-        }
-        catch(\QueryException $e) {
-            Log::error('exception : ' . $e->getMessage());
-            DB::rollback();
-            Log::info('beginTransaction - ExportService  billdataUpdate saveFile end(rollback)');
-            $errormsg = '更新出来ませんでした。';
-            return \Response::json(['error'=>$errormsg,'status'=>'NG'], 400);
-        }
+        //     // $billdata = new Billdata();
+        //     // $billdata->filepath        = $filepath;
+        //     // $billdata->filename        = $fileName;
+        //     // $billdata->organization_id = 1;
+        //     // $billdata->extension_flg   = 1;
+        //     // $billdata->customer_id     = $customer_id;
+        //     // $billdata->filesize        = $fileSize;
+        //     // $billdata->urgent_flg      = 2;  // 1:既読 2:未読
+        //     // $billdata->save();               //  Inserts
+
+        //     DB::commit();
+        //     Log::info('beginTransaction - ExportService  billdataUpdate saveFile end(commit)');
+        // }
+        // catch(\QueryException $e) {
+        //     Log::error('exception : ' . $e->getMessage());
+        //     DB::rollback();
+        //     Log::info('beginTransaction - ExportService  billdataUpdate saveFile end(rollback)');
+        //     $errormsg = '更新出来ませんでした。';
+        //     return \Response::json(['error'=>$errormsg,'status'=>'NG'], 400);
+        // }
 
         Log::info('ExportService  billdataUpdate END');
 
