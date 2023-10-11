@@ -78,6 +78,9 @@ class ExportService
         $writer     = new XlsxWriter($spreadsheet);
         $writer->save($export_xls_path);
 
+        // billdatas更新
+        $this->billdataUpdate();
+
         // Pdf出力
         if (file_exists($export_xls_path)) {
 
