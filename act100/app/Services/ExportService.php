@@ -2,6 +2,8 @@
 
 namespace App\Services;
 
+use App\Models\Billdata;
+
 use PhpOffice\PhpSpreadsheet\Reader\Xlsx as XlsxReader;
 use PhpOffice\PhpSpreadsheet\Writer\Xlsx as XlsxWriter;
 use PhpOffice\PhpSpreadsheet\IOFactory;
@@ -137,4 +139,39 @@ class ExportService
 
         return file_exists($pdf_path) ? $pdf_path : null;
     }
+
+    public function billdataUpdate()
+    {
+        Log::info('ExportService  billdataUpdate START');
+        try {
+            DB::beginTransaction();
+            Log::info('beginTransaction - ExportService  billdataUpdate saveFile start');
+
+            // $billdata = new Billdata();
+            // $billdata->filepath        = $filepath;
+            // $billdata->filename        = $fileName;
+            // $billdata->organization_id = 1;
+            // $billdata->extension_flg   = 1;
+            // $billdata->customer_id     = $customer_id;
+            // $billdata->filesize        = $fileSize;
+            // $billdata->urgent_flg      = 2;  // 1:既読 2:未読
+            // $billdata->save();               //  Inserts
+
+            DB::commit();
+            Log::info('beginTransaction - ExportService  billdataUpdate saveFile end(commit)');
+        }
+        catch(\QueryException $e) {
+            Log::error('exception : ' . $e->getMessage());
+            DB::rollback();
+            Log::info('beginTransaction - ExportService  billdataUpdate saveFile end(rollback)');
+            $errormsg = '更新出来ませんでした。';
+            return \Response::json(['error'=>$errormsg,'status'=>'NG'], 400);
+        }
+
+        Log::info('ExportService  billdataUpdate END');
+
+        return \Response::json(['error'=>'更新処理が正常に終了しました。','status'=>'OK'], 200);
+
+    }
+
 }
