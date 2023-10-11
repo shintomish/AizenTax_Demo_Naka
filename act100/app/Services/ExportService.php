@@ -80,7 +80,7 @@ class ExportService
             // Log::debug('ExportService makeXlsPdf $export_xls_path = ' . $export_xls_path);
 
             // ExcelファイルをPDFに変換するコード
-            $this->convertOfficeToPdf($file_name, $foloder_name, $export_xls_path);
+            $pdf_path = $this->convertOfficeToPdf($file_name, $foloder_name, $export_xls_path);
 
         }
 
