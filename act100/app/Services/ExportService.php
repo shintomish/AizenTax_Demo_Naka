@@ -26,7 +26,8 @@ class ExportService
                         $to_company, 
                         $to_represent, 
                         $foloder_name, 
-                        $file_name
+                        $file_name,
+                        $customers_id
                         )
     {
         Log::info('ExportService makeXlsPdf START');

@@ -67,6 +67,7 @@ class ExcelMakeController extends Controller
 
         Log::info('ExcelMakeController excel ret_query_count = ' .print_r($count,true));
 
+        // 選択クエリーオブジェクトを返す
         $xls_inp_data = $this->advisorsGet($request,$organization_id,$nowyear,$nowmonth);
 
         $work_data = array(
@@ -77,7 +78,8 @@ class ExcelMakeController extends Controller
             'foloder_name' => array(),
             'file_name'    => array(),
             'kanrino'      => array(),
-            'tanka'        => array()
+            'tanka'        => array(),
+            'customers_id' => array()
         );
 
         $xls_out_data      = array();
@@ -106,8 +108,10 @@ class ExcelMakeController extends Controller
                 $work_data['tourokuno']      = 'T9010501234567';             
             }
 
+            $work_data['customers_id']      = $xls_data2->customers_id;   
             $cusid = sprintf("%05d", $xls_data2->customers_id);
-            // ファイル名 20231010_Global_000xx_請求書
+
+            // ファイル名 20231011_合同会社グローアップ_000xx_請求書
             $stringw  = $first_ymd;
             $stringw .= '_'. $work_data['from_flcompany'];
             $stringw .= '_'. $cusid. '_請求書';
@@ -141,7 +145,8 @@ class ExcelMakeController extends Controller
                 $data['to_company'], 
                 $data['to_represent'], 
                 $data['foloder_name'],
-                $data['file_name']
+                $data['file_name'],
+                $data['customers_id']
             );
         }
  
