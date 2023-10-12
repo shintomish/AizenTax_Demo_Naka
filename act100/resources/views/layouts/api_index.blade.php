@@ -400,16 +400,89 @@
                             @method('get')
                             <div class='btn-toolbar' role="toolbar">
                                 <div class="input-group">
+                                    <!-- 年あり 月あり 顧客名あり -->
+                                    <!-- 顧問料金 06 -->
+                                    @if( $common_no == '06')
+
+                                    <select style="margin-right:5px;" class="custom-select" id="year" name="year">
+                                        @foreach ($loop_year_flg as $loop_year_flg2)
+                                            @if ($loop_year_flg2['no']==0)
+                                                <option disabled value="{{ $loop_year_flg2['no'] }}">{{ $loop_year_flg2['name'] }}</option>
+                                            @else
+                                                @if ($loop_year_flg2['no']==$nowyear)
+                                                    <option selected value="{{ $loop_year_flg2['no'] }}">{{ $loop_year_flg2['name'] }}</option>
+                                                @else
+                                                    <option disabled value="{{ $loop_year_flg2['no'] }}">{{ $loop_year_flg2['name'] }}</option>
+                                                @endif
+                                            @endif
+                                        @endforeach
+                                    </select>
+
+                                    <select style="margin-right:5px;" class="custom-select" id="month" name="month">
+                                        @foreach ($loop_month_flg as $loop_month_flg2)
+                                            @if ($loop_month_flg2['no']==0)
+                                                <option disabled value="{{ $loop_month_flg2['no'] }}">{{ $loop_month_flg2['name'] }}</option>
+                                            @else
+                                                @if ($loop_month_flg2['no']==$nowmonth)
+                                                    <option selected value="{{ $loop_month_flg2['no'] }}">{{ $loop_month_flg2['name'] }}</option>
+                                                @else
+                                                    <option disabled value="{{ $loop_month_flg2['no'] }}">{{ $loop_month_flg2['name'] }}</option>
+                                                @endif
+                                            @endif
+                                        @endforeach
+                                    </select>
+                                    @endif
+                                    {{-- 進捗チェック・スケジュール --}}
+                                    <!-- 年あり 月あり 顧客名あり -->
+                                    <!-- 請求書データ送信確認ページ 06_2 -->
+                                    @if( $common_no == '06_2' )
+                        <div class="btn-group me-2 mb-0">
+                            <a style="" class="btn btn-primary btn-sm" href="{{ route('billdata_down') }}">
+                                <i class="fa fa-download" aria-hidden="true"></i>
+                                一括ダウンロード</a>
+                        </div>
+                                    <select style="margin-right:5px;" class="custom-select" id="year" name="year">
+                                        @foreach ($loop_year_flg as $loop_year_flg2)
+                                            @if ($loop_year_flg2['no']==0)
+                                                <option disabled value="{{ $loop_year_flg2['no'] }}">{{ $loop_year_flg2['name'] }}</option>
+                                            @else
+                                                @if ($loop_year_flg2['no']==$nowyear)
+                                                    <option selected value="{{ $loop_year_flg2['no'] }}">{{ $loop_year_flg2['name'] }}</option>
+                                                @else
+                                                    <option disabled value="{{ $loop_year_flg2['no'] }}">{{ $loop_year_flg2['name'] }}</option>
+                                                @endif
+                                            @endif
+                                        @endforeach
+                                    </select>
+
+                                    <select style="margin-right:5px;" class="custom-select" id="month" name="month">
+                                        @foreach ($loop_month_flg as $loop_month_flg2)
+                                            @if ($loop_month_flg2['no']==0)
+                                                <option disabled value="{{ $loop_month_flg2['no'] }}">{{ $loop_month_flg2['name'] }}</option>
+                                            @else
+                                                @if ($loop_month_flg2['no']==$nowmonth)
+                                                    <option selected value="{{ $loop_month_flg2['no'] }}">{{ $loop_month_flg2['name'] }}</option>
+                                                @else
+                                                    <option disabled value="{{ $loop_month_flg2['no'] }}">{{ $loop_month_flg2['name'] }}</option>
+                                                @endif
+                                            @endif
+                                        @endforeach
+                                    </select>
+                                    @endif
                                     {{-- 進捗チェック・スケジュール --}}
                                     <!-- 年あり 顧客名あり -->
                                     <!-- 納期特例 03 -->
                                     <!-- 年末調整 04 -->
-                                    <!-- 顧問料金 06 -->
+                                    <!-- 請求書データ送信確認ページ 06_2 -->
                                     <!-- 税理士業務処理簿 07 -->
                                     <!-- 業務名管理 08 -->
                                     <!-- 進捗チェック 09 -->
                                     <!-- スケジュール 10 -->
-                                    @if( $common_no == '07' || $common_no == '07_2' || $common_no == '03' || $common_no == '04'  || $common_no == '06')
+                                    @if( $common_no == '07'   || 
+                                         $common_no == '07_2' || 
+                                         $common_no == '03'   || 
+                                         $common_no == '04'
+                                        )
 
                                     <select style="margin-right:5px;" class="custom-select" id="year" name="year">
                                         @foreach ($loop_year_flg as $loop_year_flg2)
@@ -425,6 +498,7 @@
                                         @endforeach
                                     </select>
                                     @endif
+
                                     @if( $common_no == '09' || $common_no == '09_1' || $common_no == '10' || $common_no == '11')
                                         <select style="margin-right:5px;" class="custom-select" id="year" name="year">
                                             @foreach ($loop_year_flg as $loop_year_flg2)

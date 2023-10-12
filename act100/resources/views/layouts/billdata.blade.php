@@ -381,8 +381,7 @@
                             @method('get')
                             <div class='btn-toolbar' role="toolbar">
                                 <div class="input-group">
-                                    {{-- 進捗チェック・スケジュール --}}
-                                    <!-- 年あり 顧客名あり -->
+                                    <!-- 年あり 月あり 顧客名あり -->
                                     <!-- 顧問料金 06 -->
                                     @if( $common_no == '06')
 
