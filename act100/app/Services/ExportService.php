@@ -9,6 +9,8 @@ use PhpOffice\PhpSpreadsheet\Writer\Xlsx as XlsxWriter;
 use PhpOffice\PhpSpreadsheet\IOFactory;
 use Maatwebsite\Excel\Facades\Excel;
 
+use Illuminate\Http\Request;
+
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
@@ -17,8 +19,23 @@ class ExportService
 {
     protected $proxies = "*";
 
-    // $export_service->makeXlsPdf($data['to_company'], $data['to_represent'] , $data['foloder_name'], $data['file_name']);
+    /**
+     *    makeXlsPdf()    : Excelを作成しPDFに変換
+     *    $nowyear        : 年
+     *    $tourokuno      : 登録番号
+     *    $tekiyou        : 摘要名
+     *    $furibi         : 振込日
+     *    $from_company   : 送り主会社名
+     *    $from_repres    : 送り主代表者名
+     *    $tanka          : 単価
+     *    $to_company     : 宛先会社名
+     *    $to_represent   : 宛先代表者名
+     *    $foloder_name   : フォルダー名
+     *    $file_name      : ファイル名
+     *    $customers_id   : 顧客ID
+     */
     public function makeXlsPdf(
+                        $nowyear,
                         $tourokuno,
                         $tekiyou,
                         $furibi,
@@ -31,7 +48,7 @@ class ExportService
                         $foloder_name, 
                         $file_name,
                         $customers_id
-                        )
+                    )
     {
         Log::info('ExportService makeXlsPdf START');
 
@@ -73,22 +90,36 @@ class ExportService
         }
 
         // Excel出力
-        $xls_path = 'app/public/invoice/xls/'. $foloder_name. '/'. $file_name. '.xlsx';
+        $xls_path        = 'app/public/invoice/xls/'. $foloder_name. '/'. $file_name. '.xlsx';
         $export_xls_path = storage_path($xls_path);         //'app/invoice'
-        $writer     = new XlsxWriter($spreadsheet);
+        $writer          = new XlsxWriter($spreadsheet);
         $writer->save($export_xls_path);
-
-        // billdatas更新
-        $this->billdataUpdate();
 
         // Pdf出力
         if (file_exists($export_xls_path)) {
 
-            // Log::debug('ExportService makeXlsPdf $export_xls_path = ' . $export_xls_path);
+            // ファイルサイズを取得する
+            $filesize = filesize($export_xls_path); // ファイルサイズをバイト単位で取得
+            // Log::debug('ExportService makeXlsPdf xls $filesize = ' . $filesize);
+
+            // billdatas更新
+            $extension_flg      = 1;
+            $extension_filename = $file_name . '.xlsx';
+            $ins_path = 'public/invoice/xls/'. $foloder_name. '/'. $file_name. '.xlsx';
+            $this->billdataUpdate($nowyear, $ins_path, $extension_filename, $customers_id, $filesize, $extension_flg);
 
             // ExcelファイルをPDFに変換するコード
             $pdf_path = $this->convertOfficeToPdf($file_name, $foloder_name, $export_xls_path);
-
+            if (file_exists($pdf_path)) {
+                // ファイルサイズを取得する
+                $filesize = filesize($pdf_path); // ファイルサイズをバイト単位で取得
+                // Log::debug('ExportService makeXlsPdf pdf $filesize = ' . $filesize);
+                // billdatas更新
+                $extension_flg      = 2;
+                $extension_filename = $file_name . '.pdf';
+                $ins_path = 'public/invoice/pdf/'. $foloder_name. '/'. $file_name. '.pdf';
+                $this->billdataUpdate($nowyear, $ins_path, $extension_filename, $customers_id, $filesize, $extension_flg);
+            }
         }
 
         Log::info('ExportService makeXlsPdf END');
@@ -96,6 +127,12 @@ class ExportService
     }
 
     // Local commandではうまく行くが実行すると出来ない SV=OK
+    /**
+     *    convertOfficeToPdf() : ExcelをPDFに変換
+     *    $file_name           : ファイル名
+     *    $foloder_name        : フォルダー名
+     *    $office_path         : Excelフルパス
+     */
     public function convertOfficeToPdf($file_name,$foloder_name, $office_path)
     {
         Log::info('ExportService convertOfficeToPdf START');
@@ -144,34 +181,35 @@ class ExportService
         return file_exists($pdf_path) ? $pdf_path : null;
     }
 
-    public function billdataUpdate()
+    public function billdataUpdate($nowyear, $filepath, $fileName, $customers_id, $filesize, $extension_flg)
     {
         Log::info('ExportService  billdataUpdate START');
 
-        // try {
-        //     DB::beginTransaction();
-        //     Log::info('beginTransaction - ExportService  billdataUpdate saveFile start');
+        try {
+            DB::beginTransaction();
+            Log::info('beginTransaction - ExportService  billdataUpdate saveFile start');
 
-        //     // $billdata = new Billdata();
-        //     // $billdata->filepath        = $filepath;
-        //     // $billdata->filename        = $fileName;
-        //     // $billdata->organization_id = 1;
-        //     // $billdata->extension_flg   = 1;
-        //     // $billdata->customer_id     = $customer_id;
-        //     // $billdata->filesize        = $fileSize;
-        //     // $billdata->urgent_flg      = 2;  // 1:既読 2:未読
-        //     // $billdata->save();               //  Inserts
+            $billdata = new Billdata();
+            $billdata->year            = $nowyear;
+            $billdata->filepath        = $filepath;
+            $billdata->filename        = $fileName;
+            $billdata->organization_id = 1;
+            $billdata->extension_flg   = $extension_flg;
+            $billdata->customer_id     = $customers_id;
+            $billdata->filesize        = $filesize;
+            $billdata->urgent_flg      = 2;  // 1:既読 2:未読
+            $billdata->save();               //  Inserts
 
-        //     DB::commit();
-        //     Log::info('beginTransaction - ExportService  billdataUpdate saveFile end(commit)');
-        // }
-        // catch(\QueryException $e) {
-        //     Log::error('exception : ' . $e->getMessage());
-        //     DB::rollback();
-        //     Log::info('beginTransaction - ExportService  billdataUpdate saveFile end(rollback)');
-        //     $errormsg = '更新出来ませんでした。';
-        //     return \Response::json(['error'=>$errormsg,'status'=>'NG'], 400);
-        // }
+            DB::commit();
+            Log::info('beginTransaction - ExportService  billdataUpdate saveFile end(commit)');
+        }
+        catch(\QueryException $e) {
+            Log::error('exception : ' . $e->getMessage());
+            DB::rollback();
+            Log::info('beginTransaction - ExportService  billdataUpdate saveFile end(rollback)');
+            $errormsg = '更新出来ませんでした。';
+            return \Response::json(['error'=>$errormsg,'status'=>'NG'], 400);
+        }
 
         Log::info('ExportService  billdataUpdate END');
 

@@ -158,12 +158,12 @@
                             </li>
                         </ul>
                         {{-- 2023/09/29 --}}
-                        <li class="nav-item">
+                        {{-- <li class="nav-item">
                             <a class="nav-link" href="{{route('chatclientin')}}">
                                 <i class="fas fa-wifi"></i>
                                 チャット
                             </a>
-                        </li>
+                        </li> --}}
                         {{-- 2023/08/17 以下コメント --}}
                         {{-- 2022/11/10 --}}
                         {{-- @if($indiv_class == 1 )
@@ -191,7 +191,7 @@
                         </ul> --}}
                         {{-- 2023/08/17 上コメント --}}
 
-                        {{-- 2023/09/24 以下追加 --}}
+                        {{-- 2023/10/12 以下追加 --}}
                         <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
                             <span>請求書データ</span>
                             <a class="link-secondary" href="#" aria-label="Add a new report">
@@ -208,7 +208,7 @@
                                 </a>
                             </li>
                         </ul>
-                        {{-- 2023/09/24 上追加 --}}
+                        {{-- 2023/10/12 上追加 --}}
 
                         {{-- 2023/08/17 以下追加 --}}
                         <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">

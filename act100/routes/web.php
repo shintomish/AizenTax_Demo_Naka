@@ -44,7 +44,7 @@ Route::post('actlog/download', 'App\Http\Controllers\ActlogController@download')
 //-----------------------------------------------------------------------------------------------
 //- Excel
 //-----------------------------------------------------------------------------------------------
-Route::get('/excel/exp', 'App\Http\Controllers\ExcelMakeController@excel')->name('excelexp');
+Route::get('/excel/exp',  'App\Http\Controllers\ExcelMakeController@excel')->name('excelexp');
 
 //-----------------------------------------------------------------------------------------------
 //- Chat
@@ -85,20 +85,19 @@ Route::get('topcli_pdf03',     'App\Http\Controllers\TopClientController@show_up
 Route::post('topclient/upload/{id}','App\Http\Controllers\UploaderController@postUpload')->name('postUpload');
 
 //-----------------------------------------------------------------------------------------------
-//- TransHistory クライアント 送信履歴
+//- クライアント 送信履歴 TransHistory 
 //-----------------------------------------------------------------------------------------------
 Route::get('transhistory',        'App\Http\Controllers\TransHistoryController@index')->name('transhistory');
 Route::get('transserch',          'App\Http\Controllers\TransHistoryController@serch')->name('transserch');
 // Route::get('transserch_custom',   'App\Http\Controllers\TransHistoryController@serch_custom')->name('transserch_custom');
 
 //-----------------------------------------------------------------------------------------------
-//- InvoiceHistory 請求書 送信履歴
+//- クライアント 請求書データ送信確認ページ 2023/10/12
 //-----------------------------------------------------------------------------------------------
 Route::get('invoicehistory',             'App\Http\Controllers\InvoiceHistoryController@index')->name('invoicehistory');
 Route::get('invoicehistoryserch',        'App\Http\Controllers\InvoiceHistoryController@serch')->name('invoicehistoryserch');
 Route::get('invoicehistory/pdf/{id}',    'App\Http\Controllers\InvoiceHistoryController@show_up01')->name('invoice_pdf01');
-Route::get('invoicehistorymore',         'App\Http\Controllers\InvoiceHistoryController@more')->name('invoicehistory.more');
-Route::post('invoicehistory/update_api', 'App\Http\Controllers\InvoiceHistoryController@update_api')->name('invoicehistory.update_api');
+Route::post('invoicehistory/update_api', 'App\Http\Controllers\InvoiceHistoryController@update_api')->name('invoicehis_upload_api');
 
 //-----------------------------------------------------------------------------------------------
 //- top 事務所 00_3
@@ -209,22 +208,15 @@ Route::post('advisorsfee/update_api',  'App\Http\Controllers\AdvisorsfeeControll
 Route::resource('advisorsfee',         'App\Http\Controllers\AdvisorsfeeController');
 
 //-----------------------------------------------------------------------------------------------
-//- 事務所 invoice 請求書 送信
+//- 事務所 請求書データ送信確認ページ 06_2  2023/10/12
 //-----------------------------------------------------------------------------------------------
-Route::get('invoice/index',        'App\Http\Controllers\InvoiceController@index')->name('invoicein');
-Route::get('invoice/custom',       'App\Http\Controllers\InvoiceController@serch_custom')->name('invoice_custom');
-Route::get('invoice/serch',        'App\Http\Controllers\InvoiceController@serch')->name('invoiceserch');
-Route::post('invoice/upload/{id}', 'App\Http\Controllers\InvoiceController@postUpload')->name('invoicepostUpload');
-Route::resource('invoice',         'App\Http\Controllers\InvoiceController');
-
-//-----------------------------------------------------------------------------------------------
-//- 事務所 invoiceconfirm 請求書 確認
-//-----------------------------------------------------------------------------------------------
-Route::get('invoiceconfirm/index',        'App\Http\Controllers\InvoiceconfirmController@index')->name('invoiceconfirmin');
-Route::get('invoiceconfirm/custom',       'App\Http\Controllers\InvoiceconfirmController@serch_custom')->name('invoiceconfirm_custom');
-Route::get('invoiceconfirm/serch',        'App\Http\Controllers\InvoiceconfirmController@serch')->name('invoiceconfirmserch');
-Route::post('invoiceconfirm/upload/{id}', 'App\Http\Controllers\InvoiceconfirmController@postUpload')->name('invoiceconfirmpostUpload');
-Route::resource('invoiceconfirm',         'App\Http\Controllers\InvoiceconfirmController');
+Route::get('billdatahistory/index',       'App\Http\Controllers\BillDataHistoryController@index')->name('billdatahistory_in');
+Route::get('billdatahistory/custom',      'App\Http\Controllers\BillDataHistoryController@serch_custom')->name('billdata_custom');
+Route::get('billdatahistory/serch',       'App\Http\Controllers\BillDataHistoryController@serch')->name('billdataserch');
+Route::get('billdatahistory/pdf/{id}',    'App\Http\Controllers\BillDataHistoryController@show_up01')->name('billdata_pdf01');
+// Route::post('billdata/upload/{id}', 'App\Http\Controllers\BillDataHistoryController@postUpload')->name('billdatapostUpload');
+Route::get('billdatahis_down',            'App\Http\Controllers\BillDataHistoryController@alldownload')->name('billdata_down');
+Route::resource('billdatahistory',        'App\Http\Controllers\BillDataHistoryController');
 
 //-----------------------------------------------------------------------------------------------
 //- 事務所 wokprocbook 税理士業務処理簿 07

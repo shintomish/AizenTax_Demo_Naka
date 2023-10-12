@@ -276,7 +276,7 @@
                         @case ('trans')
                         <form  class="form-inline my-2 my-lg-0 ml-2" action="{{route('transserch')}}" method="GET">
                             @break;
-                        @case ('invoice')
+                        @case ('billdata')
                         <form  class="form-inline my-2 my-lg-0 ml-2" action="{{route('invoicehistoryserch')}}" method="GET">
                             @break;
                         @default:

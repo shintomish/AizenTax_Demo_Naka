@@ -67,10 +67,9 @@ class ExcelMakeController extends Controller
 
         Log::info('ExcelMakeController excel ret_query_count = ' .print_r($count,true));
 
-        // 選択クエリーオブジェクトを返す
-        $xls_inp_data = $this->advisorsGet($request,$organization_id,$nowyear,$nowmonth);
-
+        // 配列初期化
         $work_data = array(
+            'nowyear'      => array(),
             'to_company'   => array(),
             'to_represent' => array(),
             'from_company' => array(),
@@ -83,8 +82,14 @@ class ExcelMakeController extends Controller
         );
 
         $xls_out_data      = array();
+
+        // advisorsGet()    : 選択クエリーオブジェクトを取得
+        $xls_inp_data = $this->advisorsGet($organization_id,$nowyear,$nowmonth);
+
         $cnt = 1;
         foreach ($xls_inp_data as $xls_data2) {
+
+            $work_data['nowyear']          = $nowyear;        // 年
 
             if($xls_data2->individual_class == 1) {
                 $work_data['to_company']    = $xls_data2->business_name. ' 御中';     // 会社名
@@ -116,14 +121,13 @@ class ExcelMakeController extends Controller
             $stringw .= '_'. $work_data['from_flcompany'];
             $stringw .= '_'. $cusid. '_請求書';
 
-            $string  = preg_replace("/( |　)/", "", $stringw ); //文字列の中にある半角空白と全角空白をすべて削除・除去する
+            $string  = preg_replace("/( |　)/", "", $stringw );         // 文字列の中にある半角空白と全角空白をすべて削除・除去する
             $work_data['file_name']    = $string;
-            $work_data['kanrino']      = $year .'_'. $mon. '_'. $cusid;   // 管理番号
+            $work_data['kanrino']      = $year .'_'. $mon. '_'. $cusid; // 管理番号
 
             if($nowmonth == 10) {
                 $work_data['tanka']    = ($xls_data2->fee_10);
             }
-            // $work_data['tanka']        = ($xls_data2->customers_id * 10) + 10000;
 
             array_push($xls_out_data, $work_data );
             $cnt = $cnt + 1;
@@ -133,8 +137,24 @@ class ExcelMakeController extends Controller
 
         // App\Services\ExportService
         $export_service = new ExportService();
+            /**
+             *    makeXlsPdf()    : Excelを作成しPDFに変換
+             *    $nowyear        : 年
+             *    $tourokuno      : 登録番号
+             *    $tekiyou        : 摘要名
+             *    $furibi         : 振込日
+             *    $from_company   : 送り主会社名
+             *    $from_repres    : 送り主代表者名
+             *    $tanka          : 単価
+             *    $to_company     : 宛先会社名
+             *    $to_represent   : 宛先代表者名
+             *    $foloder_name   : フォルダー名
+             *    $file_name      : ファイル名
+             *    $customers_id   : 顧客ID
+             */
         foreach ($xls_out_data as $data) {
             $export_service->makeXlsPdf(
+                $data['nowyear'],
                 $data['tourokuno'],
                 $tekiyou,
                 $furibi,
@@ -159,36 +179,52 @@ class ExcelMakeController extends Controller
 
     }
 
-    // 選択クエリーオブジェクトを返す
-    public function advisorsGet(Request $request,$organization_id,$nowyear,$nowmonth)
-    {
-        Log::info('ExcelMakeController advisorsGet START');
-
-        $query = $this->ret_query($organization_id,$nowyear,$nowmonth);
-        $advisorsfees = DB::select($query);
-
-        // Log::debug('ExcelMakeController advisorsGet $query = ' .print_r($query,true));
-
-
-        Log::info('ExcelMakeController advisorsGet END');
-
-        return $advisorsfees;
-
-    }
-
     /**
-     *    ret_query()      : Queryを取得
+     *    advisorsGet()    : 選択クエリーオブジェクトを取得
      *    $organization_id : 組織ID
      *    $nowyear         : 選択年
      *    $nowmonth        : 当月
      */
-    public function ret_query($organization_id,$nowyear,$nowmonth) 
+    public function advisorsGet($organization_id, $nowyear, $nowmonth)
     {
-        Log::info('ExcelMakeController ret_query START');
+        Log::info('ExcelMakeController advisorsGet START');
 
         $fee_name = '';
+        if($nowmonth == 1) {
+            $fee_name =  'fee_01';
+        }
+        if($nowmonth == 2) {
+            $fee_name =  'fee_02';
+        }
+        if($nowmonth == 3) {
+            $fee_name =  'fee_03';
+        }
+        if($nowmonth == 4) {
+            $fee_name =  'fee_04';
+        }
+        if($nowmonth == 5) {
+            $fee_name =  'fee_05';
+        }
+        if($nowmonth == 6) {
+            $fee_name =  'fee_06';
+        }
+        if($nowmonth == 7) {
+            $fee_name =  'fee_07';
+        }
+        if($nowmonth == 8) {
+            $fee_name =  'fee_08';
+        }
+        if($nowmonth == 9) {
+            $fee_name =  'fee_09';
+        }
         if($nowmonth == 10) {
             $fee_name =  'fee_10';
+        }
+        if($nowmonth == 11) {
+            $fee_name =  'fee_11';
+        }
+        if($nowmonth == 12) {
+            $fee_name =  'fee_12';
         }
 
         // select sql contract_entity
@@ -236,9 +272,14 @@ class ExcelMakeController extends Controller
         $query  = str_replace('%nowyear%',         $nowyear,         $query);
         $query  = str_replace('%fee_name%',        $fee_name,        $query);
 
-        Log::info('ExcelMakeController ret_query END');
+        $advisorsfees = DB::select($query);
 
-        return $query;
+        // Log::debug('ExcelMakeController advisorsGet $query = ' .print_r($query,true));
+
+        Log::info('ExcelMakeController advisorsGet END');
+
+        return $advisorsfees;
+
     }
 
     /**
@@ -247,13 +288,46 @@ class ExcelMakeController extends Controller
      *    $nowyear         : 選択年
      *    $nowmonth        : 当月
      */
-    public function ret_query_count($organization_id,$nowyear,$nowmonth) 
+    public function ret_query_count($organization_id, $nowyear, $nowmonth) 
     {
         Log::info('ExcelMakeController ret_query_count START');
 
         $fee_name = '';
+        if($nowmonth == 1) {
+            $fee_name =  'fee_01';
+        }
+        if($nowmonth == 2) {
+            $fee_name =  'fee_02';
+        }
+        if($nowmonth == 3) {
+            $fee_name =  'fee_03';
+        }
+        if($nowmonth == 4) {
+            $fee_name =  'fee_04';
+        }
+        if($nowmonth == 5) {
+            $fee_name =  'fee_05';
+        }
+        if($nowmonth == 6) {
+            $fee_name =  'fee_06';
+        }
+        if($nowmonth == 7) {
+            $fee_name =  'fee_07';
+        }
+        if($nowmonth == 8) {
+            $fee_name =  'fee_08';
+        }
+        if($nowmonth == 9) {
+            $fee_name =  'fee_09';
+        }
         if($nowmonth == 10) {
             $fee_name =  'fee_10';
+        }
+        if($nowmonth == 11) {
+            $fee_name =  'fee_11';
+        }
+        if($nowmonth == 12) {
+            $fee_name =  'fee_12';
         }
 
         // count sql
@@ -283,7 +357,6 @@ class ExcelMakeController extends Controller
 
         Log::info('ExcelMakeController ret_query_count END');        
 
-        // Log::debug('ExcelMakeController ret_query_count $query = ' .print_r($query,true));
         // Log::debug('ExcelMakeController ret_query_count $count = ' .print_r($count,true));
 
         return $count;

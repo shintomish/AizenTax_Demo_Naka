@@ -222,23 +222,23 @@
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{{route('advisorsfee.input')}}">
-                                    <i class="fas fa-wallet"></i>
-                                    顧問料金編集
+                                    <i class="fas fa-file-upload"></i>
+                                    請求書作成・アップロード
                                 </a>
                             </li>
                             {{-- 2023/09/26 --}}
                             <li class="nav-item">
-                                <a class="nav-link" href="{{route('invoiceconfirm.index')}}">
+                                <a class="nav-link" href="{{route('billdatahistory_in')}}">
                                     <i class="fas fa-wallet"></i>
                                     請求書データ送信確認ページ
                                 </a>
                             </li>
-                            <li class="nav-item">
+                            {{-- <li class="nav-item">
                                 <a class="nav-link" href="{{route('invoice.index')}}">
                                     <i class="fas fa-file-upload"></i>
                                     請求書データファイルアップロード
                                 </a>
-                            </li>
+                            </li> --}}
                             <li class="nav-item">
                                 <a class="nav-link" href="{{route('wokprocbook.input')}}">
                                     <i class="fas fa-address-book"></i>
@@ -321,19 +321,16 @@
                                 <form  class="form-inline my-2 my-lg-0 ml-2" action="{{route('notaccounth_custom')}}" method="GET">
                                 @break;
                             @case ('06')
+                                {{-- 2023/10/12 --}}
                                 <!-- タイトル -->
-                                <h3>顧問料金編集</h3>
+                                <h3>請求書作成・アップロード</h3>
                                 <form  class="form-inline my-2 my-lg-0 ml-2" action="{{route('advisorsfee_custom')}}" method="GET">
                                 @break;
-                            @case ('06_1')
+                            @case ('06_2')
+                                {{-- 2023/10/12 --}}
                                 <!-- タイトル -->
                                 <h3>請求書データ送信確認ページ</h3>
-                                <form  class="form-inline my-2 my-lg-0 ml-2" action="{{route('invoiceconfirm_custom')}}" method="GET">
-                                @break;
-                            @case ('06_2')
-                                <!-- タイトル -->
-                                <h3>請求書データファイルアップロード</h3>
-                                <form  class="form-inline my-2 my-lg-0 ml-2" action="{{route('invoice_custom')}}" method="GET">
+                                <form  class="form-inline my-2 my-lg-0 ml-2" action="{{route('billdata_custom')}}" method="GET">
                                 @break;
                             @case ('07')
                                 <!-- タイトル -->
@@ -385,10 +382,51 @@
                             <div class='btn-toolbar' role="toolbar">
                                 <div class="input-group">
                                     {{-- 進捗チェック・スケジュール --}}
+                                    <!-- 年あり 月あり 顧客名あり -->
+                                    <!-- 納期特例 03 -->
+                                    <!-- 年末調整 04 -->
+                                    <!-- 顧問料金 06 -->
+                                    <!-- 請求書データ送信確認ページ 06_2 -->
+                                    @if( $common_no == '06_2' )
+                        <div class="btn-group me-2 mb-0">
+                            <a style="" class="btn btn-primary btn-sm" href="{{ route('billdata_down') }}">
+                                <i class="fa fa-download" aria-hidden="true"></i>
+                                一括ダウンロード</a>
+                        </div>
+                                    <select style="margin-right:5px;" class="custom-select" id="year" name="year">
+                                        @foreach ($loop_year_flg as $loop_year_flg2)
+                                            @if ($loop_year_flg2['no']==0)
+                                                <option disabled value="{{ $loop_year_flg2['no'] }}">{{ $loop_year_flg2['name'] }}</option>
+                                            @else
+                                                @if ($loop_year_flg2['no']==$nowyear)
+                                                    <option selected value="{{ $loop_year_flg2['no'] }}">{{ $loop_year_flg2['name'] }}</option>
+                                                @else
+                                                    <option disabled value="{{ $loop_year_flg2['no'] }}">{{ $loop_year_flg2['name'] }}</option>
+                                                @endif
+                                            @endif
+                                        @endforeach
+                                    </select>
+
+                                    <select style="margin-right:5px;" class="custom-select" id="month" name="month">
+                                        @foreach ($loop_month_flg as $loop_month_flg2)
+                                            @if ($loop_month_flg2['no']==0)
+                                                <option disabled value="{{ $loop_month_flg2['no'] }}">{{ $loop_month_flg2['name'] }}</option>
+                                            @else
+                                                @if ($loop_month_flg2['no']==$nowmonth)
+                                                    <option selected value="{{ $loop_month_flg2['no'] }}">{{ $loop_month_flg2['name'] }}</option>
+                                                @else
+                                                    <option disabled value="{{ $loop_month_flg2['no'] }}">{{ $loop_month_flg2['name'] }}</option>
+                                                @endif
+                                            @endif
+                                        @endforeach
+                                    </select>
+                                    @endif
+                                    {{-- 進捗チェック・スケジュール --}}
                                     <!-- 年あり 顧客名あり -->
                                     <!-- 納期特例 03 -->
                                     <!-- 年末調整 04 -->
                                     <!-- 顧問料金 06 -->
+                                    <!-- 請求書データ送信確認ページ 06_2 -->
                                     <!-- 税理士業務処理簿 07 -->
                                     <!-- 業務名管理 08 -->
                                     <!-- 進捗チェック 09 -->

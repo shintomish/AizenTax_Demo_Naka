@@ -192,6 +192,24 @@
                         </ul> --}}
                         {{-- 2023/08/17 上コメント --}}
 
+                        {{-- 2023/10/12 以下追加 --}}
+                        {{-- 2023/10/12 復活 --}}
+                        {{-- 顧問料金 2022/05/20不要 --}}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{route('advisorsfee.input')}}">
+                                <i class="fas fa-file-upload"></i>
+                                請求書作成・アップロード
+                            </a>
+                        </li>
+                        {{-- 2023/10/12 --}}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{route('billdatahistory_in')}}">
+                                <i class="fas fa-wallet"></i>
+                                請求書データ送信確認ページ
+                            </a>
+                        </li>
+                        {{-- 2023/10/12 上追加 --}}
+
                         {{-- 2023/08/17 以下追加 --}}
                         <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
                             <span>アップロード資料</span>

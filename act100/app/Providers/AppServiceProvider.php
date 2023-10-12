@@ -330,6 +330,24 @@ class AppServiceProvider extends ServiceProvider
         );
         view()->share('loop_year_flg', $loop_year_flg);
 
+        // `月,
+        $loop_month_flg = array(
+            '00' => array ( 'no'=> 0,   'name'=>'選択してください', ),
+            '01' => array ( 'no'=> 1,   'name'=>'01月', ),
+            '02' => array ( 'no'=> 2,   'name'=>'02月', ),
+            '03' => array ( 'no'=> 3,   'name'=>'03月', ),
+            '04' => array ( 'no'=> 4,   'name'=>'04月', ),
+            '05' => array ( 'no'=> 5,   'name'=>'05月', ),
+            '06' => array ( 'no'=> 6,   'name'=>'06月', ),
+            '07' => array ( 'no'=> 7,   'name'=>'07月', ),
+            '08' => array ( 'no'=> 8,   'name'=>'08月', ),
+            '09' => array ( 'no'=> 9,   'name'=>'09月', ),
+            '10' => array ( 'no'=> 10,  'name'=>'10月', ),
+            '11' => array ( 'no'=> 11,  'name'=>'11月', ),
+            '12' => array ( 'no'=> 12,  'name'=>'12月', ),
+        );
+        view()->share('loop_month_flg', $loop_month_flg);
+
         // `業種,
         $loop_industry = array(
             '000' => array ( 'no'=>    0,  'name'=>'選択してください', ),

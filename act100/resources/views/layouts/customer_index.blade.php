@@ -216,14 +216,21 @@
                                     会計未処理事業者
                                 </a>
                             </li>
-                            {{-- 2022/05/20 --}}
-                            {{-- 顧問料金 不要 --}}
-                            {{-- <li class="nav-item">
+                            {{-- 2023/10/12 復活 --}}
+                            {{-- 顧問料金 2022/05/20不要 --}}
+                            <li class="nav-item">
                                 <a class="nav-link" href="{{route('advisorsfee.input')}}">
-                                    <i class="fas fa-wallet"></i>
-                                    顧問料金
+                                    <i class="fas fa-file-upload"></i>
+                                    請求書作成・アップロード
                                 </a>
-                            </li> --}}
+                            </li>
+                            {{-- 2023/10/12 --}}
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{route('billdatahistory_in')}}">
+                                    <i class="fas fa-wallet"></i>
+                                    請求書データ送信確認ページ
+                                </a>
+                            </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{{route('wokprocbook.input')}}">
                                     {{-- <span data-feather="file"></span> --}}
