@@ -53,6 +53,8 @@ class AdvisorsfeeController extends Controller
 
         // * 今年の年を取得2 Book
         $nowyear   = intval($this->get_now_year2());
+        //今年の月を取得
+        $nowmonth = intval($this->get_now_month());
 
         if($organization_id == 0) {
             $customers = Customer::where('organization_id','>=',$organization_id)
@@ -147,7 +149,7 @@ class AdvisorsfeeController extends Controller
         // 2023/09/22
         $userid  = $user_id;
 
-        $compacts = compact( 'userid','common_no','advisorsfees', 'customers','nowyear','keyword2' );
+        $compacts = compact( 'userid','common_no','advisorsfees', 'customers','nowyear','keyword2','nowmonth' );
         Log::info('advisorsfee index END');
         return view( 'advisorsfee.index', $compacts );
     }
@@ -171,6 +173,8 @@ class AdvisorsfeeController extends Controller
 
         // * 今年の年を取得2 Book
         $nowyear   = intval($this->get_now_year2());
+        //今月の月を取得
+        $nowmonth = intval($this->get_now_month());
 
         if($organization_id == 0) {
             $customers = Customer::where('organization_id','>=',$organization_id)
@@ -263,9 +267,6 @@ class AdvisorsfeeController extends Controller
 
         // 2023/09/22
         $userid  = $user_id;
-
-        //今月の月を取得
-        $nowmonth = intval($this->get_now_month());
 
         Log::debug('advisorsfee input nowyear = ' .print_r($nowyear,true));
 
@@ -372,8 +373,11 @@ class AdvisorsfeeController extends Controller
 
         $organization = $this->auth_user_organization();
         $organization_id = $organization->id;
+
         // * 今年の年を取得2 Book
         $nowyear   = intval($this->get_now_year2());
+        //今月の月を取得
+        $nowmonth = intval($this->get_now_month());
 
         if($organization_id == 0) {
             // customersを取得
@@ -399,7 +403,7 @@ class AdvisorsfeeController extends Controller
                             ->whereNull('deleted_at')
                             ->get();
 
-        $compacts = compact( 'customers','advisorsfees','organization_id','nowyear' );
+        $compacts = compact( 'customers','advisorsfees','organization_id','nowyear','nowmonth' );
 
         Log::info('advisorsfee create END');
         return view( 'advisorsfee.create', $compacts );
@@ -478,6 +482,11 @@ class AdvisorsfeeController extends Controller
     {
         Log::info('advisorsfee edit START');
 
+        // * 今年の年を取得2 Book
+        $nowyear   = intval($this->get_now_year2());
+        //今月の月を取得
+        $nowmonth = intval($this->get_now_month());
+
         $organization    = $this->auth_user_organization();
         $organization_id = $organization->id;
         $organizations = DB::table('organizations')
@@ -515,7 +524,7 @@ class AdvisorsfeeController extends Controller
 
         $advisorsfee = Advisorsfee::find($id);
 
-        $compacts = compact( 'advisorsfee', 'customers', 'organization_id' );
+        $compacts = compact( 'advisorsfee', 'customers', 'organization_id','nowyear','nowmonth' );
 
         // Log::debug('customer edit  = ' . $customer);
         Log::info('advisorsfee edit END');
@@ -645,6 +654,7 @@ class AdvisorsfeeController extends Controller
 
         // * 今年の年を取得
         $nowyear    = intval($this->get_now_year());
+
         // 日付or年が入力された
         if($keyword || $keyyear) {
             if($organization_id == 0) {
