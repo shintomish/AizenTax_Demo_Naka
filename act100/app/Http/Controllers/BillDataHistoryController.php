@@ -3,7 +3,6 @@
 // 事務所 請求書データ確認
 namespace App\Http\Controllers;
 
-use DateTime;
 use App\Models\Billdata;
 use App\Models\Customer;
 
@@ -33,7 +32,7 @@ class BillDataHistoryController extends Controller
     {
         Log::info('billdatahistory index START');
 
-        // 年を取得2 
+        // 年を取得2
         $nowyear   = intval($this->get_now_year2());
         //今年の月を取得
         $nowmonth = intval($this->get_now_month());
@@ -93,8 +92,8 @@ class BillDataHistoryController extends Controller
     public function serch(Request $request)
     {
         Log::info('billdatahistory serch START');
-        
-        // 年を取得2 
+
+        // 年を取得2
         $nowyear   = intval($this->get_now_year2());
 
         //-------------------------------------------------------------
@@ -169,7 +168,7 @@ class BillDataHistoryController extends Controller
     {
         Log::info('billdatahistory serch_custom START');
 
-        // 年を取得2 
+        // 年を取得2
         $nowyear   = intval($this->get_now_year2());
         //今年の月を取得
         $nowmonth = intval($this->get_now_month());
@@ -316,7 +315,7 @@ class BillDataHistoryController extends Controller
     {
         Log::info('billdatahistory all_download START');
 
-        // 年を取得2 
+        // 年を取得2
         $nowyear   = intval($this->get_now_year2());
         //今年の月を取得
         $nowmonth = intval($this->get_now_month());
@@ -431,7 +430,7 @@ class BillDataHistoryController extends Controller
 //         } else {
 //             // // 選択された顧客IDからCustomer情報(フォルダー名)を取得する
 //             // $customers  = $this->auth_user_foldername($customer_id);
-                
+
 //             // // 2023/08/18
 //             // $uploadusers = DB::table('uploadusers')
 //             //     ->where('customer_id','=',$customer_id)

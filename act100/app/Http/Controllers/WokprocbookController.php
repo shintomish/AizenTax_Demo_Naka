@@ -1,28 +1,21 @@
 <?php
 namespace App\Http\Controllers;
 
-use File;
 use Validator;
 use DateTime;
 use App\Models\User;
 use App\Models\Customer;
 use App\Models\Wokprocbook;
-use App\Models\Parameter;
 
 // use Request;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
-use Illuminate\Validation\Rule;
-use Illuminate\Support\Facades\Auth;
+
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
-use Illuminate\Support\Facades\Hash;
+
 use Symfony\Component\HttpFoundation\StreamedResponse;
 
-use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
-use Illuminate\Foundation\Bus\DispatchesJobs;
-use Illuminate\Foundation\Validation\ValidatesRequests;
-use Illuminate\Routing\Controller as BaseController;
 
 class WokprocbookController extends Controller
 {
