@@ -449,7 +449,7 @@
                                                 @if ($loop_year_flg2['no']==$nowyear)
                                                     <option selected value="{{ $loop_year_flg2['no'] }}">{{ $loop_year_flg2['name'] }}</option>
                                                 @else
-                                                    <option disabled value="{{ $loop_year_flg2['no'] }}">{{ $loop_year_flg2['name'] }}</option>
+                                                    <option value="{{ $loop_year_flg2['no'] }}">{{ $loop_year_flg2['name'] }}</option>
                                                 @endif
                                             @endif
                                         @endforeach
@@ -463,7 +463,7 @@
                                                 @if ($loop_month_flg2['no']==$nowmonth)
                                                     <option selected value="{{ $loop_month_flg2['no'] }}">{{ $loop_month_flg2['name'] }}</option>
                                                 @else
-                                                    <option disabled value="{{ $loop_month_flg2['no'] }}">{{ $loop_month_flg2['name'] }}</option>
+                                                    <option value="{{ $loop_month_flg2['no'] }}">{{ $loop_month_flg2['name'] }}</option>
                                                 @endif
                                             @endif
                                         @endforeach
@@ -478,9 +478,9 @@
                                     <!-- 業務名管理 08 -->
                                     <!-- 進捗チェック 09 -->
                                     <!-- スケジュール 10 -->
-                                    @if( $common_no == '07'   || 
-                                         $common_no == '07_2' || 
-                                         $common_no == '03'   || 
+                                    @if( $common_no == '07'   ||
+                                         $common_no == '07_2' ||
+                                         $common_no == '03'   ||
                                          $common_no == '04'
                                         )
 
