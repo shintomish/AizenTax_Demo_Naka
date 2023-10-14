@@ -15,10 +15,10 @@
             <thead>
                 <tr>
                     <th class="text-left"scope="col">ID</th>
-                    <th scope="col">送信ファイル</th>
-                    <th scope="col">送信日</th>
-                    <th class="text-left" scope="col">ファイルサイズ</th>
                     <th scope="col">会社名</th>
+                    <th scope="col">送信ファイル</th>
+                    <th class="text-left" scope="col">ファイルサイズ</th>
+                    <th scope="col">送信日</th>
                     <th scope="col">未読/既読</th>
                     <th scope="col">操作</th>
                 </tr>
@@ -29,6 +29,16 @@
                     @foreach($billdatas as $billdata)
                     <tr>
                         <td class="text-left">{{ number_format($billdata->id) }}</td>
+
+                        {{-- 会社名 --}}
+                        <td>
+                            @foreach ($customers as $customers2)
+                                @if ($customers2->id==$billdata->customer_id)
+                                    {{$customers2['business_name']}}
+                                @endif
+                            @endforeach
+                        </td>
+
                         <td>{{ $billdata->filename }}</td>
                             @php
                                 $str = "";
@@ -71,16 +81,12 @@
                                     $clslight = "";
                                 }
                         @endphp
-                        <td >{{ $str }}</td>
+                        {{-- ファイルサイズ --}}
                         <td class="text-left">{{ $temp }}</td>
 
-                        <td>
-                            @foreach ($customers as $customers2)
-                                @if ($customers2->id==$billdata->customer_id)
-                                    {{$customers2['business_name']}}
-                                @endif
-                            @endforeach
-                        </td>
+                        {{-- 送信日 --}}
+                        <td >{{ $str }}</td>
+
                         {{-- 未読/既読 --}}
                         <td>
                             <h6>

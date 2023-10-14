@@ -16,9 +16,9 @@
             <thead>
                 <tr>
                     <th class="text-left"scope="col">ID</th>
-                    <th scope="col">ダウンロードファイル</th>
-                    <th scope="col">受信日</th>
+                    <th scope="col">受信ファイル名</th>
                     <th class="text-left" scope="col">ファイルサイズ</th>
+                    <th scope="col">@sortablelink('created_at', '受信日')</th>
                     <th scope="col">会社名</th>
                     <th scope="col"> </th>
                     <th scope="col">操作</th>
@@ -30,6 +30,7 @@
                     @foreach($billdatas as $invoice)
                     <tr>
                         <td class="text-left">{{ number_format($invoice->id) }}</td>
+                        {{-- 受信ファイル名 --}}
                         <td>{{ $invoice->filename }}</td>
                             @php
                                 $str = "";
@@ -64,8 +65,12 @@
                                     $clslight = "";
                                 }
                         @endphp
-                        <td >{{ $str }}</td>
+
+                        {{-- ファイルサイズ --}}
                         <td class="text-left">{{ $temp }}</td>
+
+                        {{-- 受信日 --}}
+                        <td >{{ $str }}</td>
 
                         <td>
                             @foreach ($customer_findrec as $customer_findrec2)
