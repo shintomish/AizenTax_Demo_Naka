@@ -6,14 +6,14 @@ use App\Models\Billdata;
 
 use PhpOffice\PhpSpreadsheet\Reader\Xlsx as XlsxReader;
 use PhpOffice\PhpSpreadsheet\Writer\Xlsx as XlsxWriter;
-use PhpOffice\PhpSpreadsheet\IOFactory;
+// use PhpOffice\PhpSpreadsheet\IOFactory;
 use Maatwebsite\Excel\Facades\Excel;
 
-use Illuminate\Http\Request;
+// use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Storage;
+// use Illuminate\Support\Facades\Storage;
 
 class ExportService
 {
@@ -43,9 +43,9 @@ class ExportService
                         $from_repres,
                         $kanrino,
                         $tanka,
-                        $to_company, 
-                        $to_represent, 
-                        $foloder_name, 
+                        $to_company,
+                        $to_represent,
+                        $foloder_name,
                         $file_name,
                         $customers_id
                     )
@@ -74,7 +74,7 @@ class ExportService
         $worksheet->setCellValue('K22', $tanka);
         // セルに指定した値挿入 B22 適用欄
         $worksheet->setCellValue('B22', $tekiyou);
-        // セルに指定した値挿入 C5 会社名 
+        // セルに指定した値挿入 C5 会社名
         $worksheet->setCellValue('C5', $to_company);
         // セルに指定した値挿入 C6 代表者名
         $worksheet->setCellValue('C6', $to_represent. ' 様');
