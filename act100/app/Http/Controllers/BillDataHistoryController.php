@@ -169,60 +169,185 @@ class BillDataHistoryController extends Controller
     {
         Log::info('billdatahistory serch_custom START');
 
+        //-------------------------------------------------------------
+        //- Request パラメータ
+        //-------------------------------------------------------------
+        $keyword = $request->Input('keyword');
+        $customer_id = $request->Input('customer_id');
+
         // 年を取得2
-        $nowyear   = intval($this->get_now_year2());
+        $keyyear   = intval($this->get_now_year2());
+
         //今年の月を取得
         $nowmonth = intval($this->get_now_month());
 
         //-------------------------------------------------------------
         //- Request パラメータ
         //-------------------------------------------------------------
-        $customer_id = $request->Input('customer_id');
+        // $customer_id = $request->Input('customer_id');
 
         // ログインユーザーのユーザー情報を取得する
         $user   = $this->auth_user_info();
         $userid = $user->id;
         $organization_id =  $user->organization_id;
 
-        // 顧客が選択された
-        if($customer_id) {
-            $billdatas = Billdata::where('extension_flg',2)
-                ->where('customer_id',$customer_id)
-                ->where('year',       $nowyear)
-                ->whereNull('deleted_at')
-                ->orderByRaw('created_at DESC')
-                ->sortable()
-                ->paginate(300);
-        } else {
-            $billdatas = Billdata::where('extension_flg',2)
-                ->where('year',       $nowyear)
-                ->whereNull('deleted_at')
-                ->orderByRaw('created_at DESC')
-                ->sortable()
-                ->paginate(300);
-        };
-
         // Customer(複数レコード)情報を取得する
         $customer_findrec = $this->auth_customer_findrec();
 
-        // Customer(all)情報を取得する
-        if($organization_id == 0) {
-            $customers = Customer::whereNull('deleted_at');
-                            // ->sortable()
-                            // ->paginate(10);
+        // 名前が入力された
+        if($keyword) {
+            if($organization_id == 0) {
+                // customersを取得
+                $customers = Customer::where('organization_id','>=',$organization_id)
+                                    ->whereNull('deleted_at')
+                                    ->get();
+                // billdatasを取得
+                $billdatas = Billdata::select(
+                                    'billdatas.id as id'
+                                    ,'billdatas.organization_id as organization_id'
+                                    ,'billdatas.customer_id as customer_id'
+                                    ,'billdatas.year as year'
+                                    ,'billdatas.filepath as filepath'
+                                    ,'billdatas.filename as filename'
+                                    ,'billdatas.filesize as filesize'
+                                    ,'billdatas.extension_flg as extension_flg'
+                                    ,'billdatas.urgent_flg as urgent_flg'
+                                    ,'billdatas.created_at as created_at'
+                                    
+                                    ,'customers.id as customers_id'
+                                    ,'customers.business_name as business_name'
+                                    ,'customers.business_address as business_address'
+
+                                    )
+                                    ->leftJoin('customers', function ($join) {
+                                        $join->on('billdatas.customer_id', '=', 'customers.id');
+                                    })
+
+                                    ->where('billdatas.organization_id','>=',$organization_id)
+                                    ->whereNull('customers.deleted_at')
+                                    ->whereNull('billdatas.deleted_at')
+                                    ->where('customers.business_name', 'like', "%$keyword%")
+                                    ->where('billdatas.year', '=', $keyyear)
+                                    ->orderBy('billdatas.created_at', 'desc')
+                                    ->paginate(500);
+            } else {
+                // customersを取得
+                $customers = Customer::where('organization_id','=',$organization_id)
+                                    ->whereNull('deleted_at')
+                                    ->get();
+
+                // billdatasを取得
+                $billdatas = Billdata::select(
+                                    'billdatas.id as id'
+                                    ,'billdatas.organization_id as organization_id'
+                                    ,'billdatas.customer_id as customer_id'
+                                    ,'billdatas.year as year'
+                                    ,'billdatas.filepath as filepath'
+                                    ,'billdatas.filename as filename'
+                                    ,'billdatas.filesize as filesize'
+                                    ,'billdatas.extension_flg as extension_flg'
+                                    ,'billdatas.urgent_flg as urgent_flg'
+                                    ,'billdatas.created_at as created_at'
+
+                                    ,'customers.id as customers_id'
+                                    ,'customers.business_name as business_name'
+                                    ,'customers.business_address as business_address'
+
+                                    )
+                                    ->leftJoin('customers', function ($join) {
+                                        $join->on('billdatas.customer_id', '=', 'customers.id');
+                                    })
+
+                                    ->where('billdatas.organization_id','>=',$organization_id)
+                                    ->whereNull('customers.deleted_at')
+                                    ->whereNull('billdatas.deleted_at')
+                                    ->where('customers.business_name', 'like', "%$keyword%")
+                                    ->where('billdatas.year', '=', $keyyear)
+                                    ->orderBy('billdatas.created_at', 'desc')
+                                    ->paginate(500);
+            }
+        // 名前が入力されてない
         } else {
-            $customers = Customer::where('organization_id','=',$organization_id)
-                            ->whereNull('deleted_at');
-                            // ->sortable()
-                            // ->paginate(10);
-        }
+            if($organization_id == 0) {
+                // customersを取得
+                $customers = Customer::where('organization_id','>=',$organization_id)
+                                    ->whereNull('deleted_at')
+                                    ->get();
+                // billdatasを取得
+                $billdatas = Billdata::select(
+                                    'billdatas.id as id'
+                                    ,'billdatas.organization_id as organization_id'
+                                    ,'billdatas.customer_id as customer_id'
+                                    ,'billdatas.year as year'
+                                    ,'billdatas.filepath as filepath'
+                                    ,'billdatas.filename as filename'
+                                    ,'billdatas.filesize as filesize'
+                                    ,'billdatas.extension_flg as extension_flg'
+                                    ,'billdatas.urgent_flg as urgent_flg'
+                                    ,'billdatas.created_at as created_at'
+
+                                    ,'customers.id as customers_id'
+                                    ,'customers.business_name as business_name'
+                                    ,'customers.business_address as business_address'
+
+                                    )
+                                    ->leftJoin('customers', function ($join) {
+                                        $join->on('billdatas.customer_id', '=', 'customers.id');
+                                    })
+
+                                    ->where('billdatas.organization_id','>=',$organization_id)
+                                    ->whereNull('customers.deleted_at')
+                                    ->whereNull('billdatas.deleted_at')
+                                    ->where('billdatas.year', '=', $keyyear)
+                                    ->orderBy('billdatas.created_at', 'desc')
+                                    ->paginate(500);
+            } else {
+                // customersを取得
+                $customers = Customer::where('organization_id','=',$organization_id)
+                                    ->whereNull('deleted_at')
+                                    ->get();
+
+                // billdatasを取得
+                $billdatas = Billdata::select(
+                                    'billdatas.id as id'
+                                    ,'billdatas.organization_id as organization_id'
+                                    ,'billdatas.customer_id as customer_id'
+                                    ,'billdatas.year as year'
+                                    ,'billdatas.filepath as filepath'
+                                    ,'billdatas.filename as filename'
+                                    ,'billdatas.filesize as filesize'
+                                    ,'billdatas.extension_flg as extension_flg'
+                                    ,'billdatas.urgent_flg as urgent_flg'
+                                    ,'billdatas.created_at as created_at'
+
+                                    ,'customers.id as customers_id'
+                                    ,'customers.business_name as business_name'
+                                    ,'customers.business_address as business_address'
+
+                                    )
+                                    ->leftJoin('customers', function ($join) {
+                                        $join->on('billdatas.customer_id', '=', 'customers.id');
+                                    })
+
+                                    ->where('billdatas.organization_id','=',$organization_id)
+                                    ->whereNull('customers.deleted_at')
+                                    ->whereNull('billdatas.deleted_at')
+                                    ->where('billdatas.year', '=', $keyyear)
+                                    ->orderBy('billdatas.created_at', 'desc')
+                                    ->paginate(500);
+            }
+        };
+
+        // * 今年の年を取得 inputに変更 2023/03/13
+        // $nowyear = $this->get_now_year();
+        $nowyear  = $keyyear;
 
         $common_no = '06_2';
-        $keyword  = null;
-        $keyword2 = null;
+        $keyword2  = $keyword;
         $compacts = compact( 'nowyear','nowmonth','common_no','billdatas','customers','customer_findrec','customer_id','keyword','keyword2','userid' );
 
         Log::info('billdatahistory serch_custom END');
+
         return view( 'billdatahistory.index', $compacts );
     }
 
