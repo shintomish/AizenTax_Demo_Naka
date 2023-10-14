@@ -1164,7 +1164,7 @@ class WokprocbookController extends Controller
                                         ->where('customers.business_name', 'like', "%$keyword%")
                                         ->where('wokprocbooks.year', '=', $keyyear)
                                         ->sortable('id','business_name','name','business_address')
-                                                                            
+
                                         ->orderBy('customers.business_name', 'asc')  // 2022/10/17
                                         ->orderBy('wokprocbooks.refnumber', 'asc')
                                         ->orderBy('wokprocbooks.proc_date', 'asc')
@@ -1234,7 +1234,7 @@ class WokprocbookController extends Controller
 
         // Log::debug('wokprocbookrs store $wokprocbookrs = ' . print_r($wokprocbookrs, true));
         $compacts = compact( 'userid','common_no','users','customers','wokprocbooks','nowyear','keyword2','frdate','todate' );
-        Log::info('wokprocbookr serch END');
+        Log::info('wokprocbook serch END');
 
         // return view('wokprocbook.index', ['wokprocbooks' => $wokprocbooks]);
         return view('wokprocbook.input', $compacts);
@@ -1314,7 +1314,7 @@ class WokprocbookController extends Controller
                                     // ($keyword)の絞り込み
                                     ->where('customers.business_name', 'like', "%$keyword%")
                                     ->where('wokprocbooks.year', '=', $keyyear) // 2023/03/13 ADD
-                                    // ->sortable('id','business_name','name','business_address') // 2023/03/13 
+                                    // ->sortable('id','business_name','name','business_address') // 2023/03/13
                                     ->sortable('business_name','refnumber','id','name','business_address')
 
                                     ->orderBy('customers.business_name', 'asc')  // 2022/10/17
@@ -1373,7 +1373,7 @@ class WokprocbookController extends Controller
                                         ->where('customers.business_name', 'like', "%$keyword%")
                                         ->where('wokprocbooks.year', '=', $keyyear) // 2023/03/13 ADD
 
-                                        // ->sortable('id','business_name','name','business_address') // 2023/03/13 
+                                        // ->sortable('id','business_name','name','business_address') // 2023/03/13
                                         ->sortable('business_name','refnumber','id','name','business_address')
 
                                         ->orderBy('customers.business_name', 'asc')  // 2022/10/17
@@ -1442,7 +1442,7 @@ class WokprocbookController extends Controller
                                         ->whereNull('wokprocbooks.deleted_at')
                                         ->where('wokprocbooks.year', '=', $keyyear) // 2023/03/13 ADD
 
-                                        // ->sortable('id','business_name','name','business_address') // 2023/03/13 
+                                        // ->sortable('id','business_name','name','business_address') // 2023/03/13
                                         ->sortable('business_name','refnumber','id','name','business_address')
 
                                         ->orderBy('customers.business_name', 'asc')  // 2022/10/17
@@ -1509,7 +1509,7 @@ class WokprocbookController extends Controller
                                         ->whereNull('wokprocbooks.deleted_at')
                                         ->where('wokprocbooks.year', '=', $keyyear) // 2023/03/13 ADD
 
-                                        // ->sortable('id','business_name','name','business_address') // 2023/03/13 
+                                        // ->sortable('id','business_name','name','business_address') // 2023/03/13
                                         ->sortable('business_name','refnumber','id','name','business_address')
 
                                         ->orderBy('customers.business_name', 'asc')  // 2022/10/17
