@@ -36,7 +36,7 @@ class ExportService
      */
     public function makeXlsPdf(
                         $nowyear,
-                        $nowmon,
+                        $nowmonth,
                         $tourokuno,
                         $tekiyou,
                         $furibi,
@@ -107,7 +107,7 @@ class ExportService
             $extension_flg      = 1;
             $extension_filename = $file_name . '.xlsx';
             $ins_path = 'public/invoice/xls/'. $foloder_name. '/'. $file_name. '.xlsx';
-            $this->billdataUpdate($nowyear, $nowmon, $ins_path, $extension_filename, $customers_id, $filesize, $extension_flg);
+            $this->billdataUpdate($nowyear, $nowmonth, $ins_path, $extension_filename, $customers_id, $filesize, $extension_flg);
 
             // ExcelファイルをPDFに変換するコード
             $pdf_path = $this->convertOfficeToPdf($file_name, $foloder_name, $export_xls_path);
@@ -119,7 +119,7 @@ class ExportService
                 $extension_flg      = 2;
                 $extension_filename = $file_name . '.pdf';
                 $ins_path = 'public/invoice/pdf/'. $foloder_name. '/'. $file_name. '.pdf';
-                $this->billdataUpdate($nowyear, $nowmon, $ins_path, $extension_filename, $customers_id, $filesize, $extension_flg);
+                $this->billdataUpdate($nowyear, $nowmonth, $ins_path, $extension_filename, $customers_id, $filesize, $extension_flg);
             }
         }
 
@@ -182,7 +182,7 @@ class ExportService
         return file_exists($pdf_path) ? $pdf_path : null;
     }
 
-    public function billdataUpdate($nowyear, $nowmon, $filepath, $fileName, $customers_id, $filesize, $extension_flg)
+    public function billdataUpdate($nowyear, $nowmonth, $filepath, $fileName, $customers_id, $filesize, $extension_flg)
     {
         Log::info('ExportService  billdataUpdate START');
 
@@ -192,7 +192,7 @@ class ExportService
 
             $billdata = new Billdata();
             $billdata->year            = $nowyear;
-            $billdata->mon             = $nowmon;
+            $billdata->mon             = $nowmonth;
             $billdata->filepath        = $filepath;
             $billdata->filename        = $fileName;
             $billdata->organization_id = 1;

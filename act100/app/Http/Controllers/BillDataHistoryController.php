@@ -594,7 +594,6 @@ class BillDataHistoryController extends Controller
             $query .=  ' (billdatas.organization_id = %organization_id%) AND';
         }
 
-        $query .=  ' (billdatas.created_at LIKE %yearmonth%) AND';
         $query .=  ' (billdatas.deleted_at is NULL ) AND ';
         $query .=  ' (billdatas.year = %nowyear% ) AND ';
         $query .=  ' (billdatas.mon = %nowmonth% ) ';
