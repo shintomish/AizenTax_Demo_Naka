@@ -604,9 +604,8 @@ class BillDataHistoryController extends Controller
         $query  = str_replace('%nowyear%',         $nowyear,         $query);
         $query  = str_replace('%nowmonth%',        $nowmonth,        $query);
 
-        // $billdatas = DB::select($query);
-        // $count     = $billdatas[0]->count;
-        $count     = 0;
+        $billdatas = DB::select($query);
+        $count     = $billdatas[0]->count;
 
         Log::info('billdatahistory ret_query_count END');
 
