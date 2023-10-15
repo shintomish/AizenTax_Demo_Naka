@@ -382,9 +382,8 @@
                             <div class='btn-toolbar' role="toolbar">
                                 <div class="input-group">
                                     <!-- 年あり 月あり 顧客名あり -->
-                                    <!-- 顧問料金 06 -->
+                                    <!-- 請求書作成 06 -->
                                     @if( $common_no == '06')
-
                                     <select style="margin-right:5px;" class="custom-select" id="year" name="year">
                                         @foreach ($loop_year_flg as $loop_year_flg2)
                                             @if ($loop_year_flg2['no']==0)
@@ -413,15 +412,14 @@
                                         @endforeach
                                     </select>
                                     @endif
-                                    {{-- 進捗チェック・スケジュール --}}
                                     <!-- 年あり 月あり 顧客名あり -->
                                     <!-- 請求書データ送信確認ページ 06_2 -->
                                     @if( $common_no == '06_2' )
                         <div class="btn-group me-2 mb-0">
-                            <a style="" class="btn btn-primary btn-sm" href="{{ route('billdata_down') }}">
-                                <i class="fa fa-download" aria-hidden="true"></i>
-                                一括ダウンロード</a>
-                        </div>
+
+                <button style="margin-right:5px;" id="submit_new" name="submit_new" type="submit" class="btn btn-primary" formaction="{!! route('billdata_down') !!}">
+                    <i class="fa fa-download" aria-hidden="true"></i>一括ダウンロード</button>
+
                                     <select style="margin-right:5px;" class="custom-select" id="year" name="year">
                                         @foreach ($loop_year_flg as $loop_year_flg2)
                                             @if ($loop_year_flg2['no']==0)
@@ -449,6 +447,7 @@
                                             @endif
                                         @endforeach
                                     </select>
+                            </div>
                                     @endif
                                     {{-- 進捗チェック・スケジュール --}}
                                     <!-- 年あり 顧客名あり -->
@@ -538,6 +537,19 @@
 
         <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script>
 
-    </body>
+        {{-- <script type="text/javascript">
+            $('.submit_new').click(function()
+                if( !confirm('一括ダウンロードしますか？') ){
+                    /* キャンセルの時の処理 */
+                    return false;
+                }
+                else{
+                    /*　OKの時の処理 */
+                    return true;
+                }
+            });
+        </script> --}}
 
+    </body>
 </html>
+

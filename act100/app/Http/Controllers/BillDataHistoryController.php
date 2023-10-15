@@ -169,6 +169,10 @@ class BillDataHistoryController extends Controller
     {
         Log::info('billdatahistory serch_custom START');
 
+        if ($request->has('submit_new')) {
+            Log::info('billdatahistory submit_new serch_custom END');
+            return redirect()->route('billdatahistory_in');
+        }
         //-------------------------------------------------------------
         //- Request パラメータ
         //-------------------------------------------------------------
@@ -213,7 +217,7 @@ class BillDataHistoryController extends Controller
                                     ,'billdatas.extension_flg as extension_flg'
                                     ,'billdatas.urgent_flg as urgent_flg'
                                     ,'billdatas.created_at as created_at'
-                                    
+
                                     ,'customers.id as customers_id'
                                     ,'customers.business_name as business_name'
                                     ,'customers.business_address as business_address'
@@ -441,41 +445,35 @@ class BillDataHistoryController extends Controller
     {
         Log::info('billdatahistory all_download START');
 
-        // 年を取得2
-        $nowyear   = intval($this->get_now_year2());
-        //今年の月を取得
-        $nowmonth = intval($this->get_now_month());
+        // // 年を取得2
+        // $nowyear   = intval($this->get_now_year2());
+        // //今年の月を取得
+        // $nowmonth = intval($this->get_now_month());
 
         //-------------------------------------------------------------
         //- Request パラメータ
         //-------------------------------------------------------------
-        $customer_id = $request->Input('customer_id');
+        $nowyear  = $request->Input('year');
+        $nowmonth = $request->Input('month');
 
         // ログインユーザーのユーザー情報を取得する
         $user   = $this->auth_user_info();
         $userid = $user->id;
         $organization_id =  $user->organization_id;
 
-        // // Jsonより取得
-        // $jsonfile = storage_path() . "/app/userdata/customer_info_". $users->id. ".json";
-        // $jsonUrl = $jsonfile; //JSONファイルの場所とファイル名を記述
-        // $customer_id = 0;
-        // if (file_exists($jsonUrl)) {
-        //     $json = file_get_contents($jsonUrl);
-        //     $json = mb_convert_encoding($json, 'UTF8', 'ASCII,JIS,UTF-8,EUC-JP,SJIS-WIN');
-        //     $obj = json_decode($json, true);
-        //     $obj = $obj["res"]["info"];
-        //     foreach($obj as $key => $val) {
-        //         $customer_id = $val["status"];
-        //     }
-        //     // Log::info('client postUpload  jsonUrl OK');
-        // } else {
-        //     // echo "データがありません";
-        //     // Log::info('client postUpload  jsonUrl NG');
+        // ret_query_count(): Queryを取得 Count用
+        $count = $this->ret_query_count($organization_id, $nowyear, $nowmonth);
+        if($count == 0) {
 
-        // }
+            Log::info('billdatahistory ret_query_count $count = 0 END');
 
-//         // 選択された顧客IDからCustomer情報(フォルダー名)を取得する
+            // toastrというキーでメッセージを格納　今月の請求データはありません
+            session()->flash('toastr', config('toastr.invoice_warning'));
+
+            return redirect()->route('billdatahistory_in');
+        }
+
+        //         // 選択された顧客IDからCustomer情報(フォルダー名)を取得する
 //         // $customers  = $this->auth_user_foldername($u_id);
 //         $customers  = $this->auth_user_foldername($customer_id);
 //         $foldername = $customers->foldername;
@@ -571,5 +569,52 @@ class BillDataHistoryController extends Controller
 //         }
 
         Log::info('billdatahistory all_download END');
+
+        return redirect()->route('billdatahistory_in');
     }
+
+    /**
+     *    ret_query_count(): Queryを取得 Count用
+     *    $organization_id : 組織ID
+     *    $nowyear         : 選択年
+     *    $nowmonth        : 選択月
+     */
+    public function ret_query_count($organization_id, $nowyear, $nowmonth)
+    {
+        Log::info('billdatahistory ret_query_count START');
+
+        // count sql
+        $query = '';
+        $query .= 'select count(*) AS count ';
+        $query .= 'from billdatas ';
+        $query .= 'where ';
+        if($organization_id == 0) {
+            $query .=  ' (billdatas.organization_id >= %organization_id%) AND';
+        } else {
+            $query .=  ' (billdatas.organization_id = %organization_id%) AND';
+        }
+
+        $query .=  ' (billdatas.created_at LIKE %yearmonth%) AND';
+        $query .=  ' (billdatas.deleted_at is NULL ) AND ';
+        $query .=  ' (billdatas.year = %nowyear% ) AND ';
+        $query .=  ' (billdatas.mon = %nowmonth% ) ';
+
+        // $query .=  ' GROUP BY id; ';
+
+        $query  = str_replace('%organization_id%', $organization_id, $query);
+        $query  = str_replace('%nowyear%',         $nowyear,         $query);
+        $query  = str_replace('%nowmonth%',        $nowmonth,        $query);
+
+        // $billdatas = DB::select($query);
+        // $count     = $billdatas[0]->count;
+        $count     = 0;
+
+        Log::info('billdatahistory ret_query_count END');
+
+        Log::debug('billdatahistory ret_query_count $query = ' .print_r($query,true));
+
+        return $count;
+    }
+
+
 }

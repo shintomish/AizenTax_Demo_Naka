@@ -26,7 +26,7 @@ class ExcelMakeController extends Controller
         $organization    = $this->auth_user_organization();
         $organization_id = $organization->id;
 
-        // 年を取得2 
+        // 年を取得2
         $nowyear   = intval($this->get_now_year2());
         // $nowyear = $request->Input('year');
 
@@ -41,7 +41,7 @@ class ExcelMakeController extends Controller
             $furimon1 = 1;
             $furiyear = $furiyear + 1;
         } else {
-            $furimon1 = $furimon1 + 1;            
+            $furimon1 = $furimon1 + 1;
         }
         $furibi       = $furiyear . '年'. $furimon1. '月15日';
 
@@ -56,7 +56,7 @@ class ExcelMakeController extends Controller
         // ret_query_count(): Queryを取得 Count用
         $count = $this->ret_query_count($organization_id,$nowyear,$nowmonth);
         if($count == 0) {
-             
+
             Log::info('ExcelMakeController excel $count = 0 END');
 
             // toastrというキーでメッセージを格納　今月の請求データはありません
@@ -70,6 +70,7 @@ class ExcelMakeController extends Controller
         // 配列初期化
         $work_data = array(
             'nowyear'      => array(),
+            'nowmon'      => array(),
             'to_company'   => array(),
             'to_represent' => array(),
             'from_company' => array(),
@@ -90,6 +91,7 @@ class ExcelMakeController extends Controller
         foreach ($xls_inp_data as $xls_data2) {
 
             $work_data['nowyear']          = $nowyear;        // 年
+            $work_data['nowmon']           = $nowmon;         // 月
 
             if($xls_data2->individual_class == 1) {
                 $work_data['to_company']    = $xls_data2->business_name. ' 御中';     // 会社名
@@ -110,10 +112,10 @@ class ExcelMakeController extends Controller
                 $work_data['from_flcompany'] = '税理士法人_間庭';
                 $work_data['from_company']   = '税理士法人 間庭・飯田合同事務所';
                 $work_data['from_repres']    = '代表社員　　　　　税 理 士 法 人';
-                $work_data['tourokuno']      = 'T9010501234567';             
+                $work_data['tourokuno']      = 'T9010501234567';
             }
 
-            $work_data['customers_id']      = $xls_data2->customers_id;   
+            $work_data['customers_id']      = $xls_data2->customers_id;
             $cusid = sprintf("%05d", $xls_data2->customers_id);
 
             // ファイル名 20231011_合同会社グローアップ_000xx_請求書
@@ -140,6 +142,7 @@ class ExcelMakeController extends Controller
             /**
              *    makeXlsPdf()    : Excelを作成しPDFに変換
              *    $nowyear        : 年
+             *    $nowmon         : 月
              *    $tourokuno      : 登録番号
              *    $tekiyou        : 摘要名
              *    $furibi         : 振込日
@@ -155,6 +158,7 @@ class ExcelMakeController extends Controller
         foreach ($xls_out_data as $data) {
             $export_service->makeXlsPdf(
                 $data['nowyear'],
+                $data['nowmon'],
                 $data['tourokuno'],
                 $tekiyou,
                 $furibi,
@@ -162,14 +166,14 @@ class ExcelMakeController extends Controller
                 $data['from_repres'],
                 $data['kanrino'],
                 $data['tanka'],
-                $data['to_company'], 
-                $data['to_represent'], 
+                $data['to_company'],
+                $data['to_represent'],
                 $data['foloder_name'],
                 $data['file_name'],
                 $data['customers_id']
             );
         }
- 
+
         Log::info('ExcelMakeController excel END');
 
         // toastrというキーでメッセージを格納　請求データ作成処理が正常に完了しました
@@ -261,9 +265,9 @@ class ExcelMakeController extends Controller
         } else {
             $query .=  ' (advisorsfees.organization_id = %organization_id%) AND';
         }
-        
+
         $query .=  ' (advisorsfees.%fee_name% > 0) AND';
-    
+
         $query .=  ' (customers.deleted_at is NULL ) AND ';
         $query .=  ' (advisorsfees.deleted_at is NULL ) AND ';
         $query .=  ' (advisorsfees.year = %nowyear% ) ';
@@ -288,7 +292,7 @@ class ExcelMakeController extends Controller
      *    $nowyear         : 選択年
      *    $nowmonth        : 当月
      */
-    public function ret_query_count($organization_id, $nowyear, $nowmonth) 
+    public function ret_query_count($organization_id, $nowyear, $nowmonth)
     {
         Log::info('ExcelMakeController ret_query_count START');
 
@@ -340,7 +344,7 @@ class ExcelMakeController extends Controller
         } else {
             $query .=  ' (advisorsfees.organization_id = %organization_id%) AND';
         }
-        
+
         $query .=  ' (advisorsfees.%fee_name% > 0) AND';
 
         $query .=  ' (advisorsfees.deleted_at is NULL ) AND ';
@@ -355,7 +359,7 @@ class ExcelMakeController extends Controller
         $advisorsfees = DB::select($query);
         $count        = $advisorsfees[0]->count;
 
-        Log::info('ExcelMakeController ret_query_count END');        
+        Log::info('ExcelMakeController ret_query_count END');
 
         // Log::debug('ExcelMakeController ret_query_count $count = ' .print_r($count,true));
 
