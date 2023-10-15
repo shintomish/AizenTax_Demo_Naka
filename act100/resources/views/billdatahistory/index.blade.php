@@ -3,7 +3,10 @@
 {{-- // 事務所 請求書データ確認 --}}
 @section('content')
     <div class="row">
-
+        <div class="progress">
+            <div id="pgss2" class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">
+            </div>
+        </div>
         <!-- 検索エリア -->
 
         <!-- 検索エリア -->
@@ -152,68 +155,41 @@
                     //                     );
                 });
 
-                // /**
-                // * this_id         : 対象コントロール
-                // * wok_id          : invoiceテーブルのID
-                // *
-                // */
-                // function change_invoice_info( this_id
-                //                             , wok_id        // invoiceテーブルのID
-                //                             , urgent_flg    // invoiceテーブルのurgent_flgの値
-                //                             ) {
-                //     var reqData = new FormData();
-                //                                 reqData.append( "id"             , wok_id      );
-                //     if( null != urgent_flg    ) reqData.append( "urgent_flg"     , urgent_flg );
-
-                //     AjaxAPI.callAjax(
-                //         "{{ route('invoicehis_upload_api') }}",
-                //         reqData,
-                //         function (res) {
-                //             var shinename = 'shine_'   + wok_id;
-                //             var btnname   = 'btn_del_' + wok_id;
-
-                //             // console.log( shinename );
-                //             // console.log( btnname );
-
-                //             // 至急フラグ(1):通常 (2):至急
-                //             if(urgent_flg == 2) {
-                //                 // 点滅のclass削除
-                //                 const elem = document.getElementById(shinename);
-                //                 if (elem) {
-                //                     // クラス名を削除
-                //                     elem.classList.remove("light_box");
-                //                     // テキストを削除
-                //                     elem.textContent = "";
-                //                 } else {
-                //                     console.log( 'shine_non' );
-                //                 }
-
-                //                 // btnのclass変更
-                //                 const elem2 = document.getElementById(btnname);
-                //                 if (elem2) {
-                //                     // クラス名を削除
-                //                     elem2.classList.remove("btn-danger");
-                //                     // クラス名を追加
-                //                     elem2.classList.add("btn-secondary");
-                //                 } else {
-                //                     console.log( 'btn_del_non' );
-                //                 }
-
-                //                 $('#'+this_id).effect("pulsate", { times:2 }, 500);
-                //             }
-                //         }
-                //     )
-
-                //     // 至急フラグ(1):通常 (2):至急
-                //     if(urgent_flg == 1) {
-                //         // 何もしない
-                //         console.log('no repaint');
-                //         return;
-                //     }
-                // };
-
             </script>
 
+            {{-- 進捗バー --}}
+            <script>
+                $(function () {
+                    var count = 0;
+                    $(document).on('click','#submit_new',function(){
+                        if( !confirm('一括ダウンロードしますか？') ){
+                            /* キャンセルの時の処理 */
+                            return false;
+                        }  else {
+                            /*　OKの時の処理 */
+                            progress(count);
+
+                            // return true;
+                        }
+                            // progress(count);
+                    });
+
+                    function progress(count){
+                        setTimeout(function(){
+                            $("#pgss2").css({'width':count+'%'});
+                            $("#pgss2").prop('aria-valuenow', count)
+                            $("#pgss2").text(count + '%');
+                            count++;
+                            if(count == 100) {
+                                $("#pgss2").hide();
+                                // $("#pgss2").css({'width':0+'%'});
+                                return;
+                            }
+                            progress(count);
+                        },90);
+                    }
+                })
+            </script>
         </table>
     </div>
 
