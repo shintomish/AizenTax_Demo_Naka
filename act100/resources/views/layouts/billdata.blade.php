@@ -384,6 +384,9 @@
                                     <!-- 年あり 月あり 顧客名あり -->
                                     <!-- 請求書作成 06 -->
                                     @if( $common_no == '06')
+                                    <div class="btn-group me-2 mb-0">
+                                        <a id="start2" style="margin-bottom:5px;" class="btn btn-success btn-sm mr-auto" href="{{route('excelexp')}}">請求書作成</a>
+                                    </div>
                                     <select style="margin-right:5px;" class="custom-select" id="year" name="year">
                                         @foreach ($loop_year_flg as $loop_year_flg2)
                                             @if ($loop_year_flg2['no']==0)

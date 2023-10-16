@@ -268,7 +268,7 @@ class AdvisorsfeeController extends Controller
         // 2023/09/22
         $userid  = $user_id;
 
-        Log::debug('advisorsfee input nowyear = ' .print_r($nowyear,true));
+        // Log::debug('advisorsfee input nowyear = ' .print_r($nowyear,true));
 
         $compacts = compact( 'userid','common_no','advisorsfees', 'customers','nowyear','keyword2','nowmonth' );
         Log::info('advisorsfee input END');
@@ -552,24 +552,27 @@ class AdvisorsfeeController extends Controller
         $advisorsfee = Advisorsfee::find($id);
         $customer = Customer::find($request->custm_id);
 
+        // Log::debug('advisorsfee update $request->contract_entity = ' .print_r($request->contract_entity,true));
+
         DB::beginTransaction();
         Log::info('beginTransaction - advisorsfee update start');
         try {
-                $advisorsfee->year          = $request->year;
-                $advisorsfee->advisor_fee   = $request->advisor_fee;
-                $advisorsfee->fee_01        = $request->fee_01;
-                $advisorsfee->fee_02        = $request->fee_02;
-                $advisorsfee->fee_03        = $request->fee_03;
-                $advisorsfee->fee_04        = $request->fee_04;
-                $advisorsfee->fee_05        = $request->fee_05;
-                $advisorsfee->fee_06        = $request->fee_06;
-                $advisorsfee->fee_07        = $request->fee_07;
-                $advisorsfee->fee_08        = $request->fee_08;
-                $advisorsfee->fee_09        = $request->fee_09;
-                $advisorsfee->fee_10        = $request->fee_10;
-                $advisorsfee->fee_11        = $request->fee_11;
-                $advisorsfee->fee_12        = $request->fee_12;
-                $advisorsfee->updated_at    = now();
+                $advisorsfee->year            = $request->year;
+                $advisorsfee->advisor_fee     = $request->advisor_fee;
+                $advisorsfee->contract_entity = $request->contract_entity;
+                $advisorsfee->fee_01          = $request->fee_01;
+                $advisorsfee->fee_02          = $request->fee_02;
+                $advisorsfee->fee_03          = $request->fee_03;
+                $advisorsfee->fee_04          = $request->fee_04;
+                $advisorsfee->fee_05          = $request->fee_05;
+                $advisorsfee->fee_06          = $request->fee_06;
+                $advisorsfee->fee_07          = $request->fee_07;
+                $advisorsfee->fee_08          = $request->fee_08;
+                $advisorsfee->fee_09          = $request->fee_09;
+                $advisorsfee->fee_10          = $request->fee_10;
+                $advisorsfee->fee_11          = $request->fee_11;
+                $advisorsfee->fee_12          = $request->fee_12;
+                $advisorsfee->updated_at      = now();
                 $result = $advisorsfee->save();
 
                 $customer->advisor_fee      = $request->advisor_fee;

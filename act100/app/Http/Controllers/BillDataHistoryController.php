@@ -81,7 +81,7 @@ class BillDataHistoryController extends Controller
         $common_no = '06_2';
         Log::info('billdatahistory index END');
 
-        $compacts = compact( 'nowyear','nowmonth','common_no','indiv_class','billdatas','customers','customer_findrec','customer_id','keyword','keyword2','userid' );
+        $compacts = compact( 'nowyear','nowmonth','common_no','indiv_class','billdatas','customers','customer_findrec','keyword','keyword2','userid' );
 
         return view( 'billdatahistory.index', $compacts );
     }
@@ -178,13 +178,17 @@ class BillDataHistoryController extends Controller
         //- Request パラメータ
         //-------------------------------------------------------------
         $keyword = $request->Input('keyword');
-        $customer_id = $request->Input('customer_id');
+        // $customer_id = $request->Input('customer_id');
 
-        // 年を取得2
-        $keyyear   = intval($this->get_now_year2());
-
-        //今年の月を取得
-        $nowmonth = intval($this->get_now_month());
+        //-------------------------------------------------------------
+        //- Request パラメータ
+        //-------------------------------------------------------------
+        $nowyear  = $request->Input('year');
+        $nowmonth = $request->Input('month');
+        // // 年を取得2
+        // $keyyear   = intval($this->get_now_year2());
+        // //今年の月を取得
+        // $nowmonth = intval($this->get_now_month());
 
         //-------------------------------------------------------------
         //- Request パラメータ
@@ -232,7 +236,8 @@ class BillDataHistoryController extends Controller
                                     ->whereNull('customers.deleted_at')
                                     ->whereNull('billdatas.deleted_at')
                                     ->where('customers.business_name', 'like', "%$keyword%")
-                                    ->where('billdatas.year', '=', $keyyear)
+                                    ->where('billdatas.year', '=', $nowyear)
+                                    ->where('billdatas.mon', '=', $nowmonth)
                                     ->orderBy('billdatas.created_at', 'desc')
                                     ->paginate(500);
             } else {
@@ -267,7 +272,8 @@ class BillDataHistoryController extends Controller
                                     ->whereNull('customers.deleted_at')
                                     ->whereNull('billdatas.deleted_at')
                                     ->where('customers.business_name', 'like', "%$keyword%")
-                                    ->where('billdatas.year', '=', $keyyear)
+                                    ->where('billdatas.year', '=', $nowyear)
+                                    ->where('billdatas.mon', '=', $nowmonth)
                                     ->orderBy('billdatas.created_at', 'desc')
                                     ->paginate(500);
             }
@@ -303,7 +309,8 @@ class BillDataHistoryController extends Controller
                                     ->where('billdatas.organization_id','>=',$organization_id)
                                     ->whereNull('customers.deleted_at')
                                     ->whereNull('billdatas.deleted_at')
-                                    ->where('billdatas.year', '=', $keyyear)
+                                    ->where('billdatas.year', '=', $nowyear)
+                                    ->where('billdatas.mon', '=', $nowmonth)
                                     ->orderBy('billdatas.created_at', 'desc')
                                     ->paginate(500);
             } else {
@@ -337,7 +344,8 @@ class BillDataHistoryController extends Controller
                                     ->where('billdatas.organization_id','=',$organization_id)
                                     ->whereNull('customers.deleted_at')
                                     ->whereNull('billdatas.deleted_at')
-                                    ->where('billdatas.year', '=', $keyyear)
+                                    ->where('billdatas.year', '=', $nowyear)
+                                    ->where('billdatas.mon', '=', $nowmonth)
                                     ->orderBy('billdatas.created_at', 'desc')
                                     ->paginate(500);
             }
@@ -345,11 +353,11 @@ class BillDataHistoryController extends Controller
 
         // * 今年の年を取得 inputに変更 2023/03/13
         // $nowyear = $this->get_now_year();
-        $nowyear  = $keyyear;
+        // $nowyear  = $keyyear;
 
         $common_no = '06_2';
         $keyword2  = $keyword;
-        $compacts = compact( 'nowyear','nowmonth','common_no','billdatas','customers','customer_findrec','customer_id','keyword','keyword2','userid' );
+        $compacts = compact( 'nowyear','nowmonth','common_no','billdatas','customers','customer_findrec','keyword','keyword2','userid' );
 
         Log::info('billdatahistory serch_custom END');
 

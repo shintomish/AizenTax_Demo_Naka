@@ -5,12 +5,12 @@
     {{-- <h2>顧問料一覧</h2> --}}
     <div class="text-right">
         {{-- <a class="btn btn-success btn-sm mr-auto" href="{{route('advisorsfee.create')}}">新規登録</a> --}}
-        <a id="start2" style="margin-bottom:5px;" class="btn btn-success btn-sm mr-auto" href="{{route('excelexp')}}">請求書作成</a>
+        {{-- <a id="start2" style="margin-bottom:5px;" class="btn btn-success btn-sm mr-auto" href="{{route('excelexp')}}">請求書作成</a> --}}
     </div>
 
     <div class="row">
         <!-- 検索エリア -->
-        <p>作成状況：
+        <p>作成状況：</p>
             <div class="progress">
                 <div id="pgss2" class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">
                 </div>

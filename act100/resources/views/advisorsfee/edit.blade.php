@@ -46,6 +46,24 @@
                     </select>
                 </div>
             </div>
+            <div class="row">
+                <div class="col-2">
+                </div>
+                <div class="col-4">
+                </div>
+
+                <div class="col-2 bg-secondary text-right">
+                    <label for="contract_entity">契約主体</label>
+                </div>
+                <div class="col-4">
+                    {{-- /'契約主体 1:グローアップ社 2:税理士法人'--}}
+                    <select class="custom-select" id="contract_entity" name="contract_entity">
+                        <option value="1" {{ $advisorsfee->contract_entity == 1 ? 'selected' : 'disabled' }}>グローアップ社</option>
+                        <option value="2" {{ $advisorsfee->contract_entity == 2 ? 'selected' : 'disabled' }}>税理士法人</option>
+                    </select>
+                </div>
+            </div>
+
 
             <div class="row">
                 <div class="col-2 bg-info text-right">
