@@ -31,4 +31,12 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
 
+    // 2023/11/02
+    'line' => [
+        'message' => [
+            'channel_id'=>env('LINE_MESSAGE_CHANNEL_ID'),
+            'channel_secret'=>env('LINE_MESSAGE_CHANNEL_SECRET'),
+            'channel_token'=>env('LINE_MESSAGE_CHANNEL_TOKEN')
+        ]
+    ],
 ];

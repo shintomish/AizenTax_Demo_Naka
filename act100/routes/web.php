@@ -85,7 +85,7 @@ Route::get('topcli_pdf03',     'App\Http\Controllers\TopClientController@show_up
 Route::post('topclient/upload/{id}','App\Http\Controllers\UploaderController@postUpload')->name('postUpload');
 
 //-----------------------------------------------------------------------------------------------
-//- クライアント 送信履歴 TransHistory 
+//- クライアント 送信履歴 TransHistory
 //-----------------------------------------------------------------------------------------------
 Route::get('transhistory',        'App\Http\Controllers\TransHistoryController@index')->name('transhistory');
 Route::get('transserch',          'App\Http\Controllers\TransHistoryController@serch')->name('transserch');
@@ -272,5 +272,9 @@ Route::get('annualupdate/update', 'App\Http\Controllers\AnnualupdateController@u
 //-----------------------------------------------------------------------------------------------
 //Route::post('support/post', 'App\Http\Controllers\SupportController@post')->name('support');
 
+//-----------------------------------------------------------------------------------------------
+//- LINE
+//-----------------------------------------------------------------------------------------------
+Route::post('/line/webhook/message', 'App\Http\Controllers\LineWebhookController@message')->name('line.webhook.message');
 
 ?>
