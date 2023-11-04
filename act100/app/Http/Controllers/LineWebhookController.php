@@ -43,7 +43,6 @@ class LineWebhookController extends Controller
             //     'line_message_id' => $event['message']['id'],
             //     'text'            => $event['message']['text'],
             // ]);
-            // $response = $bot->replyText($event['replyToken'], 'メッセージ送信完了');
             $line_message = new Line_Message();
             $line_message->line_user_id    = $event['source']['userId'];
             $line_message->line_message_id = $event['message']['id'];
@@ -61,6 +60,7 @@ class LineWebhookController extends Controller
                 $trial_user->line_user_id    = $event['source']['userId'];
                 $trial_user->users_name      = $event['message']['text'];
                 $trial_user->save();               //  Inserts
+                $response = $bot->replyText($event['replyToken'], '体験会ご予約承りました。');
             }
         }
 
@@ -69,8 +69,8 @@ class LineWebhookController extends Controller
             ->orderByRaw('created_at DESC')
             ->get();
 
-        // $common_no = 'linetrialuser';
-        // $compacts = compact( 'common_no', 'linetrialusers' );
+        $common_no = 'linetrialuser';
+        $compacts = compact( 'common_no', 'linetrialusers' );
 
         // toastrというキーでメッセージを格納　LINEから体験者が登録されました
         session()->flash('toastr', config('toastr.line_success'));
@@ -78,6 +78,8 @@ class LineWebhookController extends Controller
         Log::info('LineWebhookController message END');
         // return;
         // return view( 'linetrialuser.input', $compacts );
-        return response()->json($linetrialusers);
+        // return response()->json($linetrialusers);
+        // return redirect()->route('linetrialuser.input');
+        return redirect()->route( 'linetrialuser.input', $compacts)->with('message', 'LINEから体験者が登録されました');
     }
 }

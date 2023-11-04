@@ -8,6 +8,14 @@
         {{-- <a id="start2" style="margin-bottom:5px;" class="btn btn-success btn-sm mr-auto" href="{{route('excelexp')}}">請求書作成</a> --}}
     </div>
 
+    @if (session('message'))
+        @if (session('message') == 'LINEから体験者が登録されました')
+            <div class="alert alert-success">
+                {{ session('message') }}
+            </div>
+        @endif
+    @endif
+
     <div class="row">
         <!-- 検索エリア -->
         <p>作成状況：</p>
