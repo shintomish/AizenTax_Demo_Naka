@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 
 use App\Models\Line_Message;
-use App\Models\Line_Trial_User;
+use App\Models\Line_Trial_Users;
 
 use LINE\LINEBot\HTTPClient\CurlHTTPClient;
 use LINE\LINEBot;
@@ -57,7 +57,7 @@ class LineWebhookController extends Controller
 
             //追加
             } else {
-                $trial_user = new Line_Trial_User();
+                $trial_user = new Line_Trial_Users();
                 $trial_user->line_user_id    = $event['source']['userId'];
                 $trial_user->users_name      = $event['message']['text'];
                 $trial_user->save();               //  Inserts
