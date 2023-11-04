@@ -64,7 +64,16 @@ class LineWebhookController extends Controller
             }
         }
 
+        // $linetrialusers = Line_Trial_Users::whereNull('deleted_at')
+        //     ->sortable()
+        //     ->orderByRaw('created_at DESC')
+        //     ->paginate(100);
+
+        // $common_no = 'linetrialuser';
+        // $compacts = compact( 'common_no', 'linetrialusers' );
+
         Log::info('LineWebhookController message END');
         return;
+        // return view( 'linetrialuser.input', $compacts );
     }
 }
