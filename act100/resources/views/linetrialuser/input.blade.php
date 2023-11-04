@@ -91,7 +91,7 @@
                         <td>
                             <div class="btn-toolbar">
                                 <div class="btn-group me-2 mb-0">
-                                <a class="btn btn-primary btn-sm" href="{{ route('lineexcelexp.lineexcel',$linetrialuser->id)}}">請求書作成</a>
+                                <a class="btn btn-primary btn-sm" href="{{ route('lineexcelexp',$linetrialuser->id)}}">請求書作成</a>
                                 {{-- <a class="btn btn-primary btn-sm" href="{{ route('advisorsfee.edit',$advisorsfee->id)}}">編集</a> --}}
                                 </div>
                                 {{-- <div class="btn-group me-2 mb-0">
