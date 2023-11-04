@@ -127,6 +127,7 @@ class ExcelMakeController extends Controller
             $work_data['file_name']    = $string;
             $work_data['kanrino']      = $year .'_'. $mon. '_'. $cusid; // 管理番号
 
+            // ★ 1 - 12 追加
             if($nowmonth == 10) {
                 $work_data['tanka']    = ($xls_data2->fee_10);
             }

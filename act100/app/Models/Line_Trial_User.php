@@ -5,14 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-use Kyslik\ColumnSortable\Sortable;         //追記 並び替えをcolumn-sortable使って
+use Kyslik\ColumnSortable\Sortable;
 
 class Line_Trial_User extends Model
 {
     use HasFactory;
-    use Sortable;                   //追記
+    use Sortable;
 
-    public $sortable = ['id','urgent_flg','created_at'];//追記(ソートに使うカラムを指定
+    public $sortable = ['id','urgent_flg','created_at'];    //追記(ソートに使うカラムを指定
 
     // 参照させたいSQLのテーブル名を指定
     protected $table = 'line_trial_users';

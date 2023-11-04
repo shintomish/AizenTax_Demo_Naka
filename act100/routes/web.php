@@ -280,8 +280,13 @@ Route::post('/line/webhook/message', 'App\Http\Controllers\LineWebhookController
 //-----------------------------------------------------------------------------------------------
 //- LINE LineMessageController
 //-----------------------------------------------------------------------------------------------
-Route::get('linemessage/input',        'App\Http\Controllers\LineMessageController@input')->name('linemessage.input');
-Route::post('linemessage/update_api',  'App\Http\Controllers\LineMessageController@update_api')->name('linemessage.update_api');
-Route::resource('linemessage',         'App\Http\Controllers\LineMessageController');
+Route::get('linetrialuser/input',        'App\Http\Controllers\LineTrialUserController@input')->name('linetrialuser.input');
+Route::post('linetrialuser/update_api',  'App\Http\Controllers\LineTrialUserController@update_api')->name('linetrialuser.update_api');
+Route::resource('linetrialuser',         'App\Http\Controllers\LineTrialUserController');
+
+//-----------------------------------------------------------------------------------------------
+//- LINE LineExcelMakeController
+//-----------------------------------------------------------------------------------------------
+Route::get('/lineexcel/exp/{id}',  'App\Http\Controllers\LineExcelMakeController@lineexcel')->name('lineexcelexp');
 
 ?>

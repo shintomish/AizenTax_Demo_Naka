@@ -182,7 +182,7 @@
                             </li>
 
                             <li class="nav-item">
-                                <a class="nav-link" href="{{route('linemessage.input')}}">
+                                <a class="nav-link" href="{{route('linetrialuser.input')}}">
                                     <i class="fas fa-edit"></i>
                                     <span style="color:blue">体験者名簿</span>
                                 </a>
@@ -397,7 +397,7 @@
                                 <h3>会社申請・設立</h3>
 
                                 @break;
-                            @case ('linemessage')
+                            @case ('linetrialuser')
                                 <!-- タイトル -->
                                 <h3>体験者名簿</h3>
 
@@ -412,7 +412,7 @@
                             <div class='btn-toolbar' role="toolbar">
                                 <div class="input-group">
 
-                                    @if( $common_no == 'linemessage')
+                                    @if( $common_no == 'linetrialuser')
                         {{-- <div class="btn-group me-2 mb-0">
                             <a id="start2" style="margin-bottom:5px;" class="btn btn-success btn-sm mr-auto" href="">請求書作成</a>
                         </div> --}}
@@ -544,7 +544,7 @@
                                         </select>
                                         <button type="submit" class="btn btn-secondary btn_sm">検索</button>
                                     @else
-                                        @if( $common_no == '00_3' )
+                                        @if( $common_no == '00_3' || $common_no == 'linetrialuser')
                                         @else
                                             <input type="text" value="{{$keyword2}}" name="keyword" class="form-control" placeholder="顧客名検索">
                                             <div class="input-group-append">

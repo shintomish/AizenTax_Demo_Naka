@@ -27,49 +27,71 @@
             <thead>
                 <tr>
                     <th scope="col" class ="col-xs-3 col-md-1 bg-secondary text-left">ID</th>
-                    <th scope="col" class ="col-xs-3 col-md-4 bg-info text-right">@sortablelink('users_name', '体験者名')</th>
-                    <th scope="col" class ="col-xs-3 col-md-1 bg-info text-right">@sortablelink('urgent_flg', '請求書作成状況')</th>
-                    <th scope="col" class ="col-xs-3 col-md-1 bg-info text-right">@sortablelink('created_at', '登録日時')</th>
+                    <th scope="col" class ="col-xs-3 col-md-4 bg-info text-right">体験者名</th>
+                    <th scope="col" class ="col-xs-3 col-md-1 bg-info text-right">@sortablelink('urgent_flg', '請求書作成')</th>
+                    <th scope="col" class ="col-xs-3 col-md-1 bg-info text-right">@sortablelink('reservationed_at', '予約時間')</th>
+                    <th scope="col" class ="col-xs-3 col-md-1 bg-info text-right">登録日</th>
                     <th scope="col" class ="col-xs-3 col-md-1 bg-secondary  text-right">操作</th>
                 </tr>
             </thead>
 
             <tbody>
-                @if($linemessages->count())
-                    @foreach($linemessages as $linemessage)
+                @if($linetrialusers->count())
+                    @foreach($linetrialusers as $linetrialuser)
                     <tr>
                         {{-- ID --}}
                         @php
-                            $cusid = sprintf("%03d", $linemessage->id);
+                            $cusid = sprintf("%03d", $linetrialuser->id);
                         @endphp
                         <td>{{ $cusid }}</td>
 
                         {{-- 体験者名 --}}
                         @php
-                            $str = sprintf("%s", $linemessage->users_name);
+                            $str = sprintf("%s", $linetrialuser->users_name);
                         @endphp
-                        <input type="text" class="form-control" id="users_name_{{$linemessage->id}}" name="users_name_{{$linemessage->id}}" value="{{$str}}">
-
                         <td>
-                            {{-- 請求書作成状況 1:未 2:済 --}}
-                            <select class="custom-select" id="contract_entity_{{$linemessage->id}}" name="contract_entity_{{$linemessage->id}}">
-                                <option value="1" {{ $linemessage->urgent_flg == 1 ? 'selected' : '' }}>未</option>
-                                <option value="2" {{ $linemessage->urgent_flg == 2 ? 'selected' : '' }}>済</option>
-                            </select>
+                            <input type="text" class="form-control" id="users_name_{{$linetrialuser->id}}" name="users_name_{{$linetrialuser->id}}" value="{{$str}}">
                         </td>
 
-                        {{-- 登録日時 --}}
+                        {{-- 請求書作成状況 1:未 2:済 --}}
                         @php
-                            if (isset($linemessage->created_at)) {
-                                $str1 = ( new DateTime($linemessage->created_at))->format('Y-m-d');
+                            if($linetrialuser->urgent_flg == 1){
+                                $str1 = '未作成';
+                            }else{
+                                $str1 = '作成済';
                             }
                         @endphp
                         <td>{{ $str1 }}</td>
+                            {{-- <select class="custom-select" id="contract_entity_{{$linetrialuser->id}}" name="contract_entity_{{$linetrialuser->id}}">
+                                <option value="1" {{ $linetrialuser->urgent_flg == 1 ? 'selected' : '' }}>未</option>
+                                <option value="2" {{ $linetrialuser->urgent_flg == 2 ? 'selected' : '' }}>済</option>
+                            </select> --}}
+
+                        {{-- 予約時間 reservationed_at--}}
+                        @php
+                        $str2 = '';
+                        if (isset($linetrialuser->reservationed_at)) {
+                            $str2 = substr($linetrialuser->reservationed_at,0,5);
+                            // $str1 = ( new DateTime($linetrialuser->reservationed_at))->format('Y-m-d');
+                        }
+                        @endphp
+                        <td>
+                        <input type="time" class="form-control" id="reservationed_at_{{$linetrialuser->id}}" name="reservationed_at_{{$linetrialuser->id}}" value="{{$str2}}">
+                        </td>
+                        {{-- <td>{{ $str2 }}</td> --}}
+
+                        {{-- 登録日時 --}}
+                        @php
+                            if (isset($linetrialuser->created_at)) {
+                                $str3 = ( new DateTime($linetrialuser->created_at))->format('Y-m-d');
+                            }
+                        @endphp
+                        <td>{{ $str3 }}</td>
 
                         <td>
                             <div class="btn-toolbar">
                                 <div class="btn-group me-2 mb-0">
-                                <a class="btn btn-primary btn-sm" href="">請求書作成</a>
+                                <a class="btn btn-primary btn-sm" href="{{ route('lineexcelexp.lineexcel',$linetrialuser->id)}}">請求書作成</a>
                                 {{-- <a class="btn btn-primary btn-sm" href="{{ route('advisorsfee.edit',$advisorsfee->id)}}">編集</a> --}}
                                 </div>
                                 {{-- <div class="btn-group me-2 mb-0">
@@ -91,6 +113,7 @@
                         <td><p> </p></td>
                         <td><p> </p></td>
                         <td><p> </p></td>
+                        <td><p> </p></td>
                     </tr>
                 @endif
                 <script type="text/javascript">
@@ -98,40 +121,56 @@
                     //--体験者名テキストボックスイベントハンドラ
                     //---------------------------------------------------------------
                     $('input[name^="users_name_"]').change( function(e){
-                        alert('体験者名Click');
+                        // alert('体験者名Click');
                         var wok_id           = $(this).attr("name").replace('users_name_', '');
                         var users_name       = $(this).val();
                         var this_id          = $(this).attr("id");
                         change_wokproc_info(     this_id        // 対象コントロール
-                                                , wok_id        // linemessageテーブルのID
+                                                , wok_id        // linetrialuserテーブルのID
                                                 , users_name    // 体験者名
+                                                , null          // 予約時間
+                                            );
+                    });
+                    //---------------------------------------------------------------
+                    //--予約時間テキストボックスイベントハンドラ
+                    //---------------------------------------------------------------
+                    $('input[name^="reservationed_at_"]').change( function(e){
+                        // alert('予約時間Click');
+                        var wok_id           = $(this).attr("name").replace('reservationed_at_', '');
+                        var reservationed_at = $(this).val();
+                        var this_id          = $(this).attr("id");
+                        change_wokproc_info(     this_id        // 対象コントロール
+                                                , wok_id        // linetrialuserテーブルのID
+                                                , null          // 体験者名
+                                                , reservationed_at    // 予約時間
                                             );
                     });
 
                     /**
                     * this_id         : 対象コントロール
-                    * wok_id          : linemessageテーブルのID
+                    * wok_id          : linetrialuserテーブルのID
                     * users_name      : 体験者名
                     *
                     */
                     function change_wokproc_info(  this_id
-                                                , wok_id        // wok_id  linemessageテーブルのID
+                                                , wok_id        // wok_id  linetrialuserテーブルのID
                                                 , users_name    // 体験者名
+                                                , reservationed_at    // 予約時間
                                                 ){
                             var reqData = new FormData();
                                                             reqData.append( "id"         , wok_id     );
                             if( null != users_name        ) reqData.append( "users_name" , users_name );
+                            if( null != reservationed_at  ) reqData.append( "reservationed_at" , reservationed_at );
 
                             console.log(users_name);
-                            // console.log(filing_date);
+                            console.log(reservationed_at);
 
                             // Ajax通信呼出(データファイルのアップロード)
                             AjaxAPI.callAjax(
-                                "{{ route('linemessage.update_api') }}",
+                                "{{ route('linetrialuser.update_api') }}",
                                 reqData,
                                 function (res) {
                                     $('#'+this_id).effect("pulsate", { times:2 }, 500);
-
                                 }
                             )
                     };
@@ -144,7 +183,7 @@
 
     {{-- ページネーション / pagination）の表示 --}}
     <ul class="pagination justify-content-center">
-    {{ $linemessages->appends(request()->query())->render() }}
+    {{ $linetrialusers->appends(request()->query())->render() }}
     </ul>
 
     {{-- 進捗バー --}}

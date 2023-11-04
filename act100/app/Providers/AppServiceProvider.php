@@ -4,9 +4,9 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Pagination\Paginator; //追記
-use Illuminate\Support\Facades\Schema; // ⭐️ 追加
+// use Illuminate\Support\Facades\Schema;
 
-use Illuminate\Support\Facades\URL; // 2023/11/03
+// use Illuminate\Support\Facades\URL; // 2023/11/03
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -31,7 +31,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        URL::forceScheme('https');  // 2023/11/03
+        // URL::forceScheme('https');  // 2023/11/03
 
         // user
         // `login_flg` int(11) NOT NULL DEFAULT 1  COMMENT '顧客(1):社員(2):所属(3)',
