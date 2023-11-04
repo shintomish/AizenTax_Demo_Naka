@@ -23,15 +23,15 @@
 
     <div class="table-responsive">
 
-        <table class="table table-striped table-borderd table-scroll">
+        <table class="table table-responsive text-nowrap table-striped table-borderd table_sticky">
             <thead>
                 <tr>
-                    <th scope="col" class ="col-xs-3 col-md-1 bg-secondary text-left">体験者ID</th>
-                    <th scope="col" class ="col-xs-3 col-md-4 bg-info text-right">体験者名</th>
-                    <th scope="col" class ="col-xs-3 col-md-1 bg-info text-right">パス名</th>
-                    <th scope="col" class ="col-xs-3 col-md-1 bg-info text-right">ファイル名</th>
-                    <th scope="col" class ="col-xs-3 col-md-1 bg-info text-right">XLS/PDF</th>
-                    <th scope="col" class ="col-xs-3 col-md-1 bg-secondary  text-right">操作</th>
+                    <th scope="col" class ="bg-secondary text-left">顧客ID</th>
+                    <th scope="col" class ="bg-info text-right">体験者名</th>
+                    <th scope="col" class ="bg-info text-right">パス名</th>
+                    <th scope="col" class ="bg-info text-right">ファイル名</th>
+                    {{-- <th scope="col" class ="bg-info text-right">XLS/PDF</th> --}}
+                    <th scope="col" class ="bg-secondary  text-right">操作</th>
                 </tr>
             </thead>
 
@@ -47,11 +47,9 @@
 
                         {{-- 体験者名 --}}
                         @php
-                            $str = sprintf("%s", $line_trial_users_history->users_name);
+                            $str = sprintf("%s", $line_trial_users_history->user_name);
                         @endphp
-                        <td>
-                            {{ $str }}
-                        </td>
+                        <td>{{ $str }}</td>
 
                         {{-- パス名  --}}
                         <td>{{$line_trial_users_history->filepath }}</td>
@@ -67,15 +65,15 @@
                                 $str = 'PDF';
                             }
                         @endphp
-                        <td>
+                        {{-- <td>
                             {{ $str }}
-                        </td>
+                        </td> --}}
 
                         <td>
                             <div class="btn-toolbar">
                                 <div class="btn-group me-2 mb-0">
-                                {{-- <a id="start2" class="btn btn-primary btn-sm" href="{{ route('lineexcelexp',$line_trial_users_history->id)}}">詳細</a> --}}
-<input class="btn btn-primary btn-sm" type="submit" id="btn_del_{{$line_trial_users_history->id}}" name="btn_del_{{$line_trial_users_history->id}}" value="詳細" >
+        <a id="start2" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm" href="{{ route('linetrialuserhistory_pdf01',$line_trial_users_history->id)}}">DownLoad</a>
+{{-- <input class="btn btn-primary btn-sm" type="submit" id="btn_del_{{$line_trial_users_history->id}}" name="btn_del_{{$line_trial_users_history->id}}" value="詳細" > --}}
 
                                 </div>
                             </div>
@@ -88,20 +86,20 @@
                         <td><p> </p></td>
                         <td><p> </p></td>
                         <td><p> </p></td>
-                        <td><p> </p></td>
+                        {{-- <td><p> </p></td> --}}
                         <td><p> </p></td>
                     </tr>
                 @endif
                 <script type="text/javascript">
-                $('input[name^="btn_del_"]').click( function(e){
-                    // alert('ダウンロードbtnClick');
-                    var wok_id       = $(this).attr("name").replace('btn_del_', '');
-                    var this_id      = $(this).attr("id");
-                    var url          = "invoicehistory/pdf/" + wok_id;
-                    $('#temp_form').method = 'POST';
-                    $('#temp_form').submit();
-                    var popup = window.open(url,"preview","width=800, height=600, top=200, left=500 scrollbars=yes");
-                });
+                // $('input[name^="btn_del_"]').click( function(e){
+                //     // alert('ダウンロードbtnClick');
+                //     var wok_id       = $(this).attr("name").replace('btn_del_', '');
+                //     var this_id      = $(this).attr("id");
+                //     var url          = "invoicehistory/pdf/" + wok_id;
+                //     $('#temp_form').method = 'POST';
+                //     $('#temp_form').submit();
+                //     var popup = window.open(url,"preview","width=800, height=600, top=200, left=500 scrollbars=yes");
+                // });
                 </script>
 
             </tbody>
@@ -116,32 +114,32 @@
 
     {{-- 進捗バー --}}
     <script>
-        $(function () {
-            var count = 0;
-            $(document).on('click','#start2',function(){
-                if( !confirm('請求書を作成しますか？') ){
-                    /* キャンセルの時の処理 */
-                    return false;
-                }  else {
-                    /*　OKの時の処理 */
-                    progress(count);
+        // $(function () {
+        //     var count = 0;
+        //     $(document).on('click','#start2',function(){
+        //         if( !confirm('請求書を作成しますか？') ){
+        //             /* キャンセルの時の処理 */
+        //             return false;
+        //         }  else {
+        //             /*　OKの時の処理 */
+        //             progress(count);
 
-                    // return true;
-                }
-                    // progress(count);
-            });
+        //             // return true;
+        //         }
+        //             // progress(count);
+        //     });
 
-            function progress(count){
-                setTimeout(function(){
-                    $("#pgss2").css({'width':count+'%'});
-                    $("#pgss2").prop('aria-valuenow', count)
-                    $("#pgss2").text(count + '%');
-                    count++;
-                    if(count == 100) return;
-                    progress(count);
-                },150);
-            }
-        })
+        //     function progress(count){
+        //         setTimeout(function(){
+        //             $("#pgss2").css({'width':count+'%'});
+        //             $("#pgss2").prop('aria-valuenow', count)
+        //             $("#pgss2").text(count + '%');
+        //             count++;
+        //             if(count == 100) return;
+        //             progress(count);
+        //         },150);
+        //     }
+        // })
 
     </script>
 

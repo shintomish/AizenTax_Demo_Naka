@@ -409,7 +409,7 @@
                                 <h3>体験者名簿</h3>
 
                                 @break;
-                            @case ('linetrialuser')
+                            @case ('linetrialuserhistory')
                                 <!-- タイトル -->
                                 <h3>体験者請求書</h3>
 

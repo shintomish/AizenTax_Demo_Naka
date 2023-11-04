@@ -5,9 +5,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Line_Trial_Users_History;
 
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Storage;
 
 class LineTrialUserHistoryController extends Controller
 {
@@ -30,16 +29,17 @@ class LineTrialUserHistoryController extends Controller
     {
         Log::info('linetrialuserhistory index START');
 
-        $line_trial_users_history = DB::table('Line_Trial_Users_History')
-                    ->orderBy('created_at', 'desc')
+        $line_trial_users_historys = Line_Trial_Users_History::whereNull('deleted_at')
+                    ->where('extension_flg' , 2)
                     ->sortable()
-                    ->paginate(100);
+                    ->orderBy('created_at', 'desc')
+                    ->paginate(200);
 
         $common_no = 'linetrialuserhistory';
 
         Log::info('linetrialuserhistory index END');
 
-        $compacts = compact( 'common_no', 'line_trial_users_history' );
+        $compacts = compact( 'common_no', 'line_trial_users_historys' );
 
         return view( 'linetrialuserhistory.index', $compacts );
     }
