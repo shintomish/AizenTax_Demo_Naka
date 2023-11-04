@@ -50,7 +50,7 @@ class LineWebhookController extends Controller
             $line_message->text            = $event['message']['text'];
             $line_message->save();               //  Inserts
 
-            $updata['count'] = Line_Trial_User::where('line_user_id', $line_message->line_user_id)->count();
+            $updata['count'] = Line_Trial_Users::where('line_user_id', $line_message->line_user_id)->count();
 
             //何もしない
             if( $updata['count'] > 0 ) {
