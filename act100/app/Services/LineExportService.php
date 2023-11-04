@@ -3,6 +3,7 @@
 namespace App\Services;
 
 use App\Models\Line_Trial_Users_History;
+use App\Models\Line_Trial_Users;
 
 use PhpOffice\PhpSpreadsheet\Reader\Xlsx as XlsxReader;
 use PhpOffice\PhpSpreadsheet\Writer\Xlsx as XlsxWriter;
@@ -207,7 +208,7 @@ class LineExportService
         Log::info('line_trial_users_Update beginTransaction - start');
         try{
             // 更新処理
-            Line_Trial_User::where( 'id', $id )->update($update);
+            Line_Trial_Users::where( 'id', $id )->update($update);
 
             $status = array( 'error_code' => 0, 'message'  => 'Your data has been changed!' );
             $counts = 1;

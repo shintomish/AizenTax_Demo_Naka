@@ -55,26 +55,21 @@ class LineExcelMakeController extends Controller
         $user_name = $xls_inp_data->users_name;
         Log::debug('LineExcelMakeController lineexcel $user_name = ' . print_r($user_name,true));
 
-        $cnt = 1;
-        foreach ($xls_inp_data as $xls_data2) {
+        $cusid = sprintf("%02d", $id);
+        $work_data['nowyear']      = $nowyear;        // 年
+        $work_data['nowmonth']     = $nowmonth;       // 月
+        $work_data['user_id']      = $id;             // id
+        $work_data['user_name']    = $user_name;      // ユーザー名
+        $work_data['kanrino']      = 'R-'. $year . $mon. $day. '_'. $cusid; // 管理番号 R-231112-xx
 
-            $cusid = sprintf("%02d", $id);
-            $work_data['nowyear']      = $nowyear;        // 年
-            $work_data['nowmonth']     = $nowmonth;       // 月
-            $work_data['user_id']      = $id;             // id
-            $work_data['user_name']    = $user_name;     // ユーザー名
-            $work_data['kanrino']      = 'R-'. $year . $mon. $day. '_'. $cusid; // 管理番号 R-231112-xx
+        $stringw  = $filename;
+        $stringw .= '_'. $cusid;
+        $stringw .= '_'. $user_name;
+        $stringw .= '_'. '請求書';
+        $string   = preg_replace("/( |　)/", "", $stringw );         // 文字列の中にある半角空白と全角空白をすべて削除・除去する
+        $work_data['file_name']    = $string;
 
-            $stringw  = $filename;
-            $stringw .= '_'. $cusid;
-            $stringw .= '_'. $user_name;
-            $stringw .= '_'. '請求書';
-            $string   = preg_replace("/( |　)/", "", $stringw );         // 文字列の中にある半角空白と全角空白をすべて削除・除去する
-            $work_data['file_name']    = $string;
-
-            array_push($xls_out_data, $work_data );
-            $cnt = $cnt + 1;
-        }
+        array_push($xls_out_data, $work_data );
 
         // Log::debug('LineExcelMakeController lineexcel $xls_out_data = ' .print_r($xls_out_data,true));
 
@@ -89,7 +84,6 @@ class LineExcelMakeController extends Controller
              *    $kanrino         : 管理番号 No
              *    $file_name       : ファイル名
              */
-        foreach ($xls_out_data as $data) {
             $export_service->LinemakeXlsPdf(
                 $data['nowyear'],
                 $data['nowmonth'],
@@ -98,14 +92,13 @@ class LineExcelMakeController extends Controller
                 $data['kanrino'],
                 $data['file_name'],
             );
-        }
 
         Log::info('LineExcelMakeController lineexcel END');
 
         // toastrというキーでメッセージを格納　請求データ作成処理が正常に完了しました
         session()->flash('toastr', config('toastr.invoice_success'));
 
-        return redirect()->route('advisorsfee.input');
+        return redirect()->route('linetrialuser.input');
 
     }
 

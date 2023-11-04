@@ -3,7 +3,7 @@
 // 事務所 体験者データ確認
 namespace App\Http\Controllers;
 
-use App\Models\Line_Trial_User;
+use App\Models\Line_Trial_Users;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -29,7 +29,7 @@ class LineTrialUserController extends Controller
     public function input()
     {
         Log::info('linetrialuser input START');
-        $linetrialusers = Line_Trial_User::whereNull('deleted_at')
+        $linetrialusers = Line_Trial_Users::whereNull('deleted_at')
                         ->sortable()
                         ->orderByRaw('created_at DESC')
                         ->paginate(100);

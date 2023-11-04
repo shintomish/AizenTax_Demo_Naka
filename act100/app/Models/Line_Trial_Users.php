@@ -7,12 +7,12 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 use Kyslik\ColumnSortable\Sortable;
 
-class Line_Trial_User_History extends Model
+class Line_Trial_Users extends Model
 {
     use HasFactory;
     use Sortable;
 
-    public $sortable = ['id','urgent_flg','filepath','filename','filesize','created_at'];   //追記(ソートに使うカラムを指定
+    public $sortable = ['id','urgent_flg','created_at'];    //追記(ソートに使うカラムを指定
 
     // 参照させたいSQLのテーブル名を指定
     protected $table = 'line_trial_users';
