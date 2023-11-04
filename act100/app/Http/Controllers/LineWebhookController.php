@@ -72,6 +72,9 @@ class LineWebhookController extends Controller
         // $common_no = 'linetrialuser';
         // $compacts = compact( 'common_no', 'linetrialusers' );
 
+        // toastrというキーでメッセージを格納　LINEから体験者が登録されました
+        session()->flash('toastr', config('toastr.line_success'));
+
         Log::info('LineWebhookController message END');
         return;
         // return view( 'linetrialuser.input', $compacts );
