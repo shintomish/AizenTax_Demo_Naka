@@ -91,6 +91,9 @@ class LineExportService
             }
         }
 
+        // * line_trial_usersテーブルの更新
+        $this->line_trial_users_Update($user_id);
+
         Log::info('ExportService LinemakeXlsPdf END');
         return;
     }
@@ -184,6 +187,44 @@ class LineExportService
         Log::info('ExportService  line_trial_users_history_Update END');
 
         return \Response::json(['error'=>'更新処理が正常に終了しました。','status'=>'OK'], 200);
+
+    }
+
+    /**
+     * line_trial_usersテーブルの更新
+     */
+    public function line_trial_users_Update($id)
+    {
+        Log::info('line_trial_users_Update START');
+
+        $counts = array();
+        $update = [];
+        $update['urgent_flg']       = 2;  // 作成フラグ(1):未作成 (2):作成済
+        $update['updated_at']       = date('Y-m-d H:i:s');
+
+        $status = array();
+        DB::beginTransaction();
+        Log::info('line_trial_users_Update beginTransaction - start');
+        try{
+            // 更新処理
+            Line_Trial_User::where( 'id', $id )->update($update);
+
+            $status = array( 'error_code' => 0, 'message'  => 'Your data has been changed!' );
+            $counts = 1;
+            DB::commit();
+            Log::info('line_trial_users_Update beginTransaction - end');
+        }
+        catch(Exception $e){
+            Log::error('line_trial_users_Update exception : ' . $e->getMessage());
+            DB::rollback();
+            Log::info('line_trial_users_Update beginTransaction - end(rollback)');
+            echo "エラー：" . $e->getMessage();
+            $counts = 0;
+            $status = array( 'error_code' => 501, 'message'  => $e->getMessage() );
+        }
+
+        Log::info('line_trial_users_Update END');
+        return response()->json([ compact('status','counts') ]);
 
     }
 
