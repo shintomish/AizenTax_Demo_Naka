@@ -67,7 +67,7 @@ class LineTrialUserController extends Controller
         Log::info('update_api linetrialuser beginTransaction - start');
         try{
             // 更新処理
-            Line_Trial_User::where( 'id', $id )->update($update);
+            Line_Trial_Users::where( 'id', $id )->update($update);
 
             $status = array( 'error_code' => 0, 'message'  => 'Your data has been changed!' );
             $counts = 1;
