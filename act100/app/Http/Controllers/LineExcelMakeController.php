@@ -85,12 +85,12 @@ class LineExcelMakeController extends Controller
              *    $file_name       : ファイル名
              */
             $export_service->LinemakeXlsPdf(
-                $data['nowyear'],
-                $data['nowmonth'],
-                $data['user_id'],
-                $data['user_name'],
-                $data['kanrino'],
-                $data['file_name'],
+                $work_data['nowyear'],
+                $work_data['nowmonth'],
+                $work_data['user_id'],
+                $work_data['user_name'],
+                $work_data['kanrino'],
+                $work_data['file_name'],
             );
 
         Log::info('LineExcelMakeController lineexcel END');

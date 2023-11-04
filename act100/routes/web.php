@@ -278,7 +278,7 @@ Route::get('annualupdate/update', 'App\Http\Controllers\AnnualupdateController@u
 Route::post('/line/webhook/message', 'App\Http\Controllers\LineWebhookController@message')->name('line.webhook.message');
 
 //-----------------------------------------------------------------------------------------------
-//- LINE LineMessageController
+//- LINE LineTrialUserController
 //-----------------------------------------------------------------------------------------------
 Route::get('linetrialuser/input',        'App\Http\Controllers\LineTrialUserController@input')->name('linetrialuser.input');
 Route::post('linetrialuser/update_api',  'App\Http\Controllers\LineTrialUserController@update_api')->name('linetrialuser.update_api');
@@ -288,5 +288,12 @@ Route::resource('linetrialuser',         'App\Http\Controllers\LineTrialUserCont
 //- LINE LineExcelMakeController
 //-----------------------------------------------------------------------------------------------
 Route::get('/lineexcel/exp/{id}',  'App\Http\Controllers\LineExcelMakeController@lineexcel')->name('lineexcelexp');
+
+//-----------------------------------------------------------------------------------------------
+//- LINE LineTrialUserHistoryController
+//-----------------------------------------------------------------------------------------------
+Route::get('linetrialuserhistory/index',    'App\Http\Controllers\LineTrialUserHistoryController@index')->name('linetrialuserhistory.index');
+Route::get('linetrialuserhistory/pdf/{id}', 'App\Http\Controllers\LineTrialUserHistoryController@show_up01')->name('linetrialuserhistory_pdf01');
+Route::resource('linetrialuserhistory',     'App\Http\Controllers\LineTrialUserHistoryController');
 
 ?>

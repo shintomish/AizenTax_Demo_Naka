@@ -3,8 +3,7 @@
 // 事務所 体験者データ確認
 namespace App\Http\Controllers;
 
-use App\Models\Line_Trial_User;
-use App\Models\Line_Trial_User_History;
+use App\Models\Line_Trial_Users_History;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -27,65 +26,64 @@ class LineTrialUserHistoryController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function input()
+    public function index()
     {
-        Log::info('linehistory input START');
+        Log::info('linetrialuserhistory index START');
 
-        $line_trial_users = DB::table('line_trial_user')
+        $line_trial_users_history = DB::table('Line_Trial_Users_History')
                     ->orderBy('created_at', 'desc')
                     ->sortable()
                     ->paginate(100);
 
-        $common_no = 'linehistory';
+        $common_no = 'linetrialuserhistory';
 
-        Log::info('linehistory input END');
+        Log::info('linetrialuserhistory index END');
 
-        $compacts = compact( 'common_no', 'line_trial_users' );
+        $compacts = compact( 'common_no', 'line_trial_users_history' );
 
-        return view( 'linehistory.input', $compacts );
+        return view( 'linetrialuserhistory.index', $compacts );
     }
 
+
     /**
-     * [webapi] line_trial_userテーブルの更新
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
      */
-    public function update_api(Request $request)
+    public function show_up01($id)
     {
-        Log::info('update_api linehistory START');
+        Log::info('invoicehistory show_up01 START');
 
-        // Log::debug('update_api request = ' .print_r($request->all(),true));
-        $id = $request->input('id');
+        $line_trial_users_history = Line_Trial_Users_History::where('id',$id)
+                    ->first();
 
-        $urgent_flg     = 1;  // 1:未作成 2:作成済
+        // Log::debug('invoicehistory show_up01  line_trial_users_history = ' . print_r($line_trial_users_history,true));
 
-        $counts = array();
-        $update = [];
-        $update['urgent_flg'] = $urgent_flg;
-        $update['updated_at'] = date('Y-m-d H:i:s');
-        // Log::debug('update_api linehistory update : ' . print_r($update,true));
+        $disk = 'local';  // or 's3'
+        $storage = Storage::disk($disk);
 
-        $status = array();
-        DB::beginTransaction();
-        Log::info('update_api linehistory beginTransaction - start');
-        try{
-            // 更新処理
-            Line_Trial_User::where( 'id', $id )->update($update);
+        $filepath = $line_trial_users_history->filepath;
+        $filename = $line_trial_users_history->filename;
+        $pdf_path = $filepath;
 
-            $status = array( 'error_code' => 0, 'message'  => 'Your data has been changed!' );
-            $counts = 1;
-            DB::commit();
-            Log::info('update_api linehistory beginTransaction - end');
+        // Log::debug('invoicehistory show_up01  filename = ' . print_r($filename,true));
+        // Log::debug('invoicehistory show_up01  pdf_path = ' . print_r($pdf_path,true));
+
+        $file = $storage->get($pdf_path);
+
+        Log::info('invoicehistory show_up01 END');
+
+        // 拡張子フラグ(1):xlsx  (2):pdf
+        if($line_trial_users_history->extension_flg == 1) {
+            return response($file, 200)
+                ->header('Content-Type', 'application/zip')
+                ->header('Content-Disposition', 'inline; filename="' . $filename . '"');
+        } else {
+            return response($file, 200)
+                ->header('Content-Type', 'application/pdf')
+                ->header('Content-Disposition', 'inline; filename="' . $filename . '"');
         }
-        catch(Exception $e){
-            Log::error('update_api linehistory exception : ' . $e->getMessage());
-            DB::rollback();
-            Log::info('update_api linehistory beginTransaction - end(rollback)');
-            echo "エラー：" . $e->getMessage();
-            $counts = 0;
-            $status = array( 'error_code' => 501, 'message'  => $e->getMessage() );
-        }
-
-        Log::info('update_api linehistory END');
-        return response()->json([ compact('status','counts') ]);
 
     }
 
