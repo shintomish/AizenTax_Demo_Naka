@@ -64,10 +64,10 @@ class LineWebhookController extends Controller
             }
         }
 
-        // $linetrialusers = Line_Trial_Users::whereNull('deleted_at')
-        //     ->sortable()
-        //     ->orderByRaw('created_at DESC')
-        //     ->paginate(100);
+        $linetrialusers = Line_Trial_Users::whereNull('deleted_at')
+            ->sortable()
+            ->orderByRaw('created_at DESC')
+            ->get();
 
         // $common_no = 'linetrialuser';
         // $compacts = compact( 'common_no', 'linetrialusers' );
@@ -76,7 +76,8 @@ class LineWebhookController extends Controller
         session()->flash('toastr', config('toastr.line_success'));
 
         Log::info('LineWebhookController message END');
-        return;
+        // return;
         // return view( 'linetrialuser.input', $compacts );
+        return response()->json($linetrialusers);
     }
 }
