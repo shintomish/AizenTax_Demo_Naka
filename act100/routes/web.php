@@ -273,8 +273,15 @@ Route::get('annualupdate/update', 'App\Http\Controllers\AnnualupdateController@u
 //Route::post('support/post', 'App\Http\Controllers\SupportController@post')->name('support');
 
 //-----------------------------------------------------------------------------------------------
-//- LINE
+//- LINE Webhook LINEからLine_Trial_Userに登録
 //-----------------------------------------------------------------------------------------------
 Route::post('/line/webhook/message', 'App\Http\Controllers\LineWebhookController@message')->name('line.webhook.message');
+
+//-----------------------------------------------------------------------------------------------
+//- LINE LineMessageController
+//-----------------------------------------------------------------------------------------------
+Route::get('linemessage/input',        'App\Http\Controllers\LineMessageController@input')->name('linemessage.input');
+Route::post('linemessage/update_api',  'App\Http\Controllers\LineMessageController@update_api')->name('linemessage.update_api');
+Route::resource('linemessage',         'App\Http\Controllers\LineMessageController');
 
 ?>
