@@ -2,7 +2,7 @@
 
 namespace App\Services;
 
-use App\Models\Line_Trial_User_History;
+use App\Models\Line_Trial_Users_History;
 
 use PhpOffice\PhpSpreadsheet\Reader\Xlsx as XlsxReader;
 use PhpOffice\PhpSpreadsheet\Writer\Xlsx as XlsxWriter;
@@ -48,7 +48,7 @@ class LineExportService
         // セルに指定した値挿入 J9 請求日R-231112-xx
         $worksheet->setCellValue('J9', now()->format('Y/m/d'));
         // セルに指定した値挿入 A11 体験者名
-        $worksheet->setCellValue('A11', $to_name);
+        $worksheet->setCellValue('A11', $user_name);
 
         // Dirなければ作成
         // if(!file_exists( storage_path('app/public/line/xls/'. $foloder_name))){
@@ -75,7 +75,7 @@ class LineExportService
             $extension_flg      = 1;
             $extension_filename = $file_name . '.xlsx';
             $ins_path = 'public/line/xls/'. $file_name. '.xlsx';
-            $this->line_trial_users_history_Update($nowyear, $nowmonth, $filepath, $fileName, $user_name, $user_id, $filesize, $extension_flg);
+            $this->line_trial_users_history_Update($nowyear, $nowmonth, $ins_path, $extension_filename, $user_name, $user_id, $filesize, $extension_flg);
 
             // ExcelファイルをPDFに変換するコード
             $pdf_path = $this->convertOfficeToPdf($file_name, $export_xls_path);
@@ -87,7 +87,7 @@ class LineExportService
                 $extension_flg      = 2;
                 $extension_filename = $file_name . '.pdf';
                 $ins_path = 'public/line/pdf/'. $file_name. '.pdf';
-                $this->line_trial_users_history_Update($nowyear, $nowmonth, $filepath, $fileName, $user_name, $user_id, $filesize, $extension_flg);
+                $this->line_trial_users_history_Update($nowyear, $nowmonth, $ins_path, $extension_filename, $user_name, $user_id, $filesize, $extension_flg);
             }
         }
 
@@ -160,7 +160,7 @@ class LineExportService
             DB::beginTransaction();
             Log::info('beginTransaction - ExportService  line_trial_users_history_Update saveFile start');
 
-            $line_trial_users_history = new Line_Trial_User_History();
+            $line_trial_users_history = new Line_Trial_Users_History();
             $line_trial_users_history->year            = $nowyear;
             $line_trial_users_history->mon             = $nowmonth;
             $line_trial_users_history->filepath        = $filepath;

@@ -29,8 +29,7 @@ class LineTrialUserController extends Controller
     public function input()
     {
         Log::info('linetrialuser input START');
-
-        $linetrialusers = Line_Trial_User::where('urgent_flg','>',0)
+        $linetrialusers = Line_Trial_User::whereNull('deleted_at')
                         ->sortable()
                         ->orderByRaw('created_at DESC')
                         ->paginate(100);

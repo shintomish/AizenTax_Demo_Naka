@@ -8,7 +8,7 @@ use App\Models\Line_Trial_User;
 
 use App\Services\LineExportService as LineExportService;
 use Illuminate\Support\Facades\Log;
-
+use Illuminate\Support\Facades\DB;
 
 class LineExcelMakeController extends Controller
 {
@@ -47,8 +47,13 @@ class LineExcelMakeController extends Controller
 
         $xls_out_data      = array();
 
-        $xls_inp_data = Line_Trial_User::where('id','=', $id)
+        Log::debug('LineExcelMakeController lineexcel $id = ' . print_r($id,true));
+
+        $xls_inp_data = DB::table('line_trial_users')
+                ->where('id','=', $id)
                 ->first();
+        $user_name = $xls_inp_data->users_name;
+        Log::debug('LineExcelMakeController lineexcel $user_name = ' . print_r($user_name,true));
 
         $cnt = 1;
         foreach ($xls_inp_data as $xls_data2) {
@@ -57,13 +62,13 @@ class LineExcelMakeController extends Controller
             $work_data['nowyear']      = $nowyear;        // 年
             $work_data['nowmonth']     = $nowmonth;       // 月
             $work_data['user_id']      = $id;             // id
-            $work_data['user_name']    = $$xls_data2->user_name;             // ユーザー名
-            $work_data['kanrino']      = 'R-'.$year .$mon. $day. '_'. $cusid; // 管理番号 R-231112-xx
+            $work_data['user_name']    = $user_name;     // ユーザー名
+            $work_data['kanrino']      = 'R-'. $year . $mon. $day. '_'. $cusid; // 管理番号 R-231112-xx
 
             $stringw  = $filename;
             $stringw .= '_'. $cusid;
-            $stringw .= '_'. $work_data['user_name'];
-            $stringw .= '_'. $cusid. '_請求書';
+            $stringw .= '_'. $user_name;
+            $stringw .= '_'. '請求書';
             $string   = preg_replace("/( |　)/", "", $stringw );         // 文字列の中にある半角空白と全角空白をすべて削除・除去する
             $work_data['file_name']    = $string;
 
