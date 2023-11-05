@@ -71,6 +71,7 @@ class BillDataHistoryController extends Controller
 
         $billdatas = Billdata::where('extension_flg',2)
                     ->where('year',       $nowyear)
+                    ->where('mon',       $nowmonth)
                     ->whereNull('deleted_at')
                     ->orderByRaw('created_at DESC')
                     ->sortable()
