@@ -100,7 +100,7 @@
                     @endif
 
                     @if($nowmonth == 11)
-                        <th scope="col" class ="col-xs-3 col-md-1 bg-warning text-right">10月</th>
+                        <th scope="col" class ="col-xs-3 col-md-1 bg-warning text-right">11月</th>
                     @else
                         {{-- <th scope="col" type="hidden"  class ="col-xs-3 col-md-1 bg-info text-right">11月</th> --}}
                     @endif

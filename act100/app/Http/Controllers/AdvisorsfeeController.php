@@ -1,26 +1,15 @@
 <?php
 namespace App\Http\Controllers;
 
-use File;
 use Validator;
-use App\Models\User;
 use App\Models\Customer;
 use App\Models\Advisorsfee;
-use App\Models\Progrecheck;
-use App\Models\Schedule;
-use App\Models\Parameter;
 
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
-use Illuminate\Support\Facades\Hash;
 
-use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
-use Illuminate\Foundation\Bus\DispatchesJobs;
-use Illuminate\Foundation\Validation\ValidatesRequests;
-use Illuminate\Routing\Controller as BaseController;
 
 class AdvisorsfeeController extends Controller
 {
@@ -47,7 +36,7 @@ class AdvisorsfeeController extends Controller
         // ログインユーザーのユーザー情報を取得する
         $user    = $this->auth_user_info();
         $user_id = $user->id;
-        
+
         $organization  = $this->auth_user_organization();
         $organization_id = $organization->id;
 
@@ -167,7 +156,7 @@ class AdvisorsfeeController extends Controller
         // ログインユーザーのユーザー情報を取得する
         $user    = $this->auth_user_info();
         $user_id = $user->id;
-        
+
         $organization  = $this->auth_user_organization();
         $organization_id = $organization->id;
 

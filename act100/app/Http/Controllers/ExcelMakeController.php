@@ -128,10 +128,42 @@ class ExcelMakeController extends Controller
             $work_data['kanrino']      = $year .'_'. $mon. '_'. $cusid; // 管理番号
 
             // ★ 1 - 12 追加
+            if($nowmonth == 1) {
+                $work_data['tanka']    = ($xls_data2->fee_01);
+            }
+            if($nowmonth == 2) {
+                $work_data['tanka']    = ($xls_data2->fee_02);
+            }
+            if($nowmonth == 3) {
+                $work_data['tanka']    = ($xls_data2->fee_03);
+            }
+            if($nowmonth == 4) {
+                $work_data['tanka']    = ($xls_data2->fee_04);
+            }
+            if($nowmonth == 5) {
+                $work_data['tanka']    = ($xls_data2->fee_05);
+            }
+            if($nowmonth == 6) {
+                $work_data['tanka']    = ($xls_data2->fee_06);
+            }
+            if($nowmonth == 7) {
+                $work_data['tanka']    = ($xls_data2->fee_07);
+            }
+            if($nowmonth == 8) {
+                $work_data['tanka']    = ($xls_data2->fee_08);
+            }
+            if($nowmonth == 9) {
+                $work_data['tanka']    = ($xls_data2->fee_09);
+            }
             if($nowmonth == 10) {
                 $work_data['tanka']    = ($xls_data2->fee_10);
             }
-
+            if($nowmonth == 11) {
+                $work_data['tanka']    = ($xls_data2->fee_11);
+            }
+            if($nowmonth == 12) {
+                $work_data['tanka']    = ($xls_data2->fee_12);
+            }
             array_push($xls_out_data, $work_data );
             $cnt = $cnt + 1;
         }
