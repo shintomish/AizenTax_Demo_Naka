@@ -2,7 +2,7 @@
 @extends('layouts.api_index')
 
 @section('content')
-    {{-- <h2>顧問料一覧</h2> --}}
+    {{-- 体験者請求書 --}}
     <div class="text-right">
         {{-- <a class="btn btn-success btn-sm mr-auto" href="{{route('advisorsfee.create')}}">新規登録</a> --}}
         {{-- <a id="start2" style="margin-bottom:5px;" class="btn btn-success btn-sm mr-auto" href="{{route('excelexp')}}">請求書作成</a> --}}
@@ -94,7 +94,7 @@
         <table class="table table-responsive text-nowrap table-striped table-borderd table_sticky">
             <thead>
                 <tr>
-                    <th scope="col" class ="fixed01">顧客ID</th>
+                    <th scope="col" class ="fixed01">ID</th>
                     <th scope="col" class ="fixed01">体験者名</th>
                     <th scope="col" class ="fixed01">パス名</th>
                     <th scope="col" class ="fixed01">ファイル名</th>
@@ -109,7 +109,7 @@
                     <tr>
                         {{-- ID --}}
                         @php
-                            $cusid = sprintf("%02d", $line_trial_users_history->user_id);
+                            $cusid = sprintf("%03d", $line_trial_users_history->id);
                         @endphp
                         <td>{{ $cusid }}</td>
 
