@@ -1,0 +1,37 @@
+[2023-11-05 08:22:05] Act:.INFO: auth_user_info START  
+[2023-11-05 08:22:05] Act:.INFO: auth_user_info END  
+[2023-11-05 08:22:06] Act:.INFO: auth login redirectTo user = stdClass Object
+(
+    [id] => 1
+    [name] => 新冨泰明
+    [email] => shintomi.sh@gmail.com
+    [email_verified_at] => 
+    [organization_id] => 0
+    [user_id] => 1
+    [login_flg] => 2
+    [admin_flg] => 2
+    [created_at] => 2022-10-20T03:00:00.000000Z
+    [updated_at] => 2022-10-20T03:00:00.000000Z
+    [deleted_at] => 
+)
+  
+[2023-11-05 08:22:12] Act:.INFO: auth_user_info START  
+[2023-11-05 08:22:12] Act:.INFO: auth_user_info END  
+[2023-11-05 08:22:12] Act:.INFO: office top index START $user->name = 新冨泰明  
+[2023-11-05 08:22:12] Act:.INFO: auth_user_organization START  
+[2023-11-05 08:22:12] Act:.INFO: auth_user_organization END  
+[2023-11-05 08:22:13] Act:.INFO: office top index END $user->name = 新冨泰明  
+[2023-11-05 08:22:26] Act:.INFO: linetrialuser input START  
+[2023-11-05 08:22:26] Act:.INFO: linetrialuser input END  
+[2023-11-05 08:25:31] Act:.INFO: linetrialuser input START  
+[2023-11-05 08:25:32] Act:.INFO: linetrialuser input END  
+[2023-11-05 08:26:11] Act:.INFO: linetrialuserhistory index START  
+[2023-11-05 08:26:11] Act:.INFO: linetrialuserhistory index END  
+[2023-11-05 08:26:32] Act:.INFO: linetrialuser input START  
+[2023-11-05 08:26:32] Act:.INFO: linetrialuser input END  
+[2023-11-05 08:27:04] Act:.INFO: linetrialuserhistory index START  
+[2023-11-05 08:27:04] Act:.INFO: linetrialuserhistory index END  
+[2023-11-05 08:27:38] Act:.INFO: linetrialuser input START  
+[2023-11-05 08:27:39] Act:.INFO: linetrialuser input END  
+[2023-11-05 09:05:53] Act:.INFO: linetrialuser input START  
+[2023-11-05 09:05:54] Act:.INFO: linetrialuser input END  

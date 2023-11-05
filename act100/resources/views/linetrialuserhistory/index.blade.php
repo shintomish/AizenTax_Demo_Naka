@@ -17,6 +17,74 @@
             </div> --}}
         <!-- 検索エリア -->
     </div>
+    <style>
+        /* スクロールバーの実装 */
+        .table_sticky {
+            display: block;
+            overflow-y: scroll;
+            /* height: calc(100vh/2); */
+            height: 600px;
+            border:1px solid;
+            border-collapse: collapse;
+        }
+        .table_sticky thead th {
+            position: -webkit-sticky;
+            position: sticky;
+            top: 0;
+            left: 0;
+            color: #fff;
+            background: rgb(180, 226, 11);
+            &:before{
+                content: "";
+                position: absolute;
+                top: -1px;
+                left: -1px;
+                width: 100%;
+                /* height: 100%; 2023/06/12 sortablelink対応 */
+                height: 10%;
+                border: 1px solid #ccc;
+            }
+        }
+
+        table{
+            width: 1800px;
+        }
+        th,td{
+            width: 250px;   /* 200->250 */
+            height: 10px;
+            vertical-align: middle;
+            padding: 0 15px;
+            border: 1px solid #ccc;
+        }
+        .fixed01,
+        .fixed02{
+            /* position: -webkit-sticky; */
+            position: sticky;
+            top: 0;
+            left: 0;
+            color: rgb(8, 8, 8);
+            background: #333;
+            &:before{
+                content: "";
+                position: absolute;
+                top: -1px;
+                left: -1px;
+                width: 100%;
+                height: 100%;
+                border: 1px solid #ccc;
+            }
+        }
+        .fixed01{
+            z-index: 2;
+        }
+        .fixed02{
+            z-index: 1;
+        }
+        .fixed03{
+            color: red;
+            font-weight: bold;
+        }
+    </style>
 
     {{-- Line --}}
     <hr class="mb-4">
@@ -26,12 +94,12 @@
         <table class="table table-responsive text-nowrap table-striped table-borderd table_sticky">
             <thead>
                 <tr>
-                    <th scope="col" class ="bg-secondary text-left">顧客ID</th>
-                    <th scope="col" class ="bg-info text-right">体験者名</th>
-                    <th scope="col" class ="bg-info text-right">パス名</th>
-                    <th scope="col" class ="bg-info text-right">ファイル名</th>
-                    {{-- <th scope="col" class ="bg-info text-right">XLS/PDF</th> --}}
-                    <th scope="col" class ="bg-secondary  text-right">操作</th>
+                    <th scope="col" class ="fixed01">顧客ID</th>
+                    <th scope="col" class ="fixed01">体験者名</th>
+                    <th scope="col" class ="fixed01">パス名</th>
+                    <th scope="col" class ="fixed01">ファイル名</th>
+                    {{-- <th scope="col" class ="fixed01">XLS/PDF</th> --}}
+                    <th scope="col" class ="fixed01">操作</th>
                 </tr>
             </thead>
 
