@@ -64,22 +64,23 @@ class LineWebhookController extends Controller
             }
         }
 
-        $linetrialusers = Line_Trial_Users::whereNull('deleted_at')
-            ->sortable()
-            ->orderByRaw('created_at DESC')
-            ->get();
-
-        $common_no = 'linetrialuser';
-        $compacts = compact( 'common_no', 'linetrialusers' );
-
+        // 2023/11/05 非同期で通知したかったが。。
+        // $linetrialusers = Line_Trial_Users::whereNull('deleted_at')
+        //     ->sortable()
+        //     ->orderByRaw('created_at DESC')
+        //     ->get();
+        // $common_no = 'linetrialuser';
+        // $compacts = compact( 'common_no', 'linetrialusers' );
         // toastrというキーでメッセージを格納　LINEから体験者が登録されました
-        session()->flash('toastr', config('toastr.line_success'));
-
-        Log::info('LineWebhookController message END');
+        // session()->flash('toastr', config('toastr.line_success'));
         // return;
         // return view( 'linetrialuser.input', $compacts );
         // return response()->json($linetrialusers);
         // return redirect()->route('linetrialuser.input');
-        return redirect()->route( 'linetrialuser.input', $compacts)->with('message', 'LINEから体験者が登録されました');
+        // return redirect()->route( 'linetrialuser.input', $compacts)->with('message', 'LINEから体験者が登録されました');
+
+        Log::info('LineWebhookController message END');
+
+        return 'ok';
     }
 }
