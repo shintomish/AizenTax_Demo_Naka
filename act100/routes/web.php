@@ -296,4 +296,14 @@ Route::get('linetrialuserhistory/index',    'App\Http\Controllers\LineTrialUserH
 Route::get('linetrialuserhistory/pdf/{id}', 'App\Http\Controllers\LineTrialUserHistoryController@show_up01')->name('linetrialuserhistory_pdf01');
 Route::resource('linetrialuserhistory',     'App\Http\Controllers\LineTrialUserHistoryController');
 
+//-----------------------------------------------------------------------------------------------
+//- LINE AnnouncementController
+//-----------------------------------------------------------------------------------------------
+Route::prefix('announcement')->middleware('auth')->group(function(){
+
+    Route::get('/', [AnnouncementController::class, 'index'])->name('announcement.index');
+    Route::get('/list', [AnnouncementController::class, 'list'])->name('announcement.list');
+    Route::get('/{announcement}', [AnnouncementController::class, 'show'])->name('announcement.show');
+
+});
 ?>
