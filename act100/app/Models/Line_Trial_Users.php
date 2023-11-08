@@ -4,12 +4,13 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Notifications\Notifiable;
 
 use Kyslik\ColumnSortable\Sortable;
 
 class Line_Trial_Users extends Model
 {
-    use HasFactory;
+    use HasFactory, Notifiable;
     use Sortable;
 
     public $sortable = ['id','urgent_flg','created_at'];    //追記(ソートに使うカラムを指定
