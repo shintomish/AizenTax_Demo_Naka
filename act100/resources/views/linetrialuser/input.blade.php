@@ -108,9 +108,9 @@
                 <tr>
                     <th scope="col" class ="fixed01">ID</th>
                     <th scope="col" class ="fixed01">体験者名</th>
-                    <th scope="col" class ="fixed01">請求書作成</th>
                     <th scope="col" class ="fixed01">予約時間</th>
                     <th scope="col" class ="fixed01">登録日</th>
+                    <th scope="col" class ="fixed01">請求書作成</th>
                     <th scope="col" class ="fixed01">操作</th>
                 </tr>
             </thead>
@@ -133,6 +133,26 @@
                             <input type="text" class="form-control" id="users_name_{{$linetrialuser->id}}" name="users_name_{{$linetrialuser->id}}" value="{{$str}}">
                         </td>
 
+                        {{-- 予約時間 reservationed_at--}}
+                        @php
+                            $str2 = '';
+                            if (isset($linetrialuser->reservationed_at)) {
+                                $str2 = substr($linetrialuser->reservationed_at,0,5);
+                                // $str1 = ( new DateTime($linetrialuser->reservationed_at))->format('Y-m-d');
+                            }
+                        @endphp
+                        <td>
+                        <input type="time" class="form-control" id="reservationed_at_{{$linetrialuser->id}}" name="reservationed_at_{{$linetrialuser->id}}" value="{{$str2}}">
+                        </td>
+                        {{-- <td>{{ $str2 }}</td> --}}
+
+                        {{-- 登録日時 --}}
+                        @php
+                            if (isset($linetrialuser->created_at)) {
+                                $str3 = ( new DateTime($linetrialuser->created_at))->format('Y-m-d H:i:s');
+                            }
+                        @endphp
+                        <td>{{ $str3 }}</td>
                         {{-- 請求書作成状況 1:未 2:済 --}}
                         @php
                             if($linetrialuser->urgent_flg == 1){
@@ -148,31 +168,6 @@
                                 <p class={{ $textcolor }}>{{ $str1 }}</p>
                             </h6>
                         </td>
-                            {{-- <select class="custom-select" id="contract_entity_{{$linetrialuser->id}}" name="contract_entity_{{$linetrialuser->id}}">
-                                <option value="1" {{ $linetrialuser->urgent_flg == 1 ? 'selected' : '' }}>未</option>
-                                <option value="2" {{ $linetrialuser->urgent_flg == 2 ? 'selected' : '' }}>済</option>
-                            </select> --}}
-
-                        {{-- 予約時間 reservationed_at--}}
-                        @php
-                        $str2 = '';
-                        if (isset($linetrialuser->reservationed_at)) {
-                            $str2 = substr($linetrialuser->reservationed_at,0,5);
-                            // $str1 = ( new DateTime($linetrialuser->reservationed_at))->format('Y-m-d');
-                        }
-                        @endphp
-                        <td>
-                        <input type="time" class="form-control" id="reservationed_at_{{$linetrialuser->id}}" name="reservationed_at_{{$linetrialuser->id}}" value="{{$str2}}">
-                        </td>
-                        {{-- <td>{{ $str2 }}</td> --}}
-
-                        {{-- 登録日時 --}}
-                        @php
-                            if (isset($linetrialuser->created_at)) {
-                                $str3 = ( new DateTime($linetrialuser->created_at))->format('Y-m-d');
-                            }
-                        @endphp
-                        <td>{{ $str3 }}</td>
 
                         <td>
                             <div class="btn-toolbar">

@@ -229,3 +229,55 @@
 [2023-11-08 21:22:18] Act:.INFO: auth_user_organization START  
 [2023-11-08 21:22:18] Act:.INFO: auth_user_organization END  
 [2023-11-08 21:22:19] Act:.INFO: operation index END  
+[2023-11-08 23:47:45] Act:.INFO: auth_user_info START  
+[2023-11-08 23:47:45] Act:.INFO: auth_user_info END  
+[2023-11-08 23:47:45] Act:.INFO: auth login redirectTo user = stdClass Object
+(
+    [id] => 1
+    [name] => 新冨泰明
+    [email] => shintomi.sh@gmail.com
+    [email_verified_at] => 
+    [organization_id] => 0
+    [user_id] => 1
+    [login_flg] => 2
+    [admin_flg] => 2
+    [created_at] => 2022-10-20T03:00:00.000000Z
+    [updated_at] => 2022-10-20T03:00:00.000000Z
+    [deleted_at] => 
+)
+  
+[2023-11-08 23:47:45] Act:.INFO: loginout operation update START  
+[2023-11-08 23:47:45] Act:.INFO: loginout operation update $id < 10 END  
+[2023-11-08 23:47:51] Act:.INFO: operation index START  
+[2023-11-08 23:47:51] Act:.INFO: auth_user_organization START  
+[2023-11-08 23:47:51] Act:.INFO: auth_user_organization END  
+[2023-11-08 23:47:52] Act:.INFO: operation index END  
+[2023-11-08 23:48:02] Act:.INFO: auth_user_info START  
+[2023-11-08 23:48:02] Act:.INFO: auth_user_info END  
+[2023-11-08 23:48:02] Act:.INFO: office top index START $user->name = 新冨泰明  
+[2023-11-08 23:48:02] Act:.INFO: auth_user_organization START  
+[2023-11-08 23:48:02] Act:.INFO: auth_user_organization END  
+[2023-11-08 23:48:04] Act:.INFO: office top index END $user->name = 新冨泰明  
+[2023-11-08 23:48:13] Act:.INFO: linetrialuser input START  
+[2023-11-08 23:48:13] Act:.INFO: linetrialuser input END  
+[2023-11-08 23:51:03] Act:.INFO: linetrialuser input START  
+[2023-11-08 23:51:04] Act:.INFO: linetrialuser input END  
+[2023-11-08 23:51:23] Act:.INFO: linetrialuserhistory index START  
+[2023-11-08 23:51:24] Act:.INFO: linetrialuserhistory index END  
+[2023-11-08 23:52:31] Act:.INFO: auth logout redirectTo user = stdClass Object
+(
+    [id] => 1
+    [name] => 新冨泰明
+    [email] => shintomi.sh@gmail.com
+    [email_verified_at] => 
+    [organization_id] => 0
+    [user_id] => 1
+    [login_flg] => 2
+    [admin_flg] => 2
+    [created_at] => 2022-10-20T03:00:00.000000Z
+    [updated_at] => 2022-10-20T03:00:00.000000Z
+    [deleted_at] => 
+)
+  
+[2023-11-08 23:52:31] Act:.INFO: loginout operation update START  
+[2023-11-08 23:52:31] Act:.INFO: loginout operation update $id < 10 END  
