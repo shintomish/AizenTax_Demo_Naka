@@ -179,8 +179,8 @@
                         <td>
                             {{-- /'契約主体 1:グローアップ社 2:税理士法人'--}}
                             <select class="custom-select" id="contract_entity_{{$advisorsfee->id}}" name="contract_entity_{{$advisorsfee->id}}">
-                                <option value="1" {{ $advisorsfee->contract_entity == 1 ? 'selected' : '' }}>グローアップ社</option>
-                                <option value="2" {{ $advisorsfee->contract_entity == 2 ? 'selected' : '' }}>税理士法人</option>
+                                <option value="1" {{ $advisorsfee->contract_entity == 1 ? 'selected' : '' }}>アイゼン社</option>
+                                <option value="2" {{ $advisorsfee->contract_entity == 2 ? 'selected' : '' }}>クロスコ社</option>
                             </select>
                         </td>
                         {{-- 紹介先 --}}
@@ -402,7 +402,7 @@
                 @endif
                 <script type="text/javascript">
                     //---------------------------------------------------------------
-                    //--契約主体 1:グローアップ社 2:税理士法人 プルダウンイベントハンドラ
+                    //--契約主体 1:アイゼン社 2:クロスコ社 プルダウンイベントハンドラ
                     //---------------------------------------------------------------
                     $('select[name^="contract_entity_"]').change( function(e){
                         // alert('契約主体Click');

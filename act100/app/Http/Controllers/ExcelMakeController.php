@@ -104,15 +104,15 @@ class ExcelMakeController extends Controller
 
             // 契約主体
             if($xls_data2->contract_entity == 1) {
-                $work_data['from_flcompany'] = '合同会社グローアップ';
-                $work_data['from_company']   = '合同会社グローアップ・マネジメント';
-                $work_data['from_repres']    = '代表社員　　　　　富　澤　利　広';
-                $work_data['tourokuno']      = 'T9010503005932';
+                $work_data['from_flcompany'] = '株式会社アイゼン';
+                $work_data['from_company']   = '株式会社アイゼン・ソリューション';
+                $work_data['from_repres']    = '代表社員　　　　　中　村　和　雄';
+                $work_data['tourokuno']      = 'T9010503001234';
             } else {
-                $work_data['from_flcompany'] = '税理士法人_間庭';
-                $work_data['from_company']   = '税理士法人 間庭・飯田合同事務所';
-                $work_data['from_repres']    = '代表社員　　　　　税 理 士 法 人';
-                $work_data['tourokuno']      = 'T9010501234567';
+                $work_data['from_flcompany'] = '税理士法人_小川';
+                $work_data['from_company']   = '税理士法人 小川・齋藤合同事務所';
+                $work_data['from_repres']    = '代表社員　　　　　齋　藤　一　郎';
+                $work_data['tourokuno']      = 'T9010503005678';
             }
 
             $work_data['customers_id']      = $xls_data2->customers_id;

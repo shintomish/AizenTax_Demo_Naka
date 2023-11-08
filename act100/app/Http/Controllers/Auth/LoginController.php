@@ -3,14 +3,18 @@
 namespace App\Http\Controllers\Auth;
 
 use Log;
-use App\User;
+// use App\User;
 
+use App\Models\Operation;
 use App\Http\Controllers\Controller;
+
 use App\Providers\RouteServiceProvider;
 use Illuminate\Http\Request;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Auth\SessionGuard;
+use Illuminate\Support\Facades\DB;
+// use Illuminate\Auth\SessionGuard;
+
 
 class LoginController extends Controller
 {
@@ -53,6 +57,9 @@ class LoginController extends Controller
             return '/';
         }
 
+        // Operationを更新する 2023/11/08
+        $ret  = $this->update(1,$user->id);
+
         // toastrというキーでメッセージを格納
         session()->flash('toastr', config('toastr.session_login'));
 
@@ -82,6 +89,9 @@ class LoginController extends Controller
 
         Log::info('auth logout redirectTo user = ' . print_r(json_decode($user),true));
 
+        // Operationを更新する 2023/09/06
+        $ret  = $this->update(2,$user->id);        
+
         // return $this->originalLogout($request); // 元々のログアウト
 
         // 2022/11/01 以下追加
@@ -94,5 +104,56 @@ class LoginController extends Controller
 
         // return $this->loggedOut($request) ?: redirect('/');
         return $this->originalLogout($request) ?: redirect('/');
+    }
+
+    /**
+     * Update the specified resource in storage.
+     * 2023/11/08 Operationを更新する
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update($sw ,$id)
+    {
+        Log::info('loginout operation update START');
+
+        if($id < 10){
+                Log::info('loginout operation update $id < 10 END');
+            return;
+        }
+
+        $operation = Operation::find($id);
+
+        DB::beginTransaction();
+        Log::info('beginTransaction - loginout operation update start');
+        try {
+
+                if($sw == 1){
+                    $operation->status_flg           = 1;
+                    $operation->login_verified_at    = now();
+                    // $operation->logout_verified_at   = null;
+                } else {
+                    $operation->status_flg           = 2;
+                    // $operation->login_verified_at    = null;
+                    $operation->logout_verified_at   = now();
+                }
+
+                $operation->updated_at           = now();
+                $result = $operation->save();
+
+                // Log::debug('operation update = ' . $operation);
+
+                DB::commit();
+                Log::info('beginTransaction - loginout operation update end(commit)');
+        }
+        catch(\QueryException $e) {
+            Log::error('exception : ' . $e->getMessage());
+            DB::rollback();
+            Log::info('beginTransaction - loginout operation update end(rollback)');
+        }
+
+        Log::info('loginout operation update END');
+
+        return;
     }
 }

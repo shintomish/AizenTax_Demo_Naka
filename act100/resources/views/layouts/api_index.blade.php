@@ -406,8 +406,10 @@
                                 @break;
                             @case ('linetrialuser')
                                 <!-- タイトル -->
-                                <h3>体験者名簿</h3>
-
+                                <h3>体験者名簿 </h3>
+                                <div class="col-2">
+                                    <a type="submit" class="btn btn-primary btn-sm" href="{{ route('linetrialuser.input')}}">更新</a>
+                                </div>
                                 @break;
                             @case ('linetrialuserhistory')
                                 <!-- タイトル -->

@@ -17,6 +17,9 @@
     @endif
 
     <div class="row">
+        {{-- <div class="col-2">
+    <a type="submit" class="btn btn-primary btn-sm" href="{{ route('linetrialuser.input')}}">更新</a>
+        </div> --}}
         <!-- 検索エリア -->
         <p>作成状況：</p>
             <div class="progress">
