@@ -43,29 +43,44 @@ class LineWebhookController extends Controller
             //     'line_message_id' => $event['message']['id'],
             //     'text'            => $event['message']['text'],
             // ]);
-            
-            // Log::debug('LineWebhookController message $event = ' . print_r($event,true));
 
-            $updata['count'] = Line_Message::where('line_user_id', $event['source']['userId'])->count();
-            if( $updata['count'] > 0 ) {
-                // Log::debug('LineWebhookController message [count] = ' . print_r($updata['count'],true));
+            foreach ($events as $event) {
+                
+                switch ($event['message']['type']) {
+                    case 'text':
+                        $line_message = new Line_Message();
+                        $line_message->line_user_id    = $event['source']['userId'];
+                        $line_message->line_message_id = $event['message']['id'];
+                        $line_message->text            = $event['message']['text'];
+                        $line_message->save();               //  Inserts
 
-            } else {
-                $line_message = new Line_Message();
-                $line_message->line_user_id    = $event['source']['userId'];
-                $line_message->line_message_id = $event['message']['id'];
-                $line_message->text            = $event['message']['text'];
-                $line_message->save();               //  Inserts
+                        $updata['count'] = Line_Trial_Users::where('line_user_id', $event['source']['userId'])->count();
+                        if( $updata['count'] == 0 ) {
 
-                $msg = "体験会ご予約承りました。" . "\n";
-                $msg .= "ブースにお越しいただき、" . "\n";
-                $msg .= "ご希望の予約時間を登録致します。";
-                $trial_user = new Line_Trial_Users();
-                $trial_user->line_user_id    = $line_message->line_user_id;
-                $trial_user->users_name      = $line_message->text;
-                $trial_user->save();               //  Inserts
-                $response = $bot->replyText($event['replyToken'], $msg);
+                            $trial_user = new Line_Trial_Users();
+                            $trial_user->line_user_id    = $line_message->line_user_id;
+                            $trial_user->users_name      = $line_message->text;
+                            $trial_user->save();               //  Inserts
 
+                            // 自動返信
+                            $msg = "体験会ご予約承りました。" . "\n";
+                            $msg .= "ブースにお越しいただき、" . "\n";
+                            $msg .= "ご希望の予約時間を登録致します。";
+                            $response = $bot->replyText($event['replyToken'], $msg);
+                        }
+            Log::debug('LineWebhookController message case text = ' . print_r($event['source']['userId'], true));
+
+                        break;
+                    case 'image':
+                        break;
+
+
+                        // スタンプが送信された場合
+                    case 'sticker':
+                        break;
+                    default :
+                    Log::debug('LineWebhookController message case default = ' . print_r($event['source']['userId'], true));
+                        break;
             }
 
         }
