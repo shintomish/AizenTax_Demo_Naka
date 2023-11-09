@@ -184,14 +184,14 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="{{route('linetrialuser.input')}}">
                                     <i class="fas fa-edit"></i>
-                                    <span style="color:blue">体験者名簿</span>
+                                    <span style="color:blue">体験者名簿・領収書作成</span>
                                 </a>
                             </li>
 
                             <li class="nav-item">
                                 <a class="nav-link" href="{{route('linetrialuserhistory.index')}}">
                                     <i class="fas fa-edit"></i>
-                                    <span style="color:blue">体験者請求書</span>
+                                    <span style="color:blue">体験者領収書一覧</span>
                                 </a>
                             </li>
 
@@ -406,14 +406,14 @@
                                 @break;
                             @case ('linetrialuser')
                                 <!-- タイトル -->
-                                <h3>体験者名簿 </h3>
+                                <h3>体験者名簿・領収書作成 </h3>
                                 <div class="col-2">
                                     <a type="submit" class="btn btn-primary btn-sm" href="{{ route('linetrialuser.input')}}">更新</a>
                                 </div>
                                 @break;
                             @case ('linetrialuserhistory')
                                 <!-- タイトル -->
-                                <h3>体験者請求書</h3>
+                                <h3>体験者領収書一覧</h3>
 
                                 @break;
                             @default:

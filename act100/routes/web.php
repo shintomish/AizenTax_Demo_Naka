@@ -294,6 +294,7 @@ Route::get('/lineexcel/exp/{id}',  'App\Http\Controllers\LineExcelMakeController
 //-----------------------------------------------------------------------------------------------
 Route::get('linetrialuserhistory/index',    'App\Http\Controllers\LineTrialUserHistoryController@index')->name('linetrialuserhistory.index');
 Route::get('linetrialuserhistory/pdf/{id}', 'App\Http\Controllers\LineTrialUserHistoryController@show_up01')->name('linetrialuserhistory_pdf01');
+Route::post('linetrialuserhistory/update_api', 'App\Http\Controllers\LineTrialUserHistoryController@update_api')->name('linetrialuserhistory_upload_api');
 Route::resource('linetrialuserhistory',     'App\Http\Controllers\LineTrialUserHistoryController');
 
 //-----------------------------------------------------------------------------------------------

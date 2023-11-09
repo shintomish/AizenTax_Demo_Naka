@@ -87,7 +87,7 @@
     </style>
 
     {{-- Line --}}
-    <hr class="mb-4">
+    {{-- <hr class="mb-4"> --}}
 
     <div class="table-responsive">
 
@@ -98,7 +98,7 @@
                     <th scope="col" class ="fixed01">体験者名</th>
                     <th scope="col" class ="fixed01">パス名</th>
                     <th scope="col" class ="fixed01">ファイル名</th>
-                    {{-- <th scope="col" class ="fixed01">XLS/PDF</th> --}}
+                    <th scope="col">@sortablelink('urgent_flg', '発行確認')</th>
                     <th scope="col" class ="fixed01">操作</th>
                 </tr>
             </thead>
@@ -126,22 +126,40 @@
                         <td>{{$line_trial_users_history->filename }}</td>
 
                         {{-- XLS/PDF 拡張子フラグ(1):xlsx  (2):pdf --}}
-                        @php
+                        {{-- @php
                             if($line_trial_users_history->extension_flg == 1) {
                                 $str = 'XLS';
                             } else {
                                 $str = 'PDF';
                             }
-                        @endphp
-                        {{-- <td>
+                        @endphp --}}
+                        {{-- <td>urgent_flg
                             {{ $str }}
                         </td> --}}
+
+                        {{-- 領収書ダウンロード 発行フラグ(1):済  (2):未 --}}
+                        @php
+                            if($line_trial_users_history->urgent_flg == 2) {
+                                $str = '未発行';
+                                $strstyle = "color:red";
+                            } else {
+                                $str = '発行済';
+                                $strstyle = "color:blue";
+                            }
+                        @endphp
+                        <td>
+                            <h6 >
+            <p name="shine_{{$line_trial_users_history->id}}" id="shine_{{$line_trial_users_history->id}}" style="{{$strstyle}}" ><label name="label_{{$line_trial_users_history->id}}" style="margin-top:10px;" >{{$str}}</label>
+                                </p>
+                            </h6>
+                            {{-- {{ $str }} --}}
+                        </td>
 
                         <td>
                             <div class="btn-toolbar">
                                 <div class="btn-group me-2 mb-0">
-        <a id="start2" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm" href="{{ route('linetrialuserhistory_pdf01',$line_trial_users_history->id)}}">DownLoad</a>
-{{-- <input class="btn btn-primary btn-sm" type="submit" id="btn_del_{{$line_trial_users_history->id}}" name="btn_del_{{$line_trial_users_history->id}}" value="詳細" > --}}
+        {{-- <a id="start2" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm" href="{{ route('linetrialuserhistory_pdf01',$line_trial_users_history->id)}}">DownLoad</a> --}}
+<input class="btn btn-primary btn-sm" type="submit" id="btn_del_{{$line_trial_users_history->id}}" name="btn_del_{{$line_trial_users_history->id}}" id2="btn_del_{{$line_trial_users_history->urgent_flg}}" value="DownLoad" >
 
                                 </div>
                             </div>
@@ -154,22 +172,87 @@
                         <td><p> </p></td>
                         <td><p> </p></td>
                         <td><p> </p></td>
-                        {{-- <td><p> </p></td> --}}
+                        <td><p> </p></td>
                         <td><p> </p></td>
                     </tr>
                 @endif
                 <script type="text/javascript">
-                // $('input[name^="btn_del_"]').click( function(e){
-                //     // alert('ダウンロードbtnClick');
-                //     var wok_id       = $(this).attr("name").replace('btn_del_', '');
-                //     var this_id      = $(this).attr("id");
-                //     var url          = "invoicehistory/pdf/" + wok_id;
-                //     $('#temp_form').method = 'POST';
-                //     $('#temp_form').submit();
-                //     var popup = window.open(url,"preview","width=800, height=600, top=200, left=500 scrollbars=yes");
-                // });
-                </script>
+                    $('input[name^="btn_del_"]').click( function(e){
+                        // alert('ダウンロードbtnClick');
+                        var wok_id       = $(this).attr("name").replace('btn_del_', '');
+                        var this_id      = $(this).attr("id");
+                        var urgent_flg   = $(this).attr("id2").replace('btn_del_', '');
+                        var url          = "linetrialuserhistory/pdf/" + wok_id;
+                        $('#temp_form').method = 'POST';
+                        $('#temp_form').submit();
+                        var popup = window.open(url,"preview","width=800, height=600, top=200, left=500 scrollbars=yes");
+                        change_invoice_info( this_id        // 対象コントロール
+                                            , wok_id        // line_trial_users_historyテーブルのID
+                                            , urgent_flg    // line_trial_users_historyテーブルのurgent_flgの値
+                                            );
+                    });
+    
+                    /**
+                    * this_id         : 対象コントロール
+                    * wok_id          : line_trial_users_historyテーブルのID
+                    *
+                    */
+                    function change_invoice_info( this_id
+                                                , wok_id        // line_trial_users_historyテーブルのID
+                                                , urgent_flg    // line_trial_users_historyテーブルのurgent_flgの値
+                                                ) {
+                        var reqData = new FormData();
+                                                    reqData.append( "id"             , wok_id      );
+                        if( null != urgent_flg    ) reqData.append( "urgent_flg"     , urgent_flg );
+    
+                        AjaxAPI.callAjax(
+                            "{{ route('linetrialuserhistory_upload_api') }}",
+                            reqData,
+                            function (res) {
+                                var shinename = 'shine_'   + wok_id;
+                                // var btnname   = 'btn_del_' + wok_id;
+    
+                                // console.log( shinename );
+                                // console.log( btnname );
+    
+                                // 領収書ダウンロード 発行フラグ(1):済  (2):未
+                                if(urgent_flg == 2) {
+                                    // 
+                                    const elem = document.getElementById(shinename);
+                                    if (elem) {
+                                        // テキスト・スタイルを変更
+                                        elem.textContent = "発行済";
+                                        elem.style.color = "#0000FF";   //blue
+                                    } else {
+                                        console.log( 'shine_non' );
+                                    }
 
+                                    // // btnのclass変更
+                                    // const elem2 = document.getElementById(btnname);
+                                    // if (elem2) {
+                                    //     // クラス名を削除
+                                    //     elem2.classList.remove("btn-danger");
+                                    //     // クラス名を追加
+                                    //     elem2.classList.add("btn-secondary");
+                                    // } else {
+                                    //     console.log( 'btn_del_non' );
+                                    // }
+
+                                $('#'+this_id).effect("pulsate", { times:2 }, 500);
+                            }
+                            }
+                        )
+    
+                        // 領収書ダウンロード 発行フラグ(1):済  (2):未
+                        if(urgent_flg == 1) {
+                            // 何もしない
+                            console.log('no repaint');
+                            return;
+                        }
+    
+                    };
+    
+                </script>
             </tbody>
         </table>
 

@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Line_Trial_Users_History;
 
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Storage;
 
@@ -53,12 +55,12 @@ class LineTrialUserHistoryController extends Controller
      */
     public function show_up01($id)
     {
-        Log::info('invoicehistory show_up01 START');
+        Log::info('linetrialuserhistory show_up01 START');
 
         $line_trial_users_history = Line_Trial_Users_History::where('id',$id)
                     ->first();
 
-        // Log::debug('invoicehistory show_up01  line_trial_users_history = ' . print_r($line_trial_users_history,true));
+        // Log::debug('linetrialuserhistory show_up01  line_trial_users_history = ' . print_r($line_trial_users_history,true));
 
         $disk = 'local';  // or 's3'
         $storage = Storage::disk($disk);
@@ -67,12 +69,12 @@ class LineTrialUserHistoryController extends Controller
         $filename = $line_trial_users_history->filename;
         $pdf_path = $filepath;
 
-        // Log::debug('invoicehistory show_up01  filename = ' . print_r($filename,true));
-        // Log::debug('invoicehistory show_up01  pdf_path = ' . print_r($pdf_path,true));
+        // Log::debug('linetrialuserhistory show_up01  filename = ' . print_r($filename,true));
+        // Log::debug('linetrialuserhistory show_up01  pdf_path = ' . print_r($pdf_path,true));
 
         $file = $storage->get($pdf_path);
 
-        Log::info('invoicehistory show_up01 END');
+        Log::info('linetrialuserhistory show_up01 END');
 
         // 拡張子フラグ(1):xlsx  (2):pdf
         if($line_trial_users_history->extension_flg == 1) {
@@ -84,6 +86,49 @@ class LineTrialUserHistoryController extends Controller
                 ->header('Content-Type', 'application/pdf')
                 ->header('Content-Disposition', 'inline; filename="' . $filename . '"');
         }
+
+    }
+    /**
+     * [webapi]billdataテーブルの更新
+     */
+    public function update_api(Request $request)
+    {
+        Log::info('update_api linetrialuserhistory START');
+
+        // Log::debug('update_api request = ' .print_r($request->all(),true));
+        $id = $request->input('id');
+
+        $urgent_flg     = 1;  // 1:既読 2:未読
+
+        $counts = array();
+        $update = [];
+        $update['urgent_flg'] = $urgent_flg;
+        $update['updated_at'] = date('Y-m-d H:i:s');
+        // Log::debug('update_api linetrialuserhistory update : ' . print_r($update,true));
+
+        $status = array();
+        DB::beginTransaction();
+        Log::info('update_api linetrialuserhistory beginTransaction - start');
+        try{
+            // 更新処理
+            Line_Trial_Users_History::where( 'id', $id )->update($update);
+
+            $status = array( 'error_code' => 0, 'message'  => 'Your data has been changed!' );
+            $counts = 1;
+            DB::commit();
+            Log::info('update_api linetrialuserhistory beginTransaction - end');
+        }
+        catch(Exception $e){
+            Log::error('update_api linetrialuserhistory exception : ' . $e->getMessage());
+            DB::rollback();
+            Log::info('update_api linetrialuserhistory beginTransaction - end(rollback)');
+            echo "エラー：" . $e->getMessage();
+            $counts = 0;
+            $status = array( 'error_code' => 501, 'message'  => $e->getMessage() );
+        }
+
+        Log::info('update_api linetrialuserhistory END');
+        return response()->json([ compact('status','counts') ]);
 
     }
 

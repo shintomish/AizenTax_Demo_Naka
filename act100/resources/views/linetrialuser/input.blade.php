@@ -5,7 +5,7 @@
     {{-- 体験者名簿 --}}
     <div class="text-right">
         {{-- <a class="btn btn-success btn-sm mr-auto" href="{{route('advisorsfee.create')}}">新規登録</a> --}}
-        {{-- <a id="start2" style="margin-bottom:5px;" class="btn btn-success btn-sm mr-auto" href="{{route('excelexp')}}">請求書作成</a> --}}
+        {{-- <a id="start2" style="margin-bottom:5px;" class="btn btn-success btn-sm mr-auto" href="{{route('excelexp')}}">領収書作成</a> --}}
     </div>
 
     @if (session('message'))
@@ -21,9 +21,11 @@
     <a type="submit" class="btn btn-primary btn-sm" href="{{ route('linetrialuser.input')}}">更新</a>
         </div> --}}
         <!-- 検索エリア -->
-        <p>作成状況：</p>
+        {{-- <p>作成状況：</p> --}}
             <div class="progress">
-                <div id="pgss2" class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">
+                <span style="color:blue">作成状況：</span>
+                {{-- <a>作成状況：</a> --}}
+<div id="pgss2" class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">
                 </div>
             </div>
         <!-- 検索エリア -->
@@ -98,19 +100,19 @@
     </style>
 
     {{-- Line --}}
-    <hr class="mb-4">
+    {{-- <hr class="mb-4"> --}}
 
     <div class="table-responsive">
 
         {{-- <table class="table table-striped table-borderd table-scroll"> --}}
-        <table class="table table-responsive text-nowrap table-striped table-borderd table_sticky">
+        <table style="margin-top:5px;" class="table table-responsive text-nowrap table-striped table-borderd table_sticky">
             <thead>
                 <tr>
                     <th scope="col" class ="fixed01">ID</th>
                     <th scope="col" class ="fixed01">体験者名</th>
                     <th scope="col" class ="fixed01">予約時間</th>
                     <th scope="col" class ="fixed01">登録日</th>
-                    <th scope="col" class ="fixed01">請求書作成</th>
+                    <th scope="col">@sortablelink('urgent_flg', '領収書作成状況')</th>
                     <th scope="col" class ="fixed01">操作</th>
                 </tr>
             </thead>
@@ -133,13 +135,18 @@
                             <input type="text" class="form-control" id="users_name_{{$linetrialuser->id}}" name="users_name_{{$linetrialuser->id}}" value="{{$str}}">
                         </td>
 
+                            {{-- <select class="custom-select" id="contract_entity_{{$linetrialuser->id}}" name="contract_entity_{{$linetrialuser->id}}">
+                                <option value="1" {{ $linetrialuser->urgent_flg == 1 ? 'selected' : '' }}>未</option>
+                                <option value="2" {{ $linetrialuser->urgent_flg == 2 ? 'selected' : '' }}>済</option>
+                            </select> --}}
+
                         {{-- 予約時間 reservationed_at--}}
                         @php
-                            $str2 = '';
-                            if (isset($linetrialuser->reservationed_at)) {
-                                $str2 = substr($linetrialuser->reservationed_at,0,5);
-                                // $str1 = ( new DateTime($linetrialuser->reservationed_at))->format('Y-m-d');
-                            }
+                        $str2 = '';
+                        if (isset($linetrialuser->reservationed_at)) {
+                            $str2 = substr($linetrialuser->reservationed_at,0,5);
+                            // $str1 = ( new DateTime($linetrialuser->reservationed_at))->format('Y-m-d');
+                        }
                         @endphp
                         <td>
                         <input type="time" class="form-control" id="reservationed_at_{{$linetrialuser->id}}" name="reservationed_at_{{$linetrialuser->id}}" value="{{$str2}}">
@@ -149,11 +156,12 @@
                         {{-- 登録日時 --}}
                         @php
                             if (isset($linetrialuser->created_at)) {
-                                $str3 = ( new DateTime($linetrialuser->created_at))->format('Y-m-d H:i:s');
+                                $str3 = ( new DateTime($linetrialuser->created_at))->format('Y-m-d');
                             }
                         @endphp
                         <td>{{ $str3 }}</td>
-                        {{-- 請求書作成状況 1:未 2:済 --}}
+
+                        {{-- 領収書作成状況 1:未 2:済 --}}
                         @php
                             if($linetrialuser->urgent_flg == 1){
                                 $str1 = '未作成';
@@ -172,7 +180,7 @@
                         <td>
                             <div class="btn-toolbar">
                                 <div class="btn-group me-2 mb-0">
-                                <a id="start2" class="btn btn-primary btn-sm" href="{{ route('lineexcelexp',$linetrialuser->id)}}">請求書作成</a>
+                                <a id="start2" class="btn btn-primary btn-sm" href="{{ route('lineexcelexp',$linetrialuser->id)}}">領収書作成</a>
                                 {{-- <a class="btn btn-primary btn-sm" href="{{ route('advisorsfee.edit',$advisorsfee->id)}}">編集</a> --}}
                                 </div>
                                 {{-- <div class="btn-group me-2 mb-0">
@@ -272,7 +280,7 @@
         $(function () {
             var count = 0;
             $(document).on('click','#start2',function(){
-                if( !confirm('請求書を作成しますか？') ){
+                if( !confirm('領収書を作成しますか？') ){
                     /* キャンセルの時の処理 */
                     return false;
                 }  else {
@@ -304,7 +312,7 @@
 {{-- ChangeSideBar("nav-item-system-user"); --}}
     {{-- <script type="text/javascript">
             $('.btn_del').click(function()
-                if( !confirm('請求書を作成しますか？') ){
+                if( !confirm('領収書を作成しますか？') ){
                     /* キャンセルの時の処理 */
                     return false;
                 }  else {
