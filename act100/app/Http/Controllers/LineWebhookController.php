@@ -62,8 +62,8 @@ class LineWebhookController extends Controller
                             $trial_user->save();               //  Inserts
 
                             // 自動返信
-                            $msg = "体験会ご予約承りました。" . "\n";
-                            $msg .= "ブースにお越しいただき、" . "\n";
+                            $msg = "体験会ご予約承りました。" . "\n". "\n";
+                            $msg .= "体験会ブースにお越し頂いてから、" . "\n";
                             $msg .= "ご希望の予約時間を登録致します。";
                             $response = $bot->replyText($event['replyToken'], $msg);
 
