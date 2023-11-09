@@ -30,7 +30,7 @@ class LineWebhookController extends Controller
         //     client: $client,
         //     config: $config,
         // );
-        Log::debug('LineWebhookController message $events = ' . print_r($events,true));
+        // Log::debug('LineWebhookController message $events = ' . print_r($events,true));
 
         // composer require "linecorp/line-bot-sdk:7.*"
         $httpClient = new CurlHTTPClient(config('services.line.message.channel_token'));
@@ -43,41 +43,42 @@ class LineWebhookController extends Controller
             //     'line_message_id' => $event['message']['id'],
             //     'text'            => $event['message']['text'],
             // ]);
+            if (isset($event['message']['type'])) {
+                switch ($event['message']['type']) {
+                    case 'text':
+                        Log::info('LineWebhookController message case text userId = ' . print_r($event['source']['userId'], true));
 
-            switch ($event['message']['type']) {
-                case 'text':
-                    Log::debug('LineWebhookController message case text = ' . print_r($event['source']['userId'], true));
+                        $line_message = new Line_Message();
+                        $line_message->line_user_id    = $event['source']['userId'];
+                        $line_message->line_message_id = $event['message']['id'];
+                        $line_message->text            = $event['message']['text'];
+                        $line_message->save();               //  Inserts
 
-                    $line_message = new Line_Message();
-                    $line_message->line_user_id    = $event['source']['userId'];
-                    $line_message->line_message_id = $event['message']['id'];
-                    $line_message->text            = $event['message']['text'];
-                    $line_message->save();               //  Inserts
+                        $updata['count'] = Line_Trial_Users::where('line_user_id', $event['source']['userId'])->count();
+                        if( $updata['count'] == 0 ) {
+                            $trial_user = new Line_Trial_Users();
+                            $trial_user->line_user_id    = $line_message->line_user_id;
+                            $trial_user->users_name      = $line_message->text;
+                            $trial_user->save();               //  Inserts
 
-                    $updata['count'] = Line_Trial_Users::where('line_user_id', $event['source']['userId'])->count();
-                    if( $updata['count'] == 0 ) {
-                        $trial_user = new Line_Trial_Users();
-                        $trial_user->line_user_id    = $line_message->line_user_id;
-                        $trial_user->users_name      = $line_message->text;
-                        $trial_user->save();               //  Inserts
+                            // 自動返信
+                            $msg = "体験会ご予約承りました。" . "\n";
+                            $msg .= "ブースにお越しいただき、" . "\n";
+                            $msg .= "ご希望の予約時間を登録致します。";
+                            $response = $bot->replyText($event['replyToken'], $msg);
 
-                        // 自動返信
-                        $msg = "体験会ご予約承りました。" . "\n";
-                        $msg .= "ブースにお越しいただき、" . "\n";
-                        $msg .= "ご希望の予約時間を登録致します。";
-                        $response = $bot->replyText($event['replyToken'], $msg);
+                        }
 
-                    }
-
-                    break;
-                case 'image':
-                    break;
-                    // スタンプが送信された場合
-                case 'sticker':
-                    break;
-                default :
-                    Log::debug('LineWebhookController message case default = ' . print_r($event['source']['userId'], true));
-                    break;
+                        break;
+                    case 'image':
+                        break;
+                        // スタンプが送信された場合
+                    case 'sticker':
+                        break;
+                    default :
+                        Log::info('LineWebhookController message case default userId = ' . print_r($event['source']['userId'], true));
+                        break;
+                }
             }
         }
 
