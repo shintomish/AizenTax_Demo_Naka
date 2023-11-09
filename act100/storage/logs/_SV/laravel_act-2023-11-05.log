@@ -501,3 +501,196 @@
     [deleted_at] => 
 )
   
+[2023-11-05 10:04:45] Act:.INFO: auth_user_info START  
+[2023-11-05 10:04:45] Act:.INFO: auth_user_info END  
+[2023-11-05 10:04:45] Act:.INFO: auth login redirectTo user = stdClass Object
+(
+    [id] => 1
+    [name] => 新冨泰明
+    [email] => shintomi.sh@gmail.com
+    [email_verified_at] => 
+    [organization_id] => 0
+    [user_id] => 1
+    [login_flg] => 2
+    [admin_flg] => 2
+    [created_at] => 2022-10-20T12:00:00.000000Z
+    [updated_at] => 2022-10-20T12:00:00.000000Z
+    [deleted_at] => 
+)
+  
+[2023-11-05 10:04:45] Act:.INFO: auth_user_info START  
+[2023-11-05 10:04:45] Act:.INFO: auth_user_info END  
+[2023-11-05 10:04:45] Act:.INFO: office top index START $user->name = 新冨泰明  
+[2023-11-05 10:04:45] Act:.INFO: auth_user_organization START  
+[2023-11-05 10:04:45] Act:.INFO: auth_user_organization END  
+[2023-11-05 10:04:45] Act:.INFO: office top index END $user->name = 新冨泰明  
+[2023-11-05 10:04:50] Act:.INFO: linetrialuser input START  
+[2023-11-05 10:04:50] Act:.INFO: linetrialuser input END  
+[2023-11-05 10:05:07] Act:.INFO: LineExcelMakeController lineexcel START  
+[2023-11-05 10:05:07] Act:.INFO: auth_user_organization START  
+[2023-11-05 10:05:07] Act:.INFO: auth_user_organization END  
+[2023-11-05 10:05:07] Act:.DEBUG: LineExcelMakeController lineexcel $id = 9  
+[2023-11-05 10:05:07] Act:.DEBUG: LineExcelMakeController lineexcel $user_name = 三浦竜二  
+[2023-11-05 10:05:07] Act:.INFO: ExportService LinemakeXlsPdf START  
+[2023-11-05 10:05:08] Act:.INFO: ExportService  line_trial_users_history_Update START  
+[2023-11-05 10:05:08] Act:.INFO: beginTransaction - ExportService  line_trial_users_history_Update saveFile start  
+[2023-11-05 10:05:08] Act:.INFO: beginTransaction - ExportService  line_trial_users_history_Update saveFile end(commit)  
+[2023-11-05 10:05:08] Act:.INFO: ExportService  line_trial_users_history_Update END  
+[2023-11-05 10:05:08] Act:.INFO: ExportService convertOfficeToPdf START  
+[2023-11-05 10:05:08] Act:.INFO: ExportService convertOfficeToPdf exec $return_var = 0  
+[2023-11-05 10:05:08] Act:.INFO: ExportService convertOfficeToPdf END  
+[2023-11-05 10:05:08] Act:.INFO: ExportService  line_trial_users_history_Update START  
+[2023-11-05 10:05:08] Act:.INFO: beginTransaction - ExportService  line_trial_users_history_Update saveFile start  
+[2023-11-05 10:05:08] Act:.INFO: beginTransaction - ExportService  line_trial_users_history_Update saveFile end(commit)  
+[2023-11-05 10:05:08] Act:.INFO: ExportService  line_trial_users_history_Update END  
+[2023-11-05 10:05:08] Act:.INFO: line_trial_users_Update START  
+[2023-11-05 10:05:08] Act:.INFO: line_trial_users_Update beginTransaction - start  
+[2023-11-05 10:05:08] Act:.INFO: line_trial_users_Update beginTransaction - end  
+[2023-11-05 10:05:08] Act:.INFO: line_trial_users_Update END  
+[2023-11-05 10:05:08] Act:.INFO: ExportService LinemakeXlsPdf END  
+[2023-11-05 10:05:08] Act:.INFO: LineExcelMakeController lineexcel END  
+[2023-11-05 10:05:08] Act:.INFO: linetrialuser input START  
+[2023-11-05 10:05:08] Act:.INFO: linetrialuser input END  
+[2023-11-05 10:05:12] Act:.INFO: linetrialuserhistory index START  
+[2023-11-05 10:05:12] Act:.INFO: linetrialuserhistory index END  
+[2023-11-05 10:05:16] Act:.INFO: invoicehistory show_up01 START  
+[2023-11-05 10:05:16] Act:.INFO: invoicehistory show_up01 END  
+[2023-11-05 10:06:09] Act:.INFO: invoicehistory show_up01 START  
+[2023-11-05 10:06:09] Act:.INFO: invoicehistory show_up01 END  
+[2023-11-05 10:07:15] Act:.INFO: advisorsfee input START  
+[2023-11-05 10:07:15] Act:.INFO: auth_user_info START  
+[2023-11-05 10:07:15] Act:.INFO: auth_user_info END  
+[2023-11-05 10:07:15] Act:.INFO: auth_user_organization START  
+[2023-11-05 10:07:15] Act:.INFO: auth_user_organization END  
+[2023-11-05 10:07:15] Act:.INFO: advisorsfee input END  
+[2023-11-05 10:07:39] Act:.INFO: auth logout redirectTo user = stdClass Object
+(
+    [id] => 1
+    [name] => 新冨泰明
+    [email] => shintomi.sh@gmail.com
+    [email_verified_at] => 
+    [organization_id] => 0
+    [user_id] => 1
+    [login_flg] => 2
+    [admin_flg] => 2
+    [created_at] => 2022-10-20T12:00:00.000000Z
+    [updated_at] => 2022-10-20T12:00:00.000000Z
+    [deleted_at] => 
+)
+  
+[2023-11-05 10:13:23] Act:.INFO: auth_user_info START  
+[2023-11-05 10:13:23] Act:.INFO: auth_user_info END  
+[2023-11-05 10:13:23] Act:.INFO: auth login redirectTo user = stdClass Object
+(
+    [id] => 1
+    [name] => 新冨泰明
+    [email] => shintomi.sh@gmail.com
+    [email_verified_at] => 
+    [organization_id] => 0
+    [user_id] => 1
+    [login_flg] => 2
+    [admin_flg] => 2
+    [created_at] => 2022-10-20T12:00:00.000000Z
+    [updated_at] => 2022-10-20T12:00:00.000000Z
+    [deleted_at] => 
+)
+  
+[2023-11-05 10:13:23] Act:.INFO: auth_user_info START  
+[2023-11-05 10:13:23] Act:.INFO: auth_user_info END  
+[2023-11-05 10:13:23] Act:.INFO: office top index START $user->name = 新冨泰明  
+[2023-11-05 10:13:23] Act:.INFO: auth_user_organization START  
+[2023-11-05 10:13:23] Act:.INFO: auth_user_organization END  
+[2023-11-05 10:13:23] Act:.INFO: office top index END $user->name = 新冨泰明  
+[2023-11-05 10:13:27] Act:.INFO: advisorsfee input START  
+[2023-11-05 10:13:27] Act:.INFO: auth_user_info START  
+[2023-11-05 10:13:27] Act:.INFO: auth_user_info END  
+[2023-11-05 10:13:27] Act:.INFO: auth_user_organization START  
+[2023-11-05 10:13:27] Act:.INFO: auth_user_organization END  
+[2023-11-05 10:13:27] Act:.INFO: advisorsfee input END  
+[2023-11-05 10:16:12] Act:.INFO: billdatahistory index START  
+[2023-11-05 10:16:12] Act:.INFO: auth_user_info START  
+[2023-11-05 10:16:12] Act:.INFO: auth_user_info END  
+[2023-11-05 10:16:12] Act:.INFO: auth_customer_findrec START  
+[2023-11-05 10:16:12] Act:.INFO: auth_customer_findrec START $u_id = 1  
+[2023-11-05 10:16:12] Act:.INFO: auth_customer_findrec END $u_id = 1  
+[2023-11-05 10:16:12] Act:.INFO: auth_customer_findrec END  
+[2023-11-05 10:16:13] Act:.INFO: billdatahistory index END  
+[2023-11-05 10:16:17] Act:.INFO: advisorsfee input START  
+[2023-11-05 10:16:17] Act:.INFO: auth_user_info START  
+[2023-11-05 10:16:17] Act:.INFO: auth_user_info END  
+[2023-11-05 10:16:17] Act:.INFO: auth_user_organization START  
+[2023-11-05 10:16:17] Act:.INFO: auth_user_organization END  
+[2023-11-05 10:16:17] Act:.INFO: advisorsfee input END  
+[2023-11-05 10:21:33] Act:.INFO: advisorsfee input START  
+[2023-11-05 10:21:33] Act:.INFO: auth_user_info START  
+[2023-11-05 10:21:33] Act:.INFO: auth_user_info END  
+[2023-11-05 10:21:33] Act:.INFO: auth_user_organization START  
+[2023-11-05 10:21:33] Act:.INFO: auth_user_organization END  
+[2023-11-05 10:21:33] Act:.INFO: advisorsfee input END  
+[2023-11-05 10:21:52] Act:.INFO: billdatahistory index START  
+[2023-11-05 10:21:52] Act:.INFO: auth_user_info START  
+[2023-11-05 10:21:52] Act:.INFO: auth_user_info END  
+[2023-11-05 10:21:52] Act:.INFO: auth_customer_findrec START  
+[2023-11-05 10:21:52] Act:.INFO: auth_customer_findrec START $u_id = 1  
+[2023-11-05 10:21:52] Act:.INFO: auth_customer_findrec END $u_id = 1  
+[2023-11-05 10:21:52] Act:.INFO: auth_customer_findrec END  
+[2023-11-05 10:21:52] Act:.INFO: billdatahistory index END  
+[2023-11-05 10:22:44] Act:.INFO: billdatahistory serch_custom START  
+[2023-11-05 10:22:44] Act:.INFO: auth_user_info START  
+[2023-11-05 10:22:44] Act:.INFO: auth_user_info END  
+[2023-11-05 10:22:44] Act:.INFO: auth_customer_findrec START  
+[2023-11-05 10:22:44] Act:.INFO: auth_customer_findrec START $u_id = 1  
+[2023-11-05 10:22:44] Act:.INFO: auth_customer_findrec END $u_id = 1  
+[2023-11-05 10:22:44] Act:.INFO: auth_customer_findrec END  
+[2023-11-05 10:22:44] Act:.INFO: billdatahistory serch_custom END  
+[2023-11-05 10:22:50] Act:.INFO: billdatahistory serch_custom START  
+[2023-11-05 10:22:50] Act:.INFO: auth_user_info START  
+[2023-11-05 10:22:50] Act:.INFO: auth_user_info END  
+[2023-11-05 10:22:50] Act:.INFO: auth_customer_findrec START  
+[2023-11-05 10:22:50] Act:.INFO: auth_customer_findrec START $u_id = 1  
+[2023-11-05 10:22:50] Act:.INFO: auth_customer_findrec END $u_id = 1  
+[2023-11-05 10:22:50] Act:.INFO: auth_customer_findrec END  
+[2023-11-05 10:22:50] Act:.INFO: billdatahistory serch_custom END  
+[2023-11-05 10:25:12] Act:.INFO: auth_user_info START  
+[2023-11-05 10:25:12] Act:.INFO: auth_user_info END  
+[2023-11-05 10:25:12] Act:.INFO: office top index START $user->name = 新冨泰明  
+[2023-11-05 10:25:12] Act:.INFO: auth_user_organization START  
+[2023-11-05 10:25:12] Act:.INFO: auth_user_organization END  
+[2023-11-05 10:25:12] Act:.INFO: office top index END $user->name = 新冨泰明  
+[2023-11-05 10:25:15] Act:.INFO: advisorsfee input START  
+[2023-11-05 10:25:15] Act:.INFO: auth_user_info START  
+[2023-11-05 10:25:15] Act:.INFO: auth_user_info END  
+[2023-11-05 10:25:15] Act:.INFO: auth_user_organization START  
+[2023-11-05 10:25:15] Act:.INFO: auth_user_organization END  
+[2023-11-05 10:25:15] Act:.INFO: advisorsfee input END  
+[2023-11-05 10:25:20] Act:.INFO: billdatahistory index START  
+[2023-11-05 10:25:20] Act:.INFO: auth_user_info START  
+[2023-11-05 10:25:20] Act:.INFO: auth_user_info END  
+[2023-11-05 10:25:20] Act:.INFO: auth_customer_findrec START  
+[2023-11-05 10:25:20] Act:.INFO: auth_customer_findrec START $u_id = 1  
+[2023-11-05 10:25:20] Act:.INFO: auth_customer_findrec END $u_id = 1  
+[2023-11-05 10:25:20] Act:.INFO: auth_customer_findrec END  
+[2023-11-05 10:25:20] Act:.INFO: billdatahistory index END  
+[2023-11-05 10:25:26] Act:.INFO: billdatahistory serch_custom START  
+[2023-11-05 10:25:26] Act:.INFO: auth_user_info START  
+[2023-11-05 10:25:26] Act:.INFO: auth_user_info END  
+[2023-11-05 10:25:26] Act:.INFO: auth_customer_findrec START  
+[2023-11-05 10:25:26] Act:.INFO: auth_customer_findrec START $u_id = 1  
+[2023-11-05 10:25:26] Act:.INFO: auth_customer_findrec END $u_id = 1  
+[2023-11-05 10:25:26] Act:.INFO: auth_customer_findrec END  
+[2023-11-05 10:25:26] Act:.INFO: billdatahistory serch_custom END  
+[2023-11-05 10:25:53] Act:.INFO: auth logout redirectTo user = stdClass Object
+(
+    [id] => 1
+    [name] => 新冨泰明
+    [email] => shintomi.sh@gmail.com
+    [email_verified_at] => 
+    [organization_id] => 0
+    [user_id] => 1
+    [login_flg] => 2
+    [admin_flg] => 2
+    [created_at] => 2022-10-20T12:00:00.000000Z
+    [updated_at] => 2022-10-20T12:00:00.000000Z
+    [deleted_at] => 
+)
+  
