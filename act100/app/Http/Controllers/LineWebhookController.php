@@ -43,7 +43,7 @@ class LineWebhookController extends Controller
             //     'line_message_id' => $event['message']['id'],
             //     'text'            => $event['message']['text'],
             // ]);
-
+            
             // Log::debug('LineWebhookController message $event = ' . print_r($event,true));
 
             $updata['count'] = Line_Message::where('line_user_id', $event['source']['userId'])->count();
