@@ -44,64 +44,60 @@ class LineWebhookController extends Controller
             //     'text'            => $event['message']['text'],
             // ]);
 
-            foreach ($events as $event) {
-                
-                switch ($event['message']['type']) {
-                    case 'text':
-                        $line_message = new Line_Message();
-                        $line_message->line_user_id    = $event['source']['userId'];
-                        $line_message->line_message_id = $event['message']['id'];
-                        $line_message->text            = $event['message']['text'];
-                        $line_message->save();               //  Inserts
+            switch ($event['message']['type']) {
+                case 'text':
+                    Log::debug('LineWebhookController message case text = ' . print_r($event['source']['userId'], true));
 
-                        $updata['count'] = Line_Trial_Users::where('line_user_id', $event['source']['userId'])->count();
-                        if( $updata['count'] == 0 ) {
+                    $line_message = new Line_Message();
+                    $line_message->line_user_id    = $event['source']['userId'];
+                    $line_message->line_message_id = $event['message']['id'];
+                    $line_message->text            = $event['message']['text'];
+                    $line_message->save();               //  Inserts
 
-                            $trial_user = new Line_Trial_Users();
-                            $trial_user->line_user_id    = $line_message->line_user_id;
-                            $trial_user->users_name      = $line_message->text;
-                            $trial_user->save();               //  Inserts
+                    $updata['count'] = Line_Trial_Users::where('line_user_id', $event['source']['userId'])->count();
+                    if( $updata['count'] == 0 ) {
+                        $trial_user = new Line_Trial_Users();
+                        $trial_user->line_user_id    = $line_message->line_user_id;
+                        $trial_user->users_name      = $line_message->text;
+                        $trial_user->save();               //  Inserts
 
-                            // 自動返信
-                            $msg = "体験会ご予約承りました。" . "\n";
-                            $msg .= "ブースにお越しいただき、" . "\n";
-                            $msg .= "ご希望の予約時間を登録致します。";
-                            $response = $bot->replyText($event['replyToken'], $msg);
-                        }
-            Log::debug('LineWebhookController message case text = ' . print_r($event['source']['userId'], true));
+                        // 自動返信
+                        $msg = "体験会ご予約承りました。" . "\n";
+                        $msg .= "ブースにお越しいただき、" . "\n";
+                        $msg .= "ご希望の予約時間を登録致します。";
+                        $response = $bot->replyText($event['replyToken'], $msg);
 
-                        break;
-                    case 'image':
-                        break;
+                    }
 
-
-                        // スタンプが送信された場合
-                    case 'sticker':
-                        break;
-                    default :
+                    break;
+                case 'image':
+                    break;
+                    // スタンプが送信された場合
+                case 'sticker':
+                    break;
+                default :
                     Log::debug('LineWebhookController message case default = ' . print_r($event['source']['userId'], true));
-                        break;
+                    break;
             }
-
         }
 
-        // 2023/11/05 非同期で通知したかったが。。
-        // $linetrialusers = Line_Trial_Users::whereNull('deleted_at')
-        //     ->sortable()
-        //     ->orderByRaw('created_at DESC')
-        //     ->get();
-        // $common_no = 'linetrialuser';
-        // $compacts = compact( 'common_no', 'linetrialusers' );
-        // toastrというキーでメッセージを格納　LINEから体験者が登録されました
-        // session()->flash('toastr', config('toastr.line_success'));
-        // return;
-        // return view( 'linetrialuser.input', $compacts );
-        // return response()->json($linetrialusers);
-        // return redirect()->route('linetrialuser.input');
-        // return redirect()->route( 'linetrialuser.input', $compacts)->with('message', 'LINEから体験者が登録されました');
-
         Log::info('LineWebhookController message END');
-
         return 'ok';
     }
+
+    // 2023/11/05 非同期で通知したかったが。。
+    // $linetrialusers = Line_Trial_Users::whereNull('deleted_at')
+    //     ->sortable()
+    //     ->orderByRaw('created_at DESC')
+    //     ->get();
+    // $common_no = 'linetrialuser';
+    // $compacts = compact( 'common_no', 'linetrialusers' );
+    // toastrというキーでメッセージを格納　LINEから体験者が登録されました
+    // session()->flash('toastr', config('toastr.line_success'));
+    // return;
+    // return view( 'linetrialuser.input', $compacts );
+    // return response()->json($linetrialusers);
+    // return redirect()->route('linetrialuser.input');
+    // return redirect()->route( 'linetrialuser.input', $compacts)->with('message', 'LINEから体験者が登録されました');
+
 }
