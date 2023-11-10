@@ -108,11 +108,11 @@
         <table style="margin-top:5px;" class="table table-responsive text-nowrap table-striped table-borderd table_sticky">
             <thead>
                 <tr>
-                    <th scope="col" class ="fixed01">ID</th>
+                    <th scope="col" class ="fixed01">@sortablelink('id', 'ID')</th>
                     <th scope="col" class ="fixed01">体験者名</th>
                     <th scope="col" class ="fixed01">予約時間</th>
                     <th scope="col" class ="fixed01">登録日</th>
-                    <th scope="col">@sortablelink('urgent_flg', '領収書作成状況')</th>
+                    <th scope="col" class ="fixed01">@sortablelink('urgent_flg', '領収書作成状況')</th>
                     <th scope="col" class ="fixed01">操作</th>
                 </tr>
             </thead>

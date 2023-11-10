@@ -32,16 +32,24 @@ class LineTrialUserHistoryController extends Controller
         Log::info('linetrialuserhistory index START');
 
         $line_trial_users_historys = Line_Trial_Users_History::whereNull('deleted_at')
-                    ->where('extension_flg' , 2)
+                    ->where('extension_flg' , 2 )   // pdf
                     ->sortable()
                     ->orderBy('created_at', 'desc')
                     ->paginate(200);
+
+        $line_trial_users_historys_count = Line_Trial_Users_History::whereNull('deleted_at')
+                    ->where('extension_flg' , 2 )   // pdf
+                    ->where('urgent_flg' ,    1 )   // 発行済
+                    ->get();
+
+        //発行済件数
+        $count2     = $line_trial_users_historys_count->count();
 
         $common_no = 'linetrialuserhistory';
 
         Log::info('linetrialuserhistory index END');
 
-        $compacts = compact( 'common_no', 'line_trial_users_historys' );
+        $compacts = compact( 'common_no', 'line_trial_users_historys' , 'count2' );
 
         return view( 'linetrialuserhistory.index', $compacts );
     }

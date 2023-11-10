@@ -90,15 +90,19 @@
     {{-- <hr class="mb-4"> --}}
 
     <div class="table-responsive">
+        <h5 class="d-flex justify-content-between align-items-center mb-3">
+            <span class="text-success">発行済件数 ( {{ $count2 }}  件)</span>
+            {{-- <span class="text-success">発行件数 3件</span> --}}
+        </h5>
 
         <table class="table table-responsive text-nowrap table-striped table-borderd table_sticky">
             <thead>
                 <tr>
-                    <th scope="col" class ="fixed01">ID</th>
+                    <th scope="col" class ="fixed01">@sortablelink('id', 'ID')</th>
                     <th scope="col" class ="fixed01">体験者名</th>
                     <th scope="col" class ="fixed01">パス名</th>
                     <th scope="col" class ="fixed01">ファイル名</th>
-                    <th scope="col">@sortablelink('urgent_flg', '発行確認')</th>
+                    <th scope="col" class ="fixed01">@sortablelink('urgent_flg', '発行確認')</th>
                     <th scope="col" class ="fixed01">操作</th>
                 </tr>
             </thead>
@@ -191,7 +195,7 @@
                                             , urgent_flg    // line_trial_users_historyテーブルのurgent_flgの値
                                             );
                     });
-    
+
                     /**
                     * this_id         : 対象コントロール
                     * wok_id          : line_trial_users_historyテーブルのID
@@ -204,20 +208,20 @@
                         var reqData = new FormData();
                                                     reqData.append( "id"             , wok_id      );
                         if( null != urgent_flg    ) reqData.append( "urgent_flg"     , urgent_flg );
-    
+
                         AjaxAPI.callAjax(
                             "{{ route('linetrialuserhistory_upload_api') }}",
                             reqData,
                             function (res) {
                                 var shinename = 'shine_'   + wok_id;
                                 // var btnname   = 'btn_del_' + wok_id;
-    
+
                                 // console.log( shinename );
                                 // console.log( btnname );
-    
+
                                 // 領収書ダウンロード 発行フラグ(1):済  (2):未
                                 if(urgent_flg == 2) {
-                                    // 
+                                    //
                                     const elem = document.getElementById(shinename);
                                     if (elem) {
                                         // テキスト・スタイルを変更
@@ -242,16 +246,16 @@
                             }
                             }
                         )
-    
+
                         // 領収書ダウンロード 発行フラグ(1):済  (2):未
                         if(urgent_flg == 1) {
                             // 何もしない
                             console.log('no repaint');
                             return;
                         }
-    
+
                     };
-    
+
                 </script>
             </tbody>
         </table>

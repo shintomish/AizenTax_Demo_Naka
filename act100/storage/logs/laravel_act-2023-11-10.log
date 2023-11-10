@@ -48,3 +48,58 @@
 [2023-11-10 18:23:46] Act:.INFO: loginout operation update $id < 10 END  
 [2023-11-10 18:23:52] Act:.INFO: linetrialuserhistory index START  
 [2023-11-10 18:23:52] Act:.INFO: linetrialuserhistory index END  
+[2023-11-10 18:34:14] Act:.INFO: linetrialuserhistory index START  
+[2023-11-10 18:34:15] Act:.INFO: linetrialuserhistory index END  
+[2023-11-10 18:35:15] Act:.INFO: linetrialuserhistory index START  
+[2023-11-10 18:35:16] Act:.INFO: linetrialuserhistory index END  
+[2023-11-10 18:41:57] Act:.INFO: linetrialuserhistory index START  
+[2023-11-10 18:41:58] Act:.INFO: linetrialuserhistory index END  
+[2023-11-10 18:42:13] Act:.INFO: linetrialuserhistory index START  
+[2023-11-10 18:42:14] Act:.INFO: linetrialuserhistory index END  
+[2023-11-10 18:42:24] Act:.INFO: linetrialuserhistory index START  
+[2023-11-10 18:42:24] Act:.INFO: linetrialuserhistory index END  
+[2023-11-10 18:42:39] Act:.INFO: update_api linetrialuserhistory START  
+[2023-11-10 18:42:39] Act:.INFO: update_api linetrialuserhistory beginTransaction - start  
+[2023-11-10 18:42:40] Act:.INFO: update_api linetrialuserhistory beginTransaction - end  
+[2023-11-10 18:42:40] Act:.INFO: update_api linetrialuserhistory END  
+[2023-11-10 18:42:46] Act:.INFO: linetrialuserhistory show_up01 START  
+[2023-11-10 18:42:47] Act:.INFO: linetrialuserhistory show_up01 END  
+[2023-11-10 18:42:53] Act:.INFO: linetrialuserhistory show_up01 START  
+[2023-11-10 18:42:53] Act:.INFO: linetrialuserhistory show_up01 END  
+[2023-11-10 18:43:19] Act:.INFO: linetrialuserhistory index START  
+[2023-11-10 18:43:20] Act:.INFO: linetrialuserhistory index END  
+[2023-11-10 18:48:32] Act:.INFO: linetrialuser input START  
+[2023-11-10 18:48:33] Act:.INFO: linetrialuser input END  
+[2023-11-10 18:48:47] Act:.INFO: linetrialuser input START  
+[2023-11-10 18:48:47] Act:.INFO: linetrialuser input END  
+[2023-11-10 18:48:57] Act:.INFO: linetrialuser input START  
+[2023-11-10 18:48:57] Act:.INFO: linetrialuser input END  
+[2023-11-10 18:49:09] Act:.INFO: linetrialuserhistory index START  
+[2023-11-10 18:49:10] Act:.INFO: linetrialuserhistory index END  
+[2023-11-10 18:50:04] Act:.INFO: linetrialuserhistory show_up01 START  
+[2023-11-10 18:50:04] Act:.INFO: linetrialuserhistory show_up01 END  
+[2023-11-10 18:50:10] Act:.INFO: update_api linetrialuserhistory START  
+[2023-11-10 18:50:10] Act:.INFO: update_api linetrialuserhistory beginTransaction - start  
+[2023-11-10 18:50:11] Act:.INFO: update_api linetrialuserhistory beginTransaction - end  
+[2023-11-10 18:50:11] Act:.INFO: update_api linetrialuserhistory END  
+[2023-11-10 18:50:17] Act:.INFO: linetrialuserhistory show_up01 START  
+[2023-11-10 18:50:17] Act:.INFO: linetrialuserhistory show_up01 END  
+[2023-11-10 18:50:50] Act:.INFO: linetrialuserhistory index START  
+[2023-11-10 18:50:51] Act:.INFO: linetrialuserhistory index END  
+[2023-11-10 18:55:47] Act:.INFO: auth logout redirectTo user = stdClass Object
+(
+    [id] => 1
+    [name] => 新冨泰明
+    [email] => shintomi.sh@gmail.com
+    [email_verified_at] => 
+    [organization_id] => 0
+    [user_id] => 1
+    [login_flg] => 2
+    [admin_flg] => 2
+    [created_at] => 2022-10-20T03:00:00.000000Z
+    [updated_at] => 2022-10-20T03:00:00.000000Z
+    [deleted_at] => 
+)
+  
+[2023-11-10 18:55:47] Act:.INFO: loginout operation update START  
+[2023-11-10 18:55:47] Act:.INFO: loginout operation update $id < 10 END  
