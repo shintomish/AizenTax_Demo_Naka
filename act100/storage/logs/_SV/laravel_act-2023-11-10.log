@@ -1,2 +1,65 @@
 [2023-11-10 00:04:22] Act:.INFO: LineWebhookController message START  
 [2023-11-10 00:04:22] Act:.INFO: LineWebhookController message END  
+[2023-11-10 00:10:56] Act:.INFO: LineWebhookController message START  
+[2023-11-10 00:10:56] Act:.INFO: LineWebhookController message END  
+[2023-11-10 00:11:25] Act:.INFO: auth_user_info START  
+[2023-11-10 00:11:25] Act:.INFO: auth_user_info END  
+[2023-11-10 00:11:25] Act:.INFO: auth login redirectTo user = stdClass Object
+(
+    [id] => 1
+    [name] => 新冨泰明
+    [email] => shintomi.sh@gmail.com
+    [email_verified_at] => 
+    [organization_id] => 0
+    [user_id] => 1
+    [login_flg] => 2
+    [admin_flg] => 2
+    [created_at] => 2022-10-20T12:00:00.000000Z
+    [updated_at] => 2022-10-20T12:00:00.000000Z
+    [deleted_at] => 
+)
+  
+[2023-11-10 00:11:25] Act:.INFO: loginout operation update START  
+[2023-11-10 00:11:25] Act:.INFO: loginout operation update $id < 10 END  
+[2023-11-10 00:11:25] Act:.INFO: auth_user_info START  
+[2023-11-10 00:11:25] Act:.INFO: auth_user_info END  
+[2023-11-10 00:11:25] Act:.INFO: office top index START $user->name = 新冨泰明  
+[2023-11-10 00:11:25] Act:.INFO: auth_user_organization START  
+[2023-11-10 00:11:25] Act:.INFO: auth_user_organization END  
+[2023-11-10 00:11:25] Act:.INFO: office top index END $user->name = 新冨泰明  
+[2023-11-10 00:11:28] Act:.INFO: linetrialuser input START  
+[2023-11-10 00:11:28] Act:.INFO: linetrialuser input END  
+[2023-11-10 00:11:30] Act:.INFO: linetrialuserhistory index START  
+[2023-11-10 00:11:30] Act:.INFO: linetrialuserhistory index END  
+[2023-11-10 00:11:31] Act:.INFO: linetrialuser input START  
+[2023-11-10 00:11:31] Act:.INFO: linetrialuser input END  
+[2023-11-10 00:11:56] Act:.INFO: LineWebhookController message START  
+[2023-11-10 00:11:56] Act:.INFO: LineWebhookController message END  
+[2023-11-10 00:12:07] Act:.INFO: LineWebhookController message START  
+[2023-11-10 00:12:07] Act:.INFO: LineWebhookController message case text userId = U4d15b647d8b8effec85ca24ddbbd6674  
+[2023-11-10 00:12:08] Act:.INFO: LineWebhookController message END  
+[2023-11-10 00:12:14] Act:.INFO: linetrialuser input START  
+[2023-11-10 00:12:14] Act:.INFO: linetrialuser input END  
+[2023-11-10 00:15:42] Act:.INFO: linetrialuser input START  
+[2023-11-10 00:15:42] Act:.INFO: linetrialuser input END  
+[2023-11-10 00:16:13] Act:.INFO: linetrialuserhistory index START  
+[2023-11-10 00:16:13] Act:.INFO: linetrialuserhistory index END  
+[2023-11-10 00:16:16] Act:.INFO: linetrialuser input START  
+[2023-11-10 00:16:16] Act:.INFO: linetrialuser input END  
+[2023-11-10 00:16:24] Act:.INFO: auth logout redirectTo user = stdClass Object
+(
+    [id] => 1
+    [name] => 新冨泰明
+    [email] => shintomi.sh@gmail.com
+    [email_verified_at] => 
+    [organization_id] => 0
+    [user_id] => 1
+    [login_flg] => 2
+    [admin_flg] => 2
+    [created_at] => 2022-10-20T12:00:00.000000Z
+    [updated_at] => 2022-10-20T12:00:00.000000Z
+    [deleted_at] => 
+)
+  
+[2023-11-10 00:16:24] Act:.INFO: loginout operation update START  
+[2023-11-10 00:16:24] Act:.INFO: loginout operation update $id < 10 END  
