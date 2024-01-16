@@ -3,11 +3,11 @@
 namespace App\Http\Controllers;
 
 use Validator;
-use DateTime;
+// use DateTime;
 use App\Models\User;
-use App\Models\Organization;
-use App\Models\Customer;
-use App\Models\Parameter;
+// use App\Models\Organization;
+// use App\Models\Customer;
+// use App\Models\Parameter;
 
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
@@ -16,10 +16,10 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Hash;
 
-use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
-use Illuminate\Foundation\Bus\DispatchesJobs;
-use Illuminate\Foundation\Validation\ValidatesRequests;
-use Illuminate\Routing\Controller as BaseController;
+// use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
+// use Illuminate\Foundation\Bus\DispatchesJobs;
+// use Illuminate\Foundation\Validation\ValidatesRequests;
+// use Illuminate\Routing\Controller as BaseController;
 
 class UserController extends Controller
 {
@@ -215,7 +215,9 @@ class UserController extends Controller
         try {
             // User::create($request->all());
             $user = new User();
-            $user->password        = Hash::make($request->password);
+            // 2024/01/17 2重Hash
+            // $user->password        = Hash::make($request->password);
+            $user->password        = $request->password;
             $user->name            = $request->name;
             $user->email           = $request->email;
             $user->organization_id = $request->organization_id;
@@ -407,7 +409,7 @@ class UserController extends Controller
         // 名前　顧客名が入力された
         if($keyword || $keyword2) {
             $users = User::select(
-                 'users.id as id'
+                'users.id as id'
                 ,'users.user_id as user_id'
                 ,'users.name as name'
                 ,'users.email as email'
@@ -492,39 +494,39 @@ class UserController extends Controller
                     'name'            => [
                                             'required',
                                             Rule::unique('users','name')->ignore($id)->whereNull('deleted_at'),
-                                         ],
+                                        ],
                     'user_id'         =>    'required',
                     'login_flg'       => [
                                             'min:1',        //指定された値以上か
                                             // 'regex:/^[顧客|社員|所属]+$/u',
                                             'integer',
                                             'required',
-                                         ],
+                                        ],
                     'admin_flg'       => [
                                             'min:1',        //指定された値以上か
                                             // 'regex:/^[顧客|社員|所属]+$/u',
                                             'integer',
                                             'required',
-                                         ],
+                                        ],
                     'email'           => [
                                             'required',
                                             Rule::unique('users','email')->ignore($id)->whereNull('deleted_at'),
-                                         ],
+                                        ],
                     'password'        =>    'confirmed',
                 ];
 
         $messages = [
-                     'organization_id.required' => '組織名は入力必須項目です。',
-                     'name.required'            => 'ユーザー名は入力必須項目です。',
-                     'name.unique'              => 'そのユーザー名は既に登録されています。',
-                     'user_id.required'         => '顧客名は入力必須項目です。',
-                     'login_flg.min'            => '利用区分は顧客|社員|所属から選択してください。',
-                     'login_flg.required'       => '利用区分は入力必須項目です。',
-                     'admin_flg.min'            => '管理区分は一般|管理者から選択してください。',
-                     'admin_flg.required'       => '管理区分は入力必須項目です。',
-                     'email.required'           => 'Eメールは入力必須項目です。',
-                     'email.unique'             => 'そのEメールは既に登録されています。',
-                     'password.confirmed'       => '確認用のパスワードと一致しません。',
+                    'organization_id.required' => '組織名は入力必須項目です。',
+                    'name.required'            => 'ユーザー名は入力必須項目です。',
+                    'name.unique'              => 'そのユーザー名は既に登録されています。',
+                    'user_id.required'         => '顧客名は入力必須項目です。',
+                    'login_flg.min'            => '利用区分は顧客|社員|所属から選択してください。',
+                    'login_flg.required'       => '利用区分は入力必須項目です。',
+                    'admin_flg.min'            => '管理区分は一般|管理者から選択してください。',
+                    'admin_flg.required'       => '管理区分は入力必須項目です。',
+                    'email.required'           => 'Eメールは入力必須項目です。',
+                    'email.unique'             => 'そのEメールは既に登録されています。',
+                    'password.confirmed'       => '確認用のパスワードと一致しません。',
                     ];
 
         $validator = Validator::make($request->all(), $rules, $messages);
