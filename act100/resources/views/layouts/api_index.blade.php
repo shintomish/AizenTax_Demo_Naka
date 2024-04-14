@@ -404,12 +404,15 @@
                                 <h3>会社申請・設立</h3>
 
                                 @break;
+                            @case ('linetrialusercreate')
+                                <!-- タイトル -->
+                                @break;
                             @case ('linetrialuser')
                                 <!-- タイトル -->
                                 <h3>体験者名簿・領収書作成 </h3>
                                 <div class="col-2">
-                                    <a type="submit" class="btn btn-primary btn-sm" href="{{ route('linetrialuser.input')}}">更新</a>
-                                </div>
+                                    <a type="submit" class="btn btn-primary btn-sm" href="{{ route('linetrialuser.create')}}">新規登録</a>
+                                    <a type="submit" class="btn btn-success btn-sm" href="{{ route('linetrialuser.input')}}">一覧更新</a>                                </div>
                                 @break;
                             @case ('linetrialuserhistory')
                                 <!-- タイトル -->
@@ -426,7 +429,7 @@
                             <div class='btn-toolbar' role="toolbar">
                                 <div class="input-group">
 
-                                    @if( $common_no == 'linetrialuser' || $common_no == 'linetrialuserhistory')
+                                    @if( $common_no == 'linetrialuser' || $common_no == 'linetrialuserhistory' || $common_no == 'linetrialusercreate')
                         {{-- <div class="btn-group me-2 mb-0">
                             <a id="start2" style="margin-bottom:5px;" class="btn btn-success btn-sm mr-auto" href="">請求書作成</a>
                         </div> --}}
@@ -512,9 +515,9 @@
                                     <!-- 進捗チェック 09 -->
                                     <!-- スケジュール 10 -->
                                     @if( $common_no == '07'   ||
-                                         $common_no == '07_2' ||
-                                         $common_no == '03'   ||
-                                         $common_no == '04'
+                                            $common_no == '07_2' ||
+                                            $common_no == '03'   ||
+                                            $common_no == '04'
                                         )
 
                                     <select style="margin-right:5px;" class="custom-select" id="year" name="year">
@@ -558,7 +561,7 @@
                                         </select>
                                         <button type="submit" class="btn btn-secondary btn_sm">検索</button>
                                     @else
-                                        @if( $common_no == '00_3' || $common_no == 'linetrialuser' || $common_no == 'linetrialuserhistory')
+                                        @if( $common_no == '00_3' || $common_no == 'linetrialuser' || $common_no == 'linetrialuserhistory'|| $common_no == 'linetrialusercreate' )
                                         @else
                                             <input type="text" value="{{$keyword2}}" name="keyword" class="form-control" placeholder="顧客名検索">
                                             <div class="input-group-append">
