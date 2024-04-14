@@ -122,11 +122,12 @@ class LineTrialUserController extends Controller
             ['reservationed_at'   => $request->reservationed_at],
         );
 
-        $validator = $this->get_validator($request);
+        $validator = $this->get_validator($request,$request->id);
         if ($validator->fails()) {
             return redirect('linetrialuser/create')->withErrors($validator)->withInput();
         }
-
+        Log::info('linetrialuser store START 2');
+        
         DB::beginTransaction();
         Log::info('beginTransaction - linetrialuser store start');
         try {
@@ -155,7 +156,7 @@ class LineTrialUserController extends Controller
     /**
      *
      */
-    public function get_validator(Request $request)
+    public function get_validator(Request $request,$id)
     {
         $rules   = [
             'users_name'  => [

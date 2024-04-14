@@ -98,7 +98,7 @@ class LineTrialUserController extends Controller
     {
         Log::info('linetrialuser create START');
 
-        $common_no = 'linetrialusercreate';
+        $common_no = 'linetrialuser';
 
         $compacts = compact( 'common_no' );
 
@@ -122,7 +122,7 @@ class LineTrialUserController extends Controller
             ['reservationed_at'   => $request->reservationed_at],
         );
 
-        $validator = $this->get_validator($request);
+        $validator = $this->get_validator($request,$request->id);
         if ($validator->fails()) {
             return redirect('linetrialuser/create')->withErrors($validator)->withInput();
         }
@@ -155,7 +155,7 @@ class LineTrialUserController extends Controller
     /**
      *
      */
-    public function get_validator(Request $request)
+    public function get_validator(Request $request,$id)
     {
         $rules   = [
             'users_name'  => [

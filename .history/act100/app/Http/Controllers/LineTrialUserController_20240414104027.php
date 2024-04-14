@@ -126,6 +126,7 @@ class LineTrialUserController extends Controller
         if ($validator->fails()) {
             return redirect('linetrialuser/create')->withErrors($validator)->withInput();
         }
+        Log::info('linetrialuser store START 2');
 
         DB::beginTransaction();
         Log::info('beginTransaction - linetrialuser store start');

@@ -3,7 +3,6 @@
 // 事務所 体験者データ確認
 namespace App\Http\Controllers;
 
-use Validator;
 use App\Models\Line_Trial_Users;
 
 use Illuminate\Http\Request;
@@ -98,12 +97,8 @@ class LineTrialUserController extends Controller
     {
         Log::info('linetrialuser create START');
 
-        $common_no = 'linetrialusercreate';
-
-        $compacts = compact( 'common_no' );
 
         Log::info('linetrialuser create END');
-
         return view( 'linetrialuser.create', $compacts );
     }
 
@@ -117,15 +112,20 @@ class LineTrialUserController extends Controller
     {
         Log::info('linetrialuser store START');
 
+        $organization = $this->auth_user_organization();
+
         $request->merge(
-            ['users_name'         => $request->users_name],
-            ['reservationed_at'   => $request->reservationed_at],
+            ['organization_id' => $organization->id],
+            ['user_id'         => $request->user_id],
+            ['customer_id'     => $request->customer_id],
         );
 
-        $validator = $this->get_validator($request);
+        $validator = $this->get_validator($request,$request->id);
         if ($validator->fails()) {
             return redirect('linetrialuser/create')->withErrors($validator)->withInput();
         }
+
+// Log::debug('controluser store $request = ' . print_r($request->all(), true));
 
         DB::beginTransaction();
         Log::info('beginTransaction - linetrialuser store start');
@@ -146,31 +146,16 @@ class LineTrialUserController extends Controller
         }
 
         Log::info('linetrialuser store END');
+        $common_no = 'linetrialuser';
 
+        Log::info('linetrialuser input END');
+
+        $compacts = compact( 'common_no', 'linetrialusers' );
+
+        return view( 'linetrialuser.input', $compacts );
         session()->flash('toastr', config('toastr.create'));
         return redirect()->route('linetrialuser.input');
 
-    }
-
-    /**
-     *
-     */
-    public function get_validator(Request $request)
-    {
-        $rules   = [
-            'users_name'  => [
-                                    'required',
-                            ],
-
-        ];
-
-        $messages = [
-            'users_name.required'             => '体験者名は入力必須項目です。',
-        ];
-
-        $validator = Validator::make($request->all(), $rules, $messages);
-
-        return $validator;
     }
 
 }

@@ -3,7 +3,6 @@
 // 事務所 体験者データ確認
 namespace App\Http\Controllers;
 
-use Validator;
 use App\Models\Line_Trial_Users;
 
 use Illuminate\Http\Request;
@@ -98,7 +97,7 @@ class LineTrialUserController extends Controller
     {
         Log::info('linetrialuser create START');
 
-        $common_no = 'linetrialusercreate';
+        $common_no = 'linetrialuser';
 
         $compacts = compact( 'common_no' );
 
@@ -122,7 +121,7 @@ class LineTrialUserController extends Controller
             ['reservationed_at'   => $request->reservationed_at],
         );
 
-        $validator = $this->get_validator($request);
+        $validator = $this->get_validator($request,$request->id);
         if ($validator->fails()) {
             return redirect('linetrialuser/create')->withErrors($validator)->withInput();
         }
@@ -155,7 +154,7 @@ class LineTrialUserController extends Controller
     /**
      *
      */
-    public function get_validator(Request $request)
+    public function get_validator(Request $request,$id)
     {
         $rules   = [
             'users_name'  => [

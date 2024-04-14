@@ -3,7 +3,6 @@
 // 事務所 体験者データ確認
 namespace App\Http\Controllers;
 
-use Validator;
 use App\Models\Line_Trial_Users;
 
 use Illuminate\Http\Request;
@@ -98,12 +97,15 @@ class LineTrialUserController extends Controller
     {
         Log::info('linetrialuser create START');
 
-        $common_no = 'linetrialusercreate';
+        $common_no = 'linetrialuser';
 
-        $compacts = compact( 'common_no' );
+        Log::info('linetrialuser input END');
+
+        $compacts = compact( 'common_no', 'linetrialusers' );
+
+        return view( 'linetrialuser.input', $compacts );
 
         Log::info('linetrialuser create END');
-
         return view( 'linetrialuser.create', $compacts );
     }
 
@@ -122,7 +124,7 @@ class LineTrialUserController extends Controller
             ['reservationed_at'   => $request->reservationed_at],
         );
 
-        $validator = $this->get_validator($request);
+        $validator = $this->get_validator($request,$request->id);
         if ($validator->fails()) {
             return redirect('linetrialuser/create')->withErrors($validator)->withInput();
         }
@@ -150,27 +152,6 @@ class LineTrialUserController extends Controller
         session()->flash('toastr', config('toastr.create'));
         return redirect()->route('linetrialuser.input');
 
-    }
-
-    /**
-     *
-     */
-    public function get_validator(Request $request)
-    {
-        $rules   = [
-            'users_name'  => [
-                                    'required',
-                            ],
-
-        ];
-
-        $messages = [
-            'users_name.required'             => '体験者名は入力必須項目です。',
-        ];
-
-        $validator = Validator::make($request->all(), $rules, $messages);
-
-        return $validator;
     }
 
 }
