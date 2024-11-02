@@ -165,6 +165,8 @@ class AdvisorsfeeController extends Controller
         //今月の月を取得
         $nowmonth = intval($this->get_now_month());
 
+        // Log::debug('advisorsfee input selmonth = ' .print_r($selmonth,true));
+
         if($organization_id == 0) {
             $customers = Customer::where('organization_id','>=',$organization_id)
                             // `active_cancel` int DEFAULT '1' COMMENT 'アクティブ/解約 1:契約 2:SPOT 3:解約',
@@ -172,7 +174,7 @@ class AdvisorsfeeController extends Controller
                             ->whereNull('deleted_at')
                             ->get();
             $advisorsfees = Advisorsfee::select(
-                             'advisorsfees.id               as id'
+                            'advisorsfees.id                as id'
                             ,'advisorsfees.organization_id  as organization_id'
                             ,'advisorsfees.custm_id         as custm_id'
                             ,'advisorsfees.year             as year'
@@ -214,7 +216,7 @@ class AdvisorsfeeController extends Controller
                             ->get();
 
             $advisorsfees = Advisorsfee::select(
-                             'advisorsfees.id               as id'
+                            'advisorsfees.id                as id'
                             ,'advisorsfees.organization_id  as organization_id'
                             ,'advisorsfees.custm_id         as custm_id'
                             ,'advisorsfees.year             as year'
@@ -256,8 +258,6 @@ class AdvisorsfeeController extends Controller
 
         // 2023/09/22
         $userid  = $user_id;
-
-        // Log::debug('advisorsfee input nowyear = ' .print_r($nowyear,true));
 
         $compacts = compact( 'userid','common_no','advisorsfees', 'customers','nowyear','keyword2','nowmonth' );
         Log::info('advisorsfee input END');
@@ -635,6 +635,7 @@ class AdvisorsfeeController extends Controller
         //-------------------------------------------------------------
         $keyword = $request->Input('keyword');
         $keyyear = $request->Input('year');
+        $keymonth = $request->Input('month');   // 2024/02/20
 
         // 2023/09/22
         // ログインユーザーのユーザー情報を取得する
@@ -646,6 +647,9 @@ class AdvisorsfeeController extends Controller
 
         // * 今年の年を取得
         $nowyear    = intval($this->get_now_year());
+
+        //今月の月を取得
+        $nowmonth = intval($this->get_now_month());   // 2024/02/20
 
         // 日付or年が入力された
         if($keyword || $keyyear) {
@@ -665,18 +669,18 @@ class AdvisorsfeeController extends Controller
                                     ,'advisorsfees.year             as year'
                                     ,'advisorsfees.contract_entity  as contract_entity'
                                     ,'advisorsfees.advisor_fee      as advisor_fee'
-		                            ,'advisorsfees.fee_01        as fee_01'
-		                            ,'advisorsfees.fee_02        as fee_02'
-		                            ,'advisorsfees.fee_03        as fee_03'
-		                            ,'advisorsfees.fee_04        as fee_04'
-		                            ,'advisorsfees.fee_05        as fee_05'
-		                            ,'advisorsfees.fee_06        as fee_06'
-		                            ,'advisorsfees.fee_07        as fee_07'
-		                            ,'advisorsfees.fee_08        as fee_08'
-		                            ,'advisorsfees.fee_09        as fee_09'
-		                            ,'advisorsfees.fee_10        as fee_10'
-		                            ,'advisorsfees.fee_11        as fee_11'
-		                            ,'advisorsfees.fee_12        as fee_12'
+                                    ,'advisorsfees.fee_01        as fee_01'
+                                    ,'advisorsfees.fee_02        as fee_02'
+                                    ,'advisorsfees.fee_03        as fee_03'
+                                    ,'advisorsfees.fee_04        as fee_04'
+                                    ,'advisorsfees.fee_05        as fee_05'
+                                    ,'advisorsfees.fee_06        as fee_06'
+                                    ,'advisorsfees.fee_07        as fee_07'
+                                    ,'advisorsfees.fee_08        as fee_08'
+                                    ,'advisorsfees.fee_09        as fee_09'
+                                    ,'advisorsfees.fee_10        as fee_10'
+                                    ,'advisorsfees.fee_11        as fee_11'
+                                    ,'advisorsfees.fee_12        as fee_12'
 
                                     ,'customers.id as customers_id'
                                     ,'customers.business_name as business_name'
@@ -713,18 +717,18 @@ class AdvisorsfeeController extends Controller
                                     ,'advisorsfees.year             as year'
                                     ,'advisorsfees.contract_entity  as contract_entity'
                                     ,'advisorsfees.advisor_fee      as advisor_fee'
-		                            ,'advisorsfees.fee_01        as fee_01'
-		                            ,'advisorsfees.fee_02        as fee_02'
-		                            ,'advisorsfees.fee_03        as fee_03'
-		                            ,'advisorsfees.fee_04        as fee_04'
-		                            ,'advisorsfees.fee_05        as fee_05'
-		                            ,'advisorsfees.fee_06        as fee_06'
-		                            ,'advisorsfees.fee_07        as fee_07'
-		                            ,'advisorsfees.fee_08        as fee_08'
-		                            ,'advisorsfees.fee_09        as fee_09'
-		                            ,'advisorsfees.fee_10        as fee_10'
-		                            ,'advisorsfees.fee_11        as fee_11'
-		                            ,'advisorsfees.fee_12        as fee_12'
+                                    ,'advisorsfees.fee_01        as fee_01'
+                                    ,'advisorsfees.fee_02        as fee_02'
+                                    ,'advisorsfees.fee_03        as fee_03'
+                                    ,'advisorsfees.fee_04        as fee_04'
+                                    ,'advisorsfees.fee_05        as fee_05'
+                                    ,'advisorsfees.fee_06        as fee_06'
+                                    ,'advisorsfees.fee_07        as fee_07'
+                                    ,'advisorsfees.fee_08        as fee_08'
+                                    ,'advisorsfees.fee_09        as fee_09'
+                                    ,'advisorsfees.fee_10        as fee_10'
+                                    ,'advisorsfees.fee_11        as fee_11'
+                                    ,'advisorsfees.fee_12        as fee_12'
 
                                     ,'customers.id                  as customers_id'
                                     ,'customers.business_name       as business_name'
@@ -787,13 +791,10 @@ class AdvisorsfeeController extends Controller
         // * 選択された年を取得
         $nowyear   = $keyyear;
         $keyword2  = $keyword;
+        $nowmonth  = $keymonth;   // 2024/02/20
 
         // 2023/09/22
         $userid = $user_id;
-
-        // 2023/09/22
-        //今月の月を取得
-        $nowmonth = intval($this->get_now_month());
 
         // Log::debug('advisorsfeers store $advisorsfeers = ' . print_r($advisorsfeers, true));
         $compacts = compact( 'userid','common_no','customers','advisorsfees','nowyear','keyword2','nowmonth' );
