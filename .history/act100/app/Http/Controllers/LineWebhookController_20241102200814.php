@@ -73,9 +73,9 @@ class LineWebhookController extends Controller
                             // $response = $bot->replyText($event['replyToken'], $msg);
 
                             // 自動返信 2024/11/10 Skip
-                            $msg = "体験会ご予約承りました。" . "\n". "\n";
-                            $msg .= "体験会ブースにお越し頂いてから、" . "\n";
-                            $msg .= "ご希望の予約時間を登録致します。";
+                            // $msg = "体験会ご予約承りました。" . "\n". "\n";
+                            // $msg .= "体験会ブースにお越し頂いてから、" . "\n";
+                            // $msg .= "ご希望の予約時間を登録致します。";
                         }
 
                         break;
