@@ -1,0 +1,696 @@
+[2023-11-05 07:51:51] Act:.INFO: auth_user_info START  
+[2023-11-05 07:51:51] Act:.INFO: auth_user_info END  
+[2023-11-05 07:51:51] Act:.INFO: auth login redirectTo user = stdClass Object
+(
+    [id] => 1
+    [name] => 新冨泰明
+    [email] => shintomi.sh@gmail.com
+    [email_verified_at] => 
+    [organization_id] => 0
+    [user_id] => 1
+    [login_flg] => 2
+    [admin_flg] => 2
+    [created_at] => 2022-10-20T12:00:00.000000Z
+    [updated_at] => 2022-10-20T12:00:00.000000Z
+    [deleted_at] => 
+)
+  
+[2023-11-05 07:51:51] Act:.INFO: auth_user_info START  
+[2023-11-05 07:51:51] Act:.INFO: auth_user_info END  
+[2023-11-05 07:51:51] Act:.INFO: office top index START $user->name = 新冨泰明  
+[2023-11-05 07:51:51] Act:.INFO: auth_user_organization START  
+[2023-11-05 07:51:51] Act:.INFO: auth_user_organization END  
+[2023-11-05 07:51:51] Act:.INFO: office top index END $user->name = 新冨泰明  
+[2023-11-05 07:51:54] Act:.INFO: linetrialuser input START  
+[2023-11-05 07:51:54] Act:.INFO: linetrialuser input END  
+[2023-11-05 07:53:44] Act:.INFO: LineWebhookController message START  
+[2023-11-05 07:53:45] Act:.INFO: LineWebhookController message END  
+[2023-11-05 07:55:02] Act:.INFO: linetrialuser input START  
+[2023-11-05 07:55:02] Act:.INFO: linetrialuser input END  
+[2023-11-05 07:55:29] Act:.INFO: linetrialuserhistory index START  
+[2023-11-05 07:55:29] Act:.INFO: linetrialuserhistory index END  
+[2023-11-05 07:55:39] Act:.INFO: linetrialuserhistory index START  
+[2023-11-05 07:55:39] Act:.INFO: linetrialuserhistory index END  
+[2023-11-05 07:55:43] Act:.INFO: linetrialuser input START  
+[2023-11-05 07:55:43] Act:.INFO: linetrialuser input END  
+[2023-11-05 08:14:19] Act:.INFO: linetrialuser input START  
+[2023-11-05 08:14:19] Act:.INFO: linetrialuser input END  
+[2023-11-05 08:14:39] Act:.INFO: auth_user_info START  
+[2023-11-05 08:14:39] Act:.INFO: auth_user_info END  
+[2023-11-05 08:14:39] Act:.INFO: office top index START $user->name = 新冨泰明  
+[2023-11-05 08:14:39] Act:.INFO: auth_user_organization START  
+[2023-11-05 08:14:39] Act:.INFO: auth_user_organization END  
+[2023-11-05 08:14:39] Act:.INFO: office top index END $user->name = 新冨泰明  
+[2023-11-05 08:14:46] Act:.INFO: linetrialuser input START  
+[2023-11-05 08:14:46] Act:.INFO: linetrialuser input END  
+[2023-11-05 08:14:47] Act:.INFO: linetrialuserhistory index START  
+[2023-11-05 08:14:47] Act:.INFO: linetrialuserhistory index END  
+[2023-11-05 08:14:58] Act:.INFO: wokprocbook input START  
+[2023-11-05 08:14:58] Act:.INFO: auth_user_info START  
+[2023-11-05 08:14:58] Act:.INFO: auth_user_info END  
+[2023-11-05 08:14:58] Act:.INFO: auth_user_organization START  
+[2023-11-05 08:14:58] Act:.INFO: auth_user_organization END  
+[2023-11-05 08:14:58] Act:.INFO: wokprocbook input END  
+[2023-11-05 08:15:20] Act:.INFO: wokprocbook serch_custom START  
+[2023-11-05 08:15:20] Act:.INFO: auth_user_info START  
+[2023-11-05 08:15:20] Act:.INFO: auth_user_info END  
+[2023-11-05 08:15:20] Act:.INFO: auth_user_organization START  
+[2023-11-05 08:15:20] Act:.INFO: auth_user_organization END  
+[2023-11-05 08:15:20] Act:.INFO: wokprocbook serch_custom END  
+[2023-11-05 08:15:48] Act:.INFO: linetrialuser input START  
+[2023-11-05 08:15:48] Act:.INFO: linetrialuser input END  
+[2023-11-05 08:15:55] Act:.INFO: advisorsfee input START  
+[2023-11-05 08:15:55] Act:.INFO: auth_user_info START  
+[2023-11-05 08:15:55] Act:.INFO: auth_user_info END  
+[2023-11-05 08:15:55] Act:.INFO: auth_user_organization START  
+[2023-11-05 08:15:55] Act:.INFO: auth_user_organization END  
+[2023-11-05 08:15:55] Act:.INFO: advisorsfee input END  
+[2023-11-05 08:16:21] Act:.INFO: uploaduser index START  
+[2023-11-05 08:16:21] Act:.INFO: auth_user_organization START  
+[2023-11-05 08:16:21] Act:.INFO: auth_user_organization END  
+[2023-11-05 08:16:21] Act:.INFO: auth_customer_all START  
+[2023-11-05 08:16:21] Act:.INFO: auth_customer_all END  
+[2023-11-05 08:16:21] Act:.INFO: uploaduser index END  
+[2023-11-05 08:29:49] Act:.INFO: auth_user_info START  
+[2023-11-05 08:29:49] Act:.INFO: auth_user_info END  
+[2023-11-05 08:29:49] Act:.INFO: office top index START $user->name = 新冨泰明  
+[2023-11-05 08:29:49] Act:.INFO: auth_user_organization START  
+[2023-11-05 08:29:49] Act:.INFO: auth_user_organization END  
+[2023-11-05 08:29:49] Act:.INFO: office top index END $user->name = 新冨泰明  
+[2023-11-05 08:29:52] Act:.INFO: linetrialuser input START  
+[2023-11-05 08:29:52] Act:.INFO: linetrialuser input END  
+[2023-11-05 08:30:00] Act:.INFO: linetrialuserhistory index START  
+[2023-11-05 08:30:00] Act:.INFO: linetrialuserhistory index END  
+[2023-11-05 08:30:05] Act:.INFO: linetrialuser input START  
+[2023-11-05 08:30:05] Act:.INFO: linetrialuser input END  
+[2023-11-05 08:30:22] Act:.INFO: LineExcelMakeController lineexcel START  
+[2023-11-05 08:30:22] Act:.INFO: auth_user_organization START  
+[2023-11-05 08:30:22] Act:.INFO: auth_user_organization END  
+[2023-11-05 08:30:22] Act:.DEBUG: LineExcelMakeController lineexcel $id = 9  
+[2023-11-05 08:30:22] Act:.DEBUG: LineExcelMakeController lineexcel $user_name = 三浦竜二です  
+[2023-11-05 08:30:22] Act:.INFO: ExportService LinemakeXlsPdf START  
+[2023-11-05 08:30:23] Act:.INFO: ExportService  line_trial_users_history_Update START  
+[2023-11-05 08:30:23] Act:.INFO: beginTransaction - ExportService  line_trial_users_history_Update saveFile start  
+[2023-11-05 08:30:23] Act:.INFO: beginTransaction - ExportService  line_trial_users_history_Update saveFile end(commit)  
+[2023-11-05 08:30:23] Act:.INFO: ExportService  line_trial_users_history_Update END  
+[2023-11-05 08:30:23] Act:.INFO: ExportService convertOfficeToPdf START  
+[2023-11-05 08:30:23] Act:.INFO: ExportService convertOfficeToPdf exec $return_var = 0  
+[2023-11-05 08:30:23] Act:.INFO: ExportService convertOfficeToPdf END  
+[2023-11-05 08:30:23] Act:.INFO: ExportService  line_trial_users_history_Update START  
+[2023-11-05 08:30:23] Act:.INFO: beginTransaction - ExportService  line_trial_users_history_Update saveFile start  
+[2023-11-05 08:30:23] Act:.INFO: beginTransaction - ExportService  line_trial_users_history_Update saveFile end(commit)  
+[2023-11-05 08:30:23] Act:.INFO: ExportService  line_trial_users_history_Update END  
+[2023-11-05 08:30:23] Act:.INFO: line_trial_users_Update START  
+[2023-11-05 08:30:23] Act:.INFO: line_trial_users_Update beginTransaction - start  
+[2023-11-05 08:30:23] Act:.INFO: line_trial_users_Update beginTransaction - end  
+[2023-11-05 08:30:23] Act:.INFO: line_trial_users_Update END  
+[2023-11-05 08:30:23] Act:.INFO: ExportService LinemakeXlsPdf END  
+[2023-11-05 08:30:23] Act:.INFO: LineExcelMakeController lineexcel END  
+[2023-11-05 08:30:23] Act:.INFO: linetrialuser input START  
+[2023-11-05 08:30:23] Act:.INFO: linetrialuser input END  
+[2023-11-05 08:30:27] Act:.INFO: linetrialuserhistory index START  
+[2023-11-05 08:30:27] Act:.INFO: linetrialuserhistory index END  
+[2023-11-05 08:30:31] Act:.INFO: invoicehistory show_up01 START  
+[2023-11-05 08:30:31] Act:.INFO: invoicehistory show_up01 END  
+[2023-11-05 08:30:31] Act:.INFO: invoicehistory show_up01 START  
+[2023-11-05 08:30:31] Act:.INFO: invoicehistory show_up01 END  
+[2023-11-05 08:30:41] Act:.INFO: linetrialuser input START  
+[2023-11-05 08:30:41] Act:.INFO: linetrialuser input END  
+[2023-11-05 08:30:48] Act:.INFO: update_api linetrialuser START  
+[2023-11-05 08:30:48] Act:.INFO: update_api linetrialuser beginTransaction - start  
+[2023-11-05 08:30:48] Act:.INFO: update_api linetrialuser beginTransaction - end  
+[2023-11-05 08:30:48] Act:.INFO: update_api linetrialuser END  
+[2023-11-05 08:30:55] Act:.INFO: LineExcelMakeController lineexcel START  
+[2023-11-05 08:30:55] Act:.INFO: auth_user_organization START  
+[2023-11-05 08:30:55] Act:.INFO: auth_user_organization END  
+[2023-11-05 08:30:55] Act:.DEBUG: LineExcelMakeController lineexcel $id = 9  
+[2023-11-05 08:30:55] Act:.DEBUG: LineExcelMakeController lineexcel $user_name = 三浦竜二  
+[2023-11-05 08:30:55] Act:.INFO: ExportService LinemakeXlsPdf START  
+[2023-11-05 08:30:56] Act:.INFO: ExportService  line_trial_users_history_Update START  
+[2023-11-05 08:30:56] Act:.INFO: beginTransaction - ExportService  line_trial_users_history_Update saveFile start  
+[2023-11-05 08:30:56] Act:.INFO: beginTransaction - ExportService  line_trial_users_history_Update saveFile end(commit)  
+[2023-11-05 08:30:56] Act:.INFO: ExportService  line_trial_users_history_Update END  
+[2023-11-05 08:30:56] Act:.INFO: ExportService convertOfficeToPdf START  
+[2023-11-05 08:30:56] Act:.INFO: ExportService convertOfficeToPdf exec $return_var = 0  
+[2023-11-05 08:30:56] Act:.INFO: ExportService convertOfficeToPdf END  
+[2023-11-05 08:30:56] Act:.INFO: ExportService  line_trial_users_history_Update START  
+[2023-11-05 08:30:56] Act:.INFO: beginTransaction - ExportService  line_trial_users_history_Update saveFile start  
+[2023-11-05 08:30:56] Act:.INFO: beginTransaction - ExportService  line_trial_users_history_Update saveFile end(commit)  
+[2023-11-05 08:30:56] Act:.INFO: ExportService  line_trial_users_history_Update END  
+[2023-11-05 08:30:56] Act:.INFO: line_trial_users_Update START  
+[2023-11-05 08:30:56] Act:.INFO: line_trial_users_Update beginTransaction - start  
+[2023-11-05 08:30:56] Act:.INFO: line_trial_users_Update beginTransaction - end  
+[2023-11-05 08:30:56] Act:.INFO: line_trial_users_Update END  
+[2023-11-05 08:30:56] Act:.INFO: ExportService LinemakeXlsPdf END  
+[2023-11-05 08:30:56] Act:.INFO: LineExcelMakeController lineexcel END  
+[2023-11-05 08:30:56] Act:.INFO: linetrialuser input START  
+[2023-11-05 08:30:56] Act:.INFO: linetrialuser input END  
+[2023-11-05 08:30:59] Act:.INFO: linetrialuserhistory index START  
+[2023-11-05 08:30:59] Act:.INFO: linetrialuserhistory index END  
+[2023-11-05 08:31:01] Act:.INFO: invoicehistory show_up01 START  
+[2023-11-05 08:31:01] Act:.INFO: invoicehistory show_up01 END  
+[2023-11-05 08:31:02] Act:.INFO: invoicehistory show_up01 START  
+[2023-11-05 08:31:02] Act:.INFO: invoicehistory show_up01 END  
+[2023-11-05 08:31:32] Act:.INFO: linetrialuser input START  
+[2023-11-05 08:31:32] Act:.INFO: linetrialuser input END  
+[2023-11-05 08:34:11] Act:.INFO: LineWebhookController message START  
+[2023-11-05 08:34:11] Act:.INFO: LineWebhookController message END  
+[2023-11-05 08:34:26] Act:.INFO: linetrialuser input START  
+[2023-11-05 08:34:26] Act:.INFO: linetrialuser input END  
+[2023-11-05 08:34:34] Act:.INFO: update_api linetrialuser START  
+[2023-11-05 08:34:34] Act:.INFO: update_api linetrialuser beginTransaction - start  
+[2023-11-05 08:34:34] Act:.INFO: update_api linetrialuser beginTransaction - end  
+[2023-11-05 08:34:34] Act:.INFO: update_api linetrialuser END  
+[2023-11-05 08:34:37] Act:.INFO: linetrialuserhistory index START  
+[2023-11-05 08:34:37] Act:.INFO: linetrialuserhistory index END  
+[2023-11-05 08:34:40] Act:.INFO: linetrialuser input START  
+[2023-11-05 08:34:40] Act:.INFO: linetrialuser input END  
+[2023-11-05 08:37:00] Act:.INFO: LineWebhookController message START  
+[2023-11-05 08:37:00] Act:.INFO: LineWebhookController message END  
+[2023-11-05 08:44:05] Act:.INFO: linetrialuser input START  
+[2023-11-05 08:44:05] Act:.INFO: linetrialuser input END  
+[2023-11-05 08:44:13] Act:.INFO: LineExcelMakeController lineexcel START  
+[2023-11-05 08:44:13] Act:.INFO: auth_user_organization START  
+[2023-11-05 08:44:13] Act:.INFO: auth_user_organization END  
+[2023-11-05 08:44:13] Act:.DEBUG: LineExcelMakeController lineexcel $id = 10  
+[2023-11-05 08:44:13] Act:.DEBUG: LineExcelMakeController lineexcel $user_name = 青山若林  
+[2023-11-05 08:44:13] Act:.INFO: ExportService LinemakeXlsPdf START  
+[2023-11-05 08:44:13] Act:.INFO: ExportService  line_trial_users_history_Update START  
+[2023-11-05 08:44:13] Act:.INFO: beginTransaction - ExportService  line_trial_users_history_Update saveFile start  
+[2023-11-05 08:44:13] Act:.INFO: beginTransaction - ExportService  line_trial_users_history_Update saveFile end(commit)  
+[2023-11-05 08:44:13] Act:.INFO: ExportService  line_trial_users_history_Update END  
+[2023-11-05 08:44:13] Act:.INFO: ExportService convertOfficeToPdf START  
+[2023-11-05 08:44:14] Act:.INFO: ExportService convertOfficeToPdf exec $return_var = 0  
+[2023-11-05 08:44:14] Act:.INFO: ExportService convertOfficeToPdf END  
+[2023-11-05 08:44:14] Act:.INFO: ExportService  line_trial_users_history_Update START  
+[2023-11-05 08:44:14] Act:.INFO: beginTransaction - ExportService  line_trial_users_history_Update saveFile start  
+[2023-11-05 08:44:14] Act:.INFO: beginTransaction - ExportService  line_trial_users_history_Update saveFile end(commit)  
+[2023-11-05 08:44:14] Act:.INFO: ExportService  line_trial_users_history_Update END  
+[2023-11-05 08:44:14] Act:.INFO: line_trial_users_Update START  
+[2023-11-05 08:44:14] Act:.INFO: line_trial_users_Update beginTransaction - start  
+[2023-11-05 08:44:14] Act:.INFO: line_trial_users_Update beginTransaction - end  
+[2023-11-05 08:44:14] Act:.INFO: line_trial_users_Update END  
+[2023-11-05 08:44:14] Act:.INFO: ExportService LinemakeXlsPdf END  
+[2023-11-05 08:44:14] Act:.INFO: LineExcelMakeController lineexcel END  
+[2023-11-05 08:44:14] Act:.INFO: linetrialuser input START  
+[2023-11-05 08:44:14] Act:.INFO: linetrialuser input END  
+[2023-11-05 08:44:18] Act:.INFO: linetrialuserhistory index START  
+[2023-11-05 08:44:18] Act:.INFO: linetrialuserhistory index END  
+[2023-11-05 08:44:24] Act:.INFO: invoicehistory show_up01 START  
+[2023-11-05 08:44:24] Act:.INFO: invoicehistory show_up01 END  
+[2023-11-05 08:44:24] Act:.INFO: invoicehistory show_up01 START  
+[2023-11-05 08:44:24] Act:.INFO: invoicehistory show_up01 END  
+[2023-11-05 08:44:46] Act:.INFO: linetrialuser input START  
+[2023-11-05 08:44:46] Act:.INFO: linetrialuser input END  
+[2023-11-05 08:50:33] Act:.INFO: LineExcelMakeController lineexcel START  
+[2023-11-05 08:50:33] Act:.INFO: auth_user_organization START  
+[2023-11-05 08:50:33] Act:.INFO: auth_user_organization END  
+[2023-11-05 08:50:33] Act:.DEBUG: LineExcelMakeController lineexcel $id = 8  
+[2023-11-05 08:50:33] Act:.DEBUG: LineExcelMakeController lineexcel $user_name = 山本浩二  
+[2023-11-05 08:50:33] Act:.INFO: ExportService LinemakeXlsPdf START  
+[2023-11-05 08:50:33] Act:.INFO: ExportService  line_trial_users_history_Update START  
+[2023-11-05 08:50:33] Act:.INFO: beginTransaction - ExportService  line_trial_users_history_Update saveFile start  
+[2023-11-05 08:50:33] Act:.INFO: beginTransaction - ExportService  line_trial_users_history_Update saveFile end(commit)  
+[2023-11-05 08:50:33] Act:.INFO: ExportService  line_trial_users_history_Update END  
+[2023-11-05 08:50:33] Act:.INFO: ExportService convertOfficeToPdf START  
+[2023-11-05 08:50:34] Act:.INFO: ExportService convertOfficeToPdf exec $return_var = 0  
+[2023-11-05 08:50:34] Act:.INFO: ExportService convertOfficeToPdf END  
+[2023-11-05 08:50:34] Act:.INFO: ExportService  line_trial_users_history_Update START  
+[2023-11-05 08:50:34] Act:.INFO: beginTransaction - ExportService  line_trial_users_history_Update saveFile start  
+[2023-11-05 08:50:34] Act:.INFO: beginTransaction - ExportService  line_trial_users_history_Update saveFile end(commit)  
+[2023-11-05 08:50:34] Act:.INFO: ExportService  line_trial_users_history_Update END  
+[2023-11-05 08:50:34] Act:.INFO: line_trial_users_Update START  
+[2023-11-05 08:50:34] Act:.INFO: line_trial_users_Update beginTransaction - start  
+[2023-11-05 08:50:34] Act:.INFO: line_trial_users_Update beginTransaction - end  
+[2023-11-05 08:50:34] Act:.INFO: line_trial_users_Update END  
+[2023-11-05 08:50:34] Act:.INFO: ExportService LinemakeXlsPdf END  
+[2023-11-05 08:50:34] Act:.INFO: LineExcelMakeController lineexcel END  
+[2023-11-05 08:50:36] Act:.INFO: linetrialuser input START  
+[2023-11-05 08:50:36] Act:.INFO: linetrialuser input END  
+[2023-11-05 08:50:39] Act:.INFO: linetrialuserhistory index START  
+[2023-11-05 08:50:39] Act:.INFO: linetrialuserhistory index END  
+[2023-11-05 08:50:41] Act:.INFO: invoicehistory show_up01 START  
+[2023-11-05 08:50:41] Act:.INFO: invoicehistory show_up01 END  
+[2023-11-05 08:50:41] Act:.INFO: invoicehistory show_up01 START  
+[2023-11-05 08:50:41] Act:.INFO: invoicehistory show_up01 END  
+[2023-11-05 08:52:47] Act:.INFO: linetrialuser input START  
+[2023-11-05 08:52:47] Act:.INFO: linetrialuser input END  
+[2023-11-05 08:52:57] Act:.INFO: LineExcelMakeController lineexcel START  
+[2023-11-05 08:52:57] Act:.INFO: auth_user_organization START  
+[2023-11-05 08:52:57] Act:.INFO: auth_user_organization END  
+[2023-11-05 08:52:57] Act:.DEBUG: LineExcelMakeController lineexcel $id = 7  
+[2023-11-05 08:52:57] Act:.DEBUG: LineExcelMakeController lineexcel $user_name = 佐藤光明  
+[2023-11-05 08:52:57] Act:.INFO: ExportService LinemakeXlsPdf START  
+[2023-11-05 08:52:58] Act:.INFO: ExportService  line_trial_users_history_Update START  
+[2023-11-05 08:52:58] Act:.INFO: beginTransaction - ExportService  line_trial_users_history_Update saveFile start  
+[2023-11-05 08:52:58] Act:.INFO: beginTransaction - ExportService  line_trial_users_history_Update saveFile end(commit)  
+[2023-11-05 08:52:58] Act:.INFO: ExportService  line_trial_users_history_Update END  
+[2023-11-05 08:52:58] Act:.INFO: ExportService convertOfficeToPdf START  
+[2023-11-05 08:52:58] Act:.INFO: ExportService convertOfficeToPdf exec $return_var = 0  
+[2023-11-05 08:52:58] Act:.INFO: ExportService convertOfficeToPdf END  
+[2023-11-05 08:52:58] Act:.INFO: ExportService  line_trial_users_history_Update START  
+[2023-11-05 08:52:58] Act:.INFO: beginTransaction - ExportService  line_trial_users_history_Update saveFile start  
+[2023-11-05 08:52:58] Act:.INFO: beginTransaction - ExportService  line_trial_users_history_Update saveFile end(commit)  
+[2023-11-05 08:52:58] Act:.INFO: ExportService  line_trial_users_history_Update END  
+[2023-11-05 08:52:58] Act:.INFO: line_trial_users_Update START  
+[2023-11-05 08:52:58] Act:.INFO: line_trial_users_Update beginTransaction - start  
+[2023-11-05 08:52:58] Act:.INFO: line_trial_users_Update beginTransaction - end  
+[2023-11-05 08:52:58] Act:.INFO: line_trial_users_Update END  
+[2023-11-05 08:52:58] Act:.INFO: ExportService LinemakeXlsPdf END  
+[2023-11-05 08:52:58] Act:.INFO: LineExcelMakeController lineexcel END  
+[2023-11-05 08:52:59] Act:.INFO: linetrialuser input START  
+[2023-11-05 08:52:59] Act:.INFO: linetrialuser input END  
+[2023-11-05 08:53:01] Act:.INFO: linetrialuserhistory index START  
+[2023-11-05 08:53:01] Act:.INFO: linetrialuserhistory index END  
+[2023-11-05 08:53:05] Act:.INFO: invoicehistory show_up01 START  
+[2023-11-05 08:53:05] Act:.INFO: invoicehistory show_up01 END  
+[2023-11-05 08:53:06] Act:.INFO: invoicehistory show_up01 START  
+[2023-11-05 08:53:06] Act:.INFO: invoicehistory show_up01 END  
+[2023-11-05 09:05:29] Act:.INFO: linetrialuser input START  
+[2023-11-05 09:05:29] Act:.INFO: linetrialuser input END  
+[2023-11-05 09:12:17] Act:.INFO: LineExcelMakeController lineexcel START  
+[2023-11-05 09:12:17] Act:.INFO: auth_user_organization START  
+[2023-11-05 09:12:17] Act:.INFO: auth_user_organization END  
+[2023-11-05 09:12:17] Act:.DEBUG: LineExcelMakeController lineexcel $id = 9  
+[2023-11-05 09:12:17] Act:.DEBUG: LineExcelMakeController lineexcel $user_name = 三浦竜二  
+[2023-11-05 09:12:17] Act:.INFO: ExportService LinemakeXlsPdf START  
+[2023-11-05 09:12:17] Act:.INFO: ExportService  line_trial_users_history_Update START  
+[2023-11-05 09:12:17] Act:.INFO: beginTransaction - ExportService  line_trial_users_history_Update saveFile start  
+[2023-11-05 09:12:17] Act:.INFO: beginTransaction - ExportService  line_trial_users_history_Update saveFile end(commit)  
+[2023-11-05 09:12:17] Act:.INFO: ExportService  line_trial_users_history_Update END  
+[2023-11-05 09:12:17] Act:.INFO: ExportService convertOfficeToPdf START  
+[2023-11-05 09:12:17] Act:.INFO: ExportService convertOfficeToPdf exec $return_var = 0  
+[2023-11-05 09:12:17] Act:.INFO: ExportService convertOfficeToPdf END  
+[2023-11-05 09:12:17] Act:.INFO: ExportService  line_trial_users_history_Update START  
+[2023-11-05 09:12:17] Act:.INFO: beginTransaction - ExportService  line_trial_users_history_Update saveFile start  
+[2023-11-05 09:12:17] Act:.INFO: beginTransaction - ExportService  line_trial_users_history_Update saveFile end(commit)  
+[2023-11-05 09:12:17] Act:.INFO: ExportService  line_trial_users_history_Update END  
+[2023-11-05 09:12:17] Act:.INFO: line_trial_users_Update START  
+[2023-11-05 09:12:17] Act:.INFO: line_trial_users_Update beginTransaction - start  
+[2023-11-05 09:12:17] Act:.INFO: line_trial_users_Update beginTransaction - end  
+[2023-11-05 09:12:17] Act:.INFO: line_trial_users_Update END  
+[2023-11-05 09:12:17] Act:.INFO: ExportService LinemakeXlsPdf END  
+[2023-11-05 09:12:18] Act:.INFO: LineExcelMakeController lineexcel END  
+[2023-11-05 09:12:18] Act:.INFO: linetrialuser input START  
+[2023-11-05 09:12:18] Act:.INFO: linetrialuser input END  
+[2023-11-05 09:12:21] Act:.INFO: linetrialuserhistory index START  
+[2023-11-05 09:12:21] Act:.INFO: linetrialuserhistory index END  
+[2023-11-05 09:12:26] Act:.INFO: invoicehistory show_up01 START  
+[2023-11-05 09:12:26] Act:.INFO: invoicehistory show_up01 END  
+[2023-11-05 09:12:27] Act:.INFO: invoicehistory show_up01 START  
+[2023-11-05 09:12:27] Act:.INFO: invoicehistory show_up01 END  
+[2023-11-05 09:14:04] Act:.INFO: linetrialuser input START  
+[2023-11-05 09:14:04] Act:.INFO: linetrialuser input END  
+[2023-11-05 09:14:12] Act:.INFO: LineExcelMakeController lineexcel START  
+[2023-11-05 09:14:12] Act:.INFO: auth_user_organization START  
+[2023-11-05 09:14:12] Act:.INFO: auth_user_organization END  
+[2023-11-05 09:14:12] Act:.DEBUG: LineExcelMakeController lineexcel $id = 6  
+[2023-11-05 09:14:12] Act:.DEBUG: LineExcelMakeController lineexcel $user_name = 坂本誠志郎  
+[2023-11-05 09:14:12] Act:.INFO: ExportService LinemakeXlsPdf START  
+[2023-11-05 09:14:12] Act:.INFO: ExportService  line_trial_users_history_Update START  
+[2023-11-05 09:14:12] Act:.INFO: beginTransaction - ExportService  line_trial_users_history_Update saveFile start  
+[2023-11-05 09:14:12] Act:.INFO: beginTransaction - ExportService  line_trial_users_history_Update saveFile end(commit)  
+[2023-11-05 09:14:12] Act:.INFO: ExportService  line_trial_users_history_Update END  
+[2023-11-05 09:14:12] Act:.INFO: ExportService convertOfficeToPdf START  
+[2023-11-05 09:14:13] Act:.INFO: ExportService convertOfficeToPdf exec $return_var = 0  
+[2023-11-05 09:14:13] Act:.INFO: ExportService convertOfficeToPdf END  
+[2023-11-05 09:14:13] Act:.INFO: ExportService  line_trial_users_history_Update START  
+[2023-11-05 09:14:13] Act:.INFO: beginTransaction - ExportService  line_trial_users_history_Update saveFile start  
+[2023-11-05 09:14:13] Act:.INFO: beginTransaction - ExportService  line_trial_users_history_Update saveFile end(commit)  
+[2023-11-05 09:14:13] Act:.INFO: ExportService  line_trial_users_history_Update END  
+[2023-11-05 09:14:13] Act:.INFO: line_trial_users_Update START  
+[2023-11-05 09:14:13] Act:.INFO: line_trial_users_Update beginTransaction - start  
+[2023-11-05 09:14:13] Act:.INFO: line_trial_users_Update beginTransaction - end  
+[2023-11-05 09:14:13] Act:.INFO: line_trial_users_Update END  
+[2023-11-05 09:14:13] Act:.INFO: ExportService LinemakeXlsPdf END  
+[2023-11-05 09:14:13] Act:.INFO: LineExcelMakeController lineexcel END  
+[2023-11-05 09:14:13] Act:.INFO: linetrialuser input START  
+[2023-11-05 09:14:13] Act:.INFO: linetrialuser input END  
+[2023-11-05 09:14:15] Act:.INFO: linetrialuserhistory index START  
+[2023-11-05 09:14:15] Act:.INFO: linetrialuserhistory index END  
+[2023-11-05 09:14:17] Act:.INFO: invoicehistory show_up01 START  
+[2023-11-05 09:14:17] Act:.INFO: invoicehistory show_up01 END  
+[2023-11-05 09:14:18] Act:.INFO: invoicehistory show_up01 START  
+[2023-11-05 09:14:18] Act:.INFO: invoicehistory show_up01 END  
+[2023-11-05 09:16:27] Act:.INFO: linetrialuser input START  
+[2023-11-05 09:16:27] Act:.INFO: linetrialuser input END  
+[2023-11-05 09:16:33] Act:.INFO: LineExcelMakeController lineexcel START  
+[2023-11-05 09:16:33] Act:.INFO: auth_user_organization START  
+[2023-11-05 09:16:33] Act:.INFO: auth_user_organization END  
+[2023-11-05 09:16:33] Act:.DEBUG: LineExcelMakeController lineexcel $id = 4  
+[2023-11-05 09:16:33] Act:.DEBUG: LineExcelMakeController lineexcel $user_name = 山本由伸  
+[2023-11-05 09:16:33] Act:.INFO: ExportService LinemakeXlsPdf START  
+[2023-11-05 09:16:33] Act:.INFO: ExportService  line_trial_users_history_Update START  
+[2023-11-05 09:16:33] Act:.INFO: beginTransaction - ExportService  line_trial_users_history_Update saveFile start  
+[2023-11-05 09:16:33] Act:.INFO: beginTransaction - ExportService  line_trial_users_history_Update saveFile end(commit)  
+[2023-11-05 09:16:33] Act:.INFO: ExportService  line_trial_users_history_Update END  
+[2023-11-05 09:16:33] Act:.INFO: ExportService convertOfficeToPdf START  
+[2023-11-05 09:16:34] Act:.INFO: ExportService convertOfficeToPdf exec $return_var = 0  
+[2023-11-05 09:16:34] Act:.INFO: ExportService convertOfficeToPdf END  
+[2023-11-05 09:16:34] Act:.INFO: ExportService  line_trial_users_history_Update START  
+[2023-11-05 09:16:34] Act:.INFO: beginTransaction - ExportService  line_trial_users_history_Update saveFile start  
+[2023-11-05 09:16:34] Act:.INFO: beginTransaction - ExportService  line_trial_users_history_Update saveFile end(commit)  
+[2023-11-05 09:16:34] Act:.INFO: ExportService  line_trial_users_history_Update END  
+[2023-11-05 09:16:34] Act:.INFO: line_trial_users_Update START  
+[2023-11-05 09:16:34] Act:.INFO: line_trial_users_Update beginTransaction - start  
+[2023-11-05 09:16:34] Act:.INFO: line_trial_users_Update beginTransaction - end  
+[2023-11-05 09:16:34] Act:.INFO: line_trial_users_Update END  
+[2023-11-05 09:16:34] Act:.INFO: ExportService LinemakeXlsPdf END  
+[2023-11-05 09:16:34] Act:.INFO: LineExcelMakeController lineexcel END  
+[2023-11-05 09:16:34] Act:.INFO: linetrialuser input START  
+[2023-11-05 09:16:34] Act:.INFO: linetrialuser input END  
+[2023-11-05 09:16:36] Act:.INFO: linetrialuserhistory index START  
+[2023-11-05 09:16:36] Act:.INFO: linetrialuserhistory index END  
+[2023-11-05 09:16:37] Act:.INFO: invoicehistory show_up01 START  
+[2023-11-05 09:16:38] Act:.INFO: invoicehistory show_up01 END  
+[2023-11-05 09:16:38] Act:.INFO: invoicehistory show_up01 START  
+[2023-11-05 09:16:38] Act:.INFO: invoicehistory show_up01 END  
+[2023-11-05 09:19:29] Act:.INFO: linetrialuser input START  
+[2023-11-05 09:19:29] Act:.INFO: linetrialuser input END  
+[2023-11-05 09:19:41] Act:.INFO: LineExcelMakeController lineexcel START  
+[2023-11-05 09:19:41] Act:.INFO: auth_user_organization START  
+[2023-11-05 09:19:41] Act:.INFO: auth_user_organization END  
+[2023-11-05 09:19:41] Act:.DEBUG: LineExcelMakeController lineexcel $id = 3  
+[2023-11-05 09:19:41] Act:.DEBUG: LineExcelMakeController lineexcel $user_name = 山田三郎  
+[2023-11-05 09:19:41] Act:.INFO: ExportService LinemakeXlsPdf START  
+[2023-11-05 09:19:41] Act:.INFO: ExportService  line_trial_users_history_Update START  
+[2023-11-05 09:19:41] Act:.INFO: beginTransaction - ExportService  line_trial_users_history_Update saveFile start  
+[2023-11-05 09:19:41] Act:.INFO: beginTransaction - ExportService  line_trial_users_history_Update saveFile end(commit)  
+[2023-11-05 09:19:41] Act:.INFO: ExportService  line_trial_users_history_Update END  
+[2023-11-05 09:19:41] Act:.INFO: ExportService convertOfficeToPdf START  
+[2023-11-05 09:19:42] Act:.INFO: ExportService convertOfficeToPdf exec $return_var = 0  
+[2023-11-05 09:19:42] Act:.INFO: ExportService convertOfficeToPdf END  
+[2023-11-05 09:19:42] Act:.INFO: ExportService  line_trial_users_history_Update START  
+[2023-11-05 09:19:42] Act:.INFO: beginTransaction - ExportService  line_trial_users_history_Update saveFile start  
+[2023-11-05 09:19:42] Act:.INFO: beginTransaction - ExportService  line_trial_users_history_Update saveFile end(commit)  
+[2023-11-05 09:19:42] Act:.INFO: ExportService  line_trial_users_history_Update END  
+[2023-11-05 09:19:42] Act:.INFO: line_trial_users_Update START  
+[2023-11-05 09:19:42] Act:.INFO: line_trial_users_Update beginTransaction - start  
+[2023-11-05 09:19:42] Act:.INFO: line_trial_users_Update beginTransaction - end  
+[2023-11-05 09:19:42] Act:.INFO: line_trial_users_Update END  
+[2023-11-05 09:19:42] Act:.INFO: ExportService LinemakeXlsPdf END  
+[2023-11-05 09:19:42] Act:.INFO: LineExcelMakeController lineexcel END  
+[2023-11-05 09:19:42] Act:.INFO: linetrialuser input START  
+[2023-11-05 09:19:42] Act:.INFO: linetrialuser input END  
+[2023-11-05 09:19:44] Act:.INFO: linetrialuserhistory index START  
+[2023-11-05 09:19:44] Act:.INFO: linetrialuserhistory index END  
+[2023-11-05 09:19:49] Act:.INFO: invoicehistory show_up01 START  
+[2023-11-05 09:19:49] Act:.INFO: invoicehistory show_up01 END  
+[2023-11-05 09:19:49] Act:.INFO: invoicehistory show_up01 START  
+[2023-11-05 09:19:49] Act:.INFO: invoicehistory show_up01 END  
+[2023-11-05 09:21:10] Act:.INFO: linetrialuser input START  
+[2023-11-05 09:21:10] Act:.INFO: linetrialuser input END  
+[2023-11-05 09:21:15] Act:.INFO: LineExcelMakeController lineexcel START  
+[2023-11-05 09:21:15] Act:.INFO: auth_user_organization START  
+[2023-11-05 09:21:15] Act:.INFO: auth_user_organization END  
+[2023-11-05 09:21:15] Act:.DEBUG: LineExcelMakeController lineexcel $id = 9  
+[2023-11-05 09:21:15] Act:.DEBUG: LineExcelMakeController lineexcel $user_name = 三浦竜二  
+[2023-11-05 09:21:15] Act:.INFO: ExportService LinemakeXlsPdf START  
+[2023-11-05 09:21:16] Act:.INFO: ExportService  line_trial_users_history_Update START  
+[2023-11-05 09:21:16] Act:.INFO: beginTransaction - ExportService  line_trial_users_history_Update saveFile start  
+[2023-11-05 09:21:16] Act:.INFO: beginTransaction - ExportService  line_trial_users_history_Update saveFile end(commit)  
+[2023-11-05 09:21:16] Act:.INFO: ExportService  line_trial_users_history_Update END  
+[2023-11-05 09:21:16] Act:.INFO: ExportService convertOfficeToPdf START  
+[2023-11-05 09:21:16] Act:.INFO: ExportService convertOfficeToPdf exec $return_var = 0  
+[2023-11-05 09:21:16] Act:.INFO: ExportService convertOfficeToPdf END  
+[2023-11-05 09:21:16] Act:.INFO: ExportService  line_trial_users_history_Update START  
+[2023-11-05 09:21:16] Act:.INFO: beginTransaction - ExportService  line_trial_users_history_Update saveFile start  
+[2023-11-05 09:21:16] Act:.INFO: beginTransaction - ExportService  line_trial_users_history_Update saveFile end(commit)  
+[2023-11-05 09:21:16] Act:.INFO: ExportService  line_trial_users_history_Update END  
+[2023-11-05 09:21:16] Act:.INFO: line_trial_users_Update START  
+[2023-11-05 09:21:16] Act:.INFO: line_trial_users_Update beginTransaction - start  
+[2023-11-05 09:21:16] Act:.INFO: line_trial_users_Update beginTransaction - end  
+[2023-11-05 09:21:16] Act:.INFO: line_trial_users_Update END  
+[2023-11-05 09:21:16] Act:.INFO: ExportService LinemakeXlsPdf END  
+[2023-11-05 09:21:16] Act:.INFO: LineExcelMakeController lineexcel END  
+[2023-11-05 09:21:16] Act:.INFO: linetrialuser input START  
+[2023-11-05 09:21:16] Act:.INFO: linetrialuser input END  
+[2023-11-05 09:21:18] Act:.INFO: linetrialuserhistory index START  
+[2023-11-05 09:21:18] Act:.INFO: linetrialuserhistory index END  
+[2023-11-05 09:21:21] Act:.INFO: invoicehistory show_up01 START  
+[2023-11-05 09:21:21] Act:.INFO: invoicehistory show_up01 END  
+[2023-11-05 09:21:21] Act:.INFO: invoicehistory show_up01 START  
+[2023-11-05 09:21:21] Act:.INFO: invoicehistory show_up01 END  
+[2023-11-05 09:21:54] Act:.INFO: linetrialuser input START  
+[2023-11-05 09:21:54] Act:.INFO: linetrialuser input END  
+[2023-11-05 09:22:00] Act:.INFO: linetrialuser input START  
+[2023-11-05 09:22:00] Act:.INFO: linetrialuser input END  
+[2023-11-05 09:22:02] Act:.INFO: linetrialuser input START  
+[2023-11-05 09:22:02] Act:.INFO: linetrialuser input END  
+[2023-11-05 09:22:06] Act:.INFO: linetrialuser input START  
+[2023-11-05 09:22:06] Act:.INFO: linetrialuser input END  
+[2023-11-05 09:32:44] Act:.INFO: linetrialuser input START  
+[2023-11-05 09:32:44] Act:.INFO: linetrialuser input END  
+[2023-11-05 09:32:56] Act:.INFO: LineExcelMakeController lineexcel START  
+[2023-11-05 09:32:56] Act:.INFO: auth_user_organization START  
+[2023-11-05 09:32:56] Act:.INFO: auth_user_organization END  
+[2023-11-05 09:32:56] Act:.DEBUG: LineExcelMakeController lineexcel $id = 10  
+[2023-11-05 09:32:56] Act:.DEBUG: LineExcelMakeController lineexcel $user_name = 青山若林  
+[2023-11-05 09:32:56] Act:.INFO: ExportService LinemakeXlsPdf START  
+[2023-11-05 09:32:56] Act:.INFO: ExportService  line_trial_users_history_Update START  
+[2023-11-05 09:32:56] Act:.INFO: beginTransaction - ExportService  line_trial_users_history_Update saveFile start  
+[2023-11-05 09:32:56] Act:.INFO: beginTransaction - ExportService  line_trial_users_history_Update saveFile end(commit)  
+[2023-11-05 09:32:56] Act:.INFO: ExportService  line_trial_users_history_Update END  
+[2023-11-05 09:32:56] Act:.INFO: ExportService convertOfficeToPdf START  
+[2023-11-05 09:32:57] Act:.INFO: ExportService convertOfficeToPdf exec $return_var = 0  
+[2023-11-05 09:32:57] Act:.INFO: ExportService convertOfficeToPdf END  
+[2023-11-05 09:32:57] Act:.INFO: ExportService  line_trial_users_history_Update START  
+[2023-11-05 09:32:57] Act:.INFO: beginTransaction - ExportService  line_trial_users_history_Update saveFile start  
+[2023-11-05 09:32:57] Act:.INFO: beginTransaction - ExportService  line_trial_users_history_Update saveFile end(commit)  
+[2023-11-05 09:32:57] Act:.INFO: ExportService  line_trial_users_history_Update END  
+[2023-11-05 09:32:57] Act:.INFO: line_trial_users_Update START  
+[2023-11-05 09:32:57] Act:.INFO: line_trial_users_Update beginTransaction - start  
+[2023-11-05 09:32:57] Act:.INFO: line_trial_users_Update beginTransaction - end  
+[2023-11-05 09:32:57] Act:.INFO: line_trial_users_Update END  
+[2023-11-05 09:32:57] Act:.INFO: ExportService LinemakeXlsPdf END  
+[2023-11-05 09:32:57] Act:.INFO: LineExcelMakeController lineexcel END  
+[2023-11-05 09:32:57] Act:.INFO: linetrialuser input START  
+[2023-11-05 09:32:57] Act:.INFO: linetrialuser input END  
+[2023-11-05 09:33:00] Act:.INFO: linetrialuserhistory index START  
+[2023-11-05 09:33:00] Act:.INFO: linetrialuserhistory index END  
+[2023-11-05 09:34:35] Act:.INFO: linetrialuserhistory index START  
+[2023-11-05 09:34:35] Act:.INFO: linetrialuserhistory index END  
+[2023-11-05 09:35:00] Act:.INFO: linetrialuserhistory index START  
+[2023-11-05 09:35:00] Act:.INFO: linetrialuserhistory index END  
+[2023-11-05 09:35:03] Act:.INFO: linetrialuser input START  
+[2023-11-05 09:35:03] Act:.INFO: linetrialuser input END  
+[2023-11-05 09:35:12] Act:.INFO: linetrialuserhistory index START  
+[2023-11-05 09:35:12] Act:.INFO: linetrialuserhistory index END  
+[2023-11-05 09:37:07] Act:.INFO: linetrialuserhistory index START  
+[2023-11-05 09:37:07] Act:.INFO: linetrialuserhistory index END  
+[2023-11-05 09:37:12] Act:.INFO: linetrialuserhistory index START  
+[2023-11-05 09:37:12] Act:.INFO: linetrialuserhistory index END  
+[2023-11-05 09:37:16] Act:.INFO: linetrialuser input START  
+[2023-11-05 09:37:16] Act:.INFO: linetrialuser input END  
+[2023-11-05 09:37:33] Act:.INFO: linetrialuserhistory index START  
+[2023-11-05 09:37:33] Act:.INFO: linetrialuserhistory index END  
+[2023-11-05 09:37:47] Act:.INFO: linetrialuser input START  
+[2023-11-05 09:37:47] Act:.INFO: linetrialuser input END  
+[2023-11-05 09:38:02] Act:.INFO: auth logout redirectTo user = stdClass Object
+(
+    [id] => 1
+    [name] => 新冨泰明
+    [email] => shintomi.sh@gmail.com
+    [email_verified_at] => 
+    [organization_id] => 0
+    [user_id] => 1
+    [login_flg] => 2
+    [admin_flg] => 2
+    [created_at] => 2022-10-20T12:00:00.000000Z
+    [updated_at] => 2022-10-20T12:00:00.000000Z
+    [deleted_at] => 
+)
+  
+[2023-11-05 10:04:45] Act:.INFO: auth_user_info START  
+[2023-11-05 10:04:45] Act:.INFO: auth_user_info END  
+[2023-11-05 10:04:45] Act:.INFO: auth login redirectTo user = stdClass Object
+(
+    [id] => 1
+    [name] => 新冨泰明
+    [email] => shintomi.sh@gmail.com
+    [email_verified_at] => 
+    [organization_id] => 0
+    [user_id] => 1
+    [login_flg] => 2
+    [admin_flg] => 2
+    [created_at] => 2022-10-20T12:00:00.000000Z
+    [updated_at] => 2022-10-20T12:00:00.000000Z
+    [deleted_at] => 
+)
+  
+[2023-11-05 10:04:45] Act:.INFO: auth_user_info START  
+[2023-11-05 10:04:45] Act:.INFO: auth_user_info END  
+[2023-11-05 10:04:45] Act:.INFO: office top index START $user->name = 新冨泰明  
+[2023-11-05 10:04:45] Act:.INFO: auth_user_organization START  
+[2023-11-05 10:04:45] Act:.INFO: auth_user_organization END  
+[2023-11-05 10:04:45] Act:.INFO: office top index END $user->name = 新冨泰明  
+[2023-11-05 10:04:50] Act:.INFO: linetrialuser input START  
+[2023-11-05 10:04:50] Act:.INFO: linetrialuser input END  
+[2023-11-05 10:05:07] Act:.INFO: LineExcelMakeController lineexcel START  
+[2023-11-05 10:05:07] Act:.INFO: auth_user_organization START  
+[2023-11-05 10:05:07] Act:.INFO: auth_user_organization END  
+[2023-11-05 10:05:07] Act:.DEBUG: LineExcelMakeController lineexcel $id = 9  
+[2023-11-05 10:05:07] Act:.DEBUG: LineExcelMakeController lineexcel $user_name = 三浦竜二  
+[2023-11-05 10:05:07] Act:.INFO: ExportService LinemakeXlsPdf START  
+[2023-11-05 10:05:08] Act:.INFO: ExportService  line_trial_users_history_Update START  
+[2023-11-05 10:05:08] Act:.INFO: beginTransaction - ExportService  line_trial_users_history_Update saveFile start  
+[2023-11-05 10:05:08] Act:.INFO: beginTransaction - ExportService  line_trial_users_history_Update saveFile end(commit)  
+[2023-11-05 10:05:08] Act:.INFO: ExportService  line_trial_users_history_Update END  
+[2023-11-05 10:05:08] Act:.INFO: ExportService convertOfficeToPdf START  
+[2023-11-05 10:05:08] Act:.INFO: ExportService convertOfficeToPdf exec $return_var = 0  
+[2023-11-05 10:05:08] Act:.INFO: ExportService convertOfficeToPdf END  
+[2023-11-05 10:05:08] Act:.INFO: ExportService  line_trial_users_history_Update START  
+[2023-11-05 10:05:08] Act:.INFO: beginTransaction - ExportService  line_trial_users_history_Update saveFile start  
+[2023-11-05 10:05:08] Act:.INFO: beginTransaction - ExportService  line_trial_users_history_Update saveFile end(commit)  
+[2023-11-05 10:05:08] Act:.INFO: ExportService  line_trial_users_history_Update END  
+[2023-11-05 10:05:08] Act:.INFO: line_trial_users_Update START  
+[2023-11-05 10:05:08] Act:.INFO: line_trial_users_Update beginTransaction - start  
+[2023-11-05 10:05:08] Act:.INFO: line_trial_users_Update beginTransaction - end  
+[2023-11-05 10:05:08] Act:.INFO: line_trial_users_Update END  
+[2023-11-05 10:05:08] Act:.INFO: ExportService LinemakeXlsPdf END  
+[2023-11-05 10:05:08] Act:.INFO: LineExcelMakeController lineexcel END  
+[2023-11-05 10:05:08] Act:.INFO: linetrialuser input START  
+[2023-11-05 10:05:08] Act:.INFO: linetrialuser input END  
+[2023-11-05 10:05:12] Act:.INFO: linetrialuserhistory index START  
+[2023-11-05 10:05:12] Act:.INFO: linetrialuserhistory index END  
+[2023-11-05 10:05:16] Act:.INFO: invoicehistory show_up01 START  
+[2023-11-05 10:05:16] Act:.INFO: invoicehistory show_up01 END  
+[2023-11-05 10:06:09] Act:.INFO: invoicehistory show_up01 START  
+[2023-11-05 10:06:09] Act:.INFO: invoicehistory show_up01 END  
+[2023-11-05 10:07:15] Act:.INFO: advisorsfee input START  
+[2023-11-05 10:07:15] Act:.INFO: auth_user_info START  
+[2023-11-05 10:07:15] Act:.INFO: auth_user_info END  
+[2023-11-05 10:07:15] Act:.INFO: auth_user_organization START  
+[2023-11-05 10:07:15] Act:.INFO: auth_user_organization END  
+[2023-11-05 10:07:15] Act:.INFO: advisorsfee input END  
+[2023-11-05 10:07:39] Act:.INFO: auth logout redirectTo user = stdClass Object
+(
+    [id] => 1
+    [name] => 新冨泰明
+    [email] => shintomi.sh@gmail.com
+    [email_verified_at] => 
+    [organization_id] => 0
+    [user_id] => 1
+    [login_flg] => 2
+    [admin_flg] => 2
+    [created_at] => 2022-10-20T12:00:00.000000Z
+    [updated_at] => 2022-10-20T12:00:00.000000Z
+    [deleted_at] => 
+)
+  
+[2023-11-05 10:13:23] Act:.INFO: auth_user_info START  
+[2023-11-05 10:13:23] Act:.INFO: auth_user_info END  
+[2023-11-05 10:13:23] Act:.INFO: auth login redirectTo user = stdClass Object
+(
+    [id] => 1
+    [name] => 新冨泰明
+    [email] => shintomi.sh@gmail.com
+    [email_verified_at] => 
+    [organization_id] => 0
+    [user_id] => 1
+    [login_flg] => 2
+    [admin_flg] => 2
+    [created_at] => 2022-10-20T12:00:00.000000Z
+    [updated_at] => 2022-10-20T12:00:00.000000Z
+    [deleted_at] => 
+)
+  
+[2023-11-05 10:13:23] Act:.INFO: auth_user_info START  
+[2023-11-05 10:13:23] Act:.INFO: auth_user_info END  
+[2023-11-05 10:13:23] Act:.INFO: office top index START $user->name = 新冨泰明  
+[2023-11-05 10:13:23] Act:.INFO: auth_user_organization START  
+[2023-11-05 10:13:23] Act:.INFO: auth_user_organization END  
+[2023-11-05 10:13:23] Act:.INFO: office top index END $user->name = 新冨泰明  
+[2023-11-05 10:13:27] Act:.INFO: advisorsfee input START  
+[2023-11-05 10:13:27] Act:.INFO: auth_user_info START  
+[2023-11-05 10:13:27] Act:.INFO: auth_user_info END  
+[2023-11-05 10:13:27] Act:.INFO: auth_user_organization START  
+[2023-11-05 10:13:27] Act:.INFO: auth_user_organization END  
+[2023-11-05 10:13:27] Act:.INFO: advisorsfee input END  
+[2023-11-05 10:16:12] Act:.INFO: billdatahistory index START  
+[2023-11-05 10:16:12] Act:.INFO: auth_user_info START  
+[2023-11-05 10:16:12] Act:.INFO: auth_user_info END  
+[2023-11-05 10:16:12] Act:.INFO: auth_customer_findrec START  
+[2023-11-05 10:16:12] Act:.INFO: auth_customer_findrec START $u_id = 1  
+[2023-11-05 10:16:12] Act:.INFO: auth_customer_findrec END $u_id = 1  
+[2023-11-05 10:16:12] Act:.INFO: auth_customer_findrec END  
+[2023-11-05 10:16:13] Act:.INFO: billdatahistory index END  
+[2023-11-05 10:16:17] Act:.INFO: advisorsfee input START  
+[2023-11-05 10:16:17] Act:.INFO: auth_user_info START  
+[2023-11-05 10:16:17] Act:.INFO: auth_user_info END  
+[2023-11-05 10:16:17] Act:.INFO: auth_user_organization START  
+[2023-11-05 10:16:17] Act:.INFO: auth_user_organization END  
+[2023-11-05 10:16:17] Act:.INFO: advisorsfee input END  
+[2023-11-05 10:21:33] Act:.INFO: advisorsfee input START  
+[2023-11-05 10:21:33] Act:.INFO: auth_user_info START  
+[2023-11-05 10:21:33] Act:.INFO: auth_user_info END  
+[2023-11-05 10:21:33] Act:.INFO: auth_user_organization START  
+[2023-11-05 10:21:33] Act:.INFO: auth_user_organization END  
+[2023-11-05 10:21:33] Act:.INFO: advisorsfee input END  
+[2023-11-05 10:21:52] Act:.INFO: billdatahistory index START  
+[2023-11-05 10:21:52] Act:.INFO: auth_user_info START  
+[2023-11-05 10:21:52] Act:.INFO: auth_user_info END  
+[2023-11-05 10:21:52] Act:.INFO: auth_customer_findrec START  
+[2023-11-05 10:21:52] Act:.INFO: auth_customer_findrec START $u_id = 1  
+[2023-11-05 10:21:52] Act:.INFO: auth_customer_findrec END $u_id = 1  
+[2023-11-05 10:21:52] Act:.INFO: auth_customer_findrec END  
+[2023-11-05 10:21:52] Act:.INFO: billdatahistory index END  
+[2023-11-05 10:22:44] Act:.INFO: billdatahistory serch_custom START  
+[2023-11-05 10:22:44] Act:.INFO: auth_user_info START  
+[2023-11-05 10:22:44] Act:.INFO: auth_user_info END  
+[2023-11-05 10:22:44] Act:.INFO: auth_customer_findrec START  
+[2023-11-05 10:22:44] Act:.INFO: auth_customer_findrec START $u_id = 1  
+[2023-11-05 10:22:44] Act:.INFO: auth_customer_findrec END $u_id = 1  
+[2023-11-05 10:22:44] Act:.INFO: auth_customer_findrec END  
+[2023-11-05 10:22:44] Act:.INFO: billdatahistory serch_custom END  
+[2023-11-05 10:22:50] Act:.INFO: billdatahistory serch_custom START  
+[2023-11-05 10:22:50] Act:.INFO: auth_user_info START  
+[2023-11-05 10:22:50] Act:.INFO: auth_user_info END  
+[2023-11-05 10:22:50] Act:.INFO: auth_customer_findrec START  
+[2023-11-05 10:22:50] Act:.INFO: auth_customer_findrec START $u_id = 1  
+[2023-11-05 10:22:50] Act:.INFO: auth_customer_findrec END $u_id = 1  
+[2023-11-05 10:22:50] Act:.INFO: auth_customer_findrec END  
+[2023-11-05 10:22:50] Act:.INFO: billdatahistory serch_custom END  
+[2023-11-05 10:25:12] Act:.INFO: auth_user_info START  
+[2023-11-05 10:25:12] Act:.INFO: auth_user_info END  
+[2023-11-05 10:25:12] Act:.INFO: office top index START $user->name = 新冨泰明  
+[2023-11-05 10:25:12] Act:.INFO: auth_user_organization START  
+[2023-11-05 10:25:12] Act:.INFO: auth_user_organization END  
+[2023-11-05 10:25:12] Act:.INFO: office top index END $user->name = 新冨泰明  
+[2023-11-05 10:25:15] Act:.INFO: advisorsfee input START  
+[2023-11-05 10:25:15] Act:.INFO: auth_user_info START  
+[2023-11-05 10:25:15] Act:.INFO: auth_user_info END  
+[2023-11-05 10:25:15] Act:.INFO: auth_user_organization START  
+[2023-11-05 10:25:15] Act:.INFO: auth_user_organization END  
+[2023-11-05 10:25:15] Act:.INFO: advisorsfee input END  
+[2023-11-05 10:25:20] Act:.INFO: billdatahistory index START  
+[2023-11-05 10:25:20] Act:.INFO: auth_user_info START  
+[2023-11-05 10:25:20] Act:.INFO: auth_user_info END  
+[2023-11-05 10:25:20] Act:.INFO: auth_customer_findrec START  
+[2023-11-05 10:25:20] Act:.INFO: auth_customer_findrec START $u_id = 1  
+[2023-11-05 10:25:20] Act:.INFO: auth_customer_findrec END $u_id = 1  
+[2023-11-05 10:25:20] Act:.INFO: auth_customer_findrec END  
+[2023-11-05 10:25:20] Act:.INFO: billdatahistory index END  
+[2023-11-05 10:25:26] Act:.INFO: billdatahistory serch_custom START  
+[2023-11-05 10:25:26] Act:.INFO: auth_user_info START  
+[2023-11-05 10:25:26] Act:.INFO: auth_user_info END  
+[2023-11-05 10:25:26] Act:.INFO: auth_customer_findrec START  
+[2023-11-05 10:25:26] Act:.INFO: auth_customer_findrec START $u_id = 1  
+[2023-11-05 10:25:26] Act:.INFO: auth_customer_findrec END $u_id = 1  
+[2023-11-05 10:25:26] Act:.INFO: auth_customer_findrec END  
+[2023-11-05 10:25:26] Act:.INFO: billdatahistory serch_custom END  
+[2023-11-05 10:25:53] Act:.INFO: auth logout redirectTo user = stdClass Object
+(
+    [id] => 1
+    [name] => 新冨泰明
+    [email] => shintomi.sh@gmail.com
+    [email_verified_at] => 
+    [organization_id] => 0
+    [user_id] => 1
+    [login_flg] => 2
+    [admin_flg] => 2
+    [created_at] => 2022-10-20T12:00:00.000000Z
+    [updated_at] => 2022-10-20T12:00:00.000000Z
+    [deleted_at] => 
+)
+  

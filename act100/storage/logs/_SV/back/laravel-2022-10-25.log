@@ -1,0 +1,424 @@
+[2022-10-25 14:23:12] local.INFO: auth_user_info START  
+[2022-10-25 14:23:12] local.INFO: auth_user_info END  
+[2022-10-25 14:23:12] local.INFO: auth login redirectTo user = stdClass Object
+(
+    [id] => 7
+    [name] => 新冨泰明
+    [email] => y-shintomi@aizen-sol.co.jp
+    [email_verified_at] => 
+    [organization_id] => 1
+    [user_id] => 1
+    [login_flg] => 2
+    [admin_flg] => 2
+    [created_at] => 2022-10-20T12:00:00.000000Z
+    [updated_at] => 2022-10-24T06:11:32.000000Z
+    [deleted_at] => 
+)
+  
+[2022-10-25 14:23:12] local.INFO: ChatController index　START  
+[2022-10-25 14:23:12] local.INFO: ChatController index END  
+[2022-10-25 14:23:12] local.INFO: Ajax ChatController index START  
+[2022-10-25 14:23:12] local.INFO: Ajax ChatController index END  
+[2022-10-25 14:23:38] local.INFO: Ajax ChatController create START  
+[2022-10-25 14:23:38] local.INFO: Ajax ChatController create END  
+[2022-10-25 14:24:25] local.INFO: ChatController index　START  
+[2022-10-25 14:24:25] local.INFO: ChatController index END  
+[2022-10-25 14:24:25] local.INFO: Ajax ChatController index START  
+[2022-10-25 14:24:25] local.INFO: Ajax ChatController index END  
+[2022-10-25 14:24:52] local.INFO: auth logout redirectTo user = stdClass Object
+(
+    [id] => 7
+    [name] => 新冨泰明
+    [email] => y-shintomi@aizen-sol.co.jp
+    [email_verified_at] => 
+    [organization_id] => 1
+    [user_id] => 1
+    [login_flg] => 2
+    [admin_flg] => 2
+    [created_at] => 2022-10-20T12:00:00.000000Z
+    [updated_at] => 2022-10-24T06:11:32.000000Z
+    [deleted_at] => 
+)
+  
+[2022-10-25 14:25:12] local.INFO: auth_user_info START  
+[2022-10-25 14:25:12] local.INFO: auth_user_info END  
+[2022-10-25 14:25:12] local.INFO: auth login redirectTo user = stdClass Object
+(
+    [id] => 11
+    [name] => ユーザー１１
+    [email] => user11@gmail.com
+    [email_verified_at] => 
+    [organization_id] => 1
+    [user_id] => 2
+    [login_flg] => 1
+    [admin_flg] => 1
+    [created_at] => 2022-10-20T12:00:00.000000Z
+    [updated_at] => 2022-10-20T12:00:00.000000Z
+    [deleted_at] => 
+)
+  
+[2022-10-25 14:25:12] local.INFO: topclient index START  
+[2022-10-25 14:25:12] local.INFO: auth_user_info START  
+[2022-10-25 14:25:12] local.INFO: auth_user_info END  
+[2022-10-25 14:25:12] local.INFO: auth_customer_findrec START  
+[2022-10-25 14:25:12] local.INFO: auth_customer_findrec END  
+[2022-10-25 14:25:12] local.INFO: get_three_month START  
+[2022-10-25 14:25:12] local.INFO: get_three_month END  
+[2022-10-25 14:25:12] local.INFO: topclient index END  
+[2022-10-25 14:25:15] local.INFO: ChatClientController index END  
+[2022-10-25 14:25:15] local.INFO: auth_user_info START  
+[2022-10-25 14:25:15] local.INFO: auth_user_info END  
+[2022-10-25 14:25:15] local.INFO: auth_customer_findrec START  
+[2022-10-25 14:25:15] local.INFO: auth_customer_findrec END  
+[2022-10-25 14:25:15] local.INFO: ChatClientController index END  
+[2022-10-25 14:25:15] local.INFO: Ajax ChatController index START  
+[2022-10-25 14:25:15] local.INFO: Ajax ChatController index END  
+[2022-10-25 14:25:33] local.INFO: Ajax ChatController create START  
+[2022-10-25 14:25:33] local.INFO: Ajax ChatController create END  
+[2022-10-25 14:25:49] local.INFO: ChatClientController index END  
+[2022-10-25 14:25:49] local.INFO: auth_user_info START  
+[2022-10-25 14:25:49] local.INFO: auth_user_info END  
+[2022-10-25 14:25:49] local.INFO: auth_customer_findrec START  
+[2022-10-25 14:25:49] local.INFO: auth_customer_findrec END  
+[2022-10-25 14:25:49] local.INFO: ChatClientController index END  
+[2022-10-25 14:25:50] local.INFO: Ajax ChatController index START  
+[2022-10-25 14:25:50] local.INFO: Ajax ChatController index END  
+[2022-10-25 14:25:58] local.INFO: auth logout redirectTo user = stdClass Object
+(
+    [id] => 11
+    [name] => ユーザー１１
+    [email] => user11@gmail.com
+    [email_verified_at] => 
+    [organization_id] => 1
+    [user_id] => 2
+    [login_flg] => 1
+    [admin_flg] => 1
+    [created_at] => 2022-10-20T12:00:00.000000Z
+    [updated_at] => 2022-10-20T12:00:00.000000Z
+    [deleted_at] => 
+)
+  
+[2022-10-25 15:40:21] local.INFO: auth_user_info START  
+[2022-10-25 15:40:21] local.INFO: auth_user_info END  
+[2022-10-25 15:40:21] local.INFO: auth login redirectTo user = stdClass Object
+(
+    [id] => 11
+    [name] => ユーザー１１
+    [email] => user11@gmail.com
+    [email_verified_at] => 
+    [organization_id] => 1
+    [user_id] => 2
+    [login_flg] => 1
+    [admin_flg] => 1
+    [created_at] => 2022-10-20T12:00:00.000000Z
+    [updated_at] => 2022-10-20T12:00:00.000000Z
+    [deleted_at] => 
+)
+  
+[2022-10-25 15:40:21] local.INFO: topclient index START  
+[2022-10-25 15:40:21] local.INFO: auth_user_info START  
+[2022-10-25 15:40:21] local.INFO: auth_user_info END  
+[2022-10-25 15:40:21] local.INFO: auth_customer_findrec START  
+[2022-10-25 15:40:21] local.INFO: auth_customer_findrec END  
+[2022-10-25 15:40:21] local.INFO: get_three_month START  
+[2022-10-25 15:40:21] local.INFO: get_three_month END  
+[2022-10-25 15:40:21] local.INFO: topclient index END  
+[2022-10-25 15:40:24] local.INFO: ChatClientController index END  
+[2022-10-25 15:40:24] local.INFO: auth_user_info START  
+[2022-10-25 15:40:24] local.INFO: auth_user_info END  
+[2022-10-25 15:40:24] local.INFO: auth_customer_findrec START  
+[2022-10-25 15:40:24] local.INFO: auth_customer_findrec END  
+[2022-10-25 15:40:24] local.INFO: ChatClientController index END  
+[2022-10-25 15:40:24] local.INFO: Ajax ChatController index START  
+[2022-10-25 15:40:24] local.INFO: Ajax ChatController index END  
+[2022-10-25 15:40:48] local.INFO: Ajax ChatController create START  
+[2022-10-25 15:40:48] local.INFO: Ajax ChatController create END  
+[2022-10-25 15:40:48] local.INFO: Ajax ChatController index START  
+[2022-10-25 15:40:48] local.INFO: Ajax ChatController index END  
+[2022-10-25 15:42:21] local.INFO: auth_user_info START  
+[2022-10-25 15:42:21] local.INFO: auth_user_info END  
+[2022-10-25 15:42:21] local.INFO: auth login redirectTo user = stdClass Object
+(
+    [id] => 7
+    [name] => 新冨泰明
+    [email] => y-shintomi@aizen-sol.co.jp
+    [email_verified_at] => 
+    [organization_id] => 1
+    [user_id] => 1
+    [login_flg] => 2
+    [admin_flg] => 2
+    [created_at] => 2022-10-20T12:00:00.000000Z
+    [updated_at] => 2022-10-24T06:11:32.000000Z
+    [deleted_at] => 
+)
+  
+[2022-10-25 15:42:21] local.INFO: top index START  
+[2022-10-25 15:42:21] local.INFO: auth_user_organization START  
+[2022-10-25 15:42:21] local.INFO: auth_user_organization END  
+[2022-10-25 15:42:21] local.INFO: top index END  
+[2022-10-25 15:42:34] local.INFO: ChatController index　START  
+[2022-10-25 15:42:34] local.INFO: ChatController index END  
+[2022-10-25 15:42:34] local.INFO: Ajax ChatController index START  
+[2022-10-25 15:42:34] local.INFO: Ajax ChatController index END  
+[2022-10-25 15:43:22] local.INFO: Ajax ChatController create START  
+[2022-10-25 15:43:22] local.INFO: Ajax ChatController create END  
+[2022-10-25 15:43:22] local.INFO: Ajax ChatController index START  
+[2022-10-25 15:43:22] local.INFO: Ajax ChatController index END  
+[2022-10-25 15:43:22] local.INFO: Ajax ChatController index START  
+[2022-10-25 15:43:22] local.INFO: Ajax ChatController index END  
+[2022-10-25 15:48:00] local.INFO: auth_user_info START  
+[2022-10-25 15:48:00] local.INFO: auth_user_info END  
+[2022-10-25 15:48:00] local.INFO: auth login redirectTo user = stdClass Object
+(
+    [id] => 6
+    [name] => 末岡真衣
+    [email] => m-sueoka@aizen-sol.co.jp
+    [email_verified_at] => 
+    [organization_id] => 1
+    [user_id] => 1
+    [login_flg] => 2
+    [admin_flg] => 1
+    [created_at] => 2022-10-20T12:00:00.000000Z
+    [updated_at] => 2022-10-20T12:00:00.000000Z
+    [deleted_at] => 
+)
+  
+[2022-10-25 15:48:00] local.INFO: top index START  
+[2022-10-25 15:48:00] local.INFO: auth_user_organization START  
+[2022-10-25 15:48:00] local.INFO: auth_user_organization END  
+[2022-10-25 15:48:00] local.INFO: top index END  
+[2022-10-25 15:48:05] local.INFO: ChatController index　START  
+[2022-10-25 15:48:05] local.INFO: ChatController index END  
+[2022-10-25 15:48:05] local.INFO: Ajax ChatController index START  
+[2022-10-25 15:48:05] local.INFO: Ajax ChatController index END  
+[2022-10-25 15:48:47] local.INFO: Ajax ChatController create START  
+[2022-10-25 15:48:47] local.INFO: Ajax ChatController create END  
+[2022-10-25 15:48:48] local.INFO: Ajax ChatController index START  
+[2022-10-25 15:48:48] local.INFO: Ajax ChatController index END  
+[2022-10-25 15:48:48] local.INFO: Ajax ChatController index START  
+[2022-10-25 15:48:48] local.INFO: Ajax ChatController index END  
+[2022-10-25 15:49:07] local.INFO: Ajax ChatController create START  
+[2022-10-25 15:49:07] local.INFO: Ajax ChatController create END  
+[2022-10-25 15:49:07] local.INFO: Ajax ChatController index START  
+[2022-10-25 15:49:07] local.INFO: Ajax ChatController index END  
+[2022-10-25 15:49:07] local.INFO: Ajax ChatController index START  
+[2022-10-25 15:49:07] local.INFO: Ajax ChatController index END  
+[2022-10-25 15:50:30] local.INFO: auth_user_info START  
+[2022-10-25 15:50:30] local.INFO: auth_user_info END  
+[2022-10-25 15:50:30] local.INFO: auth login redirectTo user = stdClass Object
+(
+    [id] => 3
+    [name] => 石﨑啓
+    [email] => h-ishizaki@aizen-sol.co.jp
+    [email_verified_at] => 
+    [organization_id] => 1
+    [user_id] => 1
+    [login_flg] => 2
+    [admin_flg] => 2
+    [created_at] => 2022-10-20T12:00:00.000000Z
+    [updated_at] => 2022-10-20T12:00:00.000000Z
+    [deleted_at] => 
+)
+  
+[2022-10-25 15:50:30] local.INFO: top index START  
+[2022-10-25 15:50:30] local.INFO: auth_user_organization START  
+[2022-10-25 15:50:30] local.INFO: auth_user_organization END  
+[2022-10-25 15:50:30] local.INFO: top index END  
+[2022-10-25 15:50:37] local.INFO: ChatController index　START  
+[2022-10-25 15:50:37] local.INFO: ChatController index END  
+[2022-10-25 15:50:38] local.INFO: Ajax ChatController index START  
+[2022-10-25 15:50:38] local.INFO: Ajax ChatController index END  
+[2022-10-25 15:51:00] local.INFO: Ajax ChatController create START  
+[2022-10-25 15:51:00] local.INFO: Ajax ChatController create END  
+[2022-10-25 15:51:00] local.INFO: Ajax ChatController index START  
+[2022-10-25 15:51:00] local.INFO: Ajax ChatController index END  
+[2022-10-25 15:51:00] local.INFO: Ajax ChatController index START  
+[2022-10-25 15:51:00] local.INFO: Ajax ChatController index END  
+[2022-10-25 15:51:00] local.INFO: Ajax ChatController index START  
+[2022-10-25 15:51:00] local.INFO: Ajax ChatController index END  
+[2022-10-25 15:51:00] local.INFO: Ajax ChatController index START  
+[2022-10-25 15:51:00] local.INFO: Ajax ChatController index END  
+[2022-10-25 15:51:15] local.INFO: top index START  
+[2022-10-25 15:51:15] local.INFO: auth_user_organization START  
+[2022-10-25 15:51:15] local.INFO: auth_user_organization END  
+[2022-10-25 15:51:15] local.INFO: top index END  
+[2022-10-25 15:51:17] local.INFO: organization index START  
+[2022-10-25 15:51:17] local.INFO: auth_user_organization START  
+[2022-10-25 15:51:17] local.INFO: auth_user_organization END  
+[2022-10-25 15:51:17] local.INFO: organization index END  
+[2022-10-25 15:51:20] local.INFO: Ajax ChatController create START  
+[2022-10-25 15:51:20] local.INFO: Ajax ChatController create END  
+[2022-10-25 15:51:20] local.INFO: Ajax ChatController index START  
+[2022-10-25 15:51:20] local.INFO: Ajax ChatController index END  
+[2022-10-25 15:51:20] local.INFO: Ajax ChatController index START  
+[2022-10-25 15:51:20] local.INFO: Ajax ChatController index END  
+[2022-10-25 15:51:20] local.INFO: Ajax ChatController index START  
+[2022-10-25 15:51:20] local.INFO: Ajax ChatController index END  
+[2022-10-25 15:51:20] local.INFO: customer index START  
+[2022-10-25 15:51:20] local.INFO: auth_user_organization START  
+[2022-10-25 15:51:20] local.INFO: auth_user_organization END  
+[2022-10-25 15:51:20] local.INFO: customer index END  
+[2022-10-25 15:51:25] local.INFO: controluser index START  
+[2022-10-25 15:51:25] local.INFO: auth_user_organization START  
+[2022-10-25 15:51:25] local.INFO: auth_user_organization END  
+[2022-10-25 15:51:25] local.INFO: controluser index END  
+[2022-10-25 15:51:28] local.INFO: annualupdate edit START  
+[2022-10-25 15:51:28] local.INFO: auth_user_organization START  
+[2022-10-25 15:51:28] local.INFO: auth_user_organization END  
+[2022-10-25 15:51:28] local.INFO: annualupdate edit END  
+[2022-10-25 15:52:09] local.INFO: schedule index START  
+[2022-10-25 15:52:09] local.INFO: auth_user_organization START  
+[2022-10-25 15:52:09] local.INFO: auth_user_organization END  
+[2022-10-25 15:52:09] local.INFO: schedule index END  
+[2022-10-25 15:52:22] local.INFO: ChatController index　START  
+[2022-10-25 15:52:22] local.INFO: ChatController index END  
+[2022-10-25 15:52:22] local.INFO: Ajax ChatController index START  
+[2022-10-25 15:52:22] local.INFO: Ajax ChatController index END  
+[2022-10-25 15:52:28] local.INFO: user index START  
+[2022-10-25 15:52:28] local.INFO: auth_user_organization START  
+[2022-10-25 15:52:28] local.INFO: auth_user_organization END  
+[2022-10-25 15:52:28] local.INFO: user index END  
+[2022-10-25 15:52:55] local.INFO: customer index START  
+[2022-10-25 15:52:55] local.INFO: auth_user_organization START  
+[2022-10-25 15:52:55] local.INFO: auth_user_organization END  
+[2022-10-25 15:52:55] local.INFO: customer index END  
+[2022-10-25 15:52:56] local.INFO: ChatController index　START  
+[2022-10-25 15:52:56] local.INFO: ChatController index END  
+[2022-10-25 15:52:57] local.INFO: Ajax ChatController index START  
+[2022-10-25 15:52:57] local.INFO: Ajax ChatController index END  
+[2022-10-25 15:53:42] local.INFO: customer index START  
+[2022-10-25 15:53:42] local.INFO: auth_user_organization START  
+[2022-10-25 15:53:42] local.INFO: auth_user_organization END  
+[2022-10-25 15:53:42] local.INFO: customer index END  
+[2022-10-25 15:53:44] local.INFO: ChatController index　START  
+[2022-10-25 15:53:44] local.INFO: ChatController index END  
+[2022-10-25 15:53:44] local.INFO: Ajax ChatController index START  
+[2022-10-25 15:53:44] local.INFO: Ajax ChatController index END  
+[2022-10-25 15:53:44] local.INFO: customer index START  
+[2022-10-25 15:53:44] local.INFO: auth_user_organization START  
+[2022-10-25 15:53:44] local.INFO: auth_user_organization END  
+[2022-10-25 15:53:44] local.INFO: customer index END  
+[2022-10-25 15:53:45] local.INFO: user index START  
+[2022-10-25 15:53:45] local.INFO: auth_user_organization START  
+[2022-10-25 15:53:45] local.INFO: auth_user_organization END  
+[2022-10-25 15:53:45] local.INFO: user index END  
+[2022-10-25 15:53:45] local.INFO: ChatController index　START  
+[2022-10-25 15:53:45] local.INFO: ChatController index END  
+[2022-10-25 15:53:45] local.INFO: Ajax ChatController index START  
+[2022-10-25 15:53:45] local.INFO: Ajax ChatController index END  
+[2022-10-25 15:53:46] local.INFO: schedule index START  
+[2022-10-25 15:53:46] local.INFO: auth_user_organization START  
+[2022-10-25 15:53:46] local.INFO: auth_user_organization END  
+[2022-10-25 15:53:46] local.INFO: schedule index END  
+[2022-10-25 15:53:48] local.INFO: annualupdate edit START  
+[2022-10-25 15:53:48] local.INFO: auth_user_organization START  
+[2022-10-25 15:53:48] local.INFO: auth_user_organization END  
+[2022-10-25 15:53:48] local.INFO: annualupdate edit END  
+[2022-10-25 15:54:23] local.INFO: ChatController index　START  
+[2022-10-25 15:54:23] local.INFO: ChatController index END  
+[2022-10-25 15:54:24] local.INFO: Ajax ChatController index START  
+[2022-10-25 15:54:24] local.INFO: Ajax ChatController index END  
+[2022-10-25 15:54:25] local.INFO: Ajax ChatController create START  
+[2022-10-25 15:54:25] local.INFO: Ajax ChatController create END  
+[2022-10-25 15:54:25] local.INFO: Ajax ChatController index START  
+[2022-10-25 15:54:25] local.INFO: Ajax ChatController index START  
+[2022-10-25 15:54:25] local.INFO: Ajax ChatController index END  
+[2022-10-25 15:54:25] local.INFO: Ajax ChatController index END  
+[2022-10-25 15:54:25] local.INFO: Ajax ChatController index START  
+[2022-10-25 15:54:25] local.INFO: Ajax ChatController index END  
+[2022-10-25 15:54:25] local.INFO: Ajax ChatController index START  
+[2022-10-25 15:54:25] local.INFO: Ajax ChatController index END  
+[2022-10-25 15:54:46] local.INFO: progrecheck input START  
+[2022-10-25 15:54:46] local.INFO: auth_user_organization START  
+[2022-10-25 15:54:46] local.INFO: auth_user_organization END  
+[2022-10-25 15:54:46] local.INFO: progrecheck input END  
+[2022-10-25 15:55:24] local.INFO: auth logout redirectTo user = stdClass Object
+(
+    [id] => 7
+    [name] => 新冨泰明
+    [email] => y-shintomi@aizen-sol.co.jp
+    [email_verified_at] => 
+    [organization_id] => 1
+    [user_id] => 1
+    [login_flg] => 2
+    [admin_flg] => 2
+    [created_at] => 2022-10-20T12:00:00.000000Z
+    [updated_at] => 2022-10-24T06:11:32.000000Z
+    [deleted_at] => 
+)
+  
+[2022-10-25 15:55:44] local.INFO: auth_user_info START  
+[2022-10-25 15:55:44] local.INFO: auth_user_info END  
+[2022-10-25 15:55:44] local.INFO: auth login redirectTo user = stdClass Object
+(
+    [id] => 11
+    [name] => ユーザー１１
+    [email] => user11@gmail.com
+    [email_verified_at] => 
+    [organization_id] => 1
+    [user_id] => 2
+    [login_flg] => 1
+    [admin_flg] => 1
+    [created_at] => 2022-10-20T12:00:00.000000Z
+    [updated_at] => 2022-10-20T12:00:00.000000Z
+    [deleted_at] => 
+)
+  
+[2022-10-25 15:55:44] local.INFO: topclient index START  
+[2022-10-25 15:55:44] local.INFO: auth_user_info START  
+[2022-10-25 15:55:44] local.INFO: auth_user_info END  
+[2022-10-25 15:55:44] local.INFO: auth_customer_findrec START  
+[2022-10-25 15:55:44] local.INFO: auth_customer_findrec END  
+[2022-10-25 15:55:44] local.INFO: get_three_month START  
+[2022-10-25 15:55:44] local.INFO: get_three_month END  
+[2022-10-25 15:55:44] local.INFO: topclient index END  
+[2022-10-25 15:55:48] local.INFO: ChatClientController index END  
+[2022-10-25 15:55:48] local.INFO: auth_user_info START  
+[2022-10-25 15:55:48] local.INFO: auth_user_info END  
+[2022-10-25 15:55:48] local.INFO: auth_customer_findrec START  
+[2022-10-25 15:55:48] local.INFO: auth_customer_findrec END  
+[2022-10-25 15:55:48] local.INFO: ChatClientController index END  
+[2022-10-25 15:55:48] local.INFO: Ajax ChatController index START  
+[2022-10-25 15:55:48] local.INFO: Ajax ChatController index END  
+[2022-10-25 15:56:03] local.INFO: auth logout redirectTo user = stdClass Object
+(
+    [id] => 11
+    [name] => ユーザー１１
+    [email] => user11@gmail.com
+    [email_verified_at] => 
+    [organization_id] => 1
+    [user_id] => 2
+    [login_flg] => 1
+    [admin_flg] => 1
+    [created_at] => 2022-10-20T12:00:00.000000Z
+    [updated_at] => 2022-10-20T12:00:00.000000Z
+    [deleted_at] => 
+)
+  
+[2022-10-25 15:56:19] local.INFO: auth logout redirectTo user = stdClass Object
+(
+    [id] => 11
+    [name] => ユーザー１１
+    [email] => user11@gmail.com
+    [email_verified_at] => 
+    [organization_id] => 1
+    [user_id] => 2
+    [login_flg] => 1
+    [admin_flg] => 1
+    [created_at] => 2022-10-20T12:00:00.000000Z
+    [updated_at] => 2022-10-20T12:00:00.000000Z
+    [deleted_at] => 
+)
+  
+[2022-10-25 15:56:56] local.INFO: Ajax ChatController index START  
+[2022-10-25 15:56:56] local.INFO: Ajax ChatController index END  
+[2022-10-25 15:57:17] local.INFO: Ajax ChatController index START  
+[2022-10-25 15:57:17] local.INFO: Ajax ChatController index END  
+[2022-10-25 16:04:49] local.INFO: Ajax ChatController index START  
+[2022-10-25 16:04:49] local.INFO: Ajax ChatController index END  
+[2022-10-25 16:06:20] local.INFO: Ajax ChatController index START  
+[2022-10-25 16:06:20] local.INFO: Ajax ChatController index END  
+[2022-10-25 16:14:50] local.INFO: ChatController index　START  
+[2022-10-25 16:14:50] local.INFO: ChatController index END  
+[2022-10-25 16:14:51] local.INFO: Ajax ChatController index START  
+[2022-10-25 16:14:51] local.INFO: Ajax ChatController index END  

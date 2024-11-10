@@ -1,0 +1,292 @@
+[2023-11-09 19:33:38] Act:.INFO: LineWebhookController message START  
+[2023-11-09 19:33:38] Act:.DEBUG: LineWebhookController message $events = Array
+(
+    [0] => Array
+        (
+            [type] => follow
+            [webhookEventId] => 01HESTA1726KXQA6MX5DWSK55E
+            [deliveryContext] => Array
+                (
+                    [isRedelivery] => 
+                )
+
+            [timestamp] => 1699526017764
+            [source] => Array
+                (
+                    [type] => user
+                    [userId] => U4d15b647d8b8effec85ca24ddbbd6674
+                )
+
+            [replyToken] => 1fbc55cf124f47d7b0e41bb902ee6e8f
+            [mode] => active
+        )
+
+)
+  
+[2023-11-09 19:33:38] Act:.DEBUG: LineWebhookController message $event = Array
+(
+    [type] => follow
+    [webhookEventId] => 01HESTA1726KXQA6MX5DWSK55E
+    [deliveryContext] => Array
+        (
+            [isRedelivery] => 
+        )
+
+    [timestamp] => 1699526017764
+    [source] => Array
+        (
+            [type] => user
+            [userId] => U4d15b647d8b8effec85ca24ddbbd6674
+        )
+
+    [replyToken] => 1fbc55cf124f47d7b0e41bb902ee6e8f
+    [mode] => active
+)
+  
+[2023-11-09 19:33:38] Act:.ERROR: Undefined array key "message" {"exception":"[object] (ErrorException(code: 0): Undefined array key \"message\" at /var/www/html/actver/app/Http/Controllers/LineWebhookController.php:56)
+[stacktrace]
+#0 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(259): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError()
+#1 /var/www/html/actver/app/Http/Controllers/LineWebhookController.php(56): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->Illuminate\\Foundation\\Bootstrap\\{closure}()
+#2 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Routing/Controller.php(54): App\\Http\\Controllers\\LineWebhookController->message()
+#3 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php(43): Illuminate\\Routing\\Controller->callAction()
+#4 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Routing/Route.php(259): Illuminate\\Routing\\ControllerDispatcher->dispatch()
+#5 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Routing/Route.php(205): Illuminate\\Routing\\Route->runController()
+#6 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Routing/Router.php(725): Illuminate\\Routing\\Route->run()
+#7 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(141): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}()
+#8 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php(50): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#9 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle()
+#10 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/VerifyCsrfToken.php(78): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#11 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken->handle()
+#12 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/View/Middleware/ShareErrorsFromSession.php(49): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#13 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\View\\Middleware\\ShareErrorsFromSession->handle()
+#14 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(121): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#15 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(64): Illuminate\\Session\\Middleware\\StartSession->handleStatefulRequest()
+#16 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Session\\Middleware\\StartSession->handle()
+#17 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/AddQueuedCookiesToResponse.php(37): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#18 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse->handle()
+#19 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/EncryptCookies.php(67): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#20 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Cookie\\Middleware\\EncryptCookies->handle()
+#21 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(116): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#22 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Routing/Router.php(724): Illuminate\\Pipeline\\Pipeline->then()
+#23 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Routing/Router.php(703): Illuminate\\Routing\\Router->runRouteWithinStack()
+#24 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Routing/Router.php(667): Illuminate\\Routing\\Router->runRoute()
+#25 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Routing/Router.php(656): Illuminate\\Routing\\Router->dispatchToRoute()
+#26 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(190): Illuminate\\Routing\\Router->dispatch()
+#27 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(141): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}()
+#28 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#29 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull.php(31): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle()
+#30 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull->handle()
+#31 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#32 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TrimStrings.php(40): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle()
+#33 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\TrimStrings->handle()
+#34 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#35 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle()
+#36 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance.php(86): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#37 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance->handle()
+#38 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Http/Middleware/HandleCors.php(49): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#39 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Http\\Middleware\\HandleCors->handle()
+#40 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Http/Middleware/TrustProxies.php(39): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#41 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Http\\Middleware\\TrustProxies->handle()
+#42 /var/www/html/actver/app/Http/Middleware/ThrowFileError.php(51): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#43 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): App\\Http\\Middleware\\ThrowFileError->handle()
+#44 /var/www/html/actver/vendor/barryvdh/laravel-cors/src/HandleCors.php(38): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#45 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Fruitcake\\Cors\\HandleCors->handle()
+#46 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(116): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#47 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(165): Illuminate\\Pipeline\\Pipeline->then()
+#48 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(134): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter()
+#49 /var/www/html/actver/public/index.php(51): Illuminate\\Foundation\\Http\\Kernel->handle()
+#50 {main}
+"} 
+[2023-11-09 19:33:52] Act:.INFO: LineWebhookController message START  
+[2023-11-09 19:33:52] Act:.DEBUG: LineWebhookController message $events = Array
+(
+    [0] => Array
+        (
+            [type] => message
+            [message] => Array
+                (
+                    [type] => text
+                    [id] => 480993937436967013
+                    [quoteToken] => J2Fhn_gBUVEfpFGzIEWVlIWtE3BQyBNtki_KB-oaGBr3SFDDCPkV3OIjiyiojKwjh6xpyqvCrfaEjtjANNw7wLm14PKg2e5V_ddMObM2IntLhrM5wIFUxm2kfEgypo0761Zocd5N957VlxcdYwdSiw
+                    [text] => 新冨泰明
+                )
+
+            [webhookEventId] => 01HESTAEWK651SKQ6BEG9D30A5
+            [deliveryContext] => Array
+                (
+                    [isRedelivery] => 
+                )
+
+            [timestamp] => 1699526031883
+            [source] => Array
+                (
+                    [type] => user
+                    [userId] => U4d15b647d8b8effec85ca24ddbbd6674
+                )
+
+            [replyToken] => 18cfcce3b5664e37ad6e454b4f7da069
+            [mode] => active
+        )
+
+)
+  
+[2023-11-09 19:33:52] Act:.DEBUG: LineWebhookController message $event = Array
+(
+    [type] => message
+    [message] => Array
+        (
+            [type] => text
+            [id] => 480993937436967013
+            [quoteToken] => J2Fhn_gBUVEfpFGzIEWVlIWtE3BQyBNtki_KB-oaGBr3SFDDCPkV3OIjiyiojKwjh6xpyqvCrfaEjtjANNw7wLm14PKg2e5V_ddMObM2IntLhrM5wIFUxm2kfEgypo0761Zocd5N957VlxcdYwdSiw
+            [text] => 新冨泰明
+        )
+
+    [webhookEventId] => 01HESTAEWK651SKQ6BEG9D30A5
+    [deliveryContext] => Array
+        (
+            [isRedelivery] => 
+        )
+
+    [timestamp] => 1699526031883
+    [source] => Array
+        (
+            [type] => user
+            [userId] => U4d15b647d8b8effec85ca24ddbbd6674
+        )
+
+    [replyToken] => 18cfcce3b5664e37ad6e454b4f7da069
+    [mode] => active
+)
+  
+[2023-11-09 19:33:52] Act:.INFO: LineWebhookController message END  
+[2023-11-09 19:34:08] Act:.INFO: LineWebhookController message START  
+[2023-11-09 19:34:08] Act:.DEBUG: LineWebhookController message $events = Array
+(
+    [0] => Array
+        (
+            [type] => message
+            [message] => Array
+                (
+                    [type] => text
+                    [id] => 480993964297028163
+                    [quoteToken] => XHaAw0vZE5ibgRI2mU9oti2Td1eEeIKzy_6hP9999IdT-WFLtx8gzZsrGLvnyUj0H3wVeSYJjbn6dYy5YAIeWsxt3PeFOnm1hN3KyB_Nx3naGJWxfisoS6oop2-qaOXpMOmqVBpCLJCO25hBMwD5-w
+                    [text] => 有り難うごさいます。
+                )
+
+            [webhookEventId] => 01HESTAY61F6TDB8ER9REBKMJE
+            [deliveryContext] => Array
+                (
+                    [isRedelivery] => 
+                )
+
+            [timestamp] => 1699526047853
+            [source] => Array
+                (
+                    [type] => user
+                    [userId] => U4d15b647d8b8effec85ca24ddbbd6674
+                )
+
+            [replyToken] => 034e43d9b5524f5c9ce89a52f700d9ef
+            [mode] => active
+        )
+
+)
+  
+[2023-11-09 19:34:08] Act:.DEBUG: LineWebhookController message $event = Array
+(
+    [type] => message
+    [message] => Array
+        (
+            [type] => text
+            [id] => 480993964297028163
+            [quoteToken] => XHaAw0vZE5ibgRI2mU9oti2Td1eEeIKzy_6hP9999IdT-WFLtx8gzZsrGLvnyUj0H3wVeSYJjbn6dYy5YAIeWsxt3PeFOnm1hN3KyB_Nx3naGJWxfisoS6oop2-qaOXpMOmqVBpCLJCO25hBMwD5-w
+            [text] => 有り難うごさいます。
+        )
+
+    [webhookEventId] => 01HESTAY61F6TDB8ER9REBKMJE
+    [deliveryContext] => Array
+        (
+            [isRedelivery] => 
+        )
+
+    [timestamp] => 1699526047853
+    [source] => Array
+        (
+            [type] => user
+            [userId] => U4d15b647d8b8effec85ca24ddbbd6674
+        )
+
+    [replyToken] => 034e43d9b5524f5c9ce89a52f700d9ef
+    [mode] => active
+)
+  
+[2023-11-09 19:34:08] Act:.INFO: LineWebhookController message END  
+[2023-11-09 19:35:50] Act:.INFO: linetrialuser input START  
+[2023-11-09 19:35:50] Act:.INFO: linetrialuser input END  
+[2023-11-09 19:36:39] Act:.INFO: linetrialuserhistory index START  
+[2023-11-09 19:36:39] Act:.INFO: linetrialuserhistory index END  
+[2023-11-09 19:36:41] Act:.INFO: linetrialuser input START  
+[2023-11-09 19:36:41] Act:.INFO: linetrialuser input END  
+[2023-11-09 19:36:44] Act:.INFO: auth logout redirectTo user = stdClass Object
+(
+    [id] => 1
+    [name] => 新冨泰明
+    [email] => shintomi.sh@gmail.com
+    [email_verified_at] => 
+    [organization_id] => 0
+    [user_id] => 1
+    [login_flg] => 2
+    [admin_flg] => 2
+    [created_at] => 2022-10-20T12:00:00.000000Z
+    [updated_at] => 2022-10-20T12:00:00.000000Z
+    [deleted_at] => 
+)
+  
+[2023-11-09 19:36:44] Act:.INFO: loginout operation update START  
+[2023-11-09 19:36:44] Act:.INFO: loginout operation update $id < 10 END  
+[2023-11-09 19:38:08] Act:.INFO: auth_user_info START  
+[2023-11-09 19:38:08] Act:.INFO: auth_user_info END  
+[2023-11-09 19:38:08] Act:.INFO: auth login redirectTo user = stdClass Object
+(
+    [id] => 1
+    [name] => 新冨泰明
+    [email] => shintomi.sh@gmail.com
+    [email_verified_at] => 
+    [organization_id] => 0
+    [user_id] => 1
+    [login_flg] => 2
+    [admin_flg] => 2
+    [created_at] => 2022-10-20T12:00:00.000000Z
+    [updated_at] => 2022-10-20T12:00:00.000000Z
+    [deleted_at] => 
+)
+  
+[2023-11-09 19:38:08] Act:.INFO: loginout operation update START  
+[2023-11-09 19:38:08] Act:.INFO: loginout operation update $id < 10 END  
+[2023-11-09 19:38:08] Act:.INFO: auth_user_info START  
+[2023-11-09 19:38:08] Act:.INFO: auth_user_info END  
+[2023-11-09 19:38:08] Act:.INFO: office top index START $user->name = 新冨泰明  
+[2023-11-09 19:38:08] Act:.INFO: auth_user_organization START  
+[2023-11-09 19:38:08] Act:.INFO: auth_user_organization END  
+[2023-11-09 19:38:08] Act:.INFO: office top index END $user->name = 新冨泰明  
+[2023-11-09 19:38:11] Act:.INFO: linetrialuserhistory index START  
+[2023-11-09 19:38:11] Act:.INFO: linetrialuserhistory index END  
+[2023-11-09 19:38:16] Act:.INFO: linetrialuser input START  
+[2023-11-09 19:38:16] Act:.INFO: linetrialuser input END  
+[2023-11-09 19:39:46] Act:.INFO: auth logout redirectTo user = stdClass Object
+(
+    [id] => 1
+    [name] => 新冨泰明
+    [email] => shintomi.sh@gmail.com
+    [email_verified_at] => 
+    [organization_id] => 0
+    [user_id] => 1
+    [login_flg] => 2
+    [admin_flg] => 2
+    [created_at] => 2022-10-20T12:00:00.000000Z
+    [updated_at] => 2022-10-20T12:00:00.000000Z
+    [deleted_at] => 
+)
+  
+[2023-11-09 19:39:46] Act:.INFO: loginout operation update START  
+[2023-11-09 19:39:46] Act:.INFO: loginout operation update $id < 10 END  
