@@ -11,7 +11,7 @@ return [
     */
 
     'accessToken' => env('LINE_CHANNEL_ACCESS_TOKEN'),
-    'secret' => env('LINE_CHANNEL_SECRET'),
+    'secret' => env('LINE_CHANNEL_SECRET', 'dumy_secret'),
 
     /*
     |--------------------------------------------------------------------------
