@@ -66,7 +66,7 @@ class LineWebhookController extends Controller
 
                         // 分岐処理
                         if (str_contains($userMessage, '価格')) {
-                            // Call to a member function build() on array at /var/www/html/actver/vendor/linecorp/line-bot-sdk/src/LINEBot/MessageBuilder/FlexMessageBuilder.php:142)
+                            //Call to a member function build() on array at /var/www/html/actver/vendor/linecorp/line-bot-sdk/src/LINEBot/MessageBuilder/FlexMessageBuilder.php:142)
                             // $this->replyPriceQuery($replyToken);
 
                             // 商品価格を返信するロジック
