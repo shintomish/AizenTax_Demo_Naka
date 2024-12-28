@@ -47,6 +47,8 @@ class LineWebhookController extends Controller
 
         Log::info('LineWebhookController message START');
 
+
+
         $events = $request->events;
 
         foreach ($events as $event) {
