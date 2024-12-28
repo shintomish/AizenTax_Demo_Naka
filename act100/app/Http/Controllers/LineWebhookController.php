@@ -51,7 +51,8 @@ class LineWebhookController extends Controller
         // $events = $data['events'];
         // $httpClient = new CurlHTTPClient(config('services.line.message.channel_token'));
         // $bot = new LINEBot($httpClient, ['channelSecret' => config('services.line.message.channel_secret')]);
-
+        // .envからアクセストークンを取得してプロパティに格納
+        $this->channelToken = env('LINE_CHANNEL_ACCESS_TOKEN');
         $events = $request->events;
 
         foreach ($events as $event) {
