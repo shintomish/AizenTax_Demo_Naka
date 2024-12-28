@@ -9,20 +9,14 @@ use Illuminate\Support\Facades\Log;
 use App\Models\Line_Message;
 use App\Models\Line_Trial_Users;
 
-// use LINE\LINEBot;
-// use LINE\LINEBot\HTTPClient\CurlHTTPClient;
-// use LINE\LINEBot\MessageBuilder\TextMessageBuilder;
-// use LINE\LINEBot\MessageBuilder\FlexMessageBuilder;
-// use LINE\LINEBot\TemplateActionBuilder\PostbackTemplateActionBuilder;
-// use LINE\LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder;
-// use LINE\LINEBot\MessageBuilder\TemplateMessageBuilder;
-// use LINE\LINEBot\MessageBuilder\TemplateBuilder\ButtonTemplateBuilder;
-
 use LINE\LINEBot;
 use LINE\LINEBot\HTTPClient\CurlHTTPClient;
-use LINE\LINEBot\MessageBuilder\TemplateMessageBuilder;
+use LINE\LINEBot\MessageBuilder\TextMessageBuilder;
+use LINE\LINEBot\MessageBuilder\FlexMessageBuilder;
+use LINE\LINEBot\TemplateActionBuilder\PostbackTemplateActionBuilder;
 use LINE\LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder;
-use LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder;
+
+use LINE\LINEBot\MessageBuilder\TemplateMessageBuilder;
 use LINE\LINEBot\MessageBuilder\TemplateBuilder\ButtonTemplateBuilder;
 
 use GuzzleHttp\Client;
@@ -86,8 +80,8 @@ class LineWebhookController extends Controller
                             // 商品価格を返信するロジック
                             $this->replyPriceMessage($replyToken, $userMessage);
                         } elseif (str_contains($userMessage, '問い合わせ')) {
-                            $this->replyNormalQuery($event);
-                            // $this->replyNormalMessage($replyToken);      // OK
+                            // $this->replyNormalQuery($event);
+                            $this->replyNormalMessage($replyToken);
                         } else {
                             $this->replyDefault($event);
                         }
@@ -163,26 +157,27 @@ class LineWebhookController extends Controller
         $replyToken = $event['replyToken'];
 
         $buttonTemplate = new ButtonTemplateBuilder(
-            'タイトル', // タイトル
-            '説明文です', // 説明文
-            // 'https://example.com/sample.jpg', // サムネイル画像のURL
+            'お問い合わせ',
+            'お問い合わせ内容を選択してください。',
+            'https://example.com/image.png',
             [
-                new MessageTemplateActionBuilder('ボタン1', 'アクション1'),
-                new UriTemplateActionBuilder('ボタン2', 'https://example.com')
+                new MessageTemplateActionBuilder('営業時間', '営業時間を教えてください'),
+                new MessageTemplateActionBuilder('場所', '店舗の場所を教えてください')
             ]
         );
 
-        $templateMessage = new TemplateMessageBuilder('こちらはテンプレートメッセージです', $buttonTemplate);
+        $yes_button = new PostbackTemplateActionBuilder('はい', 'button=1');
+        $no_button = new PostbackTemplateActionBuilder('キャンセル', 'button=0');
+        $actions = [$yes_button, $no_button];
+        $button = new ButtonTemplateBuilder('お問い合わせ', 'テキスト', '', $actions);
+
+        $button_message = new TemplateMessageBuilder('お問い合わせ', $buttonTemplate);
 
         Log::info('LineWebhookController replyNormalQuery END');
 
-        $response = $this->bot->replyMessage($replyToken, $templateMessage);
-
-        if (!$response->isSucceeded()) {
-            Log::info('LineWebhookController replyNormalQuery Reply failed:  = ' . print_r($response->getRawBody(), true));
-
-            // \Log::error('Reply failed: ' . $response->getRawBody());
-        }
+        // $this->bot->replyMessage($replyToken, $button_message);
+        // $this->bot->pushMessage($replyToken, $button_message);
+        $this->sendReplyMessage($replyToken, $button_message);
     }
 
     private function replyDefault($event)
@@ -264,10 +259,10 @@ class LineWebhookController extends Controller
                 ],
             ],
         ];
-
+        
         Log::info('LineWebhookController replyNormalMessage END');
 
-        $this->sendReplyMessage($replyToken, $buttonsTemplate);
+        $this->sendReplyMessage($replyToken, $buttonsTemplate);     //the request body is invalid
     }
 
     private function getPriceByProductName($productName)

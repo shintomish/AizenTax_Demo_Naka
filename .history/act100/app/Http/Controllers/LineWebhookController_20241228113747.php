@@ -86,8 +86,8 @@ class LineWebhookController extends Controller
                             // 商品価格を返信するロジック
                             $this->replyPriceMessage($replyToken, $userMessage);
                         } elseif (str_contains($userMessage, '問い合わせ')) {
-                            $this->replyNormalQuery($event);
-                            // $this->replyNormalMessage($replyToken);      // OK
+                            // $this->replyNormalQuery($event);
+                            $this->replyNormalMessage($replyToken);
                         } else {
                             $this->replyDefault($event);
                         }
@@ -168,7 +168,8 @@ class LineWebhookController extends Controller
             // 'https://example.com/sample.jpg', // サムネイル画像のURL
             [
                 new MessageTemplateActionBuilder('ボタン1', 'アクション1'),
-                new UriTemplateActionBuilder('ボタン2', 'https://example.com')
+                // new UriTemplateActionBuilder('ボタン2', 'https://example.com')
+                new UriTemplateActionBuilder('ボタン2', 'アクション1')
             ]
         );
 
@@ -176,13 +177,8 @@ class LineWebhookController extends Controller
 
         Log::info('LineWebhookController replyNormalQuery END');
 
-        $response = $this->bot->replyMessage($replyToken, $templateMessage);
+        $this->bot->replyMessage($replyToken, $templateMessage);
 
-        if (!$response->isSucceeded()) {
-            Log::info('LineWebhookController replyNormalQuery Reply failed:  = ' . print_r($response->getRawBody(), true));
-
-            // \Log::error('Reply failed: ' . $response->getRawBody());
-        }
     }
 
     private function replyDefault($event)

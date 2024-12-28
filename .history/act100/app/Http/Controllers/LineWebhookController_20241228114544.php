@@ -173,15 +173,13 @@ class LineWebhookController extends Controller
         );
 
         $templateMessage = new TemplateMessageBuilder('こちらはテンプレートメッセージです', $buttonTemplate);
-
         Log::info('LineWebhookController replyNormalQuery END');
+
 
         $response = $this->bot->replyMessage($replyToken, $templateMessage);
 
         if (!$response->isSucceeded()) {
-            Log::info('LineWebhookController replyNormalQuery Reply failed:  = ' . print_r($response->getRawBody(), true));
-
-            // \Log::error('Reply failed: ' . $response->getRawBody());
+            \Log::error('Reply failed: ' . $response->getRawBody());
         }
     }
 

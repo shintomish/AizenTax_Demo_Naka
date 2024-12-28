@@ -179,9 +179,7 @@ class LineWebhookController extends Controller
         $response = $this->bot->replyMessage($replyToken, $templateMessage);
 
         if (!$response->isSucceeded()) {
-            Log::info('LineWebhookController replyNormalQuery Reply failed:  = ' . print_r($response->getRawBody(), true));
-
-            // \Log::error('Reply failed: ' . $response->getRawBody());
+            \Log::error('Reply failed: ' . $response->getRawBody());
         }
     }
 
