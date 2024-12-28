@@ -12,262 +12,58 @@
 [2024-12-28 11:25:29] Act:.INFO: LineWebhookController replyNormalMessage START  
 [2024-12-28 11:25:29] Act:.INFO: LineWebhookController replyNormalMessage END  
 [2024-12-28 11:25:29] Act:.ERROR: Undefined variable $buttonsTemplate {"exception":"[object] (ErrorException(code: 0): Undefined variable $buttonsTemplate at /var/www/html/actver/app/Http/Controllers/LineWebhookController.php:275)
-[stacktrace]
-#0 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(259): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError()
-#1 /var/www/html/actver/app/Http/Controllers/LineWebhookController.php(275): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->Illuminate\\Foundation\\Bootstrap\\{closure}()
-#2 /var/www/html/actver/app/Http/Controllers/LineWebhookController.php(84): App\\Http\\Controllers\\LineWebhookController->replyNormalMessage()
-#3 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Routing/Controller.php(54): App\\Http\\Controllers\\LineWebhookController->message()
-#4 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php(43): Illuminate\\Routing\\Controller->callAction()
-#5 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Routing/Route.php(259): Illuminate\\Routing\\ControllerDispatcher->dispatch()
-#6 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Routing/Route.php(205): Illuminate\\Routing\\Route->runController()
-#7 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Routing/Router.php(725): Illuminate\\Routing\\Route->run()
-#8 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(141): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}()
-#9 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php(50): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
-#10 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle()
-#11 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/VerifyCsrfToken.php(78): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
-#12 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken->handle()
-#13 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/View/Middleware/ShareErrorsFromSession.php(49): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
-#14 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\View\\Middleware\\ShareErrorsFromSession->handle()
-#15 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(121): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
-#16 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(64): Illuminate\\Session\\Middleware\\StartSession->handleStatefulRequest()
-#17 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Session\\Middleware\\StartSession->handle()
-#18 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/AddQueuedCookiesToResponse.php(37): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
-#19 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse->handle()
-#20 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/EncryptCookies.php(67): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
-#21 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Cookie\\Middleware\\EncryptCookies->handle()
-#22 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(116): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
-#23 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Routing/Router.php(724): Illuminate\\Pipeline\\Pipeline->then()
-#24 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Routing/Router.php(703): Illuminate\\Routing\\Router->runRouteWithinStack()
-#25 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Routing/Router.php(667): Illuminate\\Routing\\Router->runRoute()
-#26 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Routing/Router.php(656): Illuminate\\Routing\\Router->dispatchToRoute()
-#27 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(190): Illuminate\\Routing\\Router->dispatch()
-#28 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(141): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}()
-#29 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
-#30 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull.php(31): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle()
-#31 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull->handle()
-#32 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
-#33 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TrimStrings.php(40): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle()
-#34 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\TrimStrings->handle()
-#35 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
-#36 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle()
-#37 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance.php(86): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
-#38 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance->handle()
-#39 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Http/Middleware/HandleCors.php(49): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
-#40 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Http\\Middleware\\HandleCors->handle()
-#41 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Http/Middleware/TrustProxies.php(39): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
-#42 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Http\\Middleware\\TrustProxies->handle()
-#43 /var/www/html/actver/app/Http/Middleware/ThrowFileError.php(51): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
-#44 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): App\\Http\\Middleware\\ThrowFileError->handle()
-#45 /var/www/html/actver/vendor/barryvdh/laravel-cors/src/HandleCors.php(38): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
-#46 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Fruitcake\\Cors\\HandleCors->handle()
-#47 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(116): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
-#48 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(165): Illuminate\\Pipeline\\Pipeline->then()
-#49 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(134): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter()
-#50 /var/www/html/actver/public/index.php(51): Illuminate\\Foundation\\Http\\Kernel->handle()
-#51 {main}
-"} 
-[2024-12-28 11:26:38] Act:.INFO: LineWebhookController message START  
-[2024-12-28 11:26:38] Act:.INFO: LineWebhookController replyNormalMessage START  
-[2024-12-28 11:26:38] Act:.INFO: LineWebhookController replyNormalMessage END  
-[2024-12-28 11:26:38] Act:.ERROR: Client error: `POST https://api.line.me/v2/bot/message/reply` resulted in a `400 Bad Request` response:
-{"message":"The request body has 1 error(s)","details":[{"message":"May not be empty","property":"messages[0].type"}]}
- {"exception":"[object] (GuzzleHttp\\Exception\\ClientException(code: 400): Client error: `POST https://api.line.me/v2/bot/message/reply` resulted in a `400 Bad Request` response:
-{\"message\":\"The request body has 1 error(s)\",\"details\":[{\"message\":\"May not be empty\",\"property\":\"messages[0].type\"}]}
- at /var/www/html/actver/vendor/guzzlehttp/guzzle/src/Exception/RequestException.php:113)
-[stacktrace]
-#0 /var/www/html/actver/vendor/guzzlehttp/guzzle/src/Middleware.php(69): GuzzleHttp\\Exception\\RequestException::create()
-#1 /var/www/html/actver/vendor/guzzlehttp/promises/src/Promise.php(204): GuzzleHttp\\Middleware::GuzzleHttp\\{closure}()
-#2 /var/www/html/actver/vendor/guzzlehttp/promises/src/Promise.php(153): GuzzleHttp\\Promise\\Promise::callHandler()
-#3 /var/www/html/actver/vendor/guzzlehttp/promises/src/TaskQueue.php(48): GuzzleHttp\\Promise\\Promise::GuzzleHttp\\Promise\\{closure}()
-#4 /var/www/html/actver/vendor/guzzlehttp/promises/src/Promise.php(248): GuzzleHttp\\Promise\\TaskQueue->run()
-#5 /var/www/html/actver/vendor/guzzlehttp/promises/src/Promise.php(224): GuzzleHttp\\Promise\\Promise->invokeWaitFn()
-#6 /var/www/html/actver/vendor/guzzlehttp/promises/src/Promise.php(269): GuzzleHttp\\Promise\\Promise->waitIfPending()
-#7 /var/www/html/actver/vendor/guzzlehttp/promises/src/Promise.php(226): GuzzleHttp\\Promise\\Promise->invokeWaitList()
-#8 /var/www/html/actver/vendor/guzzlehttp/promises/src/Promise.php(62): GuzzleHttp\\Promise\\Promise->waitIfPending()
-#9 /var/www/html/actver/vendor/guzzlehttp/guzzle/src/Client.php(187): GuzzleHttp\\Promise\\Promise->wait()
-#10 /var/www/html/actver/vendor/guzzlehttp/guzzle/src/ClientTrait.php(95): GuzzleHttp\\Client->request()
-#11 /var/www/html/actver/app/Http/Controllers/LineWebhookController.php(305): GuzzleHttp\\Client->post()
-#12 /var/www/html/actver/app/Http/Controllers/LineWebhookController.php(275): App\\Http\\Controllers\\LineWebhookController->sendReplyMessage()
-#13 /var/www/html/actver/app/Http/Controllers/LineWebhookController.php(84): App\\Http\\Controllers\\LineWebhookController->replyNormalMessage()
-#14 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Routing/Controller.php(54): App\\Http\\Controllers\\LineWebhookController->message()
-#15 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php(43): Illuminate\\Routing\\Controller->callAction()
-#16 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Routing/Route.php(259): Illuminate\\Routing\\ControllerDispatcher->dispatch()
-#17 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Routing/Route.php(205): Illuminate\\Routing\\Route->runController()
-#18 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Routing/Router.php(725): Illuminate\\Routing\\Route->run()
-#19 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(141): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}()
-#20 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php(50): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
-#21 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle()
-#22 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/VerifyCsrfToken.php(78): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
-#23 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken->handle()
-#24 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/View/Middleware/ShareErrorsFromSession.php(49): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
-#25 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\View\\Middleware\\ShareErrorsFromSession->handle()
-#26 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(121): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
-#27 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(64): Illuminate\\Session\\Middleware\\StartSession->handleStatefulRequest()
-#28 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Session\\Middleware\\StartSession->handle()
-#29 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/AddQueuedCookiesToResponse.php(37): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
-#30 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse->handle()
-#31 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/EncryptCookies.php(67): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
-#32 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Cookie\\Middleware\\EncryptCookies->handle()
-#33 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(116): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
-#34 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Routing/Router.php(724): Illuminate\\Pipeline\\Pipeline->then()
-#35 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Routing/Router.php(703): Illuminate\\Routing\\Router->runRouteWithinStack()
-#36 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Routing/Router.php(667): Illuminate\\Routing\\Router->runRoute()
-#37 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Routing/Router.php(656): Illuminate\\Routing\\Router->dispatchToRoute()
-#38 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(190): Illuminate\\Routing\\Router->dispatch()
-#39 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(141): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}()
-#40 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
-#41 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull.php(31): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle()
-#42 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull->handle()
-#43 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
-#44 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TrimStrings.php(40): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle()
-#45 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\TrimStrings->handle()
-#46 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
-#47 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle()
-#48 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance.php(86): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
-#49 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance->handle()
-#50 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Http/Middleware/HandleCors.php(49): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
-#51 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Http\\Middleware\\HandleCors->handle()
-#52 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Http/Middleware/TrustProxies.php(39): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
-#53 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Http\\Middleware\\TrustProxies->handle()
-#54 /var/www/html/actver/app/Http/Middleware/ThrowFileError.php(51): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
-#55 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): App\\Http\\Middleware\\ThrowFileError->handle()
-#56 /var/www/html/actver/vendor/barryvdh/laravel-cors/src/HandleCors.php(38): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
-#57 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Fruitcake\\Cors\\HandleCors->handle()
-#58 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(116): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
-#59 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(165): Illuminate\\Pipeline\\Pipeline->then()
-#60 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(134): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter()
-#61 /var/www/html/actver/public/index.php(51): Illuminate\\Foundation\\Http\\Kernel->handle()
-#62 {main}
-"} 
-[2024-12-28 11:29:23] Act:.INFO: LineWebhookController message START  
-[2024-12-28 11:29:23] Act:.INFO: LineWebhookController replyNormalMessage START  
-[2024-12-28 11:29:23] Act:.INFO: LineWebhookController replyNormalMessage END  
-[2024-12-28 11:29:23] Act:.ERROR: Client error: `POST https://api.line.me/v2/bot/message/reply` resulted in a `400 Bad Request` response:
-{"message":"The request body has 1 error(s)","details":[{"message":"May not be empty","property":"messages[0].type"}]}
- {"exception":"[object] (GuzzleHttp\\Exception\\ClientException(code: 400): Client error: `POST https://api.line.me/v2/bot/message/reply` resulted in a `400 Bad Request` response:
-{\"message\":\"The request body has 1 error(s)\",\"details\":[{\"message\":\"May not be empty\",\"property\":\"messages[0].type\"}]}
- at /var/www/html/actver/vendor/guzzlehttp/guzzle/src/Exception/RequestException.php:113)
-[stacktrace]
-#0 /var/www/html/actver/vendor/guzzlehttp/guzzle/src/Middleware.php(69): GuzzleHttp\\Exception\\RequestException::create()
-#1 /var/www/html/actver/vendor/guzzlehttp/promises/src/Promise.php(204): GuzzleHttp\\Middleware::GuzzleHttp\\{closure}()
-#2 /var/www/html/actver/vendor/guzzlehttp/promises/src/Promise.php(153): GuzzleHttp\\Promise\\Promise::callHandler()
-#3 /var/www/html/actver/vendor/guzzlehttp/promises/src/TaskQueue.php(48): GuzzleHttp\\Promise\\Promise::GuzzleHttp\\Promise\\{closure}()
-#4 /var/www/html/actver/vendor/guzzlehttp/promises/src/Promise.php(248): GuzzleHttp\\Promise\\TaskQueue->run()
-#5 /var/www/html/actver/vendor/guzzlehttp/promises/src/Promise.php(224): GuzzleHttp\\Promise\\Promise->invokeWaitFn()
-#6 /var/www/html/actver/vendor/guzzlehttp/promises/src/Promise.php(269): GuzzleHttp\\Promise\\Promise->waitIfPending()
-#7 /var/www/html/actver/vendor/guzzlehttp/promises/src/Promise.php(226): GuzzleHttp\\Promise\\Promise->invokeWaitList()
-#8 /var/www/html/actver/vendor/guzzlehttp/promises/src/Promise.php(62): GuzzleHttp\\Promise\\Promise->waitIfPending()
-#9 /var/www/html/actver/vendor/guzzlehttp/guzzle/src/Client.php(187): GuzzleHttp\\Promise\\Promise->wait()
-#10 /var/www/html/actver/vendor/guzzlehttp/guzzle/src/ClientTrait.php(95): GuzzleHttp\\Client->request()
-#11 /var/www/html/actver/app/Http/Controllers/LineWebhookController.php(305): GuzzleHttp\\Client->post()
-#12 /var/www/html/actver/app/Http/Controllers/LineWebhookController.php(275): App\\Http\\Controllers\\LineWebhookController->sendReplyMessage()
-#13 /var/www/html/actver/app/Http/Controllers/LineWebhookController.php(84): App\\Http\\Controllers\\LineWebhookController->replyNormalMessage()
-#14 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Routing/Controller.php(54): App\\Http\\Controllers\\LineWebhookController->message()
-#15 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php(43): Illuminate\\Routing\\Controller->callAction()
-#16 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Routing/Route.php(259): Illuminate\\Routing\\ControllerDispatcher->dispatch()
-#17 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Routing/Route.php(205): Illuminate\\Routing\\Route->runController()
-#18 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Routing/Router.php(725): Illuminate\\Routing\\Route->run()
-#19 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(141): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}()
-#20 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php(50): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
-#21 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle()
-#22 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/VerifyCsrfToken.php(78): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
-#23 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken->handle()
-#24 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/View/Middleware/ShareErrorsFromSession.php(49): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
-#25 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\View\\Middleware\\ShareErrorsFromSession->handle()
-#26 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(121): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
-#27 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(64): Illuminate\\Session\\Middleware\\StartSession->handleStatefulRequest()
-#28 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Session\\Middleware\\StartSession->handle()
-#29 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/AddQueuedCookiesToResponse.php(37): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
-#30 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse->handle()
-#31 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/EncryptCookies.php(67): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
-#32 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Cookie\\Middleware\\EncryptCookies->handle()
-#33 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(116): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
-#34 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Routing/Router.php(724): Illuminate\\Pipeline\\Pipeline->then()
-#35 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Routing/Router.php(703): Illuminate\\Routing\\Router->runRouteWithinStack()
-#36 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Routing/Router.php(667): Illuminate\\Routing\\Router->runRoute()
-#37 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Routing/Router.php(656): Illuminate\\Routing\\Router->dispatchToRoute()
-#38 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(190): Illuminate\\Routing\\Router->dispatch()
-#39 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(141): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}()
-#40 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
-#41 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull.php(31): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle()
-#42 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull->handle()
-#43 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
-#44 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TrimStrings.php(40): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle()
-#45 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\TrimStrings->handle()
-#46 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
-#47 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle()
-#48 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance.php(86): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
-#49 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance->handle()
-#50 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Http/Middleware/HandleCors.php(49): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
-#51 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Http\\Middleware\\HandleCors->handle()
-#52 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Http/Middleware/TrustProxies.php(39): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
-#53 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Http\\Middleware\\TrustProxies->handle()
-#54 /var/www/html/actver/app/Http/Middleware/ThrowFileError.php(51): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
-#55 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): App\\Http\\Middleware\\ThrowFileError->handle()
-#56 /var/www/html/actver/vendor/barryvdh/laravel-cors/src/HandleCors.php(38): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
-#57 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Fruitcake\\Cors\\HandleCors->handle()
-#58 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(116): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
-#59 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(165): Illuminate\\Pipeline\\Pipeline->then()
-#60 /var/www/html/actver/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(134): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter()
-#61 /var/www/html/actver/public/index.php(51): Illuminate\\Foundation\\Http\\Kernel->handle()
-#62 {main}
-"} 
-[2024-12-28 11:38:54] Act:.INFO: LineWebhookController message START  
-[2024-12-28 11:38:54] Act:.INFO: LineWebhookController replyNormalQuery START  
-[2024-12-28 11:38:54] Act:.INFO: LineWebhookController replyNormalQuery END  
-[2024-12-28 11:38:54] Act:.INFO: LineWebhookController message $userMessage = 問い合わせ  
-[2024-12-28 11:38:54] Act:.INFO: LineWebhookController message END  
-[2024-12-28 11:41:21] Act:.INFO: LineWebhookController message START  
-[2024-12-28 11:41:21] Act:.INFO: LineWebhookController replyNormalQuery START  
-[2024-12-28 11:41:21] Act:.INFO: LineWebhookController replyNormalQuery $templateMessage = LINE\LINEBot\MessageBuilder\TemplateMessageBuilder Object
-(
-    [altText:LINE\LINEBot\MessageBuilder\TemplateMessageBuilder:private] => こちらはテンプレートメッセージです
-    [templateBuilder:LINE\LINEBot\MessageBuilder\TemplateMessageBuilder:private] => LINE\LINEBot\MessageBuilder\TemplateBuilder\ButtonTemplateBuilder Object
-        (
-            [title:LINE\LINEBot\MessageBuilder\TemplateBuilder\ButtonTemplateBuilder:private] => タイトル
-            [text:LINE\LINEBot\MessageBuilder\TemplateBuilder\ButtonTemplateBuilder:private] => 説明文です
-            [thumbnailImageUrl:LINE\LINEBot\MessageBuilder\TemplateBuilder\ButtonTemplateBuilder:private] => Array
-                (
-                    [0] => LINE\LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder Object
-                        (
-                            [label:LINE\LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder:private] => ボタン1
-                            [text:LINE\LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder:private] => アクション1
-                        )
-
-                    [1] => LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder Object
-                        (
-                            [label:LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder:private] => ボタン2
-                            [uri:LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder:private] => https://example.com
-                            [altUri:LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder:private] => 
-                        )
-
-                )
-
-            [imageAspectRatio:LINE\LINEBot\MessageBuilder\TemplateBuilder\ButtonTemplateBuilder:private] => 
-            [imageSize:LINE\LINEBot\MessageBuilder\TemplateBuilder\ButtonTemplateBuilder:private] => 
-            [imageBackgroundColor:LINE\LINEBot\MessageBuilder\TemplateBuilder\ButtonTemplateBuilder:private] => 
-            [actionBuilders:LINE\LINEBot\MessageBuilder\TemplateBuilder\ButtonTemplateBuilder:private] => Array
-                (
-                )
-
-            [template:LINE\LINEBot\MessageBuilder\TemplateBuilder\ButtonTemplateBuilder:private] => 
-            [defaultAction:LINE\LINEBot\MessageBuilder\TemplateBuilder\ButtonTemplateBuilder:private] => 
-        )
-
-    [message:LINE\LINEBot\MessageBuilder\TemplateMessageBuilder:private] => Array
-        (
-        )
-
-    [quickReply:LINE\LINEBot\MessageBuilder\TemplateMessageBuilder:private] => 
-    [sender:LINE\LINEBot\MessageBuilder\TemplateMessageBuilder:private] => 
-)
-  
-[2024-12-28 11:41:21] Act:.INFO: LineWebhookController replyNormalQuery END  
-[2024-12-28 11:41:21] Act:.INFO: LineWebhookController message $userMessage = 問い合わせ  
-[2024-12-28 11:41:21] Act:.INFO: LineWebhookController message END  
-[2024-12-28 11:47:02] Act:.INFO: LineWebhookController message START  
-[2024-12-28 11:47:02] Act:.INFO: LineWebhookController replyNormalQuery START  
-[2024-12-28 11:47:02] Act:.INFO: LineWebhookController replyNormalQuery END  
-[2024-12-28 11:47:02] Act:.INFO: LineWebhookController replyNormalQuery Reply failed:  = {"message":"Authorization header required. Must follow the scheme, 'Authorization: Bearer <ACCESS TOKEN>'"}  
-[2024-12-28 11:47:02] Act:.INFO: LineWebhookController message $userMessage = 問い合わせ  
-[2024-12-28 11:47:02] Act:.INFO: LineWebhookController message END  
+[2024-12-28 15:47:57] Act:.INFO: LineWebhookController message START  
+[2024-12-28 15:47:57] Act:.INFO: LineWebhookController replyDefault START  
+[2024-12-28 15:47:57] Act:.INFO: LineWebhookController replyDefault Reply failed:   = {"message":"Authorization header required. Must follow the scheme, 'Authorization: Bearer <ACCESS TOKEN>'"}  
+[2024-12-28 15:47:57] Act:.INFO: LineWebhookController replyDefault Access Token:   =   
+[2024-12-28 15:47:57] Act:.INFO: LineWebhookController replyDefault HTTP Status:    = 401  
+[2024-12-28 15:47:57] Act:.INFO: LineWebhookController replyDefault Error Message:  = {"message":"Authorization header required. Must follow the scheme, 'Authorization: Bearer <ACCESS TOKEN>'"}  
+[2024-12-28 15:47:57] Act:.INFO: LineWebhookController replyDefault END  
+[2024-12-28 15:47:57] Act:.INFO: LineWebhookController message $userMessage = その他  
+[2024-12-28 15:47:57] Act:.INFO: LineWebhookController message END  
+[2024-12-28 15:57:04] Act:.INFO: LineWebhookController message START  
+[2024-12-28 15:57:04] Act:.INFO: LineWebhookController replyDefault START  
+[2024-12-28 15:57:04] Act:.INFO: Access Token:   
+[2024-12-28 15:57:04] Act:.INFO: LineWebhookController replyDefault Reply failed:   = {"message":"Authorization header required. Must follow the scheme, 'Authorization: Bearer <ACCESS TOKEN>'"}  
+[2024-12-28 15:57:04] Act:.INFO: LineWebhookController replyDefault Access Token:   =   
+[2024-12-28 15:57:04] Act:.INFO: LineWebhookController replyDefault HTTP Status:    = 401  
+[2024-12-28 15:57:04] Act:.INFO: LineWebhookController replyDefault Error Message:  = {"message":"Authorization header required. Must follow the scheme, 'Authorization: Bearer <ACCESS TOKEN>'"}  
+[2024-12-28 15:57:04] Act:.INFO: LineWebhookController replyDefault END  
+[2024-12-28 15:57:04] Act:.INFO: LineWebhookController message $userMessage = その他  
+[2024-12-28 15:57:04] Act:.INFO: LineWebhookController message END  
+[2024-12-28 16:04:08] Act:.INFO: LineWebhookController message START  
+[2024-12-28 16:04:08] Act:.INFO: message accessToken:   
+[2024-12-28 16:04:08] Act:.INFO: message replyToken: f72e2ba21e3a4f5081f5c224cda06223  
+[2024-12-28 16:04:08] Act:.INFO: LineWebhookController replyDefault START  
+[2024-12-28 16:04:08] Act:.INFO: replyDefault　Access Token:   
+[2024-12-28 16:04:08] Act:.INFO: LineWebhookController replyDefault Reply failed:   = {"message":"Authorization header required. Must follow the scheme, 'Authorization: Bearer <ACCESS TOKEN>'"}  
+[2024-12-28 16:04:08] Act:.INFO: LineWebhookController replyDefault Access Token:   =   
+[2024-12-28 16:04:08] Act:.INFO: LineWebhookController replyDefault HTTP Status:    = 401  
+[2024-12-28 16:04:08] Act:.INFO: LineWebhookController replyDefault Error Message:  = {"message":"Authorization header required. Must follow the scheme, 'Authorization: Bearer <ACCESS TOKEN>'"}  
+[2024-12-28 16:04:08] Act:.INFO: LineWebhookController replyDefault END  
+[2024-12-28 16:04:08] Act:.INFO: LineWebhookController message $userMessage = その他  
+[2024-12-28 16:04:08] Act:.INFO: LineWebhookController message END  
+[2024-12-28 16:05:56] Act:.INFO: LineWebhookController message START  
+[2024-12-28 16:05:56] Act:.INFO: message accessToken:   
+[2024-12-28 16:05:56] Act:.INFO: message replyToken: 3cc314e7e236450f9a8369cb0dba6345  
+[2024-12-28 16:05:56] Act:.INFO: LineWebhookController replyDefault START  
+[2024-12-28 16:05:56] Act:.INFO: replyDefault　Access Token:   
+[2024-12-28 16:05:56] Act:.INFO: LineWebhookController replyDefault Reply failed:   = {"message":"Authorization header required. Must follow the scheme, 'Authorization: Bearer <ACCESS TOKEN>'"}  
+[2024-12-28 16:05:56] Act:.INFO: LineWebhookController replyDefault Access Token:   =   
+[2024-12-28 16:05:56] Act:.INFO: LineWebhookController replyDefault HTTP Status:    = 401  
+[2024-12-28 16:05:56] Act:.INFO: LineWebhookController replyDefault Error Message:  = {"message":"Authorization header required. Must follow the scheme, 'Authorization: Bearer <ACCESS TOKEN>'"}  
+[2024-12-28 16:05:56] Act:.INFO: LineWebhookController replyDefault END  
+[2024-12-28 16:05:56] Act:.INFO: LineWebhookController message $userMessage = その他  
+[2024-12-28 16:05:56] Act:.INFO: LineWebhookController message END  
+[2024-12-28 16:11:39] Act:.INFO: LineWebhookController message START  
+[2024-12-28 16:11:39] Act:.INFO: message accessToken:   
+[2024-12-28 16:11:39] Act:.INFO: message replyToken: ae18401a470e46dca7d8d0067703ffec  
+[2024-12-28 16:11:39] Act:.INFO: LineWebhookController replyDefault START  
+[2024-12-28 16:11:39] Act:.INFO: replyDefault　Access Token:   
+[2024-12-28 16:11:39] Act:.INFO: LineWebhookController replyDefault Reply failed:   = {"message":"Authorization header required. Must follow the scheme, 'Authorization: Bearer <ACCESS TOKEN>'"}  
+[2024-12-28 16:11:39] Act:.INFO: LineWebhookController replyDefault Access Token:   =   
+[2024-12-28 16:11:39] Act:.INFO: LineWebhookController replyDefault HTTP Status:    = 401  
+[2024-12-28 16:11:39] Act:.INFO: LineWebhookController replyDefault Error Message:  = {"message":"Authorization header required. Must follow the scheme, 'Authorization: Bearer <ACCESS TOKEN>'"}  
+[2024-12-28 16:11:39] Act:.INFO: LineWebhookController replyDefault END  
+[2024-12-28 16:11:39] Act:.INFO: LineWebhookController message $userMessage = その他  
+[2024-12-28 16:11:39] Act:.INFO: LineWebhookController message END  

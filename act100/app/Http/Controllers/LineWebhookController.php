@@ -11,16 +11,18 @@ use App\Models\Line_Trial_Users;
 
 // use LINE\LINEBot;
 // use LINE\LINEBot\HTTPClient\CurlHTTPClient;
-// use LINE\LINEBot\MessageBuilder\TextMessageBuilder;
-// use LINE\LINEBot\MessageBuilder\FlexMessageBuilder;
 // use LINE\LINEBot\TemplateActionBuilder\PostbackTemplateActionBuilder;
 // use LINE\LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder;
 // use LINE\LINEBot\MessageBuilder\TemplateMessageBuilder;
 // use LINE\LINEBot\MessageBuilder\TemplateBuilder\ButtonTemplateBuilder;
 
+
+use Illuminate\Support\Facades\Config;
 use LINE\LINEBot;
 use LINE\LINEBot\HTTPClient\CurlHTTPClient;
 use LINE\LINEBot\MessageBuilder\TemplateMessageBuilder;
+use LINE\LINEBot\MessageBuilder\TextMessageBuilder;
+use LINE\LINEBot\MessageBuilder\FlexMessageBuilder;
 use LINE\LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder;
 use LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder;
 use LINE\LINEBot\MessageBuilder\TemplateBuilder\ButtonTemplateBuilder;
@@ -34,7 +36,7 @@ class LineWebhookController extends Controller
     public function __construct()
     {
         // .envからアクセストークンを取得してプロパティに格納
-        $this->channelToken = env('LINE_MESSAGE_CHANNEL_TOKEN');
+        $this->channelToken = env('LINE_CHANNEL_ACCESS_TOKEN');
         $httpClient = new CurlHTTPClient(env('LINE_CHANNEL_ACCESS_TOKEN'));
         $this->bot = new LINEBot($httpClient, ['channelSecret' => env('LINE_CHANNEL_SECRET')]);
 
@@ -57,39 +59,23 @@ class LineWebhookController extends Controller
             if (isset($event['message']['type'])) {
                 switch ($event['message']['type']) {
                     case 'text':
-                        // Log::info('LineWebhookController message case text userId = ' . print_r($event['source']['userId'], true));
-
-                        // $line_message = new Line_Message();
-                        // $line_message->line_user_id    = $event['source']['userId'];
-                        // $line_message->line_message_id = $event['message']['id'];
-                        // $line_message->text            = $event['message']['text'];
-                        // $line_message->save();               //  Inserts
-
-                        // $events = $request->input('events');
-                        // $replyToken = $event['replyToken'];
-                        // $userMessage = $event['message']['text'];
-
-                        // // メッセージ分類
-                        // if (strpos($userMessage, '価格') !== false) {
-                        //     $this->replyPriceMessage($replyToken, $userMessage);
-                        // } else {
-                        //     $this->replyNormalMessage($replyToken);
-                        // }
 
                         $replyToken = $event['replyToken'];
                         $userMessage = $event['message']['text'] ?? '';
 
+                        \Log::info('message accessToken: ' . $this->channelToken);
+                        \Log::info('message replyToken: ' . $replyToken);
                         // 分岐処理
                         if (str_contains($userMessage, '価格')) {
-                            // $this->replyPriceQuery($event);
-                            // $this->replyPriceMessage($event,$userMessage);
+                            $this->replyPriceQuery($replyToken);
+
                             // 商品価格を返信するロジック
-                            $this->replyPriceMessage($replyToken, $userMessage);
+                            // $this->replyPriceMessage($replyToken, $userMessage);      // OK
                         } elseif (str_contains($userMessage, '問い合わせ')) {
-                            $this->replyNormalQuery($event);
+                            $this->replyNormalQuery($replyToken);
                             // $this->replyNormalMessage($replyToken);      // OK
                         } else {
-                            $this->replyDefault($event);
+                            $this->replyDefault($replyToken);
                         }
 
                         Log::info('LineWebhookController message $userMessage = ' . print_r($userMessage, true));
@@ -116,8 +102,6 @@ class LineWebhookController extends Controller
     private function replyPriceQuery($replyToken)
     {
         Log::info('LineWebhookController replyPriceQuery START');
-
-        // $replyToken = $event['replyToken'];
 
         $flexMessage = new FlexMessageBuilder('商品価格リスト', [
             'type' => 'bubble',
@@ -151,52 +135,73 @@ class LineWebhookController extends Controller
             ]
         ]);
 
+        $response = $this->bot->replyMessage($replyToken, $templateMessage);
+
+        if (!$response->isSucceeded()) {
+            Log::info('LineWebhookController replyPriceQuery Reply failed:   = ' . print_r($response->getRawBody(), true));
+            Log::info('LineWebhookController replyPriceQuery Access Token:   = ' . print_r(env('LINE_CHANNEL_ACCESS_TOKEN'), true));
+            Log::info('LineWebhookController replyPriceQuery HTTP Status:    = ' . print_r($response->getHTTPStatus(), true));
+            Log::info('LineWebhookController replyPriceQuery Error Message:  = ' . print_r($response->getRawBody(), true));
+        } else {
+            Log::info('LineWebhookController replyPriceQuery HTTP Status:    = ' . print_r($response->getHTTPStatus(), true));
+        }
+
         Log::info('LineWebhookController replyPriceQuery END');
-        // $this->bot->replyMessage($replyToken, $flexMessage);
-        $this->bot->pushMessage($replyToken, $flexMessage);
     }
 
-    private function replyNormalQuery($event)
+    private function replyNormalQuery($replyToken)
     {
         Log::info('LineWebhookController replyNormalQuery START');
 
-        $replyToken = $event['replyToken'];
-
         $buttonTemplate = new ButtonTemplateBuilder(
-            'タイトル', // タイトル
-            '説明文です', // 説明文
-            // 'https://example.com/sample.jpg', // サムネイル画像のURL
+            'タイトル', // 最大40文字
+            '説明文', // 最大160文字
+            'https://www.tax-trial.com/sample.jpg', // HTTPS形式の有効な画像URL
             [
-                new MessageTemplateActionBuilder('ボタン1', 'アクション1'),
-                new UriTemplateActionBuilder('ボタン2', 'https://example.com')
+                new MessageTemplateActionBuilder('ボタン1', 'アクション1'), // ボタンの表示名とアクション内容
+                new UriTemplateActionBuilder('詳細はこちら', 'https://www.tax-trial.com') // ボタンの表示名とURL
             ]
         );
 
-        $templateMessage = new TemplateMessageBuilder('こちらはテンプレートメッセージです', $buttonTemplate);
+        $templateMessage = new TemplateMessageBuilder('こちらはボタンテンプレートです', $buttonTemplate);
 
-        Log::info('LineWebhookController replyNormalQuery END');
+        // Log::info('LineWebhookController replyNormalQuery templateMessage:  = ' . print_r($templateMessage, true));
 
         $response = $this->bot->replyMessage($replyToken, $templateMessage);
 
         if (!$response->isSucceeded()) {
-            Log::info('LineWebhookController replyNormalQuery Reply failed:  = ' . print_r($response->getRawBody(), true));
-
-            // \Log::error('Reply failed: ' . $response->getRawBody());
+            Log::info('LineWebhookController replyNormalQuery Reply failed:   = ' . print_r($response->getRawBody(), true));
+            Log::info('LineWebhookController replyNormalQuery Access Token:   = ' . print_r(env('LINE_CHANNEL_ACCESS_TOKEN'), true));
+            Log::info('LineWebhookController replyNormalQuery HTTP Status:    = ' . print_r($response->getHTTPStatus(), true));
+            Log::info('LineWebhookController replyNormalQuery Error Message:  = ' . print_r($response->getRawBody(), true));
+        } else {
+            Log::info('LineWebhookController replyNormalQuery HTTP Status:    = ' . print_r($response->getHTTPStatus(), true));
         }
+
+        Log::info('LineWebhookController replyNormalQuery END');
     }
 
-    private function replyDefault($event)
+    private function replyDefault($replyToken)
     {
         Log::info('LineWebhookController replyDefault START');
 
-        $replyToken = $event['replyToken'];
+        $accessToken = Config::get('LINE_CHANNEL_ACCESS_TOKEN');
+        \Log::info('replyDefault Access Token: ' . $accessToken);
+
         $message = new TextMessageBuilder('申し訳ありませんが、そのリクエストには対応できません。');
+
+        $response = $this->bot->replyMessage($replyToken, $message);
+        if (!$response->isSucceeded()) {
+            Log::info('LineWebhookController replyDefault Reply failed:   = ' . print_r($response->getRawBody(), true));
+            Log::info('LineWebhookController replyDefault Access Token:   = ' . print_r(env('LINE_CHANNEL_ACCESS_TOKEN'), true));
+            Log::info('LineWebhookController replyDefault HTTP Status:    = ' . print_r($response->getHTTPStatus(), true));
+            Log::info('LineWebhookController replyDefault Error Message:  = ' . print_r($response->getRawBody(), true));
+        } else {
+            Log::info('LineWebhookController replyNormalQuery HTTP Status:    = ' . print_r($response->getHTTPStatus(), true));
+        }
 
         Log::info('LineWebhookController replyDefault END');
 
-        $this->bot->replyMessage($replyToken, $message);        //OKだが resなし
-        // $this->bot->pushMessage($replyToken, $message);      //OKだが resなし
-        // $this->bot->replyText($replyToken, $message);        //OKだが resなし
     }
 
 
