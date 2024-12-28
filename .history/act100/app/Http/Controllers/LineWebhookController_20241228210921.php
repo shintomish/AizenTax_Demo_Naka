@@ -44,9 +44,8 @@ class LineWebhookController extends Controller
         $this->accessToken = config('app.accessToken');
         $this->accessSecret = config('app.secret');
 
-        \Log::info('__construct Access Token: ' . $this->accessToken);
-        \Log::info('__construct Secret: ' . $this->accessSecret);
 
+        \Log::info('replyDefault Access Token: ' . $this->accessToken);
         $httpClient = new CurlHTTPClient($this->accessToken);
         $this->bot = new LINEBot($httpClient, ['channelSecret' => $this->accessSecret]);
     }

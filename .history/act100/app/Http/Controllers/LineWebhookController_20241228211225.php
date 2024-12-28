@@ -41,7 +41,7 @@ class LineWebhookController extends Controller
         // $httpClient = new CurlHTTPClient(env('LINE_CHANNEL_ACCESS_TOKEN'));
 
         // config() を使用
-        $this->accessToken = config('app.accessToken');
+        $this->accessToken = config('app.name');
         $this->accessSecret = config('app.secret');
 
         \Log::info('__construct Access Token: ' . $this->accessToken);
