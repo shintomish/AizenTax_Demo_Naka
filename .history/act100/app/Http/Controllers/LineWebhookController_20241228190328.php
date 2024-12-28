@@ -56,7 +56,7 @@ class LineWebhookController extends Controller
                         $replyToken = $event['replyToken'];
                         $userMessage = $event['message']['text'] ?? '';
 
-                        // \Log::info('message accessToken: ' . $httpClient);
+                        \Log::info('message accessToken: ' . $httpClient);
                         \Log::info('message replyToken: ' . $replyToken);
 
                         // 分岐処理

@@ -93,3 +93,29 @@
 [2024-12-28 18:50:48] Act:.INFO: LineWebhookController replyDefault END  
 [2024-12-28 18:50:48] Act:.INFO: LineWebhookController message $userMessage = あ  
 [2024-12-28 18:50:48] Act:.INFO: LineWebhookController message END  
+[2024-12-28 18:56:02] Act:.INFO: LineWebhookController message START  
+[2024-12-28 18:56:02] Act:.INFO: message accessToken:   
+[2024-12-28 18:56:02] Act:.INFO: message replyToken: f1a2f681b9864175a53c013dc5322984  
+[2024-12-28 18:56:02] Act:.INFO: LineWebhookController replyDefault START  
+[2024-12-28 18:56:02] Act:.INFO: replyDefault Access Token:   
+[2024-12-28 18:56:02] Act:.INFO: LineWebhookController replyDefault Reply failed:   = {"message":"Authorization header required. Must follow the scheme, 'Authorization: Bearer <ACCESS TOKEN>'"}  
+[2024-12-28 18:56:02] Act:.INFO: LineWebhookController replyDefault Access Token:   =   
+[2024-12-28 18:56:02] Act:.INFO: LineWebhookController replyDefault HTTP Status:    = 401  
+[2024-12-28 18:56:02] Act:.INFO: LineWebhookController replyDefault Error Message:  = {"message":"Authorization header required. Must follow the scheme, 'Authorization: Bearer <ACCESS TOKEN>'"}  
+[2024-12-28 18:56:02] Act:.INFO: LineWebhookController replyDefault END  
+[2024-12-28 18:56:02] Act:.INFO: LineWebhookController message $userMessage = あの  
+[2024-12-28 18:56:02] Act:.INFO: LineWebhookController message END  
+[2024-12-28 18:58:46] Act:.INFO: LineWebhookController message START  
+[2024-12-28 18:58:46] Act:.INFO: LineWebhookController message END  
+[2024-12-28 19:03:57] Act:.INFO: LineWebhookController message START  
+[2024-12-28 19:05:06] Act:.INFO: LineWebhookController message START  
+[2024-12-28 19:05:06] Act:.INFO: message replyToken: b97cf29a5a49457da0b1dfa6af8c1f01  
+[2024-12-28 19:05:06] Act:.INFO: LineWebhookController replyDefault START  
+[2024-12-28 19:05:06] Act:.INFO: replyDefault Access Token:   
+[2024-12-28 19:05:06] Act:.INFO: LineWebhookController replyDefault Reply failed:   = {"message":"Authorization header required. Must follow the scheme, 'Authorization: Bearer <ACCESS TOKEN>'"}  
+[2024-12-28 19:05:06] Act:.INFO: LineWebhookController replyDefault Access Token:   =   
+[2024-12-28 19:05:06] Act:.INFO: LineWebhookController replyDefault HTTP Status:    = 401  
+[2024-12-28 19:05:06] Act:.INFO: LineWebhookController replyDefault Error Message:  = {"message":"Authorization header required. Must follow the scheme, 'Authorization: Bearer <ACCESS TOKEN>'"}  
+[2024-12-28 19:05:06] Act:.INFO: LineWebhookController replyDefault END  
+[2024-12-28 19:05:06] Act:.INFO: LineWebhookController message $userMessage = あ  
+[2024-12-28 19:05:06] Act:.INFO: LineWebhookController message END  

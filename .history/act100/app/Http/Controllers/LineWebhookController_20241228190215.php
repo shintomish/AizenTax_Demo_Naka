@@ -56,9 +56,8 @@ class LineWebhookController extends Controller
                         $replyToken = $event['replyToken'];
                         $userMessage = $event['message']['text'] ?? '';
 
-                        // \Log::info('message accessToken: ' . $httpClient);
+                        \Log::info('message accessToken: ' . $this->channelToken);
                         \Log::info('message replyToken: ' . $replyToken);
-
                         // 分岐処理
                         if (str_contains($userMessage, '価格')) {
                             $this->replyPriceQuery($replyToken);

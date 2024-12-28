@@ -36,6 +36,14 @@ class LineWebhookController extends Controller
     public function __construct()
     {
         // .envからアクセストークンを取得してプロパティに格納
+        $this->channelToken = env('LINE_CHANNEL_ACCESS_TOKEN');
+        $httpClient = new CurlHTTPClient(env('LINE_CHANNEL_ACCESS_TOKEN'));
+        $this->bot = new LINEBot($httpClient, ['channelSecret' => env('LINE_CHANNEL_SECRET')]);
+
+    }
+    public function __construct()
+    {
+        // .envからアクセストークンを取得してプロパティに格納
         $httpClient = new CurlHTTPClient(env('LINE_CHANNEL_ACCESS_TOKEN'));
         $this->bot = new LINEBot($httpClient, ['channelSecret' => env('LINE_CHANNEL_SECRET')]);
     }
@@ -56,9 +64,8 @@ class LineWebhookController extends Controller
                         $replyToken = $event['replyToken'];
                         $userMessage = $event['message']['text'] ?? '';
 
-                        // \Log::info('message accessToken: ' . $httpClient);
+                        \Log::info('message accessToken: ' . $this->channelToken);
                         \Log::info('message replyToken: ' . $replyToken);
-
                         // 分岐処理
                         if (str_contains($userMessage, '価格')) {
                             $this->replyPriceQuery($replyToken);
