@@ -32,8 +32,6 @@ use GuzzleHttp\Client;
 class LineWebhookController extends Controller
 {
     private $bot;
-    private $accessToken;
-    private $accessSecret;
 
     public function __construct()
     {
@@ -41,11 +39,9 @@ class LineWebhookController extends Controller
         // $httpClient = new CurlHTTPClient(env('LINE_CHANNEL_ACCESS_TOKEN'));
 
         // config() を使用
-        $this->accessToken = config('app.accessToken');
-        $this->accessSecret = config('app.secret');
-
-        $httpClient = new CurlHTTPClient($this->accessToken);
-        $this->bot = new LINEBot($httpClient, ['channelSecret' => $this->accessSecret]);
+        $accessToken = config('app.accessToken');
+        $httpClient = new CurlHTTPClient(accessToken);
+        $this->bot = new LINEBot($httpClient, ['channelSecret' => env('LINE_CHANNEL_SECRET')]);
     }
 
     //
@@ -141,7 +137,7 @@ class LineWebhookController extends Controller
 
         if (!$response->isSucceeded()) {
             Log::info('LineWebhookController replyPriceQuery Reply failed:   = ' . print_r($response->getRawBody(), true));
-            Log::info('LineWebhookController replyPriceQuery Access Token:   = ' . print_r($this->accessToken, true));
+            Log::info('LineWebhookController replyPriceQuery Access Token:   = ' . print_r(env('LINE_CHANNEL_ACCESS_TOKEN'), true));
             Log::info('LineWebhookController replyPriceQuery HTTP Status:    = ' . print_r($response->getHTTPStatus(), true));
             Log::info('LineWebhookController replyPriceQuery Error Message:  = ' . print_r($response->getRawBody(), true));
         } else {
@@ -173,7 +169,7 @@ class LineWebhookController extends Controller
 
         if (!$response->isSucceeded()) {
             Log::info('LineWebhookController replyNormalQuery Reply failed:   = ' . print_r($response->getRawBody(), true));
-            Log::info('LineWebhookController replyNormalQuery Access Token:   = ' . print_r($this->accessToken, true));
+            Log::info('LineWebhookController replyNormalQuery Access Token:   = ' . print_r(env('LINE_CHANNEL_ACCESS_TOKEN'), true));
             Log::info('LineWebhookController replyNormalQuery HTTP Status:    = ' . print_r($response->getHTTPStatus(), true));
             Log::info('LineWebhookController replyNormalQuery Error Message:  = ' . print_r($response->getRawBody(), true));
         } else {
@@ -187,14 +183,18 @@ class LineWebhookController extends Controller
     {
         Log::info('LineWebhookController replyDefault START');
 
-        \Log::info('replyDefault Access Token: ' . $this->accessToken);
+        // $accessToken = Config::get('LINE_CHANNEL_ACCESS_TOKEN');
+        // config() を使用
+        $accessToken = config('app.accessToken');
+
+        \Log::info('replyDefault Access Token: ' . $accessToken);
 
         $message = new TextMessageBuilder('申し訳ありませんが、そのリクエストには対応できません。');
 
         $response = $this->bot->replyMessage($replyToken, $message);
         if (!$response->isSucceeded()) {
             Log::info('LineWebhookController replyDefault Reply failed:   = ' . print_r($response->getRawBody(), true));
-            Log::info('LineWebhookController replyDefault Access Token:   = ' . print_r($this->accessToken, true));
+            Log::info('LineWebhookController replyDefault Access Token:   = ' . print_r($accessToken, true));
             Log::info('LineWebhookController replyDefault HTTP Status:    = ' . print_r($response->getHTTPStatus(), true));
             Log::info('LineWebhookController replyDefault Error Message:  = ' . print_r($response->getRawBody(), true));
         } else {
@@ -204,6 +204,7 @@ class LineWebhookController extends Controller
         Log::info('LineWebhookController replyDefault END');
 
     }
+
 
     private function replyPriceMessage($replyToken, $userMessage)
     {

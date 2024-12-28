@@ -205,6 +205,7 @@ class LineWebhookController extends Controller
 
     }
 
+
     private function replyPriceMessage($replyToken, $userMessage)
     {
         Log::info('LineWebhookController replyPriceMessage START');

@@ -187,7 +187,11 @@ class LineWebhookController extends Controller
     {
         Log::info('LineWebhookController replyDefault START');
 
-        \Log::info('replyDefault Access Token: ' . $this->accessToken);
+        // $accessToken = Config::get('LINE_CHANNEL_ACCESS_TOKEN');
+        // config() を使用
+        $accessToken = config('app.accessToken');
+
+        \Log::info('replyDefault Access Token: ' . $accessToken);
 
         $message = new TextMessageBuilder('申し訳ありませんが、そのリクエストには対応できません。');
 
@@ -204,6 +208,7 @@ class LineWebhookController extends Controller
         Log::info('LineWebhookController replyDefault END');
 
     }
+
 
     private function replyPriceMessage($replyToken, $userMessage)
     {

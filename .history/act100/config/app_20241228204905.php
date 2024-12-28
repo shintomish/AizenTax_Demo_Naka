@@ -10,9 +10,8 @@ return [
     |
     */
 
-    'accessToken' => env('LINE_CHANNEL_ACCESS_TOKEN', 'dumy_accessToken'),
-    'secret' => env('LINE_CHANNEL_SECRET', 'dumy_secret'),
-
+    'accessToken' => env('LINE_CHANNEL_ACCESS_TOKEN', 'dumy'),
+    'accessToken' => env('LINE_CHANNEL_SECRET', 'dumy'),
     /*
     |--------------------------------------------------------------------------
     | Application Name
