@@ -16,6 +16,8 @@ use App\Models\Line_Trial_Users;
 // use LINE\LINEBot\MessageBuilder\TemplateMessageBuilder;
 // use LINE\LINEBot\MessageBuilder\TemplateBuilder\ButtonTemplateBuilder;
 
+
+use Illuminate\Support\Facades\Config;
 use LINE\LINEBot;
 use LINE\LINEBot\HTTPClient\CurlHTTPClient;
 use LINE\LINEBot\MessageBuilder\TemplateMessageBuilder;
@@ -35,7 +37,10 @@ class LineWebhookController extends Controller
 
     public function __construct()
     {
-         // config() を使用
+        // .envからアクセストークンを取得してプロパティに格納
+        // $httpClient = new CurlHTTPClient(env('LINE_CHANNEL_ACCESS_TOKEN'));
+
+        // config() を使用
         $this->accessToken = config('app.accessToken');
         $this->accessSecret = config('app.secret');
 
@@ -62,6 +67,7 @@ class LineWebhookController extends Controller
                         $replyToken = $event['replyToken'];
                         $userMessage = $event['message']['text'] ?? '';
 
+                        // \Log::info('message accessToken: ' . $httpClient);
                         \Log::info('message replyToken: ' . $replyToken);
 
                         // 分岐処理
@@ -102,7 +108,7 @@ class LineWebhookController extends Controller
     {
         Log::info('LineWebhookController replyPriceQuery START');
 
-        $flexContent = [
+        $flexMessage = new FlexMessageBuilder('商品価格リスト', [
             'type' => 'bubble',
             'body' => [
                 'type' => 'box',
@@ -132,12 +138,9 @@ class LineWebhookController extends Controller
                     ]
                 ]
             ]
-        ];
+        ]);
 
-        // FlexMessageBuilderのインスタンスを生成
-        $flexMessage = new FlexMessageBuilder('商品価格リスト', $flexContent);
-
-        $response = $this->bot->replyMessage($replyToken, $flexMessage);
+        $response = $this->bot->replyMessage($replyToken, $templateMessage);
 
         if (!$response->isSucceeded()) {
             Log::info('LineWebhookController replyPriceQuery Reply failed:   = ' . print_r($response->getRawBody(), true));

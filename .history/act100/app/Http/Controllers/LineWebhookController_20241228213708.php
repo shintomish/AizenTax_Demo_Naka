@@ -102,42 +102,8 @@ class LineWebhookController extends Controller
     {
         Log::info('LineWebhookController replyPriceQuery START');
 
-        $flexContent = [
-            'type' => 'bubble',
-            'body' => [
-                'type' => 'box',
-                'layout' => 'vertical',
-                'contents' => [
-                    [
-                        'type' => 'text',
-                        'text' => '価格リスト',
-                        'weight' => 'bold',
-                        'size' => 'xl'
-                    ],
-                    [
-                        'type' => 'box',
-                        'layout' => 'vertical',
-                        'margin' => 'lg',
-                        'spacing' => 'sm',
-                        'contents' => [
-                            [
-                                'type' => 'text',
-                                'text' => '商品A: ¥1,000'
-                            ],
-                            [
-                                'type' => 'text',
-                                'text' => '商品B: ¥2,000'
-                            ]
-                        ]
-                    ]
-                ]
-            ]
-        ];
 
-        // FlexMessageBuilderのインスタンスを生成
-        $flexMessage = new FlexMessageBuilder('商品価格リスト', $flexContent);
 
-        $response = $this->bot->replyMessage($replyToken, $flexMessage);
 
         if (!$response->isSucceeded()) {
             Log::info('LineWebhookController replyPriceQuery Reply failed:   = ' . print_r($response->getRawBody(), true));

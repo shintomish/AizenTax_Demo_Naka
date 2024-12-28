@@ -102,6 +102,8 @@ class LineWebhookController extends Controller
     {
         Log::info('LineWebhookController replyPriceQuery START');
 
+        use LINE\LINEBot\MessageBuilder\FlexMessageBuilder;
+
         $flexContent = [
             'type' => 'bubble',
             'body' => [

@@ -102,6 +102,8 @@ class LineWebhookController extends Controller
     {
         Log::info('LineWebhookController replyPriceQuery START');
 
+        use LINE\LINEBot\MessageBuilder\FlexMessageBuilder;
+
         $flexContent = [
             'type' => 'bubble',
             'body' => [
@@ -138,6 +140,12 @@ class LineWebhookController extends Controller
         $flexMessage = new FlexMessageBuilder('商品価格リスト', $flexContent);
 
         $response = $this->bot->replyMessage($replyToken, $flexMessage);
+
+        if (!$response->isSucceeded()) {
+            \Log::error('Reply failed: ' . $response->getRawBody());
+        }
+
+
 
         if (!$response->isSucceeded()) {
             Log::info('LineWebhookController replyPriceQuery Reply failed:   = ' . print_r($response->getRawBody(), true));

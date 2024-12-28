@@ -102,7 +102,7 @@ class LineWebhookController extends Controller
     {
         Log::info('LineWebhookController replyPriceQuery START');
 
-        $flexContent = [
+        $flexMessage = new FlexMessageBuilder('商品価格リスト', [
             'type' => 'bubble',
             'body' => [
                 'type' => 'box',
@@ -132,10 +132,7 @@ class LineWebhookController extends Controller
                     ]
                 ]
             ]
-        ];
-
-        // FlexMessageBuilderのインスタンスを生成
-        $flexMessage = new FlexMessageBuilder('商品価格リスト', $flexContent);
+        ]);
 
         $response = $this->bot->replyMessage($replyToken, $flexMessage);
 

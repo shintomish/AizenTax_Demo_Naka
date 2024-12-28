@@ -16,6 +16,8 @@ use App\Models\Line_Trial_Users;
 // use LINE\LINEBot\MessageBuilder\TemplateMessageBuilder;
 // use LINE\LINEBot\MessageBuilder\TemplateBuilder\ButtonTemplateBuilder;
 
+
+use Illuminate\Support\Facades\Config;
 use LINE\LINEBot;
 use LINE\LINEBot\HTTPClient\CurlHTTPClient;
 use LINE\LINEBot\MessageBuilder\TemplateMessageBuilder;
@@ -102,7 +104,7 @@ class LineWebhookController extends Controller
     {
         Log::info('LineWebhookController replyPriceQuery START');
 
-        $flexContent = [
+        $flexMessage = new FlexMessageBuilder('商品価格リスト', [
             'type' => 'bubble',
             'body' => [
                 'type' => 'box',
@@ -132,10 +134,7 @@ class LineWebhookController extends Controller
                     ]
                 ]
             ]
-        ];
-
-        // FlexMessageBuilderのインスタンスを生成
-        $flexMessage = new FlexMessageBuilder('商品価格リスト', $flexContent);
+        ]);
 
         $response = $this->bot->replyMessage($replyToken, $flexMessage);
 
