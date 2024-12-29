@@ -159,7 +159,7 @@ class LineWebhookController extends Controller
         $buttonTemplate = new ButtonTemplateBuilder(
             'タイトル', // 最大40文字
             '説明文', // 最大160文字
-            'https://www.tax-trial.com/strage/app/public/sample.jpg', // HTTPS形式の有効な画像URL
+            'https://www.tax-trial.com/stragepublic/sample.jpg', // HTTPS形式の有効な画像URL
             [
                 new MessageTemplateActionBuilder('ボタン1', 'アクション1'), // ボタンの表示名とアクション内容
                 new UriTemplateActionBuilder('詳細はこちら', 'https://www.tax-trial.com') // ボタンの表示名とURL

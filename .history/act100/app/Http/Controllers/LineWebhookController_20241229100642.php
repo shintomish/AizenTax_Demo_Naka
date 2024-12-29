@@ -62,7 +62,7 @@ class LineWebhookController extends Controller
                         $replyToken = $event['replyToken'];
                         $userMessage = $event['message']['text'] ?? '';
 
-                        // \Log::info('message replyToken: ' . $replyToken);
+                        \Log::info('message replyToken: ' . $replyToken);
 
                         // 分岐処理
                         if (str_contains($userMessage, '価格')) {
@@ -159,7 +159,7 @@ class LineWebhookController extends Controller
         $buttonTemplate = new ButtonTemplateBuilder(
             'タイトル', // 最大40文字
             '説明文', // 最大160文字
-            'https://www.tax-trial.com/strage/app/public/sample.jpg', // HTTPS形式の有効な画像URL
+            'https://www.tax-trial.com/public/sample.jpg', // HTTPS形式の有効な画像URL
             [
                 new MessageTemplateActionBuilder('ボタン1', 'アクション1'), // ボタンの表示名とアクション内容
                 new UriTemplateActionBuilder('詳細はこちら', 'https://www.tax-trial.com') // ボタンの表示名とURL
@@ -188,7 +188,7 @@ class LineWebhookController extends Controller
     {
         Log::info('LineWebhookController replyDefault START');
 
-        // \Log::info('replyDefault Access Token: ' . $this->accessToken);
+        \Log::info('replyDefault Access Token: ' . $this->accessToken);
 
         $message = new TextMessageBuilder('申し訳ありませんが、そのリクエストには対応できません。');
 
