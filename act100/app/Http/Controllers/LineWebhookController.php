@@ -35,10 +35,12 @@ class LineWebhookController extends Controller
 
     public function __construct()
     {
-         // config() を使用
+         // config() を使用 rm -f bootstrap/cache/config.php
+        $this->lineChannelId = config('app.lineChannelId');
         $this->accessToken = config('app.accessToken');
         $this->accessSecret = config('app.secret');
 
+        // \Log::info('__construct lineChannelId: ' . $this->lineChannelId);
         // \Log::info('__construct Access Token: ' . $this->accessToken);
         // \Log::info('__construct Secret: ' . $this->accessSecret);
 
@@ -104,45 +106,57 @@ class LineWebhookController extends Controller
 
         // FlexメッセージのコンテンツをそのままJSONとして渡す
         $flexContent = [
-                "type" => "bubble",
-                "body" => [
-                    "type" => "box",
-                    "layout" => "vertical",
-                    "spacing" => "md",
-                    "contents" => [
-                        [
-                            "type" => "button",
-                            "style" => "primary",
-                            "action" => [
-                                "type" => "uri",
-                                "label" => "Primary style button",
-                                "uri" => "https://example.com"
-                            ]
-                        ],
-                        [
-                            "type" => "button",
-                            "style" => "secondary",
-                            "action" => [
-                                "type" => "uri",
-                                "label" => "Secondary style button",
-                                "uri" => "https://example.com"
-                            ]
-                        ],
-                        [
-                            "type" => "button",
-                            "style" => "link",
-                            "action" => [
-                                "type" => "uri",
-                                "label" => "Link style button",
-                                "uri" => "https://example.com"
-                            ]
+            "type" => "bubble",
+            "body" => [
+                "type" => "box",
+                "layout" => "vertical",
+                "spacing" => "md",
+                "contents" => [
+                    [
+                        "type" => "button",
+                        "style" => "primary",
+                        "action" => [
+                            "type" => "uri",
+                            "label" => "Primary style button",
+                            "uri" => "https://example.com"
+                        ]
+                    ],
+                    [
+                        "type" => "button",
+                        "style" => "secondary",
+                        "action" => [
+                            "type" => "uri",
+                            "label" => "Secondary style button",
+                            "uri" => "https://example.com"
+                        ]
+                    ],
+                    [
+                        "type" => "button",
+                        "style" => "link",
+                        "action" => [
+                            "type" => "uri",
+                            "label" => "Link style button",
+                            "uri" => "https://example.com"
                         ]
                     ]
                 ]
-            ];
+            ]
+        ];
+        // $post = [
+        //     "to" => Config::get("TESTLINEID"), //user id
+        //     "messages" => [
+        //         //ここに実装したいFlex Messageのコードを挿入
+        //     ],
+        // ];
 
+        $post = [
+            "to" => $this->lineChannelId, //user id
+            "messages" => $flexContent,
+        ];
+        $post = json_encode($post);
+            Log::info('LineWebhookController replyPriceQuery post:   = ' . print_r($post, true));
         // FlexMessageBuilderで正しいオブジェクトを渡す
-        $flexMessage = new FlexMessageBuilder('商品価格リスト', $flexContent);
+        $flexMessage = new FlexMessageBuilder('商品価格リスト', $post);
         $response = $this->bot->replyMessage($replyToken, $flexMessage);
         if (!$response->isSucceeded()) {
             Log::info('LineWebhookController replyPriceQuery Reply failed:   = ' . print_r($response->getRawBody(), true));

@@ -41,3 +41,16 @@
 [2024-12-29 11:07:15] Act:.INFO: LineWebhookController message START  
 [2024-12-29 11:07:15] Act:.INFO: LineWebhookController replyPriceQuery START  
 [2024-12-29 11:07:15] Act:.ERROR: Call to a member function build() on array {"exception":"[object] (Error(code: 0): Call to a member function build() on array at /var/www/html/actver/vendor/linecorp/line-bot-sdk/src/LINEBot/MessageBuilder/FlexMessageBuilder.php:142)
+[2024-12-29 14:33:34] Act:.INFO: LineWebhookController message START  
+[2024-12-29 14:33:34] Act:.INFO: LineWebhookController replyPriceQuery START  
+[2024-12-29 14:33:34] Act:.ERROR: Call to a member function build() on string {"exception":"[object] (Error(code: 0): Call to a member function build() on string at /var/www/html/actver/vendor/linecorp/line-bot-sdk/src/LINEBot/MessageBuilder/FlexMessageBuilder.php:142)
+[2024-12-29 14:35:50] Act:.INFO: LineWebhookController message START  
+[2024-12-29 14:35:50] Act:.INFO: LineWebhookController replyPriceQuery START  
+[2024-12-29 14:35:50] Act:.INFO: LineWebhookController replyPriceQuery post:   = {"to":null,"messages":{"type":"bubble","body":{"type":"box","layout":"vertical","spacing":"md","contents":[{"type":"button","style":"primary","action":{"type":"uri","label":"Primary style button","uri":"https:\/\/example.com"}},{"type":"button","style":"secondary","action":{"type":"uri","label":"Secondary style button","uri":"https:\/\/example.com"}},{"type":"button","style":"link","action":{"type":"uri","label":"Link style button","uri":"https:\/\/example.com"}}]}}}  
+[2024-12-29 14:48:17] Act:.INFO: __construct lineChannelId: 1654037870  
+[2024-12-29 14:48:17] Act:.INFO: __construct Access Token: mGSfOS83vgHBSgLKcir/BJcOyi3r/6mthVwmK/DGqhA5u9ZV5XkaG0tKp0mvgMR/5PdL0KDL2uOn98gP+53r8z9LjH6dN98ZEMcy5J8yW+nILOdFkBSrvprPllm9LPpTA6Z+H7HT7r54stfnTP3rsQdB04t89/1O/w1cDnyilFU=  
+[2024-12-29 14:48:17] Act:.INFO: __construct Secret: d7d8b977f85b671517e7377d7efdb858  
+[2024-12-29 14:48:17] Act:.INFO: LineWebhookController message START  
+[2024-12-29 14:48:17] Act:.INFO: LineWebhookController replyPriceQuery START  
+[2024-12-29 14:48:17] Act:.INFO: LineWebhookController replyPriceQuery post:   = {"to":"1654037870","messages":{"type":"bubble","body":{"type":"box","layout":"vertical","spacing":"md","contents":[{"type":"button","style":"primary","action":{"type":"uri","label":"Primary style button","uri":"https:\/\/example.com"}},{"type":"button","style":"secondary","action":{"type":"uri","label":"Secondary style button","uri":"https:\/\/example.com"}},{"type":"button","style":"link","action":{"type":"uri","label":"Link style button","uri":"https:\/\/example.com"}}]}}}  
+[2024-12-29 14:48:17] Act:.ERROR: Call to a member function build() on string {"exception":"[object] (Error(code: 0): Call to a member function build() on string at /var/www/html/actver/vendor/linecorp/line-bot-sdk/src/LINEBot/MessageBuilder/FlexMessageBuilder.php:142)

@@ -10,6 +10,7 @@ return [
     |
     */
 
+    'lineChannelId' => env('LINE_CHANNEL_ID'),
     'accessToken' => env('LINE_CHANNEL_ACCESS_TOKEN'),
     'secret' => env('LINE_CHANNEL_SECRET'),
 
