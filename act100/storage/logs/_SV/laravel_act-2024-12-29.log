@@ -50,3 +50,12 @@
 [2024-12-29 15:06:48] Act:.INFO: LineWebhookController replyPriceQuery END  
 [2024-12-29 15:06:48] Act:.INFO: LineWebhookController message $userMessage = 価格  
 [2024-12-29 15:06:48] Act:.INFO: LineWebhookController message END  
+[2024-12-29 15:09:46] Act:.INFO: LineWebhookController message START  
+[2024-12-29 15:09:46] Act:.INFO: LineWebhookController replyPriceQuery START  
+[2024-12-29 15:09:46] Act:.INFO: LineWebhookController replyPriceQuery Reply failed:   = {"message":"A message (messages[0]) in the request body is invalid","details":[{"message":"invalid property","property":"/direction"}]}  
+[2024-12-29 15:09:46] Act:.INFO: LineWebhookController replyPriceQuery Access Token:   = mGSfOS83vgHBSgLKcir/BJcOyi3r/6mthVwmK/DGqhA5u9ZV5XkaG0tKp0mvgMR/5PdL0KDL2uOn98gP+53r8z9LjH6dN98ZEMcy5J8yW+nILOdFkBSrvprPllm9LPpTA6Z+H7HT7r54stfnTP3rsQdB04t89/1O/w1cDnyilFU=  
+[2024-12-29 15:09:46] Act:.INFO: LineWebhookController replyPriceQuery HTTP Status:    = 400  
+[2024-12-29 15:09:46] Act:.INFO: LineWebhookController replyPriceQuery Error Message:  = {"message":"A message (messages[0]) in the request body is invalid","details":[{"message":"invalid property","property":"/direction"}]}  
+[2024-12-29 15:09:46] Act:.INFO: LineWebhookController replyPriceQuery END  
+[2024-12-29 15:09:46] Act:.INFO: LineWebhookController message $userMessage = 価格  
+[2024-12-29 15:09:46] Act:.INFO: LineWebhookController message END  
