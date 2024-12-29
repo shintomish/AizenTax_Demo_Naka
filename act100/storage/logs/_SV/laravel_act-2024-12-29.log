@@ -38,3 +38,6 @@
 [2024-12-29 11:05:12] Act:.INFO: LineWebhookController message START  
 [2024-12-29 11:05:12] Act:.INFO: LineWebhookController replyPriceQuery START  
 [2024-12-29 11:05:12] Act:.ERROR: Undefined variable $response {"exception":"[object] (ErrorException(code: 0): Undefined variable $response at /var/www/html/actver/app/Http/Controllers/LineWebhookController.php:148)
+[2024-12-29 11:07:15] Act:.INFO: LineWebhookController message START  
+[2024-12-29 11:07:15] Act:.INFO: LineWebhookController replyPriceQuery START  
+[2024-12-29 11:07:15] Act:.ERROR: Call to a member function build() on array {"exception":"[object] (Error(code: 0): Call to a member function build() on array at /var/www/html/actver/vendor/linecorp/line-bot-sdk/src/LINEBot/MessageBuilder/FlexMessageBuilder.php:142)
