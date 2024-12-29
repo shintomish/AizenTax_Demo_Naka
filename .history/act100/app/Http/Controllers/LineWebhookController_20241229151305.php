@@ -133,8 +133,7 @@ class LineWebhookController extends Controller
             ]
         );
 
-        // 第一引く数は、null
-        $bubble = new BubbleContainerBuilder(null, $contents);
+        $bubble = new BubbleContainerBuilder(, $contents);
 
         // FlexMessageBuilderに組み立てたコンテンツを渡す
         $flexMessage = new FlexMessageBuilder('商品価格リスト', $bubble);
