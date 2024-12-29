@@ -252,10 +252,10 @@ class LineWebhookController extends Controller
             Log::info('LineWebhookController replyPriceMessage HTTP Status:    = ' . print_r($response->getHTTPStatus(), true));
             Log::info('LineWebhookController replyPriceMessage Error Message:  = ' . print_r($response->getRawBody(), true));
         } else {
-            Log::info('LineWebhookController replyPriceMessage Reply succeeded: = ' . print_r($response->getHTTPStatus(), true));
+            Log::info('LineWebhookController replyNormalQuery Reply succeeded: = ' . print_r($response->getHTTPStatus(), true));
         }
 
-        Log::info('LineWebhookController replyPriceMessage END');
+        Log::info('LineWebhookController replyDefault END');
     }
 
     private function replyNormalMessage($replyToken)

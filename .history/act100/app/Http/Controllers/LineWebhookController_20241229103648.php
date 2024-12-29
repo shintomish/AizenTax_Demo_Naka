@@ -162,7 +162,7 @@ class LineWebhookController extends Controller
 
         $buttonTemplate = new ButtonTemplateBuilder(
             'タイトル', // 最大40文字
-            '説明文',   // 最大160文字
+            '説明文', // 最大160文字
             'https://www.tax-trial.com/storage/sample.jpg', // HTTPS形式の有効な画像URL
             [
                 new MessageTemplateActionBuilder('ボタン1', 'アクション1'), // ボタンの表示名とアクション内容
@@ -243,19 +243,9 @@ class LineWebhookController extends Controller
                 ],
             ],
         ];
-
-        // $this->sendReplyMessage($replyToken, $flexMessage);
-        $response = $this->bot->replyMessage($replyToken, $message);
-        if (!$response->isSucceeded()) {
-            Log::info('LineWebhookController replyPriceMessage Reply failed:   = ' . print_r($response->getRawBody(), true));
-            Log::info('LineWebhookController replyPriceMessage Access Token:   = ' . print_r($this->accessToken, true));
-            Log::info('LineWebhookController replyPriceMessage HTTP Status:    = ' . print_r($response->getHTTPStatus(), true));
-            Log::info('LineWebhookController replyPriceMessage Error Message:  = ' . print_r($response->getRawBody(), true));
-        } else {
-            Log::info('LineWebhookController replyPriceMessage Reply succeeded: = ' . print_r($response->getHTTPStatus(), true));
-        }
-
         Log::info('LineWebhookController replyPriceMessage END');
+
+        $this->sendReplyMessage($replyToken, $flexMessage);
     }
 
     private function replyNormalMessage($replyToken)

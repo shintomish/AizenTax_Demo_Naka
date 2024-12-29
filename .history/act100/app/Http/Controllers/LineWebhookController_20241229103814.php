@@ -247,15 +247,15 @@ class LineWebhookController extends Controller
         // $this->sendReplyMessage($replyToken, $flexMessage);
         $response = $this->bot->replyMessage($replyToken, $message);
         if (!$response->isSucceeded()) {
-            Log::info('LineWebhookController replyPriceMessage Reply failed:   = ' . print_r($response->getRawBody(), true));
-            Log::info('LineWebhookController replyPriceMessage Access Token:   = ' . print_r($this->accessToken, true));
-            Log::info('LineWebhookController replyPriceMessage HTTP Status:    = ' . print_r($response->getHTTPStatus(), true));
-            Log::info('LineWebhookController replyPriceMessage Error Message:  = ' . print_r($response->getRawBody(), true));
+            Log::info('LineWebhookController replyDefault Reply failed:   = ' . print_r($response->getRawBody(), true));
+            Log::info('LineWebhookController replyDefault Access Token:   = ' . print_r($this->accessToken, true));
+            Log::info('LineWebhookController replyDefault HTTP Status:    = ' . print_r($response->getHTTPStatus(), true));
+            Log::info('LineWebhookController replyDefault Error Message:  = ' . print_r($response->getRawBody(), true));
         } else {
-            Log::info('LineWebhookController replyPriceMessage Reply succeeded: = ' . print_r($response->getHTTPStatus(), true));
+            Log::info('LineWebhookController replyNormalQuery Reply succeeded: = ' . print_r($response->getHTTPStatus(), true));
         }
 
-        Log::info('LineWebhookController replyPriceMessage END');
+        Log::info('LineWebhookController replyDefault END');
     }
 
     private function replyNormalMessage($replyToken)
