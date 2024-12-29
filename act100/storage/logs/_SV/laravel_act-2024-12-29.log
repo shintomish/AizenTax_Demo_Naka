@@ -68,3 +68,27 @@
 [2024-12-29 15:12:29] Act:.INFO: LineWebhookController replyPriceQuery END  
 [2024-12-29 15:12:29] Act:.INFO: LineWebhookController message $userMessage = 価格  
 [2024-12-29 15:12:29] Act:.INFO: LineWebhookController message END  
+[2024-12-29 15:14:28] Act:.INFO: LineWebhookController message START  
+[2024-12-29 15:14:28] Act:.INFO: LineWebhookController replyPriceQuery START  
+[2024-12-29 15:14:28] Act:.INFO: LineWebhookController replyPriceQuery Reply succeeded: = 200  
+[2024-12-29 15:14:28] Act:.INFO: LineWebhookController replyPriceQuery END  
+[2024-12-29 15:14:28] Act:.INFO: LineWebhookController message $userMessage = 価格  
+[2024-12-29 15:14:28] Act:.INFO: LineWebhookController message END  
+[2024-12-29 15:14:45] Act:.INFO: LineWebhookController message START  
+[2024-12-29 15:14:45] Act:.INFO: LineWebhookController replyNormalQuery START  
+[2024-12-29 15:14:46] Act:.INFO: LineWebhookController replyNormalQuery Reply succeeded: = 200  
+[2024-12-29 15:14:46] Act:.INFO: LineWebhookController replyNormalQuery END  
+[2024-12-29 15:14:46] Act:.INFO: LineWebhookController message $userMessage = 問い合わせ  
+[2024-12-29 15:14:46] Act:.INFO: LineWebhookController message END  
+[2024-12-29 15:14:55] Act:.INFO: LineWebhookController message START  
+[2024-12-29 15:14:55] Act:.INFO: LineWebhookController replyDefault START  
+[2024-12-29 15:14:55] Act:.INFO: LineWebhookController replyNormalQuery Reply succeeded: = 200  
+[2024-12-29 15:14:55] Act:.INFO: LineWebhookController replyDefault END  
+[2024-12-29 15:14:55] Act:.INFO: LineWebhookController message $userMessage = か  
+[2024-12-29 15:14:55] Act:.INFO: LineWebhookController message END  
+[2024-12-29 15:17:18] Act:.INFO: LineWebhookController message START  
+[2024-12-29 15:17:18] Act:.INFO: LineWebhookController replyPriceQuery START  
+[2024-12-29 15:17:18] Act:.INFO: LineWebhookController replyPriceQuery Reply succeeded: = 200  
+[2024-12-29 15:17:18] Act:.INFO: LineWebhookController replyPriceQuery END  
+[2024-12-29 15:17:18] Act:.INFO: LineWebhookController message $userMessage = 価格  
+[2024-12-29 15:17:18] Act:.INFO: LineWebhookController message END  
