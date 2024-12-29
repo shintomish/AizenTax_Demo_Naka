@@ -118,16 +118,16 @@ class LineWebhookController extends Controller
                     [
                         new TextComponentBuilder('商品A: ¥1,000'),
                         new SeparatorComponentBuilder(),
-                        new TextComponentBuilder('商品B: ¥2,000')
+                        new TextComponentBuilder('apple')
                     ]
                 ),
                 new SeparatorComponentBuilder(),
                 new BoxComponentBuilder(
                     'horizontal',
                     [
-                        new TextComponentBuilder('商品C: ¥3,000'),
+                        new TextComponentBuilder('grape'),
                         new SeparatorComponentBuilder(),
-                        new TextComponentBuilder('商品D: ¥4,000')
+                        new TextComponentBuilder('lemon')
                     ]
                 )
             ]

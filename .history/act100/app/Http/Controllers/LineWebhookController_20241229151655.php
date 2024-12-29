@@ -127,7 +127,7 @@ class LineWebhookController extends Controller
                     [
                         new TextComponentBuilder('商品C: ¥3,000'),
                         new SeparatorComponentBuilder(),
-                        new TextComponentBuilder('商品D: ¥4,000')
+                        new TextComponentBuilder('lemon')
                     ]
                 )
             ]
