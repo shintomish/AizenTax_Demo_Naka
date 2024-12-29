@@ -109,36 +109,36 @@ class LineWebhookController extends Controller
     {
         Log::info('LineWebhookController replyPriceQuery START');
 
-        // Flexメッセージのコンテンツを組み立て
-        $contents = new BoxComponentBuilder(
-            'vertical',
-            [
-                new BoxComponentBuilder(
-                    'horizontal',
-                    [
-                        new TextComponentBuilder('orange'),
-                        new SeparatorComponentBuilder(),
-                        new TextComponentBuilder('apple')
-                    ]
-                ),
-                new SeparatorComponentBuilder(),
-                new BoxComponentBuilder(
-                    'horizontal',
-                    [
-                        new TextComponentBuilder('grape'),
-                        new SeparatorComponentBuilder(),
-                        new TextComponentBuilder('lemon')
-                    ]
-                )
-            ]
-        );
+    // Flexメッセージのコンテンツを組み立て
+    $contents = new BoxComponentBuilder(
+        'vertical',
+        [
+            new BoxComponentBuilder(
+                'horizontal',
+                [
+                    new TextComponentBuilder('orange'),
+                    new SeparatorComponentBuilder(),
+                    new TextComponentBuilder('apple')
+                ]
+            ),
+            new SeparatorComponentBuilder(),
+            new BoxComponentBuilder(
+                'horizontal',
+                [
+                    new TextComponentBuilder('grape'),
+                    new SeparatorComponentBuilder(),
+                    new TextComponentBuilder('lemon')
+                ]
+            )
+        ]
+    );
 
-        $bubble = new BubbleContainerBuilder('商品価格リスト', $contents);
+    $bubble = new BubbleContainerBuilder(null, $contents);
 
-        // FlexMessageBuilderに組み立てたコンテンツを渡す
-        $flexMessage = new FlexMessageBuilder('商品価格リスト', $bubble);
+    // FlexMessageBuilderに組み立てたコンテンツを渡す
+    $flexMessage = new FlexMessageBuilder('商品価格リスト', $bubble);
 
-        $response = $this->bot->replyMessage($replyToken, $flexMessage);
+    $response = $this->bot->replyMessage($replyToken, $flexMessage);        $response = $this->bot->replyMessage($replyToken, $flexMessage);
         if (!$response->isSucceeded()) {
             Log::info('LineWebhookController replyPriceQuery Reply failed:   = ' . print_r($response->getRawBody(), true));
             Log::info('LineWebhookController replyPriceQuery Access Token:   = ' . print_r($this->accessToken, true));

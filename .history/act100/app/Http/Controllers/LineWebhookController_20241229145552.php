@@ -25,11 +25,6 @@ use LINE\LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder;
 use LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder;
 use LINE\LINEBot\MessageBuilder\TemplateBuilder\ButtonTemplateBuilder;
 
-use LINE\LINEBot\MessageBuilder\Flex\ContainerBuilder\BubbleContainerBuilder;
-use LINE\LINEBot\MessageBuilder\Flex\ComponentBuilder\BoxComponentBuilder;
-use LINE\LINEBot\MessageBuilder\Flex\ComponentBuilder\TextComponentBuilder;
-use LINE\LINEBot\MessageBuilder\Flex\ComponentBuilder\SeparatorComponentBuilder;
-
 use GuzzleHttp\Client;
 
 class LineWebhookController extends Controller
@@ -109,35 +104,49 @@ class LineWebhookController extends Controller
     {
         Log::info('LineWebhookController replyPriceQuery START');
 
-        // Flexメッセージのコンテンツを組み立て
-        $contents = new BoxComponentBuilder(
-            'vertical',
-            [
-                new BoxComponentBuilder(
-                    'horizontal',
+        // FlexメッセージのコンテンツをそのままJSONとして渡す
+        $flexContent = [
+            "type" => "bubble",
+            "body" => [
+                "type" => "box",
+                "layout" => "vertical",
+                "spacing" => "md",
+                "contents" => [
                     [
-                        new TextComponentBuilder('orange'),
-                        new SeparatorComponentBuilder(),
-                        new TextComponentBuilder('apple')
-                    ]
-                ),
-                new SeparatorComponentBuilder(),
-                new BoxComponentBuilder(
-                    'horizontal',
+                        "type" => "button",
+                        "style" => "primary",
+                        "action" => [
+                            "type" => "uri",
+                            "label" => "Primary style button",
+                            "uri" => "https://example.com"
+                        ]
+                    ],
                     [
-                        new TextComponentBuilder('grape'),
-                        new SeparatorComponentBuilder(),
-                        new TextComponentBuilder('lemon')
+                        "type" => "button",
+                        "style" => "secondary",
+                        "action" => [
+                            "type" => "uri",
+                            "label" => "Secondary style button",
+                            "uri" => "https://example.com"
+                        ]
+                    ],
+                    [
+                        "type" => "button",
+                        "style" => "link",
+                        "action" => [
+                            "type" => "uri",
+                            "label" => "Link style button",
+                            "uri" => "https://example.com"
+                        ]
                     ]
-                )
+                ]
             ]
-        );
+        ];
 
-        $bubble = new BubbleContainerBuilder('商品価格リスト', $contents);
-
-        // FlexMessageBuilderに組み立てたコンテンツを渡す
-        $flexMessage = new FlexMessageBuilder('商品価格リスト', $bubble);
-
+        $post = json_encode($flexContent);
+            Log::info('LineWebhookController replyPriceQuery post:   = ' . print_r($post, true));
+        // FlexMessageBuilderで正しいオブジェクトを渡す
+        $flexMessage = new FlexMessageBuilder('商品価格リスト', $post);
         $response = $this->bot->replyMessage($replyToken, $flexMessage);
         if (!$response->isSucceeded()) {
             Log::info('LineWebhookController replyPriceQuery Reply failed:   = ' . print_r($response->getRawBody(), true));
