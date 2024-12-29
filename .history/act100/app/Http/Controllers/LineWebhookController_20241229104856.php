@@ -105,46 +105,40 @@ class LineWebhookController extends Controller
 
         // FlexメッセージのコンテンツをそのままJSONとして渡す
         $flexContent = [
-                "type" => "bubble",
-                "body" => [
-                    "type" => "box",
-                    "layout" => "vertical",
-                    "spacing" => "md",
-                    "contents" => [
-                        [
-                            "type" => "button",
-                            "style" => "primary",
-                            "action" => [
-                                "type" => "uri",
-                                "label" => "Primary style button",
-                                "uri" => "https://example.com"
-                            ]
-                        ],
-                        [
-                            "type" => "button",
-                            "style" => "secondary",
-                            "action" => [
-                                "type" => "uri",
-                                "label" => "Secondary style button",
-                                "uri" => "https://example.com"
-                            ]
-                        ],
-                        [
-                            "type" => "button",
-                            "style" => "link",
-                            "action" => [
-                                "type" => "uri",
-                                "label" => "Link style button",
-                                "uri" => "https://example.com"
+            'type' => 'bubble',
+            'body' => [
+                'type' => 'box',
+                'layout' => 'vertical',
+                'contents' => [
+                    [
+                        'type' => 'text',
+                        'text' => '価格リスト',
+                        'weight' => 'bold',
+                        'size' => 'xl'
+                    ],
+                    [
+                        'type' => 'box',
+                        'layout' => 'vertical',
+                        'margin' => 'lg',
+                        'spacing' => 'sm',
+                        'contents' => [
+                            [
+                                'type' => 'text',
+                                'text' => '商品A: ¥1,000'
+                            ],
+                            [
+                                'type' => 'text',
+                                'text' => '商品B: ¥2,000'
                             ]
                         ]
                     ]
                 ]
-            ];
+            ]
+        ];
 
-        // FlexMessageBuilderで正しいオブジェクトを渡す
-        $flexMessage = new FlexMessageBuilder('商品価格リスト', $flexContent);
-        $response = $this->bot->replyMessage($replyToken, $flexMessage);
+    // FlexMessageBuilderで正しいオブジェクトを渡す
+    $flexMessage = new FlexMessageBuilder('商品価格リスト', $flexContent);
+
         if (!$response->isSucceeded()) {
             Log::info('LineWebhookController replyPriceQuery Reply failed:   = ' . print_r($response->getRawBody(), true));
             Log::info('LineWebhookController replyPriceQuery Access Token:   = ' . print_r($this->accessToken, true));

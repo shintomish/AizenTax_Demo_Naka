@@ -26,3 +26,15 @@
 [2024-12-29 10:29:55] Act:.INFO: LineWebhookController message START  
 [2024-12-29 10:29:55] Act:.INFO: LineWebhookController replyPriceQuery START  
 [2024-12-29 10:29:55] Act:.ERROR: Call to a member function build() on array {"exception":"[object] (Error(code: 0): Call to a member function build() on array at /var/www/html/actver/vendor/linecorp/line-bot-sdk/src/LINEBot/MessageBuilder/FlexMessageBuilder.php:142)
+[2024-12-29 10:40:09] Act:.INFO: LineWebhookController message START  
+[2024-12-29 10:40:09] Act:.INFO: LineWebhookController replyPriceQuery START  
+[2024-12-29 10:40:09] Act:.ERROR: Call to undefined method stdClass::build() {"exception":"[object] (Error(code: 0): Call to undefined method stdClass::build() at /var/www/html/actver/vendor/linecorp/line-bot-sdk/src/LINEBot/MessageBuilder/FlexMessageBuilder.php:142)
+[2024-12-29 10:44:06] Act:.INFO: LineWebhookController message START  
+[2024-12-29 10:44:06] Act:.INFO: LineWebhookController replyPriceQuery START  
+[2024-12-29 10:44:06] Act:.ERROR: json_decode(): Argument #1 ($json) must be of type string, array given {"exception":"[object] (TypeError(code: 0): json_decode(): Argument #1 ($json) must be of type string, array given at /var/www/html/actver/app/Http/Controllers/LineWebhookController.php:143)
+[2024-12-29 10:45:25] Act:.INFO: LineWebhookController message START  
+[2024-12-29 10:45:25] Act:.INFO: LineWebhookController replyPriceQuery START  
+[2024-12-29 10:45:25] Act:.ERROR: Call to a member function build() on string {"exception":"[object] (Error(code: 0): Call to a member function build() on string at /var/www/html/actver/vendor/linecorp/line-bot-sdk/src/LINEBot/MessageBuilder/FlexMessageBuilder.php:142)
+[2024-12-29 11:05:12] Act:.INFO: LineWebhookController message START  
+[2024-12-29 11:05:12] Act:.INFO: LineWebhookController replyPriceQuery START  
+[2024-12-29 11:05:12] Act:.ERROR: Undefined variable $response {"exception":"[object] (ErrorException(code: 0): Undefined variable $response at /var/www/html/actver/app/Http/Controllers/LineWebhookController.php:148)
