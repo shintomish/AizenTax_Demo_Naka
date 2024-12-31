@@ -1,0 +1,9 @@
+[2024-12-31 13:08:47] Act:.INFO: LineWebhookController message START  
+[2024-12-31 13:08:47] Act:.INFO: LineWebhookController replyNormalQuery START  
+[2024-12-31 13:08:47] Act:.INFO: LineWebhookController replyNormalQuery Reply failed:   = {"message":"A message (messages[0]) in the request body is invalid","details":[{"message":"must not be more than 4 items","property":"template/actions"}]}  
+[2024-12-31 13:08:47] Act:.INFO: LineWebhookController replyNormalQuery Access Token:   = mGSfOS83vgHBSgLKcir/BJcOyi3r/6mthVwmK/DGqhA5u9ZV5XkaG0tKp0mvgMR/5PdL0KDL2uOn98gP+53r8z9LjH6dN98ZEMcy5J8yW+nILOdFkBSrvprPllm9LPpTA6Z+H7HT7r54stfnTP3rsQdB04t89/1O/w1cDnyilFU=  
+[2024-12-31 13:08:47] Act:.INFO: LineWebhookController replyNormalQuery HTTP Status:    = 400  
+[2024-12-31 13:08:47] Act:.INFO: LineWebhookController replyNormalQuery Error Message:  = {"message":"A message (messages[0]) in the request body is invalid","details":[{"message":"must not be more than 4 items","property":"template/actions"}]}  
+[2024-12-31 13:08:47] Act:.INFO: LineWebhookController replyNormalQuery END  
+[2024-12-31 13:08:47] Act:.INFO: LineWebhookController message $userMessage = 問い合わせ  
+[2024-12-31 13:08:47] Act:.INFO: LineWebhookController message END  

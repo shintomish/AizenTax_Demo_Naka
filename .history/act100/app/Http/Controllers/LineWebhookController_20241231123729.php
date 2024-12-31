@@ -111,26 +111,22 @@ class LineWebhookController extends Controller
 
         // Flexメッセージのコンテンツを組み立て
         $contents = new BoxComponentBuilder(
-            'vertical',
-            [
-                new BoxComponentBuilder(
-                    'horizontal',
-                    [
-                        new TextComponentBuilder('商品A: ¥1,000'),
-                        new SeparatorComponentBuilder(),
-                        new TextComponentBuilder('商品B: ¥2,000')
-                    ]
-                ),
-                new SeparatorComponentBuilder(),
-                new BoxComponentBuilder(
-                    'horizontal',
-                    [
-                        new TextComponentBuilder('商品C: ¥3,000'),
-                        new SeparatorComponentBuilder(),
-                        new TextComponentBuilder('商品D: ¥4,000')
-                    ]
-                )
-            ]
+            "body": {
+              // 2
+              "type": "box", // 3
+              "layout": "horizontal", // 4
+              "contents": [
+                // 5
+                {
+                  "type": "text", // 6
+                  "text": "Hello,"
+                },
+                {
+                  "type": "text", // 6
+                  "text": "World!"
+                }
+              ]
+            }
         );
 
         // 第一引数は、null
@@ -157,21 +153,16 @@ class LineWebhookController extends Controller
         Log::info('LineWebhookController replyNormalQuery START');
 
         $buttonTemplate = new ButtonTemplateBuilder(
-            'FAQ／よくあるご質問', // 最大40文字
+            'タイトル', // 最大40文字
             '説明文',   // 最大160文字
             'https://www.tax-trial.com/storage/sample.jpg', // HTTPS形式の有効な画像URL
             [
-                new MessageTemplateActionBuilder('ご注文について', 'アクション1'),          // ボタンの表示名とアクション内容
-                // new MessageTemplateActionBuilder('配送について', 'アクション2'),            // ボタンの表示名とアクション内容
-                // new MessageTemplateActionBuilder('価格について', 'アクション3'),            // ボタンの表示名とアクション内容
-                // new MessageTemplateActionBuilder('返品・交換について', 'アクション4'),      // ボタンの表示名とアクション内容
-                // new MessageTemplateActionBuilder('店舗について', 'アクション5'),            // ボタンの表示名とアクション内容
-                // new MessageTemplateActionBuilder('お問い合わせフォーム', 'アクション6'),    // ボタンの表示名とアクション内容
-                new UriTemplateActionBuilder('詳細はこちら', 'https://www.tax-trial.com')   // ボタンの表示名とURL
+                new MessageTemplateActionBuilder('ボタン1', 'アクション1'), // ボタンの表示名とアクション内容
+                new UriTemplateActionBuilder('詳細はこちら', 'https://www.tax-trial.com') // ボタンの表示名とURL
             ]
         );
 
-        $templateMessage = new TemplateMessageBuilder('FAQ／よくあるご質問', $buttonTemplate);
+        $templateMessage = new TemplateMessageBuilder('こちらはボタンテンプレートです', $buttonTemplate);
 
         // Log::info('LineWebhookController replyNormalQuery templateMessage:  = ' . print_r($templateMessage, true));
 

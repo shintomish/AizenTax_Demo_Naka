@@ -161,17 +161,17 @@ class LineWebhookController extends Controller
             '説明文',   // 最大160文字
             'https://www.tax-trial.com/storage/sample.jpg', // HTTPS形式の有効な画像URL
             [
-                new MessageTemplateActionBuilder('ご注文について', 'アクション1'),          // ボタンの表示名とアクション内容
-                // new MessageTemplateActionBuilder('配送について', 'アクション2'),            // ボタンの表示名とアクション内容
-                // new MessageTemplateActionBuilder('価格について', 'アクション3'),            // ボタンの表示名とアクション内容
-                // new MessageTemplateActionBuilder('返品・交換について', 'アクション4'),      // ボタンの表示名とアクション内容
-                // new MessageTemplateActionBuilder('店舗について', 'アクション5'),            // ボタンの表示名とアクション内容
-                // new MessageTemplateActionBuilder('お問い合わせフォーム', 'アクション6'),    // ボタンの表示名とアクション内容
-                new UriTemplateActionBuilder('詳細はこちら', 'https://www.tax-trial.com')   // ボタンの表示名とURL
+                new MessageTemplateActionBuilder('ご注文について', 'アクション1'),      // ボタンの表示名とアクション内容
+                new MessageTemplateActionBuilder('配送について', 'アクション2'),        // ボタンの表示名とアクション内容
+                new MessageTemplateActionBuilder('価格について', 'アクション3'), // ボタンの表示名とアクション内容
+                new MessageTemplateActionBuilder('返品・交換について', 'アクション4'), // ボタンの表示名とアクション内容
+                new MessageTemplateActionBuilder('店舗について', 'アクション5'), // ボタンの表示名とアクション内容
+                new MessageTemplateActionBuilder('お問い合わせフォーム', 'アクション6'), // ボタンの表示名とアクション内容
+                new UriTemplateActionBuilder('詳細はこちら', 'https://www.tax-trial.com') // ボタンの表示名とURL
             ]
         );
 
-        $templateMessage = new TemplateMessageBuilder('FAQ／よくあるご質問', $buttonTemplate);
+        $templateMessage = new TemplateMessageBuilder('こちらはボタンテンプレートです', $buttonTemplate);
 
         // Log::info('LineWebhookController replyNormalQuery templateMessage:  = ' . print_r($templateMessage, true));
 
