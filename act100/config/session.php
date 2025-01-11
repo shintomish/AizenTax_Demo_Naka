@@ -168,8 +168,8 @@ return [
     |
     */
 
-    'secure' => env('SESSION_SECURE_COOKIE'),
-
+    'secure' => env('SESSION_SECURE_COOKIE', true), // 2025/01/08 true 追加
+    
     /*
     |--------------------------------------------------------------------------
     | HTTP Access Only
