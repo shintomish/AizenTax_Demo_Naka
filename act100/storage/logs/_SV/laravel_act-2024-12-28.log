@@ -234,3 +234,10 @@
 [2024-12-28 21:44:47] Act:.INFO: LineWebhookController replyPriceMessage END  
 [2024-12-28 21:44:47] Act:.INFO: LineWebhookController message $userMessage = 価格 シャンプー  
 [2024-12-28 21:44:47] Act:.INFO: LineWebhookController message END  
+[2024-12-28 21:48:33] Act:.INFO: LineWebhookController message START  
+[2024-12-28 21:48:33] Act:.INFO: message replyToken: 1200444058d6495faee1b4d71934cbd0  
+[2024-12-28 21:48:33] Act:.INFO: LineWebhookController replyNormalQuery START  
+[2024-12-28 21:48:34] Act:.INFO: LineWebhookController replyNormalQuery HTTP Status:    = 200  
+[2024-12-28 21:48:34] Act:.INFO: LineWebhookController replyNormalQuery END  
+[2024-12-28 21:48:34] Act:.INFO: LineWebhookController message $userMessage = 問い合わせ  
+[2024-12-28 21:48:34] Act:.INFO: LineWebhookController message END  
