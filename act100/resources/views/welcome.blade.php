@@ -59,7 +59,7 @@
                 <div class='container'>
                     <div class='panel panel-default'>
                         <div class='panel-heading text-center panel-relative'>
-                            {{-- <h1 class="h3 mb-3 fw-normal"><i class="fas fa-globe"></i></h1> --}}
+                            {{-- <h1 class="h3 mb-3 fw-normal"><i class="fas fa-globe"></i>Lc-Aizen-Tax</h1> --}}
                             <h1 class="h3 mb-3 fw-normal"><i class="fas fa-globe"></i> {{ config('app.name', 'Laravel') }} </h1>
                         </div>
                     </div>
@@ -79,6 +79,6 @@
         </div>
     </body>
 
-    <p class="mt-5 mb-3 text-muted">AizenSolution Inc &copy; 2011-2024</p>
+    <p class="mt-5 mb-3 text-muted">Aizensolution Inc &copy; 2011-2025</p>
 
 @endsection
