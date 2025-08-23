@@ -1,0 +1,24 @@
+<?php
+
+namespace Database\Seeders;
+
+use App\Models\Item;
+use App\Models\Team;
+use App\Models\User;
+use App\Models\Address;
+use Illuminate\Database\Seeder;
+
+class DatabaseSeeder extends Seeder
+{
+    /**
+     * Seed the application's database.
+     *
+     * @return void
+     */
+    public function run()
+    {
+//         User::factory(10)->create();
+        // 省略
+        $this->call(AnnouncementsTableSeeder::class);
+    }
+}
