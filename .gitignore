@@ -17,3 +17,23 @@ yarn-error.log
 /.fleet
 /.idea
 /.vscode
+
+# キャッシュやビルド成果物
+/vendor/
+/node_modules/
+/storage/framework/cache/*
+/storage/framework/sessions/*
+/storage/framework/views/*
+/bootstrap/cache/*
+
+# OS / エディタの不要ファイル
+.DS_Store
+Thumbs.db
+*.log
+
+# その他生成物
+*.xlsx
+*.zip
+*.gz
+
+/build/
