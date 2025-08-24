@@ -1,21 +1,58 @@
-[2025-08-23 13:19:56] Act:.ERROR: require(/var/www/html/routes/channels.php): Failed to open stream: No such file or directory {"exception":"[object] (ErrorException(code: 0): require(/var/www/html/routes/channels.php): Failed to open stream: No such file or directory at /var/www/html/app/Providers/BroadcastServiceProvider.php:17)
-[stacktrace]
-#0 /var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(250): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError()
-#1 /var/www/html/app/Providers/BroadcastServiceProvider.php(17): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->Illuminate\\Foundation\\Bootstrap\\{closure}()
-#2 /var/www/html/app/Providers/BroadcastServiceProvider.php(17): require('...')
-#3 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): App\\Providers\\BroadcastServiceProvider->boot()
-#4 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/Util.php(41): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
-#5 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure()
-#6 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(35): Illuminate\\Container\\BoundMethod::callBoundMethod()
-#7 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/Container.php(661): Illuminate\\Container\\BoundMethod::call()
-#8 /var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1006): Illuminate\\Container\\Container->call()
-#9 /var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(987): Illuminate\\Foundation\\Application->bootProvider()
-#10 [internal function]: Illuminate\\Foundation\\Application->Illuminate\\Foundation\\{closure}()
-#11 /var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(986): array_walk()
-#12 /var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/BootProviders.php(17): Illuminate\\Foundation\\Application->boot()
-#13 /var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(261): Illuminate\\Foundation\\Bootstrap\\BootProviders->bootstrap()
-#14 /var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(383): Illuminate\\Foundation\\Application->bootstrapWith()
-#15 /var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(153): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
-#16 /var/www/html/artisan(35): Illuminate\\Foundation\\Console\\Kernel->handle()
-#17 {main}
-"} 
+[2025-08-23 08:59:36] Act:.INFO: auth_user_info START  
+[2025-08-23 08:59:36] Act:.INFO: auth_user_info END  
+[2025-08-23 08:59:36] Act:.INFO: auth login redirectTo user = stdClass Object
+(
+    [id] => 1
+    [name] => 新冨泰明
+    [email] => shintomi.sh@gmail.com
+    [email_verified_at] => 
+    [organization_id] => 0
+    [user_id] => 1
+    [login_flg] => 2
+    [admin_flg] => 2
+    [created_at] => 2022-10-20T03:00:00.000000Z
+    [updated_at] => 2022-10-20T03:00:00.000000Z
+    [deleted_at] => 
+)
+  
+[2025-08-23 08:59:36] Act:.INFO: loginout operation update START  
+[2025-08-23 08:59:36] Act:.INFO: loginout operation update $id < 10 END  
+[2025-08-23 08:59:36] Act:.INFO: auth_user_info START  
+[2025-08-23 08:59:36] Act:.INFO: auth_user_info END  
+[2025-08-23 08:59:36] Act:.INFO: office top index START $user->name = 新冨泰明  
+[2025-08-23 08:59:36] Act:.INFO: auth_user_organization START  
+[2025-08-23 08:59:36] Act:.INFO: auth_user_organization END  
+[2025-08-23 08:59:36] Act:.INFO: office top index END $user->name = 新冨泰明  
+[2025-08-23 08:59:38] Act:.INFO: customer index START  
+[2025-08-23 08:59:38] Act:.INFO: auth_user_organization START  
+[2025-08-23 08:59:38] Act:.INFO: auth_user_organization END  
+[2025-08-23 08:59:38] Act:.INFO: customer index END  
+[2025-08-23 08:59:41] Act:.INFO: customer edit START  
+[2025-08-23 08:59:41] Act:.INFO: auth_user_organization START  
+[2025-08-23 08:59:41] Act:.INFO: auth_user_organization END  
+[2025-08-23 08:59:41] Act:.INFO: customer edit END  
+[2025-08-23 08:59:49] Act:.INFO: customer update START  
+[2025-08-23 08:59:49] Act:.INFO: beginTransaction - customer update start  
+[2025-08-23 08:59:49] Act:.INFO: beginTransaction - customer update end(commit)  
+[2025-08-23 08:59:49] Act:.INFO: customer update END  
+[2025-08-23 08:59:49] Act:.INFO: customer index START  
+[2025-08-23 08:59:49] Act:.INFO: auth_user_organization START  
+[2025-08-23 08:59:49] Act:.INFO: auth_user_organization END  
+[2025-08-23 08:59:49] Act:.INFO: customer index END  
+[2025-08-23 09:00:44] Act:.INFO: auth logout redirectTo user = stdClass Object
+(
+    [id] => 1
+    [name] => 新冨泰明
+    [email] => shintomi.sh@gmail.com
+    [email_verified_at] => 
+    [organization_id] => 0
+    [user_id] => 1
+    [login_flg] => 2
+    [admin_flg] => 2
+    [created_at] => 2022-10-20T03:00:00.000000Z
+    [updated_at] => 2022-10-20T03:00:00.000000Z
+    [deleted_at] => 
+)
+  
+[2025-08-23 09:00:44] Act:.INFO: loginout operation update START  
+[2025-08-23 09:00:44] Act:.INFO: loginout operation update $id < 10 END  
