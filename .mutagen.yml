@@ -1,0 +1,13 @@
+sync:
+  defaults:
+    mode: "two-way-resolved"
+    ignore:
+      vcs: true
+      paths:
+        - "node_modules"
+        - "vendor"
+        - "storage/logs"
+        - "storage/framework/cache"
+  act100:
+    alpha: "/mnt/d/010_Web開発/100_TaxDemo/act100"
+    beta: "~/act100"
