@@ -1,7 +1,11 @@
 # version: '3'
 services:
+  laravel.test:
+    volumes:
+      - ./:/var/www/html
+
   cron:
-    image: sail-8.2/app   # laravel.test と同じイメージを利用
+    image: sail-8.2/app
     depends_on:
       - laravel.test
     volumes:
@@ -15,3 +19,7 @@ services:
   mysql:
     ports:
       - "3308:3306"
+
+volumes: #<-追加した
+  mutagen-sync:
+    external: true
